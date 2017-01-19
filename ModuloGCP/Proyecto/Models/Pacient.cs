@@ -24,7 +24,7 @@ namespace Proyecto.Models
 
         public double Peso { get; set; }
 
-        [Required]
+        
         [DataType(DataType.Date)]
         public string FechaCese { get; set; }
 

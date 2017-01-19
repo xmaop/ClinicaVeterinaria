@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Proyecto.Models;
+using System.IO;
 
 namespace Proyecto.Controllers
 {
@@ -60,14 +61,29 @@ namespace Proyecto.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Foto,Peso,FechaCese,Color,Estado")] Pacient pacient)
+        public ActionResult Create([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Peso,FechaCese,Color,Estado")] Pacient pacient, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
-            {
-                db.Pacients.Add(pacient);
-                db.SaveChanges();
+            
+
+                if (ModelState.IsValid)
+                {
+
+                    int lastPacientId = db.Pacients.Max(item => item.PacientId);
+                    pacient.Foto = lastPacientId.ToString() + ".jpg";
+                    db.Pacients.Add(pacient);
+                    db.SaveChanges();
+                    
+                if (file != null && file.ContentLength > 0)
+                    {
+                        //string pic = System.IO.Path.GetFileName(file.FileName);
+                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), pacient.Foto + ".jpg");
+                        // file is uploaded
+                        file.SaveAs(path);
+                    }
                 return RedirectToAction("Index");
-            }
+                }
+            
+            
 
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Direccion", pacient.ClientId);
             return View(pacient);
