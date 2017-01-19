@@ -1,0 +1,55 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<%-- Inicio DropDownList --%>
+<asp:DropDownList runat="server" CssClass="frmTextos"></asp:DropDownList>
+<%-- Fin DropDownList --%>
+
+<asp:Label runat="server" CssClass="lblTextos"></asp:Label>
+<%-- Inicio TextBox --%>
+<asp:TextBox runat="server" CssClass="frmTextos"></asp:TextBox>
+<asp:TextBox runat="server" SkinId="Deshabilitado" CssClass="textboxDesabilitado"></asp:TextBox>
+<asp:TextBox runat="server" SkinId="SoloLectura" CssClass="lblTextos" BackColor="Transparent" BorderWidth="1px" BorderColor="#cacaca" ></asp:TextBox>
+
+
+<%-- Fin TextBox --%>
+
+<%--CssClass="GrillaCss" --%>
+<asp:GridView runat="server" Width="100%" SelectedIndex="0"
+    PagerStyle-HorizontalAlign="Center" AutoGenerateColumns="False" BorderColor="Transparent" BorderStyle="None" BorderWidth="0px" CssClass="grid1" HeaderStyle-BorderWidth="0px" 
+    RowStyle-Height="24" HeaderStyle-Height="27"  >
+    <RowStyle CssClass="grid1_fila1" />
+    <HeaderStyle CssClass="grid1_header" />
+    <AlternatingRowStyle CssClass="grid1_fila2" />
+    <PagerStyle HorizontalAlign="Center"></PagerStyle>
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="GridSimple" Width="100%" SelectedIndex="0"  
+    PagerStyle-HorizontalAlign="Center" AutoGenerateColumns="False" BorderColor="Transparent" BorderStyle="None" BorderWidth="0px" CssClass="grid1" HeaderStyle-BorderWidth="0px" 
+    RowStyle-Height="24" HeaderStyle-Height="27">
+    <RowStyle CssClass="grid1_fila2" />
+    <HeaderStyle CssClass="grid1_header" />    
+    <AlternatingRowStyle CssClass="grid1_fila2" />
+    <PagerStyle HorizontalAlign="Center"></PagerStyle>
+</asp:GridView>
+
+<asp:GridView runat="server" SkinId="gdvMenu">
+</asp:GridView>
+
+<cc1:TabPanel runat="server" CssClass="lblTextos" />
+
+
+

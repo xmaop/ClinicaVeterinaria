@@ -1,0 +1,15 @@
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\bin\Debug\PetCenter.ExceptionManagement.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\bin\Debug\PetCenter.ExceptionManagement.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.ExceptionManagerInstaller.resources
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.ExceptionManagerText.resources
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.csproj.GenerateResource.Cache
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.csprojResolveAssemblyReference.cache
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\bin\Debug\PetCenter.ExceptionManagement.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\bin\Debug\PetCenter.ExceptionManagement.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.ExceptionManagerInstaller.resources
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.ExceptionManagerText.resources
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.csproj.GenerateResource.Cache
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.pdb
