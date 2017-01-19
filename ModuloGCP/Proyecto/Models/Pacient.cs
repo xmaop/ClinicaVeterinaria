@@ -9,7 +9,7 @@ namespace Proyecto.Models
     public class Pacient
     {
         public int PacientId { get; set; }
-
+        [Required]
         public string nombre { get; set; }
 
         public int ClientId { get; set; }
@@ -17,7 +17,7 @@ namespace Proyecto.Models
         [Required]
         [DataType(DataType.Date)]
         public string FechaNac { get; set; }
-
+        [Required]
         public string Genero { get; set; }
 
         public string Foto { get; set; }
@@ -27,7 +27,7 @@ namespace Proyecto.Models
         
         [DataType(DataType.Date)]
         public string FechaCese { get; set; }
-
+        [Required]
         public string Color { get; set; }
 
         public string Estado { get; set; }

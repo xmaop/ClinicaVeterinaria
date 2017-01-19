@@ -8,12 +8,16 @@ namespace Proyecto.Models
 {
     public class PersonaNatural : Client
     {
-        public string Nombre { get; set; }
-
-        public string Apellido_Paterno { get; set; }
-
-        public string Apellido_Materno { get; set; }
         [Required]
+        [DataType(DataType.Text)]
+        public string Nombre { get; set; }
+        [Required]
+        [DataType(DataType.Text)]
+        public string Apellido_Paterno { get; set; }
+     
+        [DataType(DataType.Text)]
+        public string Apellido_Materno { get; set; }
+        
         [DataType(DataType.Date)]
         public string FechaNac { get; set; }
     }

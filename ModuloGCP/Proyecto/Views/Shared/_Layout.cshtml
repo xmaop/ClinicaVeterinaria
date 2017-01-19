@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Módulo Mantenimiento Clientes y Pacientes</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -21,10 +21,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("PN", "", "PersonaNaturals")</li>
-                    <li>@Html.ActionLink("PJ", "", "PersonaJuridicas")</li>
-                    <li>@Html.ActionLink("Pacientes", "", "Pacients")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Mantinimiento Cliente
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Persona Natural", "", "PersonaNaturals")</li>
+                            <li>@Html.ActionLink("Persona Jurídica", "", "PersonaJuridicas")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Listar Pacientes", "", "Pacients")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

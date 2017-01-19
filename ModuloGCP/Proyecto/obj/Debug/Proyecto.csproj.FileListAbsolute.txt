@@ -239,6 +239,5 @@ C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\bin\Microsoft.Owin.
 C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
 C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\obj\Debug\Proyecto.dll
 C:\Users\xmaop\Desktop\ClinicaVeterinaria\ModuloGCP\Proyecto\obj\Debug\Proyecto.pdb

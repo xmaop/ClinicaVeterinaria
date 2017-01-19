@@ -68,15 +68,17 @@ namespace Proyecto.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    int lastPacientId = db.Pacients.Max(item => item.PacientId);
-                    pacient.Foto = lastPacientId.ToString() + ".jpg";
+                    
                     db.Pacients.Add(pacient);
                     db.SaveChanges();
-                    
+                    int lastPacientId = db.Pacients.Max(item => item.PacientId);
+                    pacient.Foto = lastPacientId.ToString() + ".jpg";
+                    db.Entry(pacient).State = EntityState.Modified;
+                    db.SaveChanges();
                 if (file != null && file.ContentLength > 0)
                     {
                         //string pic = System.IO.Path.GetFileName(file.FileName);
-                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), pacient.Foto + ".jpg");
+                        string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), pacient.Foto);
                         // file is uploaded
                         file.SaveAs(path);
                     }
@@ -116,11 +118,20 @@ namespace Proyecto.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Foto,Peso,FechaCese,Color,Estado")] Pacient pacient)
+        public ActionResult Edit([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Foto,Peso,FechaCese,Color,Estado")] Pacient pacient, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+
                 db.Entry(pacient).State = EntityState.Modified;
+                pacient.Foto = pacient.PacientId + ".jpg";
+                if (file != null && file.ContentLength > 0)
+                {
+                    //string pic = System.IO.Path.GetFileName(file.FileName);
+                    string path = System.IO.Path.Combine(Server.MapPath("~/images/profile"), pacient.Foto);
+                    // file is uploaded
+                    file.SaveAs(path);
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
