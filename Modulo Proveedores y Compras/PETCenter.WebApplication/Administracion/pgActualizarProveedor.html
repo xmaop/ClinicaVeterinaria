@@ -1,0 +1,47 @@
+﻿<div class="container-fluid ContentBanner" >
+    &nbsp;ACTUALIZAR PROVEEDOR
+    <div class="pull-right" style="width: 50px; cursor: pointer">
+        <input type="hidden" id="hdBusquedaAvanzada" />
+        <center><i id="faangleBusqueda" class="fa fa-minus-square" aria-hidden="true"></i></center>
+    </div>
+</div>
+
+
+<div class="container-fluid ContentPage" id="divProveedor">
+    <div class="row">
+        
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Razón Social:</span>
+                <input type="text" class="form-control input-sm text-uppercase" id="txtRazonSocial" />
+                <span class="input-group-addon">Dirección:</span>
+                <input type="text" class="form-control input-sm text-uppercase" id="txtDireccion" />
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+    
+    <div class="row">
+        
+        <div class="col-xs-12 col-sm-12 col-md-4" >
+            <div class="home-buttom col-md-4" onclick="guardarProveedor(); return false;" style="margin-right:3px;">
+                <center><i class="fa fa-floppy-o">&nbsp;</i> Grabar</center>
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+</div>
+
+<script src="../Content/scripts/pet/proveedor.js"></script>
+
+<script>
+    $(document).ready(function () {
+        if ($("#selectrow").val() == 0) {
+            loadInitialData();
+            //showError($("#selectrow").val());
+        } else {
+            //showError($("#selectrow").val());
+        }
+    });
+</script>
+
