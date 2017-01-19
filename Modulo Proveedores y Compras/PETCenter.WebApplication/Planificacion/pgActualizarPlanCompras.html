@@ -1,0 +1,169 @@
+﻿<div class="container-fluid ContentBanner" >
+    &nbsp;ACTUALIZAR PLAN DE COMPRA
+    <div class="pull-right" style="width: 50px; cursor: pointer">
+        <input type="hidden" id="hdBusquedaAvanzada" />
+        <center><i id="faangleBusqueda" class="fa fa-minus-square" aria-hidden="true"></i></center>
+    </div>
+</div>
+
+
+<div class="container-fluid ContentPage" id="divPlanCompras">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Responsable:</span>
+                <select class="form-control input-sm text-uppercase" id="selectResponsables">                   
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Periodo:</span>
+                <input type="text" disabled  class="form-control input-sm pad-control text-uppercase" id="txtPeriodo" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Presupuesto: S/.</span>
+                <input type="text" disabled value="S/180000.00" class="form-control input-sm pad-control text-uppercase" id="txtMonto" />
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <!--<div class="input-group input-group-sm ">
+                <span class="input-group-addon">Fecha Ejecución:</span>
+                <input id="datepicker" value="dd/MM/yyyy" style="width: 100%" class="input-sm" />
+
+            </div>-->
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Fecha Registro:</span>
+                <input type="text" disabled value="02/09/2016" class="form-control input-sm pad-control text-uppercase" id="txtFechaRegistro" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Estado:</span>
+                <input type="text" disabled class="form-control input-sm pad-control text-uppercase" id="txtEstado" />
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="home-buttom col-md-6" onclick="getSolicitudes(); return false;">
+                <center><i class="fa fa-download">&nbsp;</i> Obtener Solicitudes</center>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="home-buttom col-md-4" onclick="getItems(); return false;">
+                <center><i class="fa fa-download">&nbsp;</i> Obtener Items</center>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4" >
+            <div class="home-buttom col-md-4" onclick="saveActualizarPlan(); return false;" style="margin-right:3px;">
+                <center><i class="fa fa-floppy-o">&nbsp;</i> Grabar</center>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="home-buttom col-md-4" onclick="OpenPage('/Planificacion/pgGestionPlanCompra.html'); return false;">
+                <center><i class="fa fa-undo">&nbsp;</i> Cancelar</center>
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+</div>
+
+<div id="grid-view">
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div id="gridSolicitudes" class="label-sm grid-setcursor pull-left">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8">
+            <div id="gridItems" class="label-sm grid-setcursor pull-left">
+            </div>
+        </div>
+    </div>
+    <div class="row" id="rowTotales" style="display:none;">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Total S/.</span>
+                <input type="text" disabled class="form-control input-sm pad-control text-uppercase" id="txtTotal" />
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="verItemsSolicitudModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-body" style="margin:5px;">
+                <!--<div class="text-center">
+            <img src="/Content/images/gears.gif" />
+            <h4>
+                Cargando...
+            </h4>
+        </div>-->
+                <div id="gridItemsSolicitud"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="asignarProveedorRecursoModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Asignar Proveedor</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label class="control-label" id="lblRecursoAsignado"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label class="control-label" id="lblProveedorAsignado"></label>
+                    </div>
+                </div>
+                <div class="row" style="margin:5px;">
+                    <div id="gridProveedorRecurso"></div>
+                </div>                
+            </div>
+            <div class="modal-footer ">
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="saveProveedorRecurso();"><span class="fa fa-save"></span>&nbsp;Grabar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../Content/scripts/pet/planCompras.js"></script>
+
+<script>
+    $(document).ready(function () {
+        if ($("#selectrow").val() == 0) {
+            loadInitialData();
+            getResponsables();
+            //showError($("#selectrow").val());
+        } else
+        {
+            //showError($("#selectrow").val());
+            getResponsablesEdit();
+        }
+    });
+</script>

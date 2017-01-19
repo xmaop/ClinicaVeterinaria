@@ -1,0 +1,9 @@
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\EntityFramework.dll
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.dll
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\EntityFramework.xml
+F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.xml
+F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.csprojResolveAssemblyReference.cache

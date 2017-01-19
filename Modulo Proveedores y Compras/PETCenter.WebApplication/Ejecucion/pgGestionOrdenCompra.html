@@ -1,0 +1,260 @@
+﻿<div class="container-fluid ContentBanner">
+    &nbsp;Consultar Ordenes de Compra
+</div>
+
+<div class="container-fluid ContentPage" id="divPlanCompras">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Fecha Inicio:</span>
+                <input id="datepickerInicio" style="width: 100%" class="form-control input-sm pad-control text-uppercase" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Fecha Fin:</span>
+                <input id="datepickerFin" style="width: 100%" class="form-control input-sm pad-control text-uppercase" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon">Proveedor:</span>
+                <select class="form-control input-sm text-uppercase" id="selectProveedores"></select>
+            </div>
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+            <!--<div class="home-buttom col-md-6" onclick="getSolicitudes(); return false;">
+                <center><i class="fa fa-download">&nbsp;</i> Obtener Solicitudes</center>
+            </div>-->
+            <!--<input type="checkbox" class="" value="Planificada"  />-->
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon input-sm" style="width:154px;text-align: left;">
+                    <input type="checkbox" id="chkPlanificada" aria-label="Checkbox for following text input">
+                    Planificada
+                </span>
+            </div>
+        </div>
+        <!--<div class="col-xs-12 col-sm-12 col-md-2">
+        </div>-->
+        <div class="col-xs-12 col-sm-12 col-md-9">
+            <div class="home-buttom col-md-2" onclick="getOrdenesCompra(); return false;" style="margin-right:3px;">
+                <center><i class="fa fa-search">&nbsp;</i> Buscar</center>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="home-buttom col-md-2" onclick="generarOrdenesCompra();" style="margin-right:3px;">
+                <center><i class="fa fa-cog">&nbsp;</i> OC desde Plan</center>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="home-buttom col-md-2" onclick="generarSolicitudes();" style="margin-right:3px;">
+                <center><i class="fa fa-cog">&nbsp;</i> OC desde Solicitud</center>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="home-buttom col-md-2" onclick="SetEdit();" style="margin-right:3px;">
+                <center><i class="fa fa-cog">&nbsp;</i> Modificar</center>
+            </div>
+            <!--<div class="home-buttom col-md-2" onclick="OpenPage('/Ejecucion/empty.html'); return false;" style="margin-right:3px;">
+                <center><i class="fa fa-cog">&nbsp;</i> Salir</center>
+            </div>-->
+        </div>
+        <hr style="border-color: transparent" />
+    </div>
+</div>
+
+<!--GRILLA-->
+<!--<div class="container-fluid ContentBannerBody">&nbsp;Listado de Ordenes de Compras</div>-->
+<div id="grid-view">
+    <div id="grid" class="label-sm grid-setcursor pull-left">
+    </div>
+</div>
+
+
+<div class="modal fade" id="generarOrdenesModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Generador de OC</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="container-fluid ContentPage">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Plan OC</span>
+                                        <!--<input type="text" class="form-control input-sm pad-control text-uppercase" id="txtPlanOC" />-->
+                                        <select class="form-control input-sm text-uppercase" id="selectOC" onchange="getCargarOC();"></select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="home-buttom col-md-8" onclick="getCargarOC(); return false;" style="margin-right:3px;">
+                                        <center><i class="fa fa-download">&nbsp;</i> Generar OC</center>
+                                    </div>
+                                </div>
+                                <hr style="border-color: transparent" />
+                            </div>
+                        </div>
+                        <div class="container-fluid ContentBannerBody">&nbsp;Ordenes de Compras</div>
+                        <div id="grid-view">
+                            <div id="gridOrdenCompra" class="label-sm grid-setcursor pull-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="guardarOrdenCompra();">
+                    <span class="fa fa-save"></span>&nbsp;Guardar
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="generarSolicitudesModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Generador de Solicitudes</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="container-fluid ContentPage">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Solicitud</span>
+                                        <!--<input type="text" class="form-control input-sm pad-control text-uppercase" id="txtSolicitud" />-->
+                                        <select class="form-control input-sm text-uppercase" id="selectSolicitudes" onchange="getCargarItems();"></select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4">
+                                    <div class="home-buttom col-md-8" onclick="getCargarItems(); return false;" style="margin-right:3px;">
+                                        <center><i class="fa fa-download">&nbsp;</i> Generar Items</center>
+                                    </div>
+                                </div>
+                                <hr style="border-color: transparent" />
+                            </div>
+                        </div>
+                        <div class="container-fluid ContentBannerBody">&nbsp;Items</div>
+                        <div id="grid-view">
+                            <div id="gridItems" class="label-sm grid-setcursor pull-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="verDetalleOC();">
+                    <span class="fa fa-search"></span>&nbsp;Ver OC
+                </button>
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="guardarSolicitudesCompra();">
+                    <span class="fa fa-save"></span>&nbsp;Guardar
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="verOCModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-body" style="margin:5px;">
+                <!--<div class="text-center">
+                    <img src="/Content/images/gears.gif" />
+                    <h4>
+                        Cargando...
+                    </h4>
+                </div>-->
+                <div id="gridOCModal"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="verPlanOCModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:900px;">
+        <div class="modal-content">
+            <div class="modal-body" style="margin:5px;">
+                <!--<div class="text-center">
+                    <img src="/Content/images/gears.gif" />
+                    <h4>
+                        Cargando...
+                    </h4>
+                </div>-->
+                <div id="gridPlanOCModal"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="asignarProveedorRecursoModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Asignar Proveedor</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label class="control-label" id="lblRecursoAsignado"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label class="control-label" id="lblProveedorAsignado"></label>
+                    </div>
+                </div>
+                <div class="row" style="margin:5px;">
+                    <div id="gridProveedorRecurso"></div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="saveProveedorRecurso();"><span class="fa fa-save"></span>&nbsp;Grabar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="DetalleOCModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Ordenes de Compra</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--<div class="container-fluid ContentBannerBody">&nbsp;Items</div>-->
+                        <div id="grid-view">
+                            <div id="gridItemsDetalle" class="label-sm grid-setcursor pull-left">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <!--<button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="guardarSolicitudesCompra();">
+                    <span class="fa fa-search"></span>&nbsp;Ver OC
+                </button>
+                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="guardarSolicitudesCompra();">
+                    <span class="fa fa-save"></span>&nbsp;Guardar
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../Content/scripts/pet/ordenCompra.js"></script>

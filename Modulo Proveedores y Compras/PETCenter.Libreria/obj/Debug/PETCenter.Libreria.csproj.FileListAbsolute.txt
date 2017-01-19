@@ -1,0 +1,5 @@
+F:\Data\DEV\UPC\TP\PETCenter.Libreria\bin\Debug\PETCenter.Libreria.dll
+F:\Data\DEV\UPC\TP\PETCenter.Libreria\bin\Debug\PETCenter.Libreria.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Libreria\obj\Debug\PETCenter.Libreria.csprojResolveAssemblyReference.cache
+F:\Data\DEV\UPC\TP\PETCenter.Libreria\obj\Debug\PETCenter.Libreria.dll
+F:\Data\DEV\UPC\TP\PETCenter.Libreria\obj\Debug\PETCenter.Libreria.pdb

@@ -1,0 +1,14 @@
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.Logic.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.Logic.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Logic\bin\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.csprojResolveAssemblyReference.cache
+F:\Data\DEV\UPC\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.dll
+F:\Data\DEV\UPC\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.pdb
