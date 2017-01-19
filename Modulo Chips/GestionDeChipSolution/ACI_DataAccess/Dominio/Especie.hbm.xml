@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ACI_Entities"
+                   namespace="ACI_Entities"
+                   default-lazy="false">
+  <class name="Especie" table="GCP_Especie">
+    <id name="Id_Especie" column="Id_Especie">
+      <generator class="increment" />
+    </id>
+    <property name="Descripcion" column="Descripcion" />
+    <!--<property name="EdadPaciente" column="edadPaciente" />-->    
+  </class>
+</hibernate-mapping>

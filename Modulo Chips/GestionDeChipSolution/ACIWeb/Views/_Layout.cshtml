@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>@ViewBag.Title</title>
+
+
+    <script src="@Url.Content("~/Content/scripts/common/jquery.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/jquery-ui.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/jquery.coverflow.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/reflection.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/prettify.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/bootstrap.min.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/bootstrap-datetimepicker.min.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/common/toastr.min.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/kendo/kendo.all.min.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/kendo/kendo.web.min.js")"  type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/scripts/kendo/kendo.culture.es-PE.min.js")"  type="text/javascript"></script>
+    @RenderSection("JavaScript", required: false)
+
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/bootstrap-datetimepicker.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/font-talma.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/home.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/prettify.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/toastr.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/kendo/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/kendo/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/kendo/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/kendo/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+
+
+</head>
+<body>
+    <div>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#options">
+                            <span class="sr-only">Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand" id="hreflogo">
+                            <img src="/Content/images/img-logo.png" alt="Pets Center" id="logo">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="options">
+                        <ul class="nav navbar-nav" id="ul-options">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-group"></i>&nbsp;&nbsp;Módulo de Administración<span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li class="dropdown-header"><i class="fa fa-fw fa-envelope"></i>&nbsp;&nbsp;CHIPS</li>
+                                    <li><a href="#" onclick="window.location.href = '/OrdenImplantacion/Consulta';"><i class="fa fa-bell-o"></i>&nbsp;&nbsp;Registrar implantación de chip</a></li>
+                                    <li class="divider"></li>
+                                    @*<li class="dropdown-header"><i class="fa fa-fw fa-envelope"></i>&nbsp;&nbsp;EJECUCIÓN</li>
+                                    <li><a href="#" onclick="OpenPage('Ejecucion/pgGestionOrdenCompra.html');return false;"><i class="fa fa-bell-o"></i>&nbsp;&nbsp;Gestionar Orden de Compra</a></li>
+                                    <li class="divider"></li>*@
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+
+                                <ul class="dropdown-menu">
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="sectionname">
+                                    <i class="fa fa-user">&nbsp;</i>
+                                    Usuario<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="fa fa-fw fa-user">&nbsp;</i>Ver Perfil</a></li>
+
+                                    <li class="divider"></li>
+                                    <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <br />
+        <input type="hidden" id="selectrow" value="0" />
+        <div class="container-fluid" id="pages">@RenderBody()</div>
+
+
+        <script src="@Url.Content("~/Content/scripts/init.js")"  type="text/javascript"></script>
+        <script src="@Url.Content("~/Content/scripts/modal.js")"  type="text/javascript"></script>
+        <script src="@Url.Content("~/Content/scripts/home.js")"  type="text/javascript"></script>
+        <script src="@Url.Content("~/Content/scripts/session/menu.js")"  type="text/javascript"></script>
+        <script src="@Url.Content("~/Content/scripts/session/coverflow.js")"  type="text/javascript"></script>
+        @RenderSection("JavaScript", required: false)
+
+        <style>
+            .modal-loading {
+                position: absolute !important;
+                z-index: 99999 !important;
+            }
+
+            .k-loading-mask {
+                z-index: 2 !important;
+            }
+
+            .modal-static {
+                position: fixed;
+                top: 50% !important;
+                left: 50% !important;
+                margin-top: -100px;
+                margin-left: -100px;
+                overflow: visible !important;
+                z-index: 99999 !important;
+            }
+
+                .modal-static,
+                .modal-static .modal-dialog,
+                .modal-static .modal-content {
+                    width: 200px;
+                    height: 200px;
+                    /*background-color:transparent;*/
+                }
+
+                    .modal-static .modal-dialog,
+                    .modal-static .modal-content {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        /*background-color:transparent;*/
+                    }
+
+                        .modal-static .modal-content .icon {
+                        }
+        </style>
+        <!-- Static Modal -->
+        <div class="modal modal-static fade" id="processingModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="../Content/images/gears.gif" style="width: 50px; height: 50px;" />
+                            <center><label class="pad-control text-uppercase">Cargando...</label></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

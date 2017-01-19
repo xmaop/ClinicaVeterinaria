@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ACI_Entities"
+                   namespace="ACI_Entities"
+                   default-lazy="false">
+  <class name="Chip" table="ACI_Chip">
+    <id name="Id_chip" column="id_chip">
+      <generator class="increment" />
+    </id>
+    <property name="Codigo_Chip" column="codigo_Chip" />
+    <property name="Estado" column="estado" />
+    <!--<property name="EdadPaciente" column="edadPaciente" />-->    
+  </class>
+</hibernate-mapping>

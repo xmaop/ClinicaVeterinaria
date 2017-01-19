@@ -1,0 +1,10 @@
+C:\Users\Pablo\Desktop\Tp3-Eddy\GestionDeChipSolution\ACI_Entities\bin\Debug\ACI_Entities.dll
+C:\Users\Pablo\Desktop\Tp3-Eddy\GestionDeChipSolution\ACI_Entities\bin\Debug\ACI_Entities.pdb
+C:\Users\Pablo\Desktop\Tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.dll
+C:\Users\Pablo\Desktop\Tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.pdb
+C:\Users\Pablo\Desktop\Tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.csprojResolveAssemblyReference.cache
+C:\Users\Pablo-laptop\Desktop\tp3-Eddy\GestionDeChipSolution\ACI_Entities\bin\Debug\ACI_Entities.dll
+C:\Users\Pablo-laptop\Desktop\tp3-Eddy\GestionDeChipSolution\ACI_Entities\bin\Debug\ACI_Entities.pdb
+C:\Users\Pablo-laptop\Desktop\tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.csprojResolveAssemblyReference.cache
+C:\Users\Pablo-laptop\Desktop\tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.dll
+C:\Users\Pablo-laptop\Desktop\tp3-Eddy\GestionDeChipSolution\ACI_Entities\obj\Debug\ACI_Entities.pdb

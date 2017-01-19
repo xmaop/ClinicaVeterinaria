@@ -1,0 +1,150 @@
+﻿@{    
+    Layout = "~/Views/_Layout.cshtml";
+    ViewBag.Title = "Órdenes para Implantación";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "onlineform" }))
+{ 
+    @Html.AntiForgeryToken()
+
+    <script type="text/javascript">
+       
+        function dataSourceOrdenaAtencion() {
+            //var params = JSON.stringify({
+            //    "numOrden": $("#txtNOrden").val() || ''
+            //});
+
+            var dataSource = new kendo.data.DataSource({
+                batch: true,
+                transport: {
+                    read: {
+                        type: "GET",
+                        url: "/OrdenImplantacion/GetImplantacion/?numOrden=" + $("#txtNOrden").val(),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                    },
+                    //parameterMap: function (options, operation) {
+                    //    return params;
+                    //},
+                    pageSize: 10,
+                }
+            });
+            return dataSource;
+        }
+
+
+        function getOrdenaAtencion() {
+            $("#gridOrdenAtencion").kendoGrid({
+                dataSource: dataSourceOrdenaAtencion(),
+                height: 340,
+                groupable: false,
+                sortable: true,
+                selectable: true,
+                resizable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                rowTemplate: "<tr>" +                    
+                    "<td onclick=\"RedirectRegistrar('#: EstadoAtencion #',#: IdOrdenAtencion #)\">Seleccione</td>" +
+                    "<td>#: IdOrdenAtencion #</td>" +
+                    "<td>#: NombrePaciente #</td>" +
+                    "<td>#: EdadPaciente #</td>" +
+                    "<td>#: TipoDocumentoCliente #</td>" +
+                    "<td>#: NumeroDocumentoCliente #</td>" +
+                    "<td>#: NombreCliente #</td>" +
+                    "<td>#: EstadoAtencion #</td>" +
+                    "</tr>",
+                altRowTemplate: "<tr>" +                    
+                   "<td onclick=\"RedirectRegistrar('#: EstadoAtencion #',#: IdOrdenAtencion #)\">Seleccione</td>" +
+                   "<td>#: IdOrdenAtencion #</td>" +
+                    "<td>#: NombrePaciente #</td>" +
+                    "<td>#: EdadPaciente #</td>" +
+                    "<td>#: TipoDocumentoCliente #</td>" +
+                    "<td>#: NumeroDocumentoCliente #</td>" +
+                    "<td>#: NombreCliente #</td>" +
+                    "<td>#: EstadoAtencion #</td>" +
+                    "</tr>",
+                columns: [{                    
+                    title: "Opciones",
+                    width: 240
+                }, {
+                    field: "IdOrdenAtencion",
+                    title: "N° Orden Atención",                    
+                }, {
+                    field: "NombrePaciente",
+                    title: "Nombre Paciente"
+                }, {
+                    field: "EdadPaciente",
+                    title: "Edad (Año Sem.)"
+                }, {
+                    field: "TipoDocumentoCliente",
+                    title: "Tipo Documento"
+                }, {
+                    field: "NumeroDocumentoCliente",
+                    title: "Número Documento"
+                }, {
+                    field: "NombreCliente",
+                    title: "Nombre Cliente"
+                }, {
+                    field: "EstadoAtencion",
+                    title: "Estado",
+                }]
+            });
+        }
+
+
+
+
+        function RedirectRegistrar(estado, idordenatencion) {
+            window.location.href = '/OrdenImplantacion/Registrar/?numOrden=' + idordenatencion;
+            //if (estado == "Listo para implantación" && estado != "Listo para implantación") {
+            //    showError('No puede registrar la implantación. Debe tener un registro con el estado Listo para implantación');
+            //}
+            //else {
+            //    window.location.href = '/OrdenImplantacion/Registrar/?numOrden=' + idordenatencion;
+            //}
+        }
+
+
+
+    </script>
+    
+    <fieldset>
+        <div class="container-fluid ContentBanner">
+            <center>Registrar Implantación de Chip</center> 
+        </div>
+        <div class="container-fluid ContentPage" id="divPlanCompras">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table>
+                            <tr>
+                                <td><span class="input-group-addon">Ingrese N° Orden:</span></td>
+                                <td><input type="text" id="txtNOrden" class="form-control input-sm pad-control text-uppercase k-input" /></td>
+                                <td>
+                                    <input type="button" style="width: 120px" class="home-buttom col-md-2" value="Buscar" onclick="getOrdenaAtencion();" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+
+        <div class="container-fluid ContentBannerBody">&nbsp;Listado para la implantación</div>
+        <div class="row">
+            <div id="grid-view">
+                <div id="gridOrdenAtencion" class="label-sm grid-setcursor pull-left">
+                </div>
+            </div>
+        </div>
+         <script type="text/javascript">
+             getOrdenaAtencion();
+        </script>
+    </fieldset>
+}
+
+
+

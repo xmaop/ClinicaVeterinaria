@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ACI_Entities"
+                   namespace="ACI_Entities"
+                   default-lazy="false">
+  <class name="OrdenAtencion" table="GCP_OrdenAtencion">
+    <id name="IdOrdenAtencion" column="idOrdenAtencion">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Paciente" column="id_Mascota" />    
+    <property name="Estado" column="estado" />
+    <property name="Fecha" column="fecha" />
+    <property name="MotivoRechazo" column="motivoRechazo" />
+    <property name="Observacion" column="observacion" />
+    <property name="DescripciónMotivoRechazo" column="descripciónMotivoRechazo" />
+    
+  </class>
+</hibernate-mapping>

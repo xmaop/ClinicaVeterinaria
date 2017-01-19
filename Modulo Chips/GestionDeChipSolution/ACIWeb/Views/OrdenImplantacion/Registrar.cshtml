@@ -1,0 +1,284 @@
+﻿@model ACIWeb.ViewModels.OrdenAtencionPacienteCliente
+@{
+    Layout = "~/Views/_Layout.cshtml";
+    ViewBag.Title = "Registrar Órdenes";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "onlineform" }))
+{ 
+    @Html.AntiForgeryToken()
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#btnSalir').click(function () {
+                window.location.href = '/OrdenImplantacion/Consulta';
+            });
+
+
+            //$('#btnGrabar').click(function () {
+            //    alert(onlineform);
+            //    $.ajax({
+            //        type: 'POST',
+            //        url: "/OrdenImplantacion/GuardarImplantacion",
+            //        data: onlineform,
+            //        dataType: 'json',
+            //        success: function (response) {
+            //            if (response != null && response.success && response.responseText == 'OK') {
+            //                window.location.href = '/OrdenImplantacion/Consulta';
+            //            } else {
+
+            //            }
+            //        }
+            //    });
+
+            //});
+
+        });
+
+        function VerificarCambioItemEstado(estado) {
+            if (estado == "Rechazado") {
+                $('#tdMotivos').show();
+                //$('#tdDescripcionMotivos').show();                
+                
+                $('#Motivo').val('');
+                //$('#DescripcionMotivoRechazo').val('');
+
+                VerificarCambioItemMotivo($('#Motivo').val());
+            }
+            else if (estado == "") {
+                $('#tdMotivos').hide();
+                //$('#tdDescripcionMotivos').hide();
+                $('#tdObservaciones').hide();
+                                                
+                $('#Motivo').val('');
+                //$('#DescripcionMotivoRechazo').val('');
+                $('#Observaciones').val('');
+
+                VerificarCambioItemMotivo('');
+            }
+            else {
+                $('#tdObservaciones').show();
+
+                $('#tdMotivos').hide();
+                //$('#tdDescripcionMotivos').hide();
+                
+                $('#Motivo').val('');
+                //$('#DescripcionMotivoRechazo').val('');
+
+                VerificarCambioItemMotivo('');
+            }
+        }
+
+        function VerificarCambioItemEstado2(estado) {
+            if (estado == "Rechazado") {
+                $('#tdMotivos').show();
+                $('#tdDescripcionMotivos').show();
+
+                VerificarCambioItemMotivo2($('#Motivo').val());
+            }
+            else if (estado == "") {
+                $('#tdMotivos').hide();
+                $('#tdDescripcionMotivos').hide();
+                $('#tdObservaciones').hide();
+
+                VerificarCambioItemMotivo2('');
+            }
+            else {
+                $('#tdObservaciones').show();
+
+                $('#tdMotivos').hide();
+                $('#tdDescripcionMotivos').hide();
+
+                VerificarCambioItemMotivo2('');
+            }
+        }
+
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        function VerificarCambioItemMotivo(motivo) {
+            if (motivo == "Otros") {
+                $('#tdDescripcionMotivos').show();
+                $('#DescripcionMotivoRechazo').val('');
+            }
+            else {
+                $('#tdDescripcionMotivos').hide();
+                $('#DescripcionMotivoRechazo').val('');
+            }
+        }
+
+
+        function VerificarCambioItemMotivo2(motivo) {
+            if (motivo == "Otros") {
+                $('#tdDescripcionMotivos').show();                
+            }
+            else {
+                $('#tdDescripcionMotivos').hide();
+            }
+        }
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        function ValidarDatos() {
+            
+            if ($('#EstadoAtencionModificacion').val() == "") {
+                showError('Seleccione un estado');
+                return false;
+            }
+            if ($('#tdMotivos').is(':visible')) {
+                if ($('#Motivo').val() == "") {
+                    showError('Seleccione un motivo');
+                    return false;
+                }
+            }
+
+            if (confirm('Desea guardar los datos?'))
+                document.getElementById('onlineform').submit();
+        }
+
+    </script>
+    
+    <fieldset>
+        @Html.HiddenFor(model => model.IdOrdenAtencion, new { id = "hdIdOrdenAtencion" })        
+        <br />
+        <div class="container-fluid ContentBanner">
+            <center>Registrar Implantación de Chip</center> 
+            <br />
+            Orden N°: @Model.IdOrdenAtencion
+        </div>
+        <div class="container-fluid ContentPage">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table style="width: 100%">
+                            <tr>
+                                <td><span class="input-group-addon">N° Chip: @Model.NumeroChip </span></td>
+                                <td><span class="input-group-addon">Fecha Registro: @Model.FechaRegistro</span></td>
+                                <td><span class="input-group-addon">Estado: @Model.EstadoAtencion</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+
+        <div class="container-fluid ContentBanner">
+            Cliente
+        </div>
+        <div class="container-fluid ContentPage">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table style="width: 100%">
+                            <tr>
+                                <td><span class="input-group-addon">Código: @Model.CodigoCliente </span></td>
+                                <td><span class="input-group-addon">Tipo: @Model.TipoCliente</span></td>
+                                <td><span class="input-group-addon">Nombre: @Model.NombreCliente</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="input-group-addon">Documento: @Model.NumeroDocumentoClienteCompleto </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="input-group-addon">CONTACTO</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="input-group-addon">Nombre: @Model.NombreContacto </span></td>
+                                <td><span class="input-group-addon">Documento: @Model.NumeroDocumentoContactoCompleto </span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+
+        <div class="container-fluid ContentBanner">
+            Paciente
+        </div>
+        <div class="container-fluid ContentPage">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table style="width: 100%">
+                            <tr>
+                                <td><span class="input-group-addon">Código: @Model.CodigoPaciente </span></td>
+                                <td><span class="input-group-addon">Nombre: @Model.NombrePaciente</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="input-group-addon">Fecha Nacimiento: @Model.FechaNacimiento </span></td>
+                                <td><span class="input-group-addon">Años: @Model.EdadPaciente</span></td>
+                                <td><span class="input-group-addon">Semanas: @Model.SemanaPaciente</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="input-group-addon">Tipo: @Model.TipoPaciente</span></td>
+                                <td><span class="input-group-addon">Raza: @Model.RazaPaciente</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+
+        <div class="container-fluid ContentBanner">
+            Evaluación Médica
+        </div>
+        <div class="container-fluid ContentPage">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table style="width: 350px">
+                            <tr>
+                                <td colspan="2">
+                                    @Html.LabelFor(model => model.EstadoAtencionModificacion, "Estado", htmlAttributes: new { @class = "input-group-addon" })
+                                    @Html.DropDownList("EstadoAtencionModificacion", (SelectList)ViewBag.ListaEstados, "-Seleccione-", htmlAttributes: new { @class = "form-control input-sm pad-control text-uppercase k-input", @onchange = "VerificarCambioItemEstado(this.value);" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="tdMotivos">
+                                    @Html.LabelFor(model => model.Motivo, "Motivo", htmlAttributes: new { @class = "input-group-addon" })
+                                    @Html.DropDownList("Motivo", (SelectList)ViewBag.ListaMotivos, "-Seleccione-", htmlAttributes: new { @class = "form-control input-sm pad-control text-uppercase k-input" , @onchange ="VerificarCambioItemMotivo(this.value);"})                                    
+                                </td>
+                                <td id="tdDescripcionMotivos">
+                                    @Html.LabelFor(model => model.DescripcionMotivoRechazo, "Descripción Motivo:", htmlAttributes: new { @class = "input-group-addon" })
+                                    <br />                                    
+                                    @Html.TextAreaFor(model => model.DescripcionMotivoRechazo,4,50, new { htmlAttributes = new {@class = "form-control" , @maxlength = "100" } })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" id="tdObservaciones">
+                                    @Html.LabelFor(model => model.Observaciones, "Observaciones:", htmlAttributes: new { @class = "input-group-addon" })
+                                    @*@Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control input-sm pad-control text-uppercase k-input", @maxlength = "100" } })*@
+                                    @Html.TextAreaFor(model => model.Observaciones,4,50, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+
+        <div class="container-fluid ContentPage" id="divPlanCompras">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="button" id="btnGrabar" onclick="ValidarDatos();" style="width: 120px" class="home-buttom col-md-2" value="Grabar" />
+                                    <input type="button" id="btnSalir" style="width: 120px" class="home-buttom col-md-2" value="Regresar" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr style="border-color: transparent">
+            </div>
+        </div>
+        <script type="text/javascript">            
+            VerificarCambioItemEstado2($('#EstadoAtencionModificacion').val());
+        </script>
+    </fieldset>
+}

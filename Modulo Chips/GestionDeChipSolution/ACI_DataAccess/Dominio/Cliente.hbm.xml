@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ACI_Entities"
+                   namespace="ACI_Entities"
+                   default-lazy="false">
+  <class name="Cliente" table="GCP_Cliente">
+    <id name="IdCliente" column="idCliente">
+      <generator class="increment" />
+    </id>
+    <!--<many-to-one name="TipoDocumento" column="idTipoDocumento" />
+    <many-to-one name="VinculoApoderado" column="idVinculoApoderado" />-->
+    <property name="Nom_Cliente" column="Nom_Cliente" />
+    <property name="ApePat_Cliente" column="ApePat_Cliente" />
+    <property name="ApeMat_Cliente" column="ApeMat_Cliente" />    
+    <property name="TipoDocumento_Identidad" column="TipoDocumento_Identidad" />
+    <property name="Documento_Identidad" column="Documento_Identidad" />
+    <property name="Tipo_Cliente" column="Tipo_Cliente" />    
+    <property name="Nombre_Contacto" column="Nombre_Contacto" />
+    <property name="ApePat_Contacto" column="ApePat_Contacto" />
+    <property name="ApeMat_Contacto" column="ApeMat_Contacto" />
+    <property name="TipoDocIdent_Contacto" column="TipoDocIdent_Contacto" />
+    <property name="NroDocIdent_Contacto" column="NroDocIdent_Contacto" />
+    <property name="Razon_Social" column="Razon_Social" />
+    
+  </class>
+</hibernate-mapping>
