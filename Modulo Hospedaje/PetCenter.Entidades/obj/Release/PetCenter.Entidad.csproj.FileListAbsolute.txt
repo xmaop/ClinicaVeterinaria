@@ -1,8 +1,0 @@
-C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\bin\Release\PetCenter.Entidades.dll
-C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\bin\Release\PetCenter.Entidades.pdb
-C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\obj\Release\PetCenter.Entidades.dll
-C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\obj\Release\PetCenter.Entidades.pdb
-D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Release\PetCenter.Entidades.dll
-D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Release\PetCenter.Entidades.pdb
-D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Release\PetCenter.Entidades.dll
-D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Release\PetCenter.Entidades.pdb
