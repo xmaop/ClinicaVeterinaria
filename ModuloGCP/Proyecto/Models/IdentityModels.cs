@@ -31,6 +31,7 @@ namespace Proyecto.Models
         }
 
         public System.Data.Entity.DbSet<Proyecto.Models.PersonaNatural> Clients { get; set; }
+        public System.Data.Entity.DbSet<Proyecto.Models.Client> Todos { get; set; }
         public System.Data.Entity.DbSet<Proyecto.Models.PersonaJuridica> PersonaJuridica { get; set; }
 
         public System.Data.Entity.DbSet<Proyecto.Models.Pacient> Pacients { get; set; }

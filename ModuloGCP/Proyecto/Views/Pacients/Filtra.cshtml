@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<Proyecto.Models.Pacient>
 
 @{
-    ViewBag.Title = "Clientes";
+    ViewBag.Title = "Filtra";
 }
 
 <h2>Pacientes</h2>
 
-<p>
-    @Html.ActionLink("Agregar Cliente", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -73,7 +71,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PacientId }) |
             @Html.ActionLink("Details", "Details", new { id=item.PacientId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.PacientId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.PacientId })
         </td>
     </tr>
 }

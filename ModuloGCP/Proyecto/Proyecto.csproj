@@ -240,6 +240,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ScriptClientes.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -295,6 +296,7 @@
     <Content Include="Views\GCP_Especie\Details.cshtml" />
     <Content Include="Views\GCP_Especie\Edit.cshtml" />
     <Content Include="Views\GCP_Especie\Index.cshtml" />
+    <Content Include="Views\Pacients\Filtra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

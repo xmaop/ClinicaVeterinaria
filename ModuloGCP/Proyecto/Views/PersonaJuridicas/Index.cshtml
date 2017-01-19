@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>PJ</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table id="tablaClientePJ" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.telefono)
@@ -33,7 +33,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr id=@Html.DisplayFor(modelItem => item.ClientId)>
         <td>
             @Html.DisplayFor(modelItem => item.telefono)
         </td>
@@ -55,9 +55,13 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ClientId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ClientId })|
+            @Html.ActionLink("Agregar Paciente", "Create", new { controller = "Pacients", ClientId = item.ClientId })
         </td>
     </tr>
 }
 
 </table>
+<div id="contenedorDetalle"></div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/ScriptClientes.js")

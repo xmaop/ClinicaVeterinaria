@@ -37,10 +37,21 @@ namespace Proyecto.Controllers
         }
 
         // GET: Pacients/Create
-        public ActionResult Create()
+        public ActionResult Create(int? ClientId)
         {
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Nombre");
-            ViewBag.PersonaJ = new SelectList(db.PersonaJuridica, "ClientId", "razon_social");
+            try
+            {
+                Client client = db.Clients.Find(ClientId);
+                ViewBag.ClientId = client;
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                PersonaJuridica client = db.PersonaJuridica.Find(ClientId);
+                ViewBag.ClientId = client;
+            }
+            
+            //ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Nombre");
+            //ViewBag.PersonaJ = new SelectList(db.PersonaJuridica, "ClientId", "razon_social");
             return View();
         }
 
@@ -60,6 +71,12 @@ namespace Proyecto.Controllers
 
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Direccion", pacient.ClientId);
             return View(pacient);
+        }
+
+        public ActionResult Filtra(int? id)
+        {
+            var detcalendario = db.Pacients.Where(d => d.ClientId == id);
+            return View(detcalendario.ToList());
         }
 
         // GET: Pacients/Edit/5
