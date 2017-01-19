@@ -1,0 +1,10 @@
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\bin\Debug\Reportes.exe.config
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\bin\Debug\Reportes.exe
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\bin\Debug\Reportes.pdb
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\Reportes.csprojResolveAssemblyReference.cache
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\Reportes.Properties.Resources.resources
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\Reportes.csproj.GenerateResource.Cache
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\RdlCompile.cache
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\RdlCompile.compiled
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\Reportes.exe
+D:\Proyectos\Otros\UPC\PetCenter\Reportes\obj\Debug\Reportes.pdb

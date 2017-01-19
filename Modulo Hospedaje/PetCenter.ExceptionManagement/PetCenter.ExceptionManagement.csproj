@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0EC6238-F384-47E5-AF95-D082C84ECF1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetCenter.ExceptionManagement</RootNamespace>
+    <AssemblyName>PetCenter.ExceptionManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="petcenterBusinessException.cs" />
+    <Compile Include="ApplicationRulesException.cs" />
+    <Compile Include="BaseApplicationException.cs" />
+    <Compile Include="ExceptionManager.cs" />
+    <Compile Include="ExceptionManagerExceptions.cs" />
+    <Compile Include="ExceptionManagerInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExceptionManagerSectionHandler.cs" />
+    <Compile Include="ExceptionManagerText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionManagerText.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceDefinitions.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publishers\ExceptionXMLPublisher.cs" />
+    <Compile Include="publishers\SMTPLogPublisher.cs" />
+    <Compile Include="publishers\WebServiceLogPublisher.cs" />
+    <Compile Include="Web References\LoggerManager\Reference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web References\LoggerManager\loggermanager.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExceptionManagerText.xsc">
+      <DependentUpon>ExceptionManagerText.xsd</DependentUpon>
+    </None>
+    <None Include="ExceptionManagerText.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExceptionManagerText.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExceptionManagerText.xss">
+      <DependentUpon>ExceptionManagerText.xsd</DependentUpon>
+    </None>
+    <None Include="ExceptionManagerText.xsx">
+      <DependentUpon>ExceptionManagerText.xsd</DependentUpon>
+    </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\GenerateResource.read.1.tlog" />
+    <None Include="obj\Debug\GenerateResource.write.1.tlog" />
+    <None Include="Web References\LoggerManager\loggermanager.wsdl" />
+    <None Include="Web References\LoggerManager\Reference.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionManagerInstaller.resx">
+      <DependentUpon>ExceptionManagerInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionManagerText.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

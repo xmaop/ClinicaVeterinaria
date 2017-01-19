@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RecordLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XMLErrorDocument" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecordLogResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RecordLogSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordLog" />
+  </wsdl:message>
+  <wsdl:message name="RecordLogSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecordLogHttpGetIn">
+    <wsdl:part name="XMLErrorDocument" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecordLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RecordLogHttpPostIn">
+    <wsdl:part name="XMLErrorDocument" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecordLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="LoggerManagerSoap">
+    <wsdl:operation name="RecordLog">
+      <wsdl:input message="tns:RecordLogSoapIn" />
+      <wsdl:output message="tns:RecordLogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LoggerManagerHttpGet">
+    <wsdl:operation name="RecordLog">
+      <wsdl:input message="tns:RecordLogHttpGetIn" />
+      <wsdl:output message="tns:RecordLogHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LoggerManagerHttpPost">
+    <wsdl:operation name="RecordLog">
+      <wsdl:input message="tns:RecordLogHttpPostIn" />
+      <wsdl:output message="tns:RecordLogHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoggerManagerSoap" type="tns:LoggerManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="RecordLog">
+      <soap:operation soapAction="http://tempuri.org/RecordLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoggerManagerHttpGet" type="tns:LoggerManagerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RecordLog">
+      <http:operation location="/RecordLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoggerManagerHttpPost" type="tns:LoggerManagerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RecordLog">
+      <http:operation location="/RecordLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoggerManager">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="LoggerManagerSoap" binding="tns:LoggerManagerSoap">
+      <soap:address location="http://192.168.15.36/monitorws/loggermanager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoggerManagerHttpGet" binding="tns:LoggerManagerHttpGet">
+      <http:address location="http://192.168.15.36/monitorws/loggermanager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoggerManagerHttpPost" binding="tns:LoggerManagerHttpPost">
+      <http:address location="http://192.168.15.36/monitorws/loggermanager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

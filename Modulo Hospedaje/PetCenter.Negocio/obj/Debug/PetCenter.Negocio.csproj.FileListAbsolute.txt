@@ -1,0 +1,57 @@
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Negocio.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Negocio.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Datos.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.DBUtility.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Entidades.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.ExceptionManagement.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\AVT.Framework.DataAccess.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.Unity.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Datos.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.DBUtility.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Entidades.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.ExceptionManagement.pdb
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.dll
+C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Negocio.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Negocio.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Datos.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.DBUtility.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Entidades.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.ExceptionManagement.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\AVT.Framework.DataAccess.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.Unity.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\Microsoft.Practices.Unity.Interception.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Datos.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.DBUtility.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.Entidades.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Release\PetCenter.ExceptionManagement.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.csprojResolveAssemblyReference.cache
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Release\PetCenter.Negocio.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Negocio.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Negocio.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Datos.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.DBUtility.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Entidades.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.ExceptionManagement.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\AVT.Framework.DataAccess.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Datos.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.DBUtility.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.Entidades.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\bin\Debug\PetCenter.ExceptionManagement.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Debug\PetCenter.Negocio.csprojResolveAssemblyReference.cache
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Debug\PetCenter.Negocio.dll
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Negocio\obj\Debug\PetCenter.Negocio.pdb
