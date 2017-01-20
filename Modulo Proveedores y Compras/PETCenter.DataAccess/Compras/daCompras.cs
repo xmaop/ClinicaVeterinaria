@@ -11,6 +11,7 @@ namespace PETCenter.DataAccess.Compras
 {
     public class daCompras
     {
+        private string connectionAzure = "DefaultAzure";
         public List<Periodo> GetPeriodoAnio()
         {
             Query query = new Query("GCP_USP_SEL_PERIODO_ANIO");
@@ -348,6 +349,35 @@ namespace PETCenter.DataAccess.Compras
             return ocol;
         }
 
+        public List<Proveedor> GetProveedores_Busqueda(String codigoProveedor, String nombreProveedor)
+        {
+            Query query = new Query("GPC_USP_VET_SEL_PROVEEDORESXIDXNOMBRE");
+            query.input.Add(codigoProveedor);
+            query.input.Add(nombreProveedor);
+            query.connection = connectionAzure;
+            List<Proveedor> provl = new List<Proveedor>();
+            Proveedor be;
+            using (IDataReader dr = new DAO().GetCollectionIReader(query))
+            {
+                while (dr.Read())
+                {
+                    be = new Proveedor();
+                    be.idProveedor = Convert.ToInt32(dr["IDPROVEEDOR"]);
+                    be.RazonSocial = dr["RAZONSOCIAL"].ToString();
+                    be.Direccion = dr["DIRECCION"].ToString(); 
+                    be.Estado = dr["ESTADO"].ToString();
+                    be.Puntaje = Convert.ToInt32(dr["PUNTAJE"]);
+
+                    be.TipoDocumento = dr["TIPODOCUMENTO"].ToString();
+                    be.NumeroDocumento = dr["DOCUMENTO"].ToString();
+                    be.Telefono = dr["TELEFONO"].ToString();
+                    be.Contacto = dr["CONTACTO"].ToString();
+                    provl.Add(be);
+                }
+            }
+            return provl;
+        }
+
         public List<Proveedor> GetProveedores()
         {
             Query query = new Query("GCP_USP_SEL_PROVEEDORES");
@@ -443,6 +473,83 @@ namespace PETCenter.DataAccess.Compras
             return be.idOrden;
         }
 
+        public int GeneraProveedor(string razonSocial, string direccion, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto)
+        {
+            Query query = new Query("GPC_USP_VET_INS_PROVEEDOR");
+            query.input.Add(razonSocial);
+            query.input.Add(direccion);
+            query.input.Add(puntaje);
+            query.input.Add(tipoDocumento);
+            query.input.Add(numeroDocumento);
+            query.input.Add(telefono);
+            query.input.Add(contacto);
+            query.connection = connectionAzure;
+            Proveedor be = new Proveedor();
+            using (IDataReader dr = new DAO().GetCollectionIReader(query))
+            {
+                while (dr.Read())
+                {
+                    try { be.idProveedor = Convert.ToInt32(dr["N_ORDEN"]); }
+                    catch (Exception ex)
+                    {
+                        be.idProveedor = 1;
+                    }
+
+                }
+            }
+            return be.idProveedor;
+        }
+
+        public int ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
+        {
+            Query query = new Query("GPC_USP_VET_UPD_PROVEEDOR");
+            query.input.Add(idProveedor);
+            query.input.Add(razonSocial);
+            query.input.Add(direccion);
+            //query.input.Add(puntaje);
+            query.input.Add(tipoDocumento);
+            query.input.Add(numeroDocumento);
+            query.input.Add(telefono);
+            query.input.Add(contacto);
+            query.input.Add(estado);
+            query.connection = connectionAzure;
+            Proveedor be = new Proveedor();
+            using (IDataReader dr = new DAO().GetCollectionIReader(query))
+            {
+                while (dr.Read())
+                {
+                    try { be.idProveedor = Convert.ToInt32(dr["N_ORDEN"]); }
+                    catch (Exception ex)
+                    {
+                        be.idProveedor = 1;
+                    }
+
+                }
+            }
+            return be.idProveedor;
+        }
+
+        public int DeleteProveedor(string idProveedor, string estado)
+        {
+            Query query = new Query("GPC_USP_VET_DEL_PROVEEDOR");
+            query.input.Add(idProveedor);
+            query.input.Add(estado);
+            query.connection = connectionAzure;
+            Proveedor be = new Proveedor();
+            using (IDataReader dr = new DAO().GetCollectionIReader(query))
+            {
+                while (dr.Read())
+                {
+                    try { be.idProveedor = Convert.ToInt32(dr["N_ORDEN"]); }
+                    catch (Exception ex)
+                    {
+                        be.idProveedor = 1;
+                    }
+
+                }
+            }
+            return be.idProveedor;
+        }
 
         public List<ItemOrdenCompra> GetDetalleSolicitudparaOC(int idSolicitud, string usuario)
         {
@@ -562,7 +669,7 @@ namespace PETCenter.DataAccess.Compras
 
         public List<OrdenCompra> GetDatosCabeceraOrden(int idOrden)
         {
-            Query query = new Query("GCP_USP_SEL_ORDENCOMPRA_ID");
+            Query query = new Query("GPC_USP_SEL_ORDENCOMPRA_ID");
             query.input.Add(idOrden);
 
             List<OrdenCompra> ocol = new List<OrdenCompra>();
@@ -581,6 +688,33 @@ namespace PETCenter.DataAccess.Compras
                 }
             }
             return ocol;
+        }
+
+        public Proveedor GetProveedor(int idProveedor)
+        {
+            Query query = new Query("GPC_USP_VET_SEL_PROVEEDOR_ID");
+            query.input.Add(idProveedor);
+            query.connection = connectionAzure;
+
+            //Proveedor provl = new Proveedor();
+            Proveedor be = new Proveedor();
+            using (IDataReader dr = new DAO().GetCollectionIReader(query))
+            {
+                while (dr.Read())
+                {
+                    be = new Proveedor();
+                    be.idProveedor = Convert.ToInt32(dr["ID_PROVEEDOR"]);
+                    be.RazonSocial = dr["RAZON_SOCIAL"].ToString();
+                    be.Direccion = dr["DIRECCION"].ToString();
+                    be.Puntaje = Convert.ToInt32(dr["PUNTAJE"]);
+                    be.TipoDocumento = dr["TIPODOCUMENTO"].ToString();
+                    be.NumeroDocumento = dr["DOCUMENTO"].ToString();
+                    be.Telefono = dr["TELEFONO"].ToString();
+                    be.Contacto = dr["CONTACTO"].ToString();
+                    
+                }
+            }
+            return be;
         }
             
 

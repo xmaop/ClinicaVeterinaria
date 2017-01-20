@@ -174,6 +174,17 @@ namespace PETCenter.WebApplication.Controllers.ajax
             else
                 return "";
         }
+
+        public Proveedor GetProveedor(int idProveedor)
+        {
+            blCompras bl = new blCompras();
+            Transaction transaction = Common.InitTransaction();
+            Proveedor provl = bl.GetProveedor(idProveedor, out transaction);
+            if (transaction.type == TypeTransaction.ERR)
+                return provl;
+            else
+                return new Proveedor();
+        }
         //Transaction GetDatosCabeceraOrden(int idOrden)
 
         public List<RecursoProveedor> GetPresentacionRecursosProveedor(int idpresentacion, int cantidad)
@@ -198,6 +209,13 @@ namespace PETCenter.WebApplication.Controllers.ajax
             return ocol;
         }
 
+        public CollectionProveedores GetProveedores_Busqueda(string codigoProveedor, string nombreProveedor)
+        {
+            blCompras bl = new blCompras();
+            CollectionProveedores provl = bl.GetProveedores_Busqueda(codigoProveedor, nombreProveedor);
+            return provl;
+        }
+
         public List<Proveedor> GetProveedores()
         {
             blCompras bl = new blCompras();
@@ -219,7 +237,7 @@ namespace PETCenter.WebApplication.Controllers.ajax
         }
 
 
-        //generar oc
+        //aar oc
         public string GeneraOrdenessegunPlan(int idPlan)
         {
             Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
@@ -243,6 +261,65 @@ namespace PETCenter.WebApplication.Controllers.ajax
             blCompras bl = new blCompras();
             Transaction transaction = Common.InitTransaction();
             int result = bl.GeneraOrdenessegunSolicitud(idSolicitud, user.Codigo, out transaction);
+            return transaction.message;
+            //if (transaction.type == TypeTransaction.OK)
+            //{
+            //    return result;
+            //}
+            //else
+            //    return 0;
+        }
+
+        public string GeneraProveedor(int puntaje, string razonSocial, string direccion, string tipoDocumento, string numeroDocumento, string telefono, string contacto)
+        {
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+
+            blCompras bl = new blCompras();
+
+            Transaction transaction = Common.InitTransaction();
+            int result = bl.GeneraProovedor(puntaje, razonSocial, direccion, tipoDocumento, numeroDocumento, telefono, contacto, out transaction);
+            return transaction.message;
+            //if (transaction.type == TypeTransaction.OK)
+            //{
+            //    return result;
+            //}
+            //else
+            //    return 0;
+        }
+
+        public string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
+        {
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+
+            blCompras bl = new blCompras();
+
+            string nuevoEstado = estado == "Activo" ? "ACT" : "INA";
+
+            Transaction transaction = Common.InitTransaction();
+            int result = bl.ActualizarProveedor(idProveedor, direccion, razonSocial, puntaje, tipoDocumento, numeroDocumento, telefono, contacto, nuevoEstado, out transaction);
+            return transaction.message;
+            //if (transaction.type == TypeTransaction.OK)
+            //{
+            //    return result;
+            //}
+            //else
+            //    return 0;
+        }
+
+        public string DeleteProveedor(string idProveedor, string estado)
+        {
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+
+            blCompras bl = new blCompras();
+
+            Transaction transaction = Common.InitTransaction();
+
+            if (estado.Equals("ACTIVO"))
+                estado = "INACTIVO";
+            else
+                estado = "ACTIVO";
+
+            int result = bl.DeleteProovedor(idProveedor, estado, out transaction);
             return transaction.message;
             //if (transaction.type == TypeTransaction.OK)
             //{

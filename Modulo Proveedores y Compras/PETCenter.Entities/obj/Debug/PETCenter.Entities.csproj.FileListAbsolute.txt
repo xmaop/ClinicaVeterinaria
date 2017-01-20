@@ -7,3 +7,20 @@ F:\Data\DEV\UPC\TP\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.xml
 F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
 F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb
 F:\Data\DEV\UPC\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\PETCenter.Entities.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\PETCenter.Entities.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\PETCenter.Entities.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\PETCenter.Entities.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.csprojResolveAssemblyReference.cache
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb

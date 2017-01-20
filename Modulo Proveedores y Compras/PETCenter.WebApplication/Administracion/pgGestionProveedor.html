@@ -13,57 +13,41 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
             <div class="col-xs-12 input-group">
-                <!--<div class="col-xs-4 col-sm-4 col-md-4 pad-none" style="padding: 1px 0px 0px 1px">
-                    <div id="btnSearchNotification" class="home-buttom" onclick="getPlanCompras(); return false;">
-                        <center><i class="fa fa-search">&nbsp;</i> Buscar</center>
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 pad-none" style="padding: 1px 0px 0px 1px">
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 pad-none" style="padding: 1px 0px 0px 1px">
-                   
-                </div>-->
                 <div class="col-xs-3 col-sm-3 col-md-3 pad-none" style="padding: 1px 0px 0px 1px">
-                    <div  class="home-buttom" onclick="getProveedores(); return false;">
+                    <div class="home-buttom" onclick="getProveedores(); return false;">
                         <center><i class="fa fa-search">&nbsp;</i> Buscar</center>
                     </div>
                 </div>
                 &nbsp;&nbsp;&nbsp;
-                <div class="col-xs-3 col-sm-5 col-md-5 pad-none" style="padding: 1px 0px 0px 1px">
+                <div class="col-xs-3 col-sm-3 col-md-3 pad-none" style="padding: 1px 0px 0px 1px">
                     <div class="home-buttom" onclick="nuevoProveedor();" style="margin-right:3px;">
-                        <center><i class="glyphicon-save" >&nbsp;</i> Nuevo Proveedor</center>
+                        <center><i class="glyphicon-save">&nbsp;</i> Nuevo Proveedor</center>
                     </div>
                 </div>
                 &nbsp;&nbsp;&nbsp;
-                <div class="col-xs-3 col-sm-5 col-md-5 pad-none" style="padding: 1px 0px 0px 1px">
+                <div class="col-xs-3 col-sm-3 col-md-3 pad-none" style="padding: 1px 0px 0px 1px;display:none;">
                     <div class="home-buttom" onclick="SetEdit();" style="margin-right:3px;">
                         <center><i class="glyphicon-edit">&nbsp;</i> Editar Proveedor</center>
                     </div>
                 </div>
 
-                <div class="col-xs-3 col-sm-5 col-md-5 pad-none" style="padding: 1px 0px 0px 1px">
+                <!--<div class="col-xs-3 col-sm-3 col-md-3 pad-none" style="padding: 1px 0px 0px 1px">
                     <div class="home-buttom" onclick="trash();" style="margin-right:3px;">
                         <center><i class="glyphicon-trash">&nbsp;</i> Editar Proveedor</center>
                     </div>
-                </div>
-                    <!--<div class="col-xs-3 col-sm-3 col-md-3 pad-none" style="padding: 1px 0px 0px 1px">
-            <div  class="home-buttom" onclick="SearchNotifications();return false;">
-                <center><i class="fa fa-undo">&nbsp;</i> Salir</center>
+                </div>-->
             </div>
-        </div>-->
-                </div>
         </div>
 
         <hr style="border-color: transparent" />
     </div>
-
 </div>
 
 <!--GRILLA-->
 <div class="container-fluid ContentBannerBody">&nbsp;Listado de Proveedores</div>
 <div id="grid-view">
     <div id="gridProveedor" class="label-sm grid-setcursor pull-left">
-    </div>  
+    </div>
 </div>
 
 
@@ -78,15 +62,37 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="container-fluid ContentPage">
-                            <div class="row">
-
+                            <div class="row" style="margin-top:3px;">
                                 <div class="col-xs-12">
                                     <div class="input-group input-group-sm">
-                                        
-                                        <span class="input-group-addon">Razón Social:</span>
-                                        <input type="text" class="form-control input-lg text-uppercase" id="txtRazonSocial1" />
-                                        <span class="input-group-addon">Dirección:</span>
-                                        <input type="text" class="form-control input-lg text-uppercase" id="txtDireccion1" />
+                                        <span class="input-group-addon">Tipo Documento:<small style="color:red;">*</small></span>
+                                        <select class="form-control input-sm text-uppercase" id="selectTipoDocumentoAdd">
+                                            <option value="1">DNI</option>
+                                            <option value="2">RUC</option>
+                                            <option value="3">Carnet Extranjeria</option>
+                                        </select>
+                                        <span class="input-group-addon">Número Documento:<small style="color:red;">*</small></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtNumeroDocumentoAdd" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:3px;">
+                                <div class=" col-xs-12">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Razón Social:<small style="color:red;">*</small></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtRazonSocialAdd" />
+                                        <span class="input-group-addon">Dirección:<small style="color:red;">*</small></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtDireccionAdd" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:3px;">
+                                <div class=" col-xs-12">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Teléfono:<small style="color:red;">*</small></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtTelefonoAdd" />
+                                        <span class="input-group-addon">Contacto:<small style="color:red;">*</small></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtContactoAdd" />
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +101,7 @@
                 </div>
             </div>
             <div class="modal-footer ">
-                <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="guardarProveedor();">
+                <button data-bb-handler="danger" type="button" class="btn btn-success"  onclick="guardarProveedor();">
                     <span class="fa fa-save"></span>&nbsp;Guardar
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -115,15 +121,52 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="container-fluid ContentPage">
+                            <div class="row" style="margin-top:3px;">
+                                <div class="col-xs-12">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Tipo Documento:</span>
+                                        <select class="form-control input-sm text-uppercase" id="selectTipoDocumentoEdit">
+                                            <option value="1">DNI</option>
+                                            <option value="2">RUC</option>
+                                            <option value="3">Carnet Extranjeria</option>
+                                        </select>
+                                        <span class="input-group-addon">Número Documento:</span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtNumeroDocumentoEdit" />
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
 
                                 <div class="col-xs-12">
                                     <div class="input-group input-group-sm">
                                         <input type="hidden" id="hIdProveedor" />
                                         <span class="input-group-addon">Razón Social:</span>
-                                        <input type="text" class="form-control input-lg text-uppercase" id="txtRazonSocial2" />
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtRazonSocialEdit" />
                                         <span class="input-group-addon">Dirección:</span>
-                                        <input type="text" class="form-control input-lg text-uppercase" id="txtDireccion2" />
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtDireccionEdit" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:3px;">
+                                <div class=" col-xs-12">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Teléfono:</span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtTelefonoEdit" />
+                                        <span class="input-group-addon">Contacto:</span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtContactoEdit" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:3px;">
+                                <div class="col-xs-12">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-addon">Estado:</span>
+                                        <select class="form-control input-sm text-uppercase" id="selectEstadoEdit">
+                                            <option value="Activo">ACTIVO</option>
+                                            <option value="Inactivo">INACTIVO</option>
+                                        </select>
+                                        <span class="input-group-addon"></span>
+                                        <input type="text" class="form-control input-lg text-uppercase" id="txtNumeroDocumentoEdit"  style="display:none;"/>
                                     </div>
                                 </div>
                             </div>
@@ -134,6 +177,26 @@
             <div class="modal-footer ">
                 <button data-bb-handler="danger" type="button" class="btn btn-success" data-dismiss="modal" onclick="actualizarProveedor();">
                     <span class="fa fa-save"></span>&nbsp;Guardar
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="eliminarProveedorModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99999">
+    <div class="modal-dialog" style="width:800px;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner" style="background-image: none; background-color: #c9302c;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title custom_align" id="H2">Eliminar Proveedor</h4>
+            </div>
+            <div class="modal-body">
+                <span class="input-group-addon" style="background-color:#FFF;font-size:18px;border:0;">Desea eliminar el registro seleccionado?</span>
+            </div>
+            <div class="modal-footer ">
+                <button data-bb-handler="error" type="button" class="btn btn-danger" data-dismiss="modal" onclick="eliminarProveedor();">
+                    <span class="fa fa-save"></span>&nbsp;Eliminar
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
@@ -198,5 +261,5 @@
 <script src="../Content/scripts/pet/proveedor.js"></script>
 
 <script>
-    
+
 </script>

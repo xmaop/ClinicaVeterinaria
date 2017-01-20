@@ -356,6 +356,30 @@ namespace PETCenter.Logic.Compras
             }
         }
 
+        public CollectionProveedores GetProveedores_Busqueda(string codigoProveedor, string nombreProveedor)
+        {
+            try
+            {
+                PETCenter.DataAccess.Configuration.DAO dao = new DAO();
+                Transaction transaction;
+                daCompras da = new daCompras();
+                List<Proveedor> provl = da.GetProveedores_Busqueda(codigoProveedor, nombreProveedor);
+                if (provl.Count() == 0)
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.ERR, "No existen ordenes de compra disponibles");
+                }
+                else
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "");
+                }
+                return new CollectionProveedores(provl, transaction);
+            }
+            catch (Exception ex)
+            {
+                return new CollectionProveedores(Common.GetTransaction(TypeTransaction.ERR, ex.Message));
+            }
+        }
+
         public List<Proveedor> GetProveedores(out Transaction transaction) 
         {
             try
@@ -435,6 +459,78 @@ namespace PETCenter.Logic.Compras
                 PETCenter.DataAccess.Configuration.DAO dao = new DAO();
                 daCompras da = new daCompras();
                 int result = da.GeneraOrdenessegunSolicitud(idSolicitud, usuario);
+                if (result == 0)
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.ERR, "No se realizó la transacción");
+                }
+                else
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "");
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                transaction = Common.GetTransaction(TypeTransaction.ERR, ex.Message);
+                return 0;
+            }
+        }
+
+        public int GeneraProovedor(int puntaje, string razonSocial, string direccion, string tipoDocumento, string numeroDocumento, string telefono, string contacto, out Transaction transaction)
+        {
+            try
+            {
+                PETCenter.DataAccess.Configuration.DAO dao = new DAO();
+                daCompras da = new daCompras();
+                int result = da.GeneraProveedor(razonSocial,direccion,puntaje,  tipoDocumento,  numeroDocumento,  telefono,  contacto);
+                if (result == 0)
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.ERR, "No se realizó la transacción");
+                }
+                else
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "Operación realizada satisfactoriamente");
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                transaction = Common.GetTransaction(TypeTransaction.ERR, ex.Message);
+                return 0;
+            }
+        }
+
+        public int ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado, out Transaction transaction)
+        {
+            try
+            {
+                PETCenter.DataAccess.Configuration.DAO dao = new DAO();
+                daCompras da = new daCompras();
+                int result = da.ActualizarProveedor(idProveedor, direccion, razonSocial, puntaje, tipoDocumento, numeroDocumento, telefono, contacto,estado);
+                if (result == 0)
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.ERR, "No se realizó la transacción");
+                }
+                else
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "Operación realizada satisfactoriamente");
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                transaction = Common.GetTransaction(TypeTransaction.ERR, ex.Message);
+                return 0;
+            }
+        }
+
+        public int DeleteProovedor(string idProveedor, string estado, out Transaction transaction)
+        {
+            try
+            {
+                PETCenter.DataAccess.Configuration.DAO dao = new DAO();
+                daCompras da = new daCompras();
+                int result = da.DeleteProveedor(idProveedor, estado);
                 if (result == 0)
                 {
                     transaction = Common.GetTransaction(TypeTransaction.ERR, "No se realizó la transacción");
@@ -580,6 +676,33 @@ namespace PETCenter.Logic.Compras
             catch (Exception ex)
             {
                 return Common.GetTransaction(TypeTransaction.ERR, ex.Message);
+            }
+        }
+        
+        public Proveedor GetProveedor(int idProveedor, out Transaction transaction)
+        {
+            try
+            {
+                PETCenter.DataAccess.Configuration.DAO dao = new DAO();
+                transaction = Common.GetTransaction(TypeTransaction.OK, "");
+                daCompras da = new daCompras();
+                Proveedor provl = da.GetProveedor(idProveedor);
+                if (provl != null)
+                {
+                    transaction = Common.GetTransaction(TypeTransaction.ERR, "No existen proveedores disponibles");
+                }
+                else
+                {
+                    
+                        transaction = Common.GetTransaction(TypeTransaction.OK, "");
+                    
+                }
+                return provl;
+            }
+            catch (Exception ex)
+            {
+                transaction = Common.GetTransaction(TypeTransaction.ERR, ex.Message);
+                return new Proveedor();
             }
         }
 

@@ -44,3 +44,137 @@ F:\Data\DEV\UPC\TP\PETCenter.WebApplication\bin\es\System.Net.Http.resources.dll
 F:\Data\DEV\UPC\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.csprojResolveAssemblyReference.cache
 F:\Data\DEV\UPC\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.dll
 F:\Data\DEV\UPC\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll.config
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.WebApplication.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\EntityFramework.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.Entities.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.Logic.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\System.Web.Providers.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.DataAccess.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.Entities.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.Logic.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\EntityFramework.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\PETCenter.DataAccess.pdb
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\es\EntityFramework.resources.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\es\System.Web.Providers.resources.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.csprojResolveAssemblyReference.cache
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.dll
+C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll.config
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\EntityFramework.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Web.Infrastructure.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Entities.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Logic.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Web.Providers.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.DataAccess.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Net.Http.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.ServiceLocation.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.Interception.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Logic.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\EntityFramework.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.DataAccess.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Net.Http.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\EntityFramework.resources.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\System.Web.Providers.resources.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\System.Net.Http.resources.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.csprojResolveAssemblyReference.cache
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll.config
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.WebApplication.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\EntityFramework.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Entities.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Logic.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Web.Providers.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.DataAccess.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Net.Http.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Entities.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.Logic.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\EntityFramework.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.Core.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\DotNetOpenAuth.AspNet.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\PETCenter.DataAccess.pdb
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\System.Net.Http.xml
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\EntityFramework.resources.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\System.Web.Providers.resources.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\Microsoft.AspNet.Membership.OpenAuth.resources.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.csprojResolveAssemblyReference.cache
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.dll
+D:\Project\Others\Modulo Proveedores y Compras\PETCenter.WebApplication\obj\Debug\PETCenter.WebApplication.pdb

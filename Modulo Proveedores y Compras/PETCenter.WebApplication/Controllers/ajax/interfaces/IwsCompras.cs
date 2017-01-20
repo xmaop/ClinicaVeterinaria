@@ -73,6 +73,25 @@ namespace PETCenter.WebApplication.Controllers.ajax
             string periodo);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GeneraProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string GeneraProveedor(
+            int puntaje,
+            string razonSocial,
+            string direccion, string tipoDocumento, string numeroDocumento, string telefono, string contacto);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "ActualizarProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "DeleteProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string DeleteProveedor(
+            string idProveedor, string estado);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetPlanCompraVigente", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string GetPlanCompraVigente();
@@ -87,6 +106,11 @@ namespace PETCenter.WebApplication.Controllers.ajax
         [WebInvoke(Method = "POST", UriTemplate = "GetOrdenCompra_Busqueda", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         CollectionOrdenCompra GetOrdenCompra_Busqueda(string fechaIni, string fechaFin, string idProveedor, int IsPlanificada);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetProveedores_Busqueda", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionProveedores GetProveedores_Busqueda(string codigoProveedor, string nombreProveedor);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProveedores", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
@@ -137,6 +161,11 @@ namespace PETCenter.WebApplication.Controllers.ajax
         [WebInvoke(Method = "POST", UriTemplate = "GetDatosCabeceraOrden", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string GetDatosCabeceraOrden(int idOrden);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        Proveedor GetProveedor(int idProveedor);
     }
 
 

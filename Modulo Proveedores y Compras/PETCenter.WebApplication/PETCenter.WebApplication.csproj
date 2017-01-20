@@ -117,6 +117,8 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Administracion\pgActualizarProveedor.html" />
+    <Content Include="Administracion\pgGestionProveedor.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -341,6 +343,7 @@
     <Content Include="Content\scripts\modal.js" />
     <Content Include="Content\scripts\pet\ordenCompra.js" />
     <Content Include="Content\scripts\pet\planCompras.js" />
+    <Content Include="Content\scripts\pet\proveedor.js" />
     <Content Include="Content\scripts\session\coverflow.js" />
     <Content Include="Content\scripts\session\menu.js" />
     <Content Include="Content\scripts\session\signin.js" />
@@ -428,6 +431,8 @@
     <Content Include="Content\images\kendoui.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Ejecucion\pgGestionOrdenCompra.html" />
+    <Content Include="Proveedores\pgActualizarProveedor.html" />
+    <Content Include="Proveedores\pgGestionProveedor.html" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
@@ -436,9 +441,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Planificacion\pgActualizarPlanCompras.html" />
     <Content Include="Planificacion\pgGestionPlanCompra.html" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\_references.js" />

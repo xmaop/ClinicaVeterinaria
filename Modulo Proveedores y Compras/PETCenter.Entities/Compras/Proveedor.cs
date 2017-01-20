@@ -22,6 +22,15 @@ namespace PETCenter.Entities.Compras
 
         public string RazonSocial{ get; set; }
 
+        public string Direccion { get; set; }
+
         public int Puntaje { get; set; }
+
+        public string Estado { get; set; }
+
+        public string TipoDocumento { get; set; }
+        public string NumeroDocumento { get; set; }
+        public string Telefono { get; set; }
+        public string Contacto { get; set; }
     }
 }

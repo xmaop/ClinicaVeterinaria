@@ -81,6 +81,7 @@
     </header>
     <br />
     <input type="hidden" id="selectrow" value="0" />
+    <input type="hidden" id="selectestado" value="0" />
     <div class="container-fluid" id="pages"></div>
     <%--    <div id="menuData" class="preview menuDataOn">
         <div class="menuBanner">
