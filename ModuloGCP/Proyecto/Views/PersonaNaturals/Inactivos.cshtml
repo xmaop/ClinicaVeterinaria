@@ -61,11 +61,12 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ClientId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })|
-            @Html.ActionLink("Agregar Paciente", "Create", new { controller = "Pacients", ClientId = item.ClientId })
+            @Html.ActionLink("Activar", "Activar", new { id = item.ClientId })
         </td>
     </tr>
 }
 
 </table>
 <div id="contenedorDetalle"></div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/ScriptClientes.js")

@@ -297,6 +297,12 @@
     <Content Include="Views\GCP_Especie\Edit.cshtml" />
     <Content Include="Views\GCP_Especie\Index.cshtml" />
     <Content Include="Views\Pacients\Filtra.cshtml" />
+    <Content Include="Views\Pacients\Inactivos.cshtml" />
+    <Content Include="Views\PersonaJuridicas\Inactivos.cshtml" />
+    <Content Include="Views\PersonaNaturals\Inactivos.cshtml" />
+    <Content Include="Views\Pacients\Activar.cshtml" />
+    <Content Include="Views\PersonaJuridicas\Activar.cshtml" />
+    <Content Include="Views\PersonaNaturals\Activar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

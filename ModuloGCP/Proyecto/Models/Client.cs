@@ -16,7 +16,7 @@ namespace Proyecto.Models
         public string Direccion { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Correo { get; set; }
-
+        public string Estado { get; set; }
         public List<Pacient> pacient { get; set; }
 
     }

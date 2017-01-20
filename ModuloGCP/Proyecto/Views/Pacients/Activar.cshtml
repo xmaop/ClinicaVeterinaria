@@ -1,11 +1,12 @@
 ﻿@model Proyecto.Models.Pacient
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Activar";
 }
 
-<h2>Details</h2>
+<h2>Activar</h2>
 
+<h3>Quiere activar este paciente?</h3>
 <div>
     <h4>Pacient</h4>
     <hr />
@@ -47,8 +48,7 @@
         </dt>
 
         <dd>
-
-            <img src="/images/profile/@Html.DisplayFor(model => model.Foto)" height="300" width="300" />
+            @Html.DisplayFor(model => model.Foto)
         </dd>
 
         <dt>
@@ -58,20 +58,7 @@
         <dd>
             @Html.DisplayFor(model => model.Peso)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Especie)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Especie)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Raza)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Raza)
-        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.FechaCese)
         </dt>
@@ -97,8 +84,13 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Activar" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PacientId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

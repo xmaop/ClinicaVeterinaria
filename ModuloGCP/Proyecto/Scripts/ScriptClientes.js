@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    
+    $(".dropdown-toggle").dropdown();
     $('#tablaClienteN tr').click(function (event) {
 
         $.ajax({

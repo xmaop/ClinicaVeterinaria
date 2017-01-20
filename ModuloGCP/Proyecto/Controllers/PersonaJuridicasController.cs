@@ -17,9 +17,14 @@ namespace Proyecto.Controllers
         // GET: PersonaJuridicas
         public ActionResult Index()
         {
-            return View(db.PersonaJuridica.ToList());
+            var PersonaJuridica = db.PersonaJuridica.Where(d => d.Estado == "Activo");
+            return View(PersonaJuridica.ToList());
         }
-
+        public ActionResult Inactivos()
+        {
+            var PersonaJuridica = db.PersonaJuridica.Where(d => d.Estado == "Inactivo");
+            return View(PersonaJuridica.ToList());
+        }
         // GET: PersonaJuridicas/Details/5
         public ActionResult Details(int? id)
         {
@@ -51,6 +56,7 @@ namespace Proyecto.Controllers
             if (ModelState.IsValid)
             {
                 db.PersonaJuridica.Add(personaJuridica);
+                personaJuridica.Estado = "Activo";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -83,6 +89,7 @@ namespace Proyecto.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(personaJuridica).State = EntityState.Modified;
+                personaJuridica.Estado = "Activo";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -104,17 +111,44 @@ namespace Proyecto.Controllers
             return View(personaJuridica);
         }
 
+        public ActionResult Activar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            PersonaJuridica personaJuridica = db.PersonaJuridica.Find(id);
+            if (personaJuridica == null)
+            {
+                return HttpNotFound();
+            }
+            return View(personaJuridica);
+        }
         // POST: PersonaJuridicas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             PersonaJuridica personaJuridica = db.PersonaJuridica.Find(id);
-            db.PersonaJuridica.Remove(personaJuridica);
+
+            personaJuridica.Estado = "Inactivo";
+            db.Entry(personaJuridica).State = EntityState.Modified;
+            //db.PersonaJuridica.Remove(personaJuridica);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpPost, ActionName("Activar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActivarConfirmed(int id)
+        {
+            PersonaJuridica personaJuridica = db.PersonaJuridica.Find(id);
 
+            personaJuridica.Estado = "Activo";
+            db.Entry(personaJuridica).State = EntityState.Modified;
+            //db.PersonaJuridica.Remove(personaJuridica);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

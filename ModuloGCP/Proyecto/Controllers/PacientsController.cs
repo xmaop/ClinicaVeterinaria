@@ -18,10 +18,16 @@ namespace Proyecto.Controllers
         // GET: Pacients
         public ActionResult Index()
         {
-            var pacients = db.Pacients.Include(p => p.Client);
+            //var pacients = db.Pacients.Include(p => p.Client);
+            var pacients = db.Pacients.Where(d => d.Estado == "Activo");
             return View(pacients.ToList());
         }
-
+        public ActionResult Inactivos()
+        {
+            var pacients = db.Pacients.Where(d => d.Estado == "Inactivo");
+            
+            return View(pacients.ToList());
+        }
         // GET: Pacients/Details/5
         public ActionResult Details(int? id)
         {
@@ -61,14 +67,14 @@ namespace Proyecto.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Peso,FechaCese,Color,Estado")] Pacient pacient, HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Peso,FechaCese,Color,Especie,Raza")] Pacient pacient, HttpPostedFileBase file)
         {
             
 
                 if (ModelState.IsValid)
                 {
 
-                    
+                    pacient.Estado = "Activo";
                     db.Pacients.Add(pacient);
                     db.SaveChanges();
                     int lastPacientId = db.Pacients.Max(item => item.PacientId);
@@ -109,7 +115,7 @@ namespace Proyecto.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Direccion", pacient.ClientId);
+            ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Nombre", pacient.ClientId);
             return View(pacient);
         }
 
@@ -118,13 +124,14 @@ namespace Proyecto.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Foto,Peso,FechaCese,Color,Estado")] Pacient pacient, HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "PacientId,nombre,ClientId,FechaNac,Genero,Foto,Peso,FechaCese,Color,Especie,Raza")] Pacient pacient, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
 
                 db.Entry(pacient).State = EntityState.Modified;
                 pacient.Foto = pacient.PacientId + ".jpg";
+                pacient.Estado = "Activo";
                 if (file != null && file.ContentLength > 0)
                 {
                     //string pic = System.IO.Path.GetFileName(file.FileName);
@@ -153,18 +160,42 @@ namespace Proyecto.Controllers
             }
             return View(pacient);
         }
-
+        public ActionResult Activar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Pacient pacient = db.Pacients.Find(id);
+            if (pacient == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pacient);
+        }
         // POST: Pacients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Pacient pacient = db.Pacients.Find(id);
-            db.Pacients.Remove(pacient);
+            //db.Pacients.Remove(pacient);
+            db.Entry(pacient).State = EntityState.Modified;
+            pacient.Estado = "Inactivo";
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [HttpPost, ActionName("Activar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActivarConfirmed(int id)
+        {
+            Pacient pacient = db.Pacients.Find(id);
+            //db.Pacients.Remove(pacient);
+            db.Entry(pacient).State = EntityState.Modified;
+            pacient.Estado = "Activo";
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
