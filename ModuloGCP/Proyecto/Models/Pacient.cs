@@ -23,8 +23,9 @@ namespace Proyecto.Models
         public string Foto { get; set; }
 
         public double Peso { get; set; }
+        public string Especie { get; set; }
+        public string Raza { get; set; }
 
-        
         [DataType(DataType.Date)]
         public string FechaCese { get; set; }
         [Required]

@@ -17,7 +17,14 @@ namespace Proyecto.Controllers
         // GET: PersonaNaturals
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            var PersonaNatural = db.Clients.Where(d => d.Estado == "Activo");
+            return View(PersonaNatural.ToList());
+        }
+
+        public ActionResult Inactivos()
+        {
+            var PersonaNatural = db.Clients.Where(d => d.Estado == "Inactivo");
+            return View(PersonaNatural.ToList());
         }
 
         // GET: PersonaNaturals/Details/5
@@ -50,6 +57,7 @@ namespace Proyecto.Controllers
         {
             if (ModelState.IsValid)
             {
+                personaNatural.Estado = "Activo";
                 db.Clients.Add(personaNatural);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -83,6 +91,7 @@ namespace Proyecto.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(personaNatural).State = EntityState.Modified;
+                personaNatural.Estado = "Activo";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -97,6 +106,21 @@ namespace Proyecto.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             PersonaNatural personaNatural = db.Clients.Find(id);
+            
+            if (personaNatural == null)
+            {
+                return HttpNotFound();
+            }
+            return View(personaNatural);
+        }
+        public ActionResult Activar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            PersonaNatural personaNatural = db.Clients.Find(id);
+
             if (personaNatural == null)
             {
                 return HttpNotFound();
@@ -110,11 +134,24 @@ namespace Proyecto.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             PersonaNatural personaNatural = db.Clients.Find(id);
-            db.Clients.Remove(personaNatural);
+            db.Entry(personaNatural).State = EntityState.Modified;
+            personaNatural.Estado = "Inactivo";
+            //db.Clients.Remove(personaNatural);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        [HttpPost, ActionName("Activar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActivarConfirmed(int id)
+        {
+            PersonaNatural personaNatural = db.Clients.Find(id);
+            db.Entry(personaNatural).State = EntityState.Modified;
+            personaNatural.Estado = "Activo";
+            //db.Clients.Remove(personaNatural);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -1,15 +1,15 @@
-﻿@model IEnumerable<Proyecto.Models.PersonaNatural>
+﻿@model IEnumerable<Proyecto.Models.PersonaJuridica>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Clientes</h2>
+<h2>PJ</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table id="tablaClienteN" class="table">
+<table id="tablaClientePJ" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.telefono)
@@ -21,16 +21,13 @@
             @Html.DisplayNameFor(model => model.Correo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.ruc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            @Html.DisplayNameFor(model => model.razon_social)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido_Materno)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaNac)
+            @Html.DisplayNameFor(model => model.representante)
         </th>
         <th></th>
     </tr>
@@ -47,25 +44,24 @@
             @Html.DisplayFor(modelItem => item.Correo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
+            @Html.DisplayFor(modelItem => item.ruc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+            @Html.DisplayFor(modelItem => item.razon_social)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Apellido_Materno)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaNac)
+            @Html.DisplayFor(modelItem => item.representante)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ClientId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })|
-            @Html.ActionLink("Agregar Paciente", "Create", new { controller = "Pacients", ClientId = item.ClientId })
+            @Html.ActionLink("Activar", "Activar", new { id=item.ClientId })
+            
         </td>
     </tr>
 }
 
 </table>
 <div id="contenedorDetalle"></div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/ScriptClientes.js")
