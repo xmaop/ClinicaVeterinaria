@@ -1,34 +1,20 @@
 ﻿function guardarProveedor() {
-    
-    if ($('#selectTipoDocumentoAdd').val() == '' ||
-        $('#txtNumeroDocumentoAdd').val() == '' ||
-        $('#txtRazonSocialAdd').val() == '' 
-        //||
-        //$('#txtDireccionAdd').val() == ''
-        //||
-        //$('#txtTelefonoAdd').val() == '' ||
-        //$('#txtContactoAdd').val() == ''
-    )
-    {
-
-        showError('Ingrese los campos obligatorios');
-        return false;
-    }
-
+    var id = $('#txtCodigoPopup').val() == null ? "" : $('#txtCodigoPopup').val();
     var params = JSON.stringify({
-        "tipoDocumento": $('#selectTipoDocumentoAdd').val() || "",
-        "numeroDocumento": $('#txtNumeroDocumentoAdd').val() || "",
-        "razonSocial": $('#txtRazonSocialAdd').val() || "",
-        "direccion": $('#txtDireccionAdd').val() || "",
-        "telefono": $('#txtTelefonoAdd').val() || "",
-        "contacto": $('#txtContactoAdd').val() || "",
-        "puntaje":50
+        "tipoDocumento": $('#selTipoDocumentoPopup').val() || "",
+        "numeroDocumento": $('#txtNroDocumentoPopup').val() || "",
+        "razonSocial": $('#txtRazonSocialPopup').val() || "",
+        "direccion": $('#txtDirecccionPopup').val() || "",
+        "telefono": $('#txtTelefonoPopup').val() || "",
+        "contacto": $('#txtContactoPopup').val() || "",
+        "estado": $("#imgEstadoPopup").attr('src') || "",
+        "idproveedor": id || ""
     });
 
     $.ajax({
         type: "POST",
         contentType: 'application/json; charset=utf-8',
-        url: wsnode + "wsCompras.svc/GeneraProveedor",
+        url: wsnode + "wsCompras.svc/GuardarProveedor",
         dataType: "json",
         data: params,
         async: false,
@@ -42,75 +28,6 @@
         }
     })
 }
-
-function actualizarProveedor() {
-
-    var params = JSON.stringify({
-        
-        "tipoDocumento": $('#selectTipoDocumentoEdit').val() || "",
-        "numeroDocumento": $('#txtNumeroDocumentoEdit').val() || "",
-        "razonSocial": $('#txtRazonSocialEdit').val() || "",
-        "direccion": $('#txtDireccionEdit').val() || "",
-        "idProveedor": $('#hIdProveedor').val() || "",
-        "telefono": $('#txtTelefonoEdit').val() || "",
-        "contacto": $('#txtContactoEdit').val() || "",
-        "estado": $('#selectEstadoEdit').val() || "",
-        "puntaje": 50
-    });
-
-    $.ajax({
-        type: "POST",
-        contentType: 'application/json; charset=utf-8',
-        url: wsnode + "wsCompras.svc/ActualizarProveedor",
-        dataType: "json",
-        data: params,
-        async: false,
-        processData: false,
-        cache: false,
-        success: function (response) {
-            $('#pages').append(response);
-        },
-        error: function (response) {
-            showError(response);
-        }
-    })
-}
-
-function dataSourceProveedores() {
-    var params = JSON.stringify({
-        "codigoProveedor": $("#txtCodigoProveedor").val() || '',
-        "nombreProveedor": $("#txtNombreProveedor").val() || ''
-    });
-
-    var dataSource = new kendo.data.DataSource({
-        batch: true,
-        transport: {
-            read: {
-                type: "POST",
-                url: wsnode + "wsCompras.svc/GetProveedores_Busqueda",
-                contentType: "application/json; charset=utf-8",
-                dataType: 'json'
-            },
-            parameterMap: function (options, operation) {
-                return params;
-            },
-            pageSize: 10
-        }
-    });
-
-    return dataSource;
-}
- 
-
-function SetIdProovedor(idProveedor, RazonSocial) {
-
-    $("#selectrow").val(idProveedor);
-    $("#selectestado").val(idProveedor);
-
-  
-}
-
-var proveedor = {};
 
 function SetProovedorId(idProveedor)
 {
@@ -130,49 +47,49 @@ function SetProovedorId(idProveedor)
     $('#ProveedorModal_footer').append(
         "<div class=\"col-xs-12 \">" +
         "<div class=\"col-xs-9\"></div>" +
-        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
+        "<div class=\"col-xs-3 home-buttom\" onclick=\"guardarProveedor(); return false;\">" +
         "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
         "</div></div>"
     );
-}
-
-function SetProovedor(idProveedor, RazonSocial, Direccion, Puntaje, Estado, TipoDocumento, NumeroDocumento, Telefono, Contacto) {
-
-    $("#selectrow").val(idProveedor);
-    $("#selectEstadoEdit").val(Estado);
-    $('#hIdProveedor').val(idProveedor)
-    $("#selectTipoDocumentoEdit").val(TipoDocumento);
-    $("#txtNumeroDocumentoEdit").val(NumeroDocumento);
-    $("#txtRazonSocialEdit").val(RazonSocial);
-    $("#txtDireccionEdit").val(Direccion);
-    $("#txtTelefonoEdit").val(Telefono);
-    $("#txtContactoEdit").val(Contacto);
-    //showError($("#selectrow").val());
-
-    $('#editarProveedorModal').modal('show');
-}
-
-function loadInitialData() {
-    //$('#processingModal').modal('show');
+    var params = JSON.stringify({
+        "idproveddor": idProveedor
+    });
     $.ajax({
         type: "POST",
-        contentType: 'application/json; charset=utf-8',
-        url: wsnode + "wsCompras.svc/GetPresupuestoPendiente",
+        url: wsnode + "wsCompras.svc/GetProveedor_Id",
+        contentType: "application/json; charset=utf-8",
         dataType: "json",
+        data: params,
         async: false,
         processData: false,
         cache: false,
-        success: function (data) {
-            $('#txtRazonSocial').val(data.RazonSocial);
-            $('#txtDireccion').val(data.Direccion);
+        success: function (response) {
+            if (response.messageType == "OK")
+            {
+                $("#selTipoDocumentoPopup").val(response.rows[0].TipoDocumento);
+                $("#txtNroDocumentoPopup").val(response.rows[0].Documento);
+                $("#txtRazonSocialPopup").val(response.rows[0].RazonSocial);
+                $("#txtPuntajePopup").val(response.rows[0].Puntaje);
+                $("#txtPuntajePopup").prop('disabled', true);
+                $("#txtDirecccionPopup").val(response.rows[0].Direccion);
+                $("#txtTelefonoPopup").val(response.rows[0].Telefono);
+                $("#txtContactoPopup").val(response.rows[0].Contacto);
+                $("#txtCodigoPopup").val(response.rows[0].Codigo);
+                $("#txtCodigoPopup").prop('disabled', true);
+                $("#imgEstadoPopup").attr("src", response.rows[0].Estado);
+            }
+            else
+                showError(response.message);
         },
         error: function (response) {
-            $('#processingModal').modal('hide');
-            showErrorMessage(response);
+            showError(response);
         }
     });
-
 }
+
+$(document).ready(function () {
+    getProveedores();
+});
 
 function ChangeEstado()
 {
@@ -187,10 +104,11 @@ function getProveedores() {
     $('#processingModal').modal('show');
 
     var params = JSON.stringify({
+        "tipodocumento": $("#TipoDocumentoSearch").val() || '',
+        "nrodocumento": $("#txtNroDocumentoSearch").val() || '',
         "codigoProveedor": $("#txtCodigoProveedor").val() || '',
         "nombreProveedor": $("#txtNombreProveedor").val() || ''
     });
-    //dataSource: dataSourceProveedores()
     $("#gridProveedor").kendoGrid({
         dataSource: {
         type: "json",
@@ -207,9 +125,6 @@ function getProveedores() {
                     cache: false,
                     success: function (response) {
                         options.success(response.rows);
-                        Showmodal(false);
-                        $("#selectrow").val(0);
-                        $("#selectestado").val("");
                         $('#processingModal').modal('hide');
                     },
                     error: function (err) {
@@ -238,7 +153,8 @@ function getProveedores() {
             "<td>#: DesTipoDocumento #</td>" +
             "<td>#: Documento #</td>" +
             "<td>#: RazonSocial #</td>" +
-            "<td>#: Estado #</td>" +
+            //"<td>#: Estado #</td>" +
+            "<td><center><input type=\"image\" src=\"#: Estado #\" style=\"width:17px\" /></center></td>" +
             "<td><div class=\"home-buttom\" style=\"margin-right:3px;height:auto !important;height: 40px;\" onclick=\"SetProovedorId('#: idProveedor #');return false;\" ><center><i class=\"fa fa-pencil\" aria-hidden=\"true\" >&nbsp;</i> Modificar</center></div></td>" +
             "</tr>",
         altRowTemplate: "<tr>" +
@@ -246,7 +162,8 @@ function getProveedores() {
             "<td>#: DesTipoDocumento #</td>" +
             "<td>#: Documento #</td>" +
             "<td>#: RazonSocial #</td>" +
-            "<td>#: Estado #</td>" +
+            //"<td>#: Estado #</td>" +
+            "<td><center><input type=\"image\" src=\"#: Estado #\" style=\"width:17px\" /></center></td>" +
             "<td><div class=\"home-buttom\" style=\"margin-right:3px;height:auto !important;height: 40px;\" onclick=\"SetProovedorId('#: idProveedor #');return false;\" ><center><i class=\"fa fa-pencil\" aria-hidden=\"true\" >&nbsp;</i> Modificar</center></div></td>" +
             "</tr>",
         columns: [
@@ -288,7 +205,10 @@ function getProveedores() {
             hidden: true
         }]
     });
-    // });
+    var grid = $('#gridProveedor').data('kendoGrid');
+    grid.dataSource.pageSize(10);
+    grid.dataSource.page(1); 
+    grid.dataSource.read();
 }
 
 function nuevoProveedor() {
@@ -296,7 +216,21 @@ function nuevoProveedor() {
     //Clean
     $('#ProveedorModal_header').empty();
     $('#ProveedorModal_footer').empty();
-    $('#divCodigoPopup').empty();    
+    
+    $("#selTipoDocumentoPopup").val(2);
+    $("#txtNroDocumentoPopup").val("");
+    $("#txtRazonSocialPopup").val("");
+    $("#txtPuntajePopup").val("");
+    $("#txtPuntajePopup").prop('disabled', true);
+    $("#txtDirecccionPopup").val("");
+    $("#txtTelefonoPopup").val("");
+    $("#txtContactoPopup").val("");
+    $("#imgEstadoPopup").attr("src", "../Content/images/uncheck.png");
+
+    $('#divCodigoPopup').empty();
+
+    $("#txtTelefonoPopup").mask('(00)000-0000');
+
     //Add Controls
     $('#ProveedorModal_header').append(
         "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
@@ -306,131 +240,9 @@ function nuevoProveedor() {
     $('#ProveedorModal_footer').append(
         "<div class=\"col-xs-12 \">" +
         "<div class=\"col-xs-9\"></div>" +
-        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
+        "<div class=\"col-xs-3 home-buttom\" onclick=\"guardarProveedor(); return false;\">" +
         "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
         "</div></div>"
     );
 }
 
-function editarProveedor() {
-    $('#ProveedorModal').modal("show");
-    //Clean
-    $('#ProveedorModal_header').empty();
-    $('#ProveedorModal_footer').empty();
-    //$('#divCodigoPopup').empty();
-    //Add Controls
-    $('#ProveedorModal_header').append(
-        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
-        "&nbsp;<i class=\"fa fa-male\">&nbsp;&nbsp;</i><label class=\"label-md modal-title custom_align\"> Modificar Proveedor</label>"
-    );
-
-    $('#ProveedorModal_footer').append(
-        "<div class=\"col-xs-12 \">" +
-        "<div class=\"col-xs-9\"></div>" +
-        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
-        "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
-        "</div></div>"
-    );
-    /*
-    if ($("#selectrow").val() == 0) {
-        $('#sinSeleccionModal').modal('show');
-    }else{
-        $('#editarProveedorModal').modal('show');
-    }
-    */
-}
-
-function confimarEliminacion(idProveedor) {
-    if ($("#selectrow").val()) {
-        $('#sinSeleccionModal').modal('show');
-    } else {
-        $('#confirmarEliminacionModal').modal('show');
-    }
-}
-
-var idSeleccionado = '';
-function eliminarProveedor() {
-
-    console.log($("#selectestado").val());
-
-    var params = JSON.stringify({
-        "idProveedor": idSeleccionado || "0",
-        "estado": $("#selectestado").val() || ""
-    });
-
-    $.ajax({
-        type: "POST",
-        contentType: 'application/json; charset=utf-8',
-        url: wsnode + "wsCompras.svc/DeleteProveedor",
-        dataType: "json",
-        data: params,
-        async: false,
-        processData: false,
-        cache: false,
-        success: function (response) {
-            var array = response.split('-');
-            if (array[0] != 'ERR') {
-                showSuccess('Se eliminó correctamente.');
-                getProveedores();
-                $("#selectrow").val(0);
-                $("#selectestado").val("");
-                //OpenPage('/Planificacion/pgGestionPlanCompra.html');
-            }
-            else {
-                showError(array[1]);
-            }
-
-            //$("#outMessage").append(response);
-            //Showmodal(false);
-        },
-        error: function (response) {
-            showError(response);
-            //Showmodal(false);
-
-        }
-    })
-}
-
-
-function trash(idProveedor) {
-
-    idSeleccionado = idProveedor;
-    $('#eliminarProveedorModal').modal('show');
-
-}
-
-function SetEdit() {
-    var params = JSON.stringify({
-        "idProveedor": $("#selectrow").val() || "0",
-    });
-
-    //console.log($("#selectrow").val());
-    $.ajax({
-        type: "POST",
-        contentType: 'application/json; charset=utf-8',
-        url: wsnode + "wsCompras.svc/GetProveedor",
-        dataType: "json",
-        data: params,
-        async: false,
-        processData: false,
-        cache: false,
-        success: function (data) {
-            $('#txtRazonSocialEdit').val(data.RazonSocial);
-            $('#txtDireccionEdit').val(data.Direccion);
-            $('#hIdProveedor').val(data.idProveedor);
-
-            $('#selectTipoDocumentoEdit').val(data.TipoDocumento);
-            $('#txtNumeroDocumentoEdit').val(data.NumeroDocumento);
-            $('#txtTelefonoEdit').val(data.Telefono);
-            $('#txtContactoEdit').val(data.Contacto);
-
-            editarProveedor();
-            //OpenPage('/Planificacion/pgActualizarPlanCompras.html');
-        },
-        error: function (response) {
-            //console.log("1");
-            //alert("3");
-            showError(response);
-        }
-    });
-}

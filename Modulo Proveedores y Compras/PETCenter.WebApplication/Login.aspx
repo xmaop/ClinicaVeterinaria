@@ -38,7 +38,7 @@
                         <div>                            
                             <br />
                             <center>
-                            <p>SISTEMA INTEGRAL <br />PETCENTER</p>
+                            <p><br /><br /></p>
                             </center>
                         </div>  
                         <hr />                      

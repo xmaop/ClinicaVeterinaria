@@ -22,6 +22,8 @@
     <script language="javascript" src="/Content/scripts/common/jquery.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/common/jquery-ui.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/common/jquery.coverflow.js" type="text/javascript"></script>
+    <script language="javascript" src="/Content/scripts/common/jquery.mask.min.js" type="text/javascript"></script>
+    
     <script language="javascript" src="/Content/scripts/common/reflection.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/common/prettify.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/common/bootstrap.min.js" type="text/javascript"></script>

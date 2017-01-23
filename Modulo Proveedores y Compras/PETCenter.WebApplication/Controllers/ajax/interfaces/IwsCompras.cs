@@ -82,6 +82,12 @@ namespace PETCenter.WebApplication.Controllers.ajax
             string direccion, string tipoDocumento, string numeroDocumento, string telefono, string contacto);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GuardarProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string GuardarProveedor(string tipoDocumento, string numeroDocumento, string razonSocial, string direccion, string telefono, string contacto, string estado, string idproveedor);
+
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "ActualizarProveedor", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado);
@@ -111,7 +117,12 @@ namespace PETCenter.WebApplication.Controllers.ajax
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProveedores_Busqueda", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        CollectionProveedores GetProveedores_Busqueda(string codigoProveedor, string nombreProveedor);
+        CollectionProveedores GetProveedores_Busqueda(string tipodocumento, string nrodocumento, string codigoProveedor, string nombreProveedor);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetProveedor_Id", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionProveedores GetProveedor_Id(int idproveddor);        
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetProveedores", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,

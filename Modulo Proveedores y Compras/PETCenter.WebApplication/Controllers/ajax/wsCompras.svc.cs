@@ -209,10 +209,60 @@ namespace PETCenter.WebApplication.Controllers.ajax
             return ocol;
         }
 
-        public CollectionProveedores GetProveedores_Busqueda(string codigoProveedor, string nombreProveedor)
+        public string GuardarProveedor(string tipoDocumento, string numeroDocumento, string razonSocial, string direccion, string telefono, string contacto, string estado, string idproveedor)
+        {
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+
+            blCompras bl = new blCompras();
+            Transaction transaction = Common.InitTransaction();
+            int result = 0;
+            if (estado == "../Content/images/uncheck.png")
+                estado = "INA";
+            else if (estado == "../Content/images/check.png")
+                estado = "ACT";
+            else
+                estado = "";
+            if(idproveedor=="")
+                result = bl.GeneraProovedor(razonSocial, direccion, tipoDocumento, numeroDocumento, telefono, contacto, estado, out transaction);
+            else
+                result = bl.ActualizarProveedor(idproveedor, direccion, razonSocial, tipoDocumento, numeroDocumento, telefono, contacto, estado, out transaction);
+            if (transaction.type == TypeTransaction.OK)
+            {
+                return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");$('#ProveedorModal').modal('hide');getProveedores();", transaction.message));
+            }
+            else
+                return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));
+        }
+
+        public string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
+        {
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+
+            blCompras bl = new blCompras();
+
+            string nuevoEstado = estado == "Activo" ? "ACT" : "INA";
+
+            Transaction transaction = Common.InitTransaction();
+            int result = 0; //bl.ActualizarProveedor(idProveedor, direccion, razonSocial, puntaje, tipoDocumento, numeroDocumento, telefono, contacto, nuevoEstado, out transaction);
+            if (transaction.type == TypeTransaction.OK)
+            {
+                return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");getProveedores();", transaction.message));
+            }
+            else
+                return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));
+        }
+
+        public CollectionProveedores GetProveedores_Busqueda(string tipodocumento, string nrodocumento, string codigoProveedor, string nombreProveedor)
         {
             blCompras bl = new blCompras();
-            CollectionProveedores provl = bl.GetProveedores_Busqueda(codigoProveedor, nombreProveedor);
+            CollectionProveedores provl = bl.GetProveedores_Busqueda(tipodocumento, nrodocumento, codigoProveedor, nombreProveedor);
+            return provl;
+        }
+
+        public CollectionProveedores GetProveedor_Id(int idproveddor) 
+        {
+            blCompras bl = new blCompras();
+            CollectionProveedores provl = bl.GetProveedor_Id(idproveddor);
             return provl;
         }
 
@@ -277,28 +327,10 @@ namespace PETCenter.WebApplication.Controllers.ajax
             blCompras bl = new blCompras();
 
             Transaction transaction = Common.InitTransaction();
-            int result = bl.GeneraProovedor(puntaje, razonSocial, direccion, tipoDocumento, numeroDocumento, telefono, contacto, out transaction);
+            int result = 0;//bl.GeneraProovedor(puntaje, razonSocial, direccion, tipoDocumento, numeroDocumento, telefono, contacto, out transaction);
             if (transaction.type == TypeTransaction.OK)
             {
                 return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");$('#nuevoProveedorModal').modal('hide');getProveedores();", transaction.message));
-            }
-            else
-                return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));
-        }
-
-        public string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
-        {
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-
-            blCompras bl = new blCompras();
-
-            string nuevoEstado = estado == "Activo" ? "ACT" : "INA";
-
-            Transaction transaction = Common.InitTransaction();
-            int result = bl.ActualizarProveedor(idProveedor, direccion, razonSocial, puntaje, tipoDocumento, numeroDocumento, telefono, contacto, nuevoEstado, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");getProveedores();", transaction.message));
             }
             else
                 return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));

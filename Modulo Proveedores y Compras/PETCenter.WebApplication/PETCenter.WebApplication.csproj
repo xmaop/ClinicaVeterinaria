@@ -196,6 +196,7 @@
     <Content Include="Content\images\img-logo.png" />
     <Content Include="Content\images\img-T.png" />
     <Content Include="Content\images\menuPage.png" />
+    <Content Include="Content\images\sliderpet7-77.png" />
     <Content Include="Content\images\uncheck.png" />
     <Content Include="Content\scripts\common\angular.js" />
     <Content Include="Content\scripts\common\bootstrap-datetimepicker.min.js" />
@@ -206,6 +207,7 @@
     <Content Include="Content\scripts\common\jquery.coverflow.js" />
     <Content Include="Content\scripts\common\jquery.interpolate.min.js" />
     <Content Include="Content\scripts\common\jquery.js" />
+    <Content Include="Content\scripts\common\jquery.mask.min.js" />
     <Content Include="Content\scripts\common\jquery.min.js" />
     <Content Include="Content\scripts\common\jquery.touchSwipe.min.js" />
     <Content Include="Content\scripts\common\knockout-2.1.0.debug.js" />
