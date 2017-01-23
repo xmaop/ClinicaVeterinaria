@@ -24,3 +24,12 @@ D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\Enti
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.csprojResolveAssemblyReference.cache
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\bin\Debug\EntityFramework.SqlServer.xml
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.csprojResolveAssemblyReference.cache
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Entities\obj\Debug\PETCenter.Entities.pdb

@@ -10,7 +10,7 @@
     {    
         border-width:1px;
         border-color:Black;
-        background-color: black;
+        background-color: #585858;
         /*background-image:url("/Content/images/bg-green.png");*/
         -webkit-border-radius: 4;
         -moz-border-radius: 4;
@@ -26,7 +26,8 @@
     
     .home-buttom:hover
     {    
-        background-image:url("/Content/images/bg-yellow.png");
+        //background-image:url("/Content/images/bg-yellow.png");
+        background-color: #428BCA;        
         text-shadow: 1px 1px 3px #666666;
         color: #ffffff;
         font-size: 13px;
@@ -99,7 +100,12 @@
     .label-md
     {
         font-size: 14px;        
-    }    
+    }
+
+    input[type=checkbox] 
+    {
+        transform:scale(1.5);
+    }
     
     .pad-all
     {    
@@ -196,7 +202,7 @@
                 
         /*background-image:url("/Content/images/bg-green.png");*/
         /*background-color:#0F438B;*/
-        background-color:black;
+        background-color:#585858;
         margin: 1px;
         /*height:30px;*/
         color:White;
@@ -240,7 +246,7 @@
         /*background-image:url("/Content/images/bg-green.png");*/
         /*background-image:url("/Content/images/bg-blue-dark.png");
         background-color:#0F438B;*/
-        background-color:black;
+        background-color:#585858;
         margin: 55px 0px 0px 0px;
         /*height:30px;*/
         color:White;

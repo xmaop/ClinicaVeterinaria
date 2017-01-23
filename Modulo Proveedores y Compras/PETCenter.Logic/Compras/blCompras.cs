@@ -489,7 +489,7 @@ namespace PETCenter.Logic.Compras
                 }
                 else
                 {
-                    transaction = Common.GetTransaction(TypeTransaction.OK, "Operación realizada satisfactoriamente");
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "El nuevo proveedor fue registrado satisfactoriamente");
                 }
                 return result;
             }
@@ -513,7 +513,7 @@ namespace PETCenter.Logic.Compras
                 }
                 else
                 {
-                    transaction = Common.GetTransaction(TypeTransaction.OK, "Operación realizada satisfactoriamente");
+                    transaction = Common.GetTransaction(TypeTransaction.OK, "El proveedor fue actualizado satisfactoriamente");
                 }
                 return result;
             }

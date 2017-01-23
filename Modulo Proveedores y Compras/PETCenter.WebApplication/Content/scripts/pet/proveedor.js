@@ -2,10 +2,14 @@
     
     if ($('#selectTipoDocumentoAdd').val() == '' ||
         $('#txtNumeroDocumentoAdd').val() == '' ||
-        $('#txtRazonSocialAdd').val() == '' ||
-        $('#txtDireccionAdd').val() == '' ||
-        $('#txtTelefonoAdd').val() == '' ||
-        $('#txtContactoAdd').val() == '') {
+        $('#txtRazonSocialAdd').val() == '' 
+        //||
+        //$('#txtDireccionAdd').val() == ''
+        //||
+        //$('#txtTelefonoAdd').val() == '' ||
+        //$('#txtContactoAdd').val() == ''
+    )
+    {
 
         showError('Ingrese los campos obligatorios');
         return false;
@@ -31,23 +35,10 @@
         processData: false,
         cache: false,
         success: function (response) {
-            var array = response.split('-');
-            if (array[0] != 'ERR') {
-                getProveedores();
-                showSuccess('Se registró correctamente.');
-                //OpenPage('/Planificacion/pgGestionPlanCompra.html');
-            }
-            else {
-                showError(array[1]);
-            }
-
-            //$("#outMessage").append(response);
-            //Showmodal(false);
+            $('#pages').append(response);
         },
         error: function (response) {
             showError(response);
-            //Showmodal(false);
-
         }
     })
 }
@@ -77,25 +68,10 @@ function actualizarProveedor() {
         processData: false,
         cache: false,
         success: function (response) {
-            var array = response.split('-');
-            if (array[0] != 'ERR') {
-                showSuccess('Se actualizó correctamente.');
-                getProveedores();
-                $("#selectrow").val(0);
-                $("#selectestado").val("");
-                //OpenPage('/Planificacion/pgGestionPlanCompra.html');
-            }
-            else {
-                showError(array[1]);
-            }
-
-            //$("#outMessage").append(response);
-            //Showmodal(false);
+            $('#pages').append(response);
         },
         error: function (response) {
             showError(response);
-            //Showmodal(false);
-
         }
     })
 }
@@ -136,6 +112,30 @@ function SetIdProovedor(idProveedor, RazonSocial) {
 
 var proveedor = {};
 
+function SetProovedorId(idProveedor)
+{
+    $('#ProveedorModal').modal("show");
+    //Clean
+    $('#ProveedorModal_header').empty();
+    $('#ProveedorModal_footer').empty();
+    $('#divCodigoPopup').empty();
+    $('#divCodigoPopup').append("<span class=\"input-group-addon\" style=\"width:130px\">Código</span>" +
+                            "<input type=\"text\" class=\"form-control input-lg text-uppercase\" id=\"txtCodigoPopup\" />");
+    //Add Controls
+    $('#ProveedorModal_header').append(
+        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
+        "&nbsp;<i class=\"fa fa-pencil\">&nbsp;&nbsp;</i><label class=\"label-md modal-title custom_align\"> Modificar Proveedor</label>"
+    );
+
+    $('#ProveedorModal_footer').append(
+        "<div class=\"col-xs-12 \">" +
+        "<div class=\"col-xs-9\"></div>" +
+        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
+        "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
+        "</div></div>"
+    );
+}
+
 function SetProovedor(idProveedor, RazonSocial, Direccion, Puntaje, Estado, TipoDocumento, NumeroDocumento, Telefono, Contacto) {
 
     $("#selectrow").val(idProveedor);
@@ -174,6 +174,13 @@ function loadInitialData() {
 
 }
 
+function ChangeEstado()
+{
+    if ($("#imgEstadoPopup").attr('src') == "../Content/images/uncheck.png")
+        $("#imgEstadoPopup").attr("src", "../Content/images/check.png");
+    else
+        $("#imgEstadoPopup").attr("src", "../Content/images/uncheck.png");
+}
 
 function getProveedores() {
 
@@ -227,47 +234,51 @@ function getProveedores() {
             buttonCount: 5
         },
         rowTemplate: "<tr>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: idProveedor #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: RazonSocial #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Direccion #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Puntaje #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Estado #</td>" +
-            "<td><i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"SetProovedor('#: idProveedor #', '#: RazonSocial #', '#: Direccion #', '#: Puntaje #', '#: Estado #', '#: TipoDocumento #', '#: NumeroDocumento #', '#: Telefono #', '#: Contacto #');return false;\">&nbsp;</i> &nbsp;<i class=\"fa fa-trash\" aria-hidden=\"true\" onclick=\"trash('#: idProveedor #');return false;\">&nbsp;</i></td>" +
+            "<td>#: Codigo #</td>" +
+            "<td>#: DesTipoDocumento #</td>" +
+            "<td>#: Documento #</td>" +
+            "<td>#: RazonSocial #</td>" +
+            "<td>#: Estado #</td>" +
+            "<td><div class=\"home-buttom\" style=\"margin-right:3px;height:auto !important;height: 40px;\" onclick=\"SetProovedorId('#: idProveedor #');return false;\" ><center><i class=\"fa fa-pencil\" aria-hidden=\"true\" >&nbsp;</i> Modificar</center></div></td>" +
             "</tr>",
         altRowTemplate: "<tr>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: idProveedor #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: RazonSocial #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Direccion #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Puntaje #</td>" +
-            "<td onclick=\"SetIdProovedor('#: idProveedor #', '#: Estado #');return false;\">#: Estado #</td>" +
-            "<td><i class=\"fa fa-pencil\" aria-hidden=\"true\" onclick=\"SetProovedor('#: idProveedor #', '#: RazonSocial #', '#: Direccion #', '#: Puntaje #', '#: Estado #', '#: TipoDocumento #', '#: NumeroDocumento #', '#: Telefono #', '#: Contacto #');return false;\">&nbsp;</i> &nbsp;<i class=\"fa fa-trash\" aria-hidden=\"true\" onclick=\"trash('#: idProveedor #');return false;\">&nbsp;</i></td>" +
-            "</tr>",        
-        columns: [{
-            field: "idProveedor",
+            "<td>#: Codigo #</td>" +
+            "<td>#: DesTipoDocumento #</td>" +
+            "<td>#: Documento #</td>" +
+            "<td>#: RazonSocial #</td>" +
+            "<td>#: Estado #</td>" +
+            "<td><div class=\"home-buttom\" style=\"margin-right:3px;height:auto !important;height: 40px;\" onclick=\"SetProovedorId('#: idProveedor #');return false;\" ><center><i class=\"fa fa-pencil\" aria-hidden=\"true\" >&nbsp;</i> Modificar</center></div></td>" +
+            "</tr>",
+        columns: [
+        {
+            field: "Codigo",
             title: "Código",
-            width: 240
+            width: 120
+        },
+        {
+            field: "DesTipoDocumento",
+            title: "Tipo de Documento",
+            width: 120
         }, {
+            field: "Documento",
+            title: "Nro Documento",
+            width: 120
+        },
+        {
             field: "RazonSocial",
-            title: "Razón Social"
-        }, {
-            field: "Direccion",
-            title: "Dirección"
-        }, {
-            field: "Puntaje",
-            title: "Puntaje",
-            width: 150
+            title: "Razón Social",
         }, {
             field: "Estado",
-            title: "Estado"
-        }, {
-            field: "idProveedor",
-            title: "Acciones",
+            title: "Estado",
             width: 80
+        }, {
+            title: "Acciones",
+            width: 160
         }, {
             field: "TipoDocumento",
             hidden: true
-        }, {
-            field: "NumeroDocumento",
+        }, {    
+            field: "Documento",
             hidden: true
         }, {
             field: "Telefono",
@@ -281,15 +292,52 @@ function getProveedores() {
 }
 
 function nuevoProveedor() {
-    $('#nuevoProveedorModal').modal('show');
+    $('#ProveedorModal').modal("show");
+    //Clean
+    $('#ProveedorModal_header').empty();
+    $('#ProveedorModal_footer').empty();
+    $('#divCodigoPopup').empty();    
+    //Add Controls
+    $('#ProveedorModal_header').append(
+        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
+        "&nbsp;<i class=\"fa fa-male\">&nbsp;&nbsp;</i><label class=\"label-md modal-title custom_align\"> Nuevo Proveedor</label>"
+    );    
+    
+    $('#ProveedorModal_footer').append(
+        "<div class=\"col-xs-12 \">" +
+        "<div class=\"col-xs-9\"></div>" +
+        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
+        "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
+        "</div></div>"
+    );
 }
 
 function editarProveedor() {
+    $('#ProveedorModal').modal("show");
+    //Clean
+    $('#ProveedorModal_header').empty();
+    $('#ProveedorModal_footer').empty();
+    //$('#divCodigoPopup').empty();
+    //Add Controls
+    $('#ProveedorModal_header').append(
+        "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
+        "&nbsp;<i class=\"fa fa-male\">&nbsp;&nbsp;</i><label class=\"label-md modal-title custom_align\"> Modificar Proveedor</label>"
+    );
+
+    $('#ProveedorModal_footer').append(
+        "<div class=\"col-xs-12 \">" +
+        "<div class=\"col-xs-9\"></div>" +
+        "<div class=\"col-xs-3 home-buttom\" onclick=\"actualizarProveedor(); return false;\" data-bb-handler=\"danger\" data-dismiss=\"modal\">" +
+        "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
+        "</div></div>"
+    );
+    /*
     if ($("#selectrow").val() == 0) {
         $('#sinSeleccionModal').modal('show');
     }else{
         $('#editarProveedorModal').modal('show');
     }
+    */
 }
 
 function confimarEliminacion(idProveedor) {
@@ -356,7 +404,7 @@ function SetEdit() {
         "idProveedor": $("#selectrow").val() || "0",
     });
 
-    console.log($("#selectrow").val());
+    //console.log($("#selectrow").val());
     $.ajax({
         type: "POST",
         contentType: 'application/json; charset=utf-8',
@@ -380,8 +428,8 @@ function SetEdit() {
             //OpenPage('/Planificacion/pgActualizarPlanCompras.html');
         },
         error: function (response) {
-            console.log("1");
-            alert("3");
+            //console.log("1");
+            //alert("3");
             showError(response);
         }
     });

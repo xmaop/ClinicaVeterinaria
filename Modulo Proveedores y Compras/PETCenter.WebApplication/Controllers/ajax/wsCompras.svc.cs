@@ -278,13 +278,12 @@ namespace PETCenter.WebApplication.Controllers.ajax
 
             Transaction transaction = Common.InitTransaction();
             int result = bl.GeneraProovedor(puntaje, razonSocial, direccion, tipoDocumento, numeroDocumento, telefono, contacto, out transaction);
-            return transaction.message;
-            //if (transaction.type == TypeTransaction.OK)
-            //{
-            //    return result;
-            //}
-            //else
-            //    return 0;
+            if (transaction.type == TypeTransaction.OK)
+            {
+                return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");$('#nuevoProveedorModal').modal('hide');getProveedores();", transaction.message));
+            }
+            else
+                return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));
         }
 
         public string ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
@@ -297,13 +296,12 @@ namespace PETCenter.WebApplication.Controllers.ajax
 
             Transaction transaction = Common.InitTransaction();
             int result = bl.ActualizarProveedor(idProveedor, direccion, razonSocial, puntaje, tipoDocumento, numeroDocumento, telefono, contacto, nuevoEstado, out transaction);
-            return transaction.message;
-            //if (transaction.type == TypeTransaction.OK)
-            //{
-            //    return result;
-            //}
-            //else
-            //    return 0;
+            if (transaction.type == TypeTransaction.OK)
+            {
+                return Common.InvokeTextHTML(string.Format("showSuccess(\"{0}\");getProveedores();", transaction.message));
+            }
+            else
+                return Common.InvokeTextHTML(string.Format("showError(\"{0}\");", transaction.message));
         }
 
         public string DeleteProveedor(string idProveedor, string estado)

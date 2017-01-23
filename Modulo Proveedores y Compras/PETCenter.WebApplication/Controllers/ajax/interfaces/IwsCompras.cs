@@ -1,4 +1,5 @@
-﻿using PETCenter.Entities.Compras;
+﻿using PETCenter.Entities.Common;
+using PETCenter.Entities.Compras;
 using PETCenter.Entities.Seguridad;
 using System;
 using System.Collections.Generic;

@@ -53,9 +53,6 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope">&nbsp;</i><b class="caret"></b>
-                            </a>--%>
                             <ul class="dropdown-menu">
                             </ul>
                         </li>
@@ -65,17 +62,12 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="fa fa-fw fa-user">&nbsp;</i>Ver Perfil</a></li>
-                                <%--<li><a href="#"><i class="fa fa-fw fa-envelope">&nbsp;</i>Notificaciones</a></li>--%>
                                 <li class="divider"></li>
-                                <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Cerrar Sesión</a></li>
+                                <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Salir</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <%--<div id="menuOver" class="menuOver">
-                    <input type="hidden" id="angle" />
-                    <center><i id="faangle" class="fa fa-angle-double-down" aria-hidden="true"></i></center>
-                </div>--%>
             </div>
         </nav>
     </header>
@@ -83,16 +75,6 @@
     <input type="hidden" id="selectrow" value="0" />
     <input type="hidden" id="selectestado" value="0" />
     <div class="container-fluid" id="pages"></div>
-    <%--    <div id="menuData" class="preview menuDataOn">
-        <div class="menuBanner">
-            <span><img src="/Content/images/img-T.png" /></span>&nbsp;Opciones del Sistema
-            <input type="hidden" id="actoption" />
-            <i id="return" class="fa fa-reply pull-right" style="font-size:18px" onclick="ShowmenuDataReturn();return false;"></i>
-        </div>
-        <div id="preview-coverflow">
-	    </div>
-    </div>--%>
-
     <script language="javascript" src="/Content/scripts/init.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/modal.js" type="text/javascript"></script>
     <script language="javascript" src="/Content/scripts/home.js" type="text/javascript"></script>

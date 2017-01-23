@@ -363,15 +363,16 @@ namespace PETCenter.DataAccess.Compras
                 {
                     be = new Proveedor();
                     be.idProveedor = Convert.ToInt32(dr["IDPROVEEDOR"]);
-                    be.RazonSocial = dr["RAZONSOCIAL"].ToString();
-                    be.Direccion = dr["DIRECCION"].ToString(); 
-                    be.Estado = dr["ESTADO"].ToString();
-                    be.Puntaje = Convert.ToInt32(dr["PUNTAJE"]);
-
+                    be.Codigo = dr["Codigo"].ToString();
+                    be.DesTipoDocumento = dr["DesTipoDocumento"].ToString();
                     be.TipoDocumento = dr["TIPODOCUMENTO"].ToString();
-                    be.NumeroDocumento = dr["DOCUMENTO"].ToString();
+                    be.Documento = dr["DOCUMENTO"].ToString();
+                    be.RazonSocial = dr["RAZONSOCIAL"].ToString();
+                    be.Direccion = dr["DIRECCION"].ToString();
                     be.Telefono = dr["TELEFONO"].ToString();
                     be.Contacto = dr["CONTACTO"].ToString();
+                    be.Puntaje = Convert.ToInt32(dr["PUNTAJE"]);
+                    be.Estado = dr["ESTADO"].ToString();
                     provl.Add(be);
                 }
             }
@@ -484,20 +485,8 @@ namespace PETCenter.DataAccess.Compras
             query.input.Add(telefono);
             query.input.Add(contacto);
             query.connection = connectionAzure;
-            Proveedor be = new Proveedor();
-            using (IDataReader dr = new DAO().GetCollectionIReader(query))
-            {
-                while (dr.Read())
-                {
-                    try { be.idProveedor = Convert.ToInt32(dr["N_ORDEN"]); }
-                    catch (Exception ex)
-                    {
-                        be.idProveedor = 1;
-                    }
-
-                }
-            }
-            return be.idProveedor;
+            int result = new DAO().ExecuteTransactions(query);
+            return result;
         }
 
         public int ActualizarProveedor(string idProveedor, string direccion, string razonSocial, int puntaje, string tipoDocumento, string numeroDocumento, string telefono, string contacto, string estado)
@@ -513,20 +502,8 @@ namespace PETCenter.DataAccess.Compras
             query.input.Add(contacto);
             query.input.Add(estado);
             query.connection = connectionAzure;
-            Proveedor be = new Proveedor();
-            using (IDataReader dr = new DAO().GetCollectionIReader(query))
-            {
-                while (dr.Read())
-                {
-                    try { be.idProveedor = Convert.ToInt32(dr["N_ORDEN"]); }
-                    catch (Exception ex)
-                    {
-                        be.idProveedor = 1;
-                    }
-
-                }
-            }
-            return be.idProveedor;
+            int result = new DAO().ExecuteTransactions(query);
+            return result;
         }
 
         public int DeleteProveedor(string idProveedor, string estado)
@@ -708,7 +685,7 @@ namespace PETCenter.DataAccess.Compras
                     be.Direccion = dr["DIRECCION"].ToString();
                     be.Puntaje = Convert.ToInt32(dr["PUNTAJE"]);
                     be.TipoDocumento = dr["TIPODOCUMENTO"].ToString();
-                    be.NumeroDocumento = dr["DOCUMENTO"].ToString();
+                    be.Documento = dr["DOCUMENTO"].ToString();
                     be.Telefono = dr["TELEFONO"].ToString();
                     be.Contacto = dr["CONTACTO"].ToString();
                     
