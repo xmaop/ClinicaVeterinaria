@@ -19,9 +19,19 @@ namespace PETCenter.Entities.Compras
         /// Gets or sets property for idProveedor
         /// </summary>
         public int idProveedor { get; set; }
-
-        public string RazonSocial{ get; set; }
-
+        public string Codigo { get; set; }
+        public string DesTipoDocumento { get; set; }
+        public string TipoDocumento { get; set; }
+        public string Documento { get; set; }
+        public string RazonSocial { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public string Contacto { get; set; }
+        public string Tipo { get; set; }
         public int Puntaje { get; set; }
+        public string Estado { get; set; }
+
+
+
     }
 }

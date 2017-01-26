@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PETCenter.Entities.Compras;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -23,7 +24,7 @@ namespace PETCenter.Entities.Seguridad
         [DataMember]
         public string Contrasenna { get; set; }
         [DataMember]
-        public int Area { get; set; }
+        public Area Area { get; set; }
         [DataMember]
         public string DNI { get; set; }
         [DataMember]

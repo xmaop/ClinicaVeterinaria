@@ -117,6 +117,10 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Administracion\pgActualizarInformacionSolicitud.html" />
+    <Content Include="Administracion\pgActualizarProveedor.html" />
+    <Content Include="Administracion\pgAprobarSolicitudRecursos.html" />
+    <Content Include="Administracion\pgGestionProveedor.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -174,6 +178,7 @@
     <Content Include="Content\images\bg-sig-form.jpg" />
     <Content Include="Content\images\bg-sig-form.png" />
     <Content Include="Content\images\bg-yellow.png" />
+    <Content Include="Content\images\check.png" />
     <Content Include="Content\images\cube.gif" />
     <Content Include="Content\images\demo\attic.jpg" />
     <Content Include="Content\images\demo\aurora.jpg" />
@@ -193,6 +198,8 @@
     <Content Include="Content\images\img-logo.png" />
     <Content Include="Content\images\img-T.png" />
     <Content Include="Content\images\menuPage.png" />
+    <Content Include="Content\images\sliderpet7-77.png" />
+    <Content Include="Content\images\uncheck.png" />
     <Content Include="Content\scripts\common\angular.js" />
     <Content Include="Content\scripts\common\bootstrap-datetimepicker.min.js" />
     <Content Include="Content\scripts\common\bootstrap.min.js" />
@@ -202,6 +209,7 @@
     <Content Include="Content\scripts\common\jquery.coverflow.js" />
     <Content Include="Content\scripts\common\jquery.interpolate.min.js" />
     <Content Include="Content\scripts\common\jquery.js" />
+    <Content Include="Content\scripts\common\jquery.mask.min.js" />
     <Content Include="Content\scripts\common\jquery.min.js" />
     <Content Include="Content\scripts\common\jquery.touchSwipe.min.js" />
     <Content Include="Content\scripts\common\knockout-2.1.0.debug.js" />
@@ -340,7 +348,10 @@
     <Content Include="Content\scripts\Mantenimientos\Ubicaciones.js" />
     <Content Include="Content\scripts\modal.js" />
     <Content Include="Content\scripts\pet\ordenCompra.js" />
+    <Content Include="Content\scripts\pet\pgActualizarInformacionSolicitud.js" />
+    <Content Include="Content\scripts\pet\pgAprobarSolicitudRecursos.js" />
     <Content Include="Content\scripts\pet\planCompras.js" />
+    <Content Include="Content\scripts\pet\proveedor.js" />
     <Content Include="Content\scripts\session\coverflow.js" />
     <Content Include="Content\scripts\session\menu.js" />
     <Content Include="Content\scripts\session\signin.js" />

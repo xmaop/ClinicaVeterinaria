@@ -9,13 +9,13 @@ namespace PETCenter.DataAccess.Seguridad
 {
     public class daSeguridad
     {
-        private string defaultconnection = "DefaultAzure";
+        private string connectionAzure = "DefaultAzure";
         public Usuario UserValidate(string usuario, string clave)
         {
-            Query query = new Query("SEG_USP_VET_SEL_USUARIOxID");
+            Query query = new Query("SEG_USP_VET_SEL_USUARIOXID");
             query.input.Add(usuario);
             query.input.Add(clave);
-            query.connection = defaultconnection;
+            query.connection = connectionAzure;
             Usuario be = new Usuario();
             using (IDataReader dr = new DAO().GetCollectionIReader(query))
             {
@@ -27,7 +27,9 @@ namespace PETCenter.DataAccess.Seguridad
                     be.ApellidoPaterno = dr["AP_USUA"].ToString();
                     be.ApellidoMaterno = dr["AM_USUA"].ToString();
                     be.DNI = dr["DNI_USUA"].ToString();
-                    be.Area = Convert.ToInt32(dr["CO_AREA"]);
+                    be.Area = new Entities.Compras.Area();
+                    be.Area.idArea = Convert.ToInt32(dr["CO_AREA"]);
+                    be.Area.Descripcion = dr["DE_AREA"].ToString();
                     be.Alias = dr["AL_USUA"].ToString();
                 }
             }
@@ -39,7 +41,7 @@ namespace PETCenter.DataAccess.Seguridad
             Query query = new Query("SEG_USP_VET_SEL_OPCIONxID");
             query.input.Add(codigo);
             query.input.Add(aplicacion);
-            query.connection = defaultconnection;
+            query.connection = connectionAzure;
             List<Option> col = new List<Option>();
             Option be;
             using (IDataReader dr = new DAO().GetCollectionIReader(query))

@@ -1,10 +1,17 @@
 body
 {    
-    background-image:url("/Content/images/bg-image.png");
+    background-image:url("/Content/images/sliderpet7-77.png");
+    background-repeat: no-repeat;
+    background-position: 85% 45px ;
+    /*
+    background-color:lightgray;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     background-position: center; 
     background-color:#004566;
+
+    */
     font-family: Candara; 
     font-size: 14px;
 }
@@ -18,7 +25,7 @@ p
 
 hr
 {
-    border-color: Green;
+    border-color: #428BCA;
 }
 
 .sig-message
@@ -48,7 +55,8 @@ hr
 
 .sig-buttom:hover
 {
-    background-image:url("/Content/images/bg-yellow.png");
+    /*background-image:url("/Content/images/bg-yellow.png");*/
+    background-color:#428BCA;
     text-shadow: 1px 1px 3px #666666;
     color: #ffffff;
     font-size: 14px;
@@ -62,7 +70,8 @@ hr
 
 .sig-buttom
 {    
-    background-image:url("/Content/images/bg-green.png");
+    /*background-image:url("/Content/images/bg-green.png");*/
+    background-color:#585858;
     -webkit-border-radius: 4;
     -moz-border-radius: 4;
     border-radius: 4px;

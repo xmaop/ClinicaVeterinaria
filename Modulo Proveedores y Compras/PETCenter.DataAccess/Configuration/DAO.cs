@@ -157,6 +157,31 @@ namespace PETCenter.DataAccess.Configuration
             return obuilder;
         }
 
+        public int ExecuteTransactions(Query query) 
+        {
+            Database db;
+            int result;
+            if (query.connection == null || query.connection == string.Empty)
+                db = DatabaseFactory.CreateDatabase("Default");
+            else
+                db = DatabaseFactory.CreateDatabase(query.connection);
+            using (DbConnection connection = db.CreateConnection())
+            {
+                connection.Open();
+                DbCommand dbCommand;
+                if (query.input.Count() == 0)
+                    dbCommand = db.GetStoredProcCommand(query.method);
+                else
+                    dbCommand = db.GetStoredProcCommand(query.method, query.input.ToArray());
+                if (query.Timeout != 0)
+                    dbCommand.CommandTimeout = query.Timeout;
+
+                result = db.ExecuteNonQuery(dbCommand);
+                connection.Close();
+            }
+            return result;      
+        }
+
         //public int ExecuteQueueTransactions(QueueTransactionCollection queues) 
         //{
         //    List<ParameterIn> key = new List<ParameterIn>();
@@ -189,7 +214,7 @@ namespace PETCenter.DataAccess.Configuration
         //                    {
         //                        db.AddOutParameter(dbCommand, string.Format("OU_{0}",parameterOut.field), parameterOut.type.db, parameterOut.type.size);
         //                    }
-                            
+
         //                    nresult = db.ExecuteNonQuery(dbCommand, transaction);
 
         //                    foreach (ParameterOut parameterOut in queue.output)
@@ -209,7 +234,7 @@ namespace PETCenter.DataAccess.Configuration
         //                        db.AddInParameter(dbCommand, string.Format("IN_{0}", parameterIn.field), parameterIn.type.db, parameterIn.value);
         //                    }
         //                    nresult = db.ExecuteNonQuery(dbCommand, transaction);
-                        
+
         //                }
         //                if (nresult == -1)
         //                    break;

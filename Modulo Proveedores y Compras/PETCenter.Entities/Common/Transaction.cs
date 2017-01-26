@@ -6,8 +6,6 @@ using System.Text;
 
 namespace PETCenter.Entities.Common
 {
-    [DataContract(IsReference = true)]
-    [Serializable]
     public class Transaction
     {
         [DataMember]
