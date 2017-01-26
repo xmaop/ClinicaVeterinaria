@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="es-pe" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="es-pe">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Veterinaria PetCenter | Pantalla principal</title>
+    <script type="text/javascript">var baseUrl = "@Url.Content("~")"; </script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/JQueryJs")
+    <script src='@Url.Content("~/Scripts/jquery.jqGrid.js")'></script>
+    <script src='@Url.Content("~/Scripts/grid.locale-es.js")'></script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/JQueryExtendsJs")
+    <link href="@Url.Content("~/Content/Styles/normalize/normalize.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Styles/site/site2.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Styles/jquery.ui/jquery.ui.all.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Styles/jquery.ui/jquery-ui.multiselect.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Styles/jquery.jqGrid/ui.jqgrid.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Styles/jquery.pnotify/jquery.pnotify.default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Styles/site/alertNotify.css")" rel="stylesheet" />
+    <script src='@Url.Content("~/Scripts/custom.js")'></script>
+    <script src="~/scripts/jquery.pnotify.js"></script>
+    <script src='@Url.Content("~/Scripts/jquery.mask.min.js")'></script>
+    <script src="@Url.Content("~/Scripts/title_notifier.js")"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="zeganet" name="author" />
+    <link rel="icon" type="image/png" href="https://u.jimcdn.com/e/o/sbc5664e9573051bd/img/favicon.png?t=1443112524">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="@Url.Content("~/Content/assets/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/style.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/style-responsive.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/theme/default.css")" rel="stylesheet" id="theme" />
+    <link href="@Url.Content("~/Content/assets/plugins/gritter/css/jquery.gritter.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/assets/plugins/jquery/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/pace/pace.min.js")"></script>
+    <script type="text/javascript">
+        arrowimages.down[1] = '@Url.Content("~/Content/images/down.gif")'
+        arrowimages.right[1] = '@Url.Content("~/Content/images/right.gif")'
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+        var ControllerName = "";
+        var ActionName = "";
+        var total_tabs = 0;
+
+        if (!Array.prototype.filter) {
+            Array.prototype.filter = function (fun) {
+                "use strict";
+
+                if (this == null)
+                    throw new TypeError();
+
+                var t = Object(this);
+                var len = t.length >>> 0;
+                if (typeof fun != "function")
+                    throw new TypeError();
+
+                var res = [];
+                var thisp = arguments[1];
+                for (var i = 0; i < len; i++) {
+                    if (i in t) {
+                        var val = t[i];
+                        if (fun.call(thisp, val, i, t))
+                            res.push(val);
+                    }
+                }
+                return res;
+            };
+        }
+
+        $(document).unbind('keydown').bind('keydown', function (event) {
+            var doPrevent = false;
+            if (event.keyCode === 8) {
+                var d = event.srcElement || event.target;
+                if ((d.tagName.toUpperCase() === 'INPUT' && (d.type.toUpperCase() === 'TEXT' || d.type.toUpperCase() === 'PASSWORD'))
+                     || d.tagName.toUpperCase() === 'TEXTAREA') {
+                    doPrevent = d.readOnly || d.disabled;
+                }
+                else {
+                    doPrevent = true;
+                }
+            }
+            if (doPrevent) {
+                event.preventDefault();
+            }
+        });
+
+        $(document).ready(function () {
+            //CreateMessageBox();
+            $(document).bind('keydown keyup', function (e) {
+                if (e.which === 116) {
+                    return false;
+                }
+                if (e.which === 82 && e.ctrlKey) {
+                    return false;
+                }
+            });
+        });
+
+        function setMenu(elem, container, ControllerName, ActionName, OptionName) {
+            $(elem).addClass('active');
+            $('#' + container).addClass('active');
+
+            $(function () { $("#tabcontent").load("/" + ControllerName + "/" + ActionName); });
+        }
+    </script>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();">
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    @*<form id="frmMaster">*@
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+        @Html.Partial("_Menu")
+        <div id="content" class="content">
+            @RenderSection("featured", required: false)
+            @RenderBody()
+        </div>
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+    @*</form>*@
+    <!--[if lt IE 9]>
+        <script src="~/Content/assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="~/Content/assets/crossbrowserjs/respond.min.js"></script>
+        <script src="~/Content/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="@Url.Content("~/Content/assets/plugins/slimscroll/jquery.slimscroll.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/gritter/js/jquery.gritter.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/apps.js")"></script>
+    <!--zeganet-->
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+</body>
+</html>

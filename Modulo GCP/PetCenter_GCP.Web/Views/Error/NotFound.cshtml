@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnRedirect").click(function () {
+            var http = location.protocol;
+            var slashes = http.concat("//");
+            var host = slashes.concat(window.location.host);
+            window.location.href = host + "/Login/Login";
+        });
+    });
+
+</script>
+<div class="header_sesion">
+    La Página que intentas solicitar ha sido movida, eliminada o no existe, dale Click al botón de abajo para ir a la página de Inicio.
+</div>
+<div class="wrapper_center_sesion">
+    <div class="ico_sesion">
+        <img src="@Url.Content("~/Content/images/no_found.png")" />
+    </div>
+    <a href="#" id="btnRedirect" class="btn_sesion">Ir al Inicio</a>
+</div>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E605A2F2-8B7F-490B-A7EE-EFB6B5171EC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetCenter_GCP.RazorEngine</RootNamespace>
+    <AssemblyName>PetCenter_GCP.RazorEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compilation\CompilerServiceBase.cs" />
+    <Compile Include="Compilation\CompilerServices.cs" />
+    <Compile Include="Compilation\CSharp\CSharpDirectCompilerService.cs" />
+    <Compile Include="Compilation\CSharp\CSharpRazorCodeGenerator.cs" />
+    <Compile Include="Compilation\CSharp\CSharpRazorCodeLanguage.cs" />
+    <Compile Include="Compilation\DefaultCompilerServiceFactory.cs" />
+    <Compile Include="Compilation\DirectCompilerServiceBase.cs" />
+    <Compile Include="Compilation\HasDynamicModelAttribute.cs" />
+    <Compile Include="Compilation\ICompilerService.cs" />
+    <Compile Include="Compilation\ICompilerServiceFactory.cs" />
+    <Compile Include="Compilation\RazorDynamicObject.cs" />
+    <Compile Include="Compilation\TypeContext.cs" />
+    <Compile Include="Compilation\VisualBasic\VBDirectCompilerService.cs" />
+    <Compile Include="Compilation\VisualBasic\VBRazorCodeGenerator.cs" />
+    <Compile Include="Compilation\VisualBasic\VBRazorCodeLanguage.cs" />
+    <Compile Include="Configuration\ConfigurationServices.cs" />
+    <Compile Include="Configuration\NamespaceConfigurationElement.cs" />
+    <Compile Include="Configuration\NamespaceConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\RazorEngineConfigurationSection.cs" />
+    <Compile Include="Configuration\TemplateServiceConfigurationElement.cs" />
+    <Compile Include="Configuration\TemplateServiceConfigurationElementConfiguration.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="MicrosoftCSharpReferenceStub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Razor.cs" />
+    <Compile Include="Templating\DefaultActivator.cs" />
+    <Compile Include="Templating\DelegateActivator.cs" />
+    <Compile Include="Templating\DelegateTemplateResolver.cs" />
+    <Compile Include="Templating\IActivator.cs" />
+    <Compile Include="Templating\ITemplate.cs" />
+    <Compile Include="Templating\ITemplateResolver.cs" />
+    <Compile Include="Templating\ITemplate`1.cs" />
+    <Compile Include="Templating\RequireNamespacesAttribute.cs" />
+    <Compile Include="Templating\TemplateBase.cs" />
+    <Compile Include="Templating\TemplateBase`1.cs" />
+    <Compile Include="Templating\TemplateCompilationException.cs" />
+    <Compile Include="Templating\TemplateParsingException.cs" />
+    <Compile Include="Templating\TemplateService.cs" />
+    <Compile Include="Templating\TemplateServiceFactory.cs" />
+    <Compile Include="Templating\TemplateWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetCenter_GCP.ViewEngine\PetCenter_GCP.ViewEngine.csproj">
+      <Project>{bb47d8f0-6369-41cb-812a-3610939748b3}</Project>
+      <Name>PetCenter_GCP.ViewEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

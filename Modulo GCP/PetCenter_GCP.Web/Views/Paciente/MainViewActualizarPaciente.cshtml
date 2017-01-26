@@ -1,0 +1,200 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        fnGrillaPaciente();
+
+        $("#btNuevoPaciente").bind('click', function () {
+            onClickNuevoPaciente();
+        });
+    });
+
+    function fnGrillaPaciente() {
+        jQuery("#listPaciente").jqGrid({
+            url: baseUrl + "Paciente/ConsultarPacientes",
+            datatype: 'json',
+            mtype: 'GET',
+            postData: ({
+                //idNivelEducativo: function () { return $("#dlNivelEducativo").val(); },
+                //idGrado: function () { return $("#dlGrado").val() },
+                //idCurso: function () { return $("#dlCurso").val() }
+            }),
+            contentType: "application/json; charset=utf-8",
+            colNames: ['idCliente', 'idPaciente', 'Nombre Cliente', 'Código Cliente', 'Nombre Paciente', 'Código Paciente', 'Especie', 'Raza', 'Peso (Kg.)', 'Sexo', 'Acción'],
+            colModel: [
+                { name: 'id_Cliente', index: 'id_Cliente', hidden: true },
+                { name: 'id_Paciente', index: 'id_Paciente', hidden: true },
+                { name: 'nomCliente', index: 'nomCliente', width: 150 },
+                { name: 'codigoCliente', index: 'codigoCliente', width: 50 },
+                { name: 'nombre', index: 'nombre', width: 100 },
+                { name: 'codigo', index: 'codigo', width: 60 },
+                { name: 'nomEspecie', index: 'nomEspecie', width: 30 },
+                { name: 'nomRaza', index: 'nomRaza', width: 120 },
+                { name: 'peso', index: 'peso', width: 30 },
+                { name: 'sexo', index: 'sexo', width: 40 },
+                {
+                    name: 'act', index: 'act', width: 40, sortable: false, align: 'center', resizable: false,
+                    formatter: function (cellvalue, options, rowObject) {
+                        return ShowActions(cellvalue, options, rowObject);
+                    }, search: false, hidedlg: true
+                }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: jQuery('#pagerPaciente'),
+            rowNum: 10,
+            rownumbers: true,
+            scrollOffset: 0,
+            rowList: [10, 20, 30, 40, 50],
+            sortname: 'id_Paciente',
+            sortorder: 'asc',
+            viewrecords: true,
+            width: '1000',
+            height: 'auto',
+            altRows: true,
+            footerrow: true,
+            altclass: 'jQGridAltRowClass',
+            loadComplete: function (data) {
+                if (data != null) {
+                    var Index = $("#hdMainIndex").val();
+                    jQuery("#listPaciente").setSelection(Index, true);
+                }
+            },
+            //beforeRequest: function () {
+            //    var grid = $(this);
+            //    var postdata = grid.jqGrid('getGridParam', 'postData');
+            //    if (postdata != undefined && postdata.filters != undefined) {
+            //        postdata.idNivelEducativo = $("#dlNivelEducativo").val();
+            //        postdata.idGrado = $("#dlGrado").val();
+            //        postdata.idCurso = $("#dlCurso").val();
+            //    } else {
+            //        jQuery.extend(postdata, {
+            //        });
+            //    }
+            //    return [true, ''];
+            //}
+        });
+        jQuery("#listPaciente").jqGrid('navGrid', "#pagerPaciente", {
+            add: false, edit: false, refresh: false, del: false, search: false
+        });
+        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        ScrollDynamicGridPage("listPaciente");
+    }
+
+    $.jgrid.extend({
+        EditarPaciente: function (id_Paciente, Index) {
+            EditarPacienteRow(id_Paciente, Index);
+            return false;
+        },
+        EliminarPaciente: function (id_Paciente, Index) {
+            EliminarPacienteRow(id_Paciente, Index);
+            return false;
+        },
+        VerHistorico: function (id_Paciente, Index) {
+            VerHistoricoRow(id_Paciente, Index);
+            return false;
+        }
+    });
+
+    function ShowActions(cellvalue, options, rowObject) {
+        var edit = "<a href='javascript:;' onclick=\"return jQuery('#listPaciente').EditarPaciente('" + rowObject[1] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/Edit.png")' alt='Editar Paciente' title='Editar Paciente' border='0' /></a>";
+        var del = "<a href='javascript:;' onclick=\"return jQuery('#listPaciente').EliminarPaciente('" + rowObject[1] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/Delete.png")' alt='Eliminar Paciente' title='Eliminar Paciente' border='0' /></a>";
+        @*var changeCli = "<a href='javascript:;' onclick=\"return jQuery('#listPaciente').CambiarCliente('" + rowObject[1] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/contact.png")' alt='Cambiar Dueño' title='Cambiar Dueño' border='0' /></a>";*@
+        var viewhistory = "<a href='javascript:;' onclick=\"return jQuery('#listPaciente').VerHistorico('" + rowObject[1] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/replaceFact.png")' alt='Ver Histórico Cliente' title='Ver Histórico Cliente' border='0' /></a>";
+
+        return edit + /*changeCli +*/ viewhistory + del;
+    }
+
+    function EditarPacienteRow(id_Paciente, Index) {
+        var URL = "Paciente/MantenimientoPaciente_Modal?Parameter01=" + id_Paciente + "&Parameter02=" + Index;
+        OpenDialogId('Mantenimiento de Pacientes', 950, URL, id_Paciente, "Actualizando Paciente : " + id_Paciente, 'Pacientes');
+        return false;
+    }
+
+    function EliminarPacienteRow(id_Paciente, Index) {
+        var elimina = confirm('¿Está seguro que desea eliminar el registro seleccionado?');
+        if (!elimina)
+            return false;
+
+        jQuery.ajax({
+            type: 'POST',
+            url: baseUrl + 'Paciente/Delete',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ Id: id_Paciente }),
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        message('Confirmación:', data.message, 'success');
+                        jQuery("#listPaciente").trigger('reloadGrid');
+                        $("#hdMainIndex").val(Index);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                messageErrorAjax('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA', xhr.status, baseUrl + 'Paciente/Delete', JSON.stringify({ Id: id_Paciente }));
+            }
+        });
+    }
+
+    function VerHistoricoRow(id_Paciente, Index) {
+        var URL = "Paciente/Consultar_HistoricoCliente_Modal?Parameter01=" + id_Paciente + "&Parameter02=" + Index;
+        OpenDialogId('Consultar Histórico Clientes', 700, URL, '@Constantes.ModalKeys.CONSULTA' + id_Paciente, "Consultando Histórico Clientes : " + id_Paciente);
+        return false;
+    }
+
+    function onClickNuevoPaciente() {
+        var URL = "Paciente/MantenimientoPaciente_Modal";
+        OpenDialogId('Mantenimiento de Pacientes', 950, URL, '0', "Registro de Pacientes", 'Pacientes');
+        return false;
+    }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    <div class="panel-heading" style="background: #80bd00; color:#ffffff">
+        <div class="panel-heading-btn">
+        </div>
+        <h4 class="panel-title"><strong>LISTADO DE PACIENTES</strong></h4>
+    </div>
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        <div class="item_form">
+            <div class="item_label">
+                <div class="form-group right">
+                    <button type="button" id="btNuevoPaciente" class="btn btn-primary">Nuevo</button>
+                </div>
+            </div>
+        </div>
+        <div class="item_form">
+            <fieldset>
+                <legend>Listado de Pacientes</legend>
+                <div class="grilla_custom">
+                    <table id="listPaciente"></table>
+                    <div id="pagerPaciente"></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("~/Views/UserControls/_ListaCliente.cshtml");
+}
+@Html.LoadJsInline(Url.Content("~/Scripts/UserControls/_ListaCliente.js"))

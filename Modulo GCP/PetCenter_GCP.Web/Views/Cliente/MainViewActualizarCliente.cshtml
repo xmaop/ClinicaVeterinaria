@@ -1,0 +1,234 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        fnGrillaCliente();
+
+        $("#btNuevoCliente").bind('click', function () {
+            onClickNuevoCliente();
+        });
+    });
+
+    function fnGrillaCliente() {
+        jQuery("#listCliente").jqGrid({
+            url: baseUrl + "Cliente/ConsultarClientes",
+            datatype: 'json',
+            mtype: 'GET',
+            postData: ({
+                //idNivelEducativo: function () { return $("#dlNivelEducativo").val(); },
+                //idGrado: function () { return $("#dlGrado").val() },
+                //idCurso: function () { return $("#dlCurso").val() }
+            }),
+            contentType: "application/json; charset=utf-8",
+            colNames: ['idCliente', 'Nombre/Razón Social', 'Código', 'Tipo Documento', 'Nro. Documento', 'Email', 'Tipo Cliente', 'Nombre Contacto', 'Email Contacto', 'Acción'],
+            colModel: [
+                { name: 'idCliente', index: 'idCliente', hidden: true },
+                { name: 'Nom_Cliente', index: 'Nom_Cliente', width: 150 },
+                { name: 'codigo', index: 'codigo', width: 50 },
+                { name: 'descTipoDocumento', index: 'descTipoDocumento', width: 50 },
+                { name: 'nroDocumento', index: 'nroDocumento', width: 60 },
+                { name: 'email', index: 'email', width: 100 },
+                { name: 'descTipoCliente', index: 'descTipoCliente', width: 40 },
+                { name: 'nomContacto', index: 'nomContacto', width: 100 },
+                { name: 'emailContacto', index: 'emailContacto', width: 100 },
+                {
+                    name: 'act', index: 'act', width: 40, sortable: false, align: 'center', resizable: false,
+                    formatter: function (cellvalue, options, rowObject) {
+                        return ShowActions(cellvalue, options, rowObject);
+                    }, search: false, hidedlg: true
+                }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: jQuery('#pagerCliente'),
+            rowNum: 10,
+            rownumbers: true,
+            scrollOffset: 0,
+            rowList: [10, 20, 30, 40, 50],
+            sortname: 'idCliente',
+            sortorder: 'asc',
+            viewrecords: true,
+            width: '1000',
+            height: 'auto',
+            altRows: true,
+            footerrow: true,
+            altclass: 'jQGridAltRowClass',
+            loadComplete: function (data) {
+                if (data != null) {
+                    var Index = $("#hdMainIndex").val();
+                    jQuery("#listCliente").setSelection(Index, true);
+                }
+            },
+            //beforeRequest: function () {
+            //    var grid = $(this);
+            //    var postdata = grid.jqGrid('getGridParam', 'postData');
+            //    if (postdata != undefined && postdata.filters != undefined) {
+            //        postdata.idNivelEducativo = $("#dlNivelEducativo").val();
+            //        postdata.idGrado = $("#dlGrado").val();
+            //        postdata.idCurso = $("#dlCurso").val();
+            //    } else {
+            //        jQuery.extend(postdata, {
+            //        });
+            //    }
+            //    return [true, ''];
+            //}
+        });
+        jQuery("#listCliente").jqGrid('navGrid', "#pagerCliente", {
+            add: false, edit: false, refresh: false, del: false, search: false
+        });
+        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        ScrollDynamicGridPage("listCliente");
+    }
+
+    $.jgrid.extend({
+        EditarCliente: function (idCliente, RowId) {
+            EditarClienteRow(idCliente, RowId);
+            return false;
+        },
+        EliminarCliente: function (idCliente, RowId) {
+            EliminarClienteRow(idCliente, RowId);
+            return false;
+        },
+        VerPaciente: function (idCliente, RowId) {
+            VerPacienteRow(idCliente, RowId);
+            return false;
+        }
+    });
+
+    function ShowActions(cellvalue, options, rowObject) {
+        var edit = "<a href='javascript:;' onclick=\"return jQuery('#listCliente').EditarCliente('" + rowObject[0] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/Edit.png")' alt='Editar Cliente' title='Editar Cliente' border='0' /></a>";
+        var del = "<a href='javascript:;' onclick=\"return jQuery('#listCliente').EliminarCliente('" + rowObject[0] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/Delete.png")' alt='Eliminar Cliente' title='Eliminar Cliente' border='0' /></a>";
+        var viewpacient = "<a href='javascript:;' onclick=\"return jQuery('#listCliente').VerPaciente('" + rowObject[0] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/replaceFact.png")' alt='Ver Pacientes' title='Ver Pacientes' border='0' /></a>";
+
+        return edit + viewpacient + del;
+    }
+
+    function EditarClienteRow(idCliente, Index) {
+        var URL = "Cliente/MantenimientoCliente_Modal?Parameter01=" + idCliente + "&Parameter02=" + Index;
+        OpenDialogId('Mantenimiento de Clientes', 950, URL, idCliente, "Actualizando Cliente : " + idCliente, 'Clientes');
+        return false;
+    }
+
+    function EliminarClienteRow(idCliente, Index) {
+        var elimina = confirm('¿Está seguro que desea eliminar el registro seleccionado?');
+        if (!elimina)
+            return false;
+
+        jQuery.ajax({
+            type: 'POST',
+            url: baseUrl + 'Cliente/Delete',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ Id: idCliente }),
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        message('Confirmación:', data.message, 'success');
+                        jQuery("#listCliente").trigger('reloadGrid');
+                        $("#hdMainIndex").val(Index);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                messageErrorAjax('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA', xhr.status, baseUrl + 'Cliente/Delete', JSON.stringify({ Id: idCliente }));
+            }
+        });
+    }
+
+    function VerPacienteRow(idCliente, Index) {
+        var URL = "Cliente/Consultar_Paciente_Modal?Parameter01=" + idCliente + "&Parameter02=" + Index;
+        OpenDialogId('Consultar Pacientes', 800, URL, '@Constantes.ModalKeys.CONSULTA' + idCliente, "Consultando Pacientes : " + idCliente);
+        return false;
+    }
+
+    function onClickNuevoCliente() {
+        var URL = "Cliente/MantenimientoCliente_Modal";
+        OpenDialogId('Mantenimiento de Clientes', 950, URL, '0', "Registro de Clientes", 'Clientes');
+        return false;
+    }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    <div class="panel-heading" style="background: #80bd00; color:#ffffff">
+        <div class="panel-heading-btn">
+        </div>
+        <h4 class="panel-title"><strong>LISTADO DE CLIENTES</strong></h4>
+    </div>
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        @*<div id="Alerta" style="text-align: left; padding: 10px !important; margin: 12px 50px 0 10px; min-height: 20px; font-size: 12px;" class="@ViewBag.cssAlert" role="alert"><strong>Información:</strong><span style="margin-left: 15px;">@ViewBag.messageAlert</span></div>
+        <div class="item_form" style="clear:both; padding-top: 10px;">
+            <div class="item_label">Nivel Educativo:</div>
+            <div class="item_campo" style="width: 150px;">
+                <select id="dlNivelEducativo"></select>
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_label">Grado:</div>
+            <div class="item_campo" style="width: 150px;">
+                <select id="dlGrado"></select>
+            </div>
+        </div>*@
+        <div class="item_form">
+            @*<div class="item_label">Curso:</div>
+            <div class="item_campo" style="width: 150px;">
+                <select id="dlCurso"></select>
+            </div>*@
+            <div class="item_label">
+                <div class="form-group right">
+                    <button type="button" id="btNuevoCliente" class="btn btn-primary">Nuevo</button>
+                </div>
+            </div>
+        </div>
+        <div class="item_form">
+            <fieldset>
+                <legend>Listado de clientes</legend>
+                <div class="grilla_custom">
+                    <table id="listCliente"></table>
+                    <div id="pagerCliente"></div>
+                </div>
+            </fieldset>
+        </div>
+        @*<div class="item_form">
+            <fieldset>
+                <legend>Indicadores</legend>
+                <div class="grilla_custom">
+                    <table id="listIndicador"></table>
+                    <div id="pagerIndicador"></div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="item_form">
+            <fieldset style="float:left;">
+                <legend>Instrumentos de Evaluación</legend>
+                <div class="item_label" style="float: right; margin-right: 16px; width: auto;">
+                    <div class="form-group">
+                        <button type="button" id="btAddIns" class="btn btn-info">Agregar</button>
+                        <button type="button" id="btSaveIns" class="btn btn-info">Guardar</button>
+                    </div>
+                </div>
+                <div class="grilla_custom" style="float: left;">
+                    <table id="listInstrumento"></table>
+                    <div id="pagerInstrumento"></div>
+                </div>
+            </fieldset>
+        </div>*@
+    </div>
+</div>

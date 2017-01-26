@@ -1,0 +1,60 @@
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.csprojResolveAssemblyReference.cache
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\obj\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.BizLogic.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Core.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccess.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.BizLogic\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb

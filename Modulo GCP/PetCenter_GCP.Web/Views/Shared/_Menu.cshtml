@@ -1,0 +1,185 @@
+﻿@using System.Threading;
+@{
+    PetCenter_GCP.Entity.UsuarioEntity usuarioPermiso = ViewBag.UsuarioData;
+}
+@if (usuarioPermiso != null)
+{
+    <div id="header" class="header navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid" id="navbar">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index", "Contenedor")" class="navbar-brand">
+                    <span>
+                        <img src="~/Content/assets/img/login-bg/logo.png" width="85" style="margin-left: 35px; top: -19px; left: 50px" />
+                    </span>
+                </a>
+                <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav navbar-right">
+                    @*<li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle">
+                            <span class="hidden-xs">
+                                <strong>Año Escolar: </strong><span id="lbPeriodo">@ViewBag.Periodo</span>
+                            </span>
+                        </a>
+                    </li>*@
+                    <li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle f-s-14">
+                            <i class="fa fa-bell-o"></i>
+                            <span id="lbAlarma" class="label">1</span>
+                        </a>
+                        <ul class="dropdown-menu media-list pull-right animated fadeInDown">
+                            <li class="dropdown-header">Notificaciones (<span id="lbNotificacionesCantidad">0</span>)</li>
+                            <li class="dropdown-footer text-center"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <img id="imgFoto" src="~/Content/assets/img/login-photo/usuario.png" />
+                            <span class="hidden-xs">
+                                <strong>Usuario: </strong><span id="lbPersonalNombre">@ViewBag.NombreUsuario</span> |
+                                <strong>Cargo: </strong><span id="lbCargo">@ViewBag.Cargo</span>
+                            </span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInLeft">
+                            <li class="arrow"></li>
+                            <li>
+                                <a href="javascript:;">Ver Perfil</a>
+                                <a id="hlPerfil" style="visibility: hidden;"></a>
+                            </li>
+                            <li>
+                                <a id="hlEquipoTrabajo" style="visibility: hidden;"></a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a id="linkCerrarSesion" href="@Url.Action("LogOut", "Login")">Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar" class="sidebar animated fadeInUp">
+        <div data-scrollbar="true" data-height="100%">
+            <ul id="menu" class="nav">
+                <li class="nav-header">Menu</li>
+                <li id="liPrincipal" class="has-sub">
+                    <a href="/"><i class="fa fa-laptop"></i><span>Pantalla principal</span></a>
+                </li>
+                <li id="liRegistros" class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="fa fa-suitcase"></i>
+                        <span>Gestión de Clientes y Pacientes</span>
+                    </a>
+                    <ul class="sub-menu">
+                        @if (usuarioPermiso.login == "glujan")
+                        {
+                            <li>
+                                <a id="hlActualizarCliente" href="#" onclick="setMenu(this, 'liRegistros', 'Cliente', 'MainViewActualizarCliente', 'Actualizar Clientes');">Actualizar Clientes</a>
+                            </li>
+                        }
+                        @if (usuarioPermiso.login == "glujan")
+                        {
+                            <li>
+                                <a id="hlActualizarPaciente" href="#" onclick="setMenu(this, 'liRegistros', 'Paciente', 'MainViewActualizarPaciente', 'Actualizar Pacientes');">Actualizar Pacientes</a>
+                            </li>
+                        }
+                        @if (usuarioPermiso.login == "glujan")
+                        {
+                            <li>
+                                <a id="hlConsultarOrdenAtencion" href="#" onclick="setMenu(this, 'liRegistros', 'OrdenAtencion', 'MainViewOrdenAtencion', 'Consultar Orden de Atención');">Consultar Orden de Atención</a>
+                            </li>
+                        }
+                        @if (usuarioPermiso.login == "glujan")
+                        {
+                            <li>
+                                <a id="hlNotificacionCliente" href="#" onclick="setMenu(this, 'liRegistros', 'NotificarCliente', 'MainViewNotificarCliente');">Notificación Cliente</a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+                <li id="liMantenimiento" class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="fa fa-th"></i>
+                        <span>Mantenimiento</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a id="hlAtenciones" href="#" style="visibility: hidden;">Atenciones</a>
+                        </li>
+                        <li>
+                            <a id="hlEquipos" href="#" style="visibility: hidden;">Equipos</a>
+                        </li>
+                        <li>
+                            <a id="hlEspecialidades" href="#" style="visibility: hidden;">Especialidades</a>
+                        </li>
+                        <li>
+                            <a id="hlEstablecimientoSalud" href="#" style="visibility: hidden;">Establecimiento Salud</a>
+                        </li>
+                        <li>
+                            <a id="hlPersonal" href="#" style="visibility: hidden;">Personal</a>
+                        </li>
+                        <li>
+                            <a id="hlUbigeo" href="#" style="visibility: hidden;">Ubigeo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="liConsultas" class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="fa fa-area-chart"></i>
+                        <span>Consultas / Reportes</span>
+                    </a>
+                    <ul class="sub-menu">
+                        @if (usuarioPermiso.login == "tvelasco")
+                        {
+                            <li>
+                                <a id="hlConsultarApoderado" href="#" onclick="setMenu(this, 'liConsultas', 'ConsultarNota', 'MainViewConsultarNota', 'Consultar Notas');">Consultar Notas</a>
+                            </li>
+                        }
+                        @if (usuarioPermiso.login == "glujan")
+                        {
+                            <li>
+                                <a id="hlReporteEstadistico" href="#" onclick="setMenu(this, 'liConsultas', 'ReporteEstadistico', 'MainViewReporteEstadistico', 'Generar Reporte Estadístico');">Generar Reporte Estadístico</a>
+                            </li>
+                        }
+                        <li>
+                            <a id="hlRankingEspecialidad" href="#" style="visibility: hidden;"></a>
+                        </li>
+                        <li>
+                            <a id="hlProduccionBrigada" href="#" style="visibility: hidden;"></a>
+                        </li>
+                        <li>
+                            <a id="hlCirugiasFrecuentes" href="#" style="visibility: hidden;"></a>
+                        </li>
+                        <li>
+                            <a id="hlMorbilidadFrecuentes" href="#" style="visibility: hidden;"></a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="liConfiguracion" class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="fa fa-cogs"></i>
+                        <span>Configuracion</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a id="hlGeneral" href="#" style="visibility: hidden;"></a>
+                        </li>
+                        <li>
+                            <a href="#modal-dialog-clavecambio" data-toggle="modal">Cambiar mi clave</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:;" class="sidebar-minify-btn animated fadeInRight" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-bg"></div>
+}
