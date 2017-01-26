@@ -5,10 +5,10 @@ using System.Text;
 
 namespace PETCenter.Entities.Compras
 {
-    public class Periodo
+    public class Area
     {
+        public int idArea { get; set; }
         public string Codigo { get; set; }
-        public int Secuencia { get; set; }
         public string Descripcion { get; set; }
     }
 }

@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Compras\daEmpleado.cs" />
+    <Compile Include="Compras\daArea.cs" />
     <Compile Include="Compras\daCompras.cs" />
+    <Compile Include="Seguridad\daSolicitudRecursos.cs" />
     <Compile Include="Configuration\DAO.cs" />
     <Compile Include="Configuration\Global.cs" />
     <Compile Include="Configuration\Query.cs" />

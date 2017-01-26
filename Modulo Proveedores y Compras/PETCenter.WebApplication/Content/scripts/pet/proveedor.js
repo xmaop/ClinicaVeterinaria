@@ -29,6 +29,38 @@
     })
 }
 
+function ValidarTipoDocumento(id, txtTipoDocu)
+{
+    var params = JSON.stringify({
+        "idTipoDocumento": id,
+        "control": txtTipoDocu || ''
+    });
+    $.ajax({
+        type: "POST",
+        url: wsnode + "wsCompras.svc/GetHTMLTipoDocumento",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: params,
+        async: false,
+        processData: false,
+        cache: false,
+        success: function (response) {
+            $("#pages").append(response);
+        },
+        error: function (response) {
+            showError(response);
+        }
+    });
+}
+
+$('#TipoDocumentoSearch').change(function () {
+    ValidarTipoDocumento($('#TipoDocumentoSearch').val(), 'txtNroDocumentoSearch');
+});
+
+$('#selTipoDocumentoPopup').change(function () {
+    ValidarTipoDocumento($('#selTipoDocumentoPopup').val(),'txtNroDocumentoPopup');
+});
+
 function SetProovedorId(idProveedor)
 {
     $('#ProveedorModal').modal("show");
@@ -37,7 +69,8 @@ function SetProovedorId(idProveedor)
     $('#ProveedorModal_footer').empty();
     $('#divCodigoPopup').empty();
     $('#divCodigoPopup').append("<span class=\"input-group-addon\" style=\"width:130px\">Código</span>" +
-                            "<input type=\"text\" class=\"form-control input-lg text-uppercase\" id=\"txtCodigoPopup\" />");
+                            "<input type=\"text\" class=\"form-control input-lg text-uppercase\" id=\"txtCodigoPopup\" />");    
+
     //Add Controls
     $('#ProveedorModal_header').append(
         "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
@@ -77,6 +110,8 @@ function SetProovedorId(idProveedor)
                 $("#txtCodigoPopup").val(response.rows[0].Codigo);
                 $("#txtCodigoPopup").prop('disabled', true);
                 $("#imgEstadoPopup").attr("src", response.rows[0].Estado);
+                $("#txtTelefonoPopup").mask('(00)000-0000');
+                ValidarTipoDocumento($('#selTipoDocumentoPopup').val(), 'txtNroDocumentoPopup');
             }
             else
                 showError(response.message);
@@ -89,6 +124,7 @@ function SetProovedorId(idProveedor)
 
 $(document).ready(function () {
     getProveedores();
+    ValidarTipoDocumento($('#TipoDocumentoSearch').val(), 'txtNroDocumentoSearch');
 });
 
 function ChangeEstado()
@@ -175,7 +211,7 @@ function getProveedores() {
         {
             field: "DesTipoDocumento",
             title: "Tipo de Documento",
-            width: 120
+            width: 180
         }, {
             field: "Documento",
             title: "Nro Documento",
@@ -186,7 +222,7 @@ function getProveedores() {
             title: "Razón Social",
         }, {
             field: "Estado",
-            title: "Estado",
+            title: "Activo",
             width: 80
         }, {
             title: "Acciones",
@@ -244,5 +280,7 @@ function nuevoProveedor() {
         "    <center><i class=\"fa fa-save\">&nbsp;&nbsp;</i> Guardar</center>" +
         "</div></div>"
     );
+
+    ValidarTipoDocumento($('#selTipoDocumentoPopup').val(), 'txtNroDocumentoPopup');
 }
 

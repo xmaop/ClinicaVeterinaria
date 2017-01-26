@@ -19,162 +19,7 @@ namespace PETCenter.WebApplication.Controllers.ajax
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class wsCompras : IwsCompras
     {
-        public List<Periodo> GetPeriodoAnio()
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<Periodo> periodos = bl.GetPeriodoAnio(out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return periodos;
-            }
-            else
-                return new List<Periodo>();
-        }
-
-        public List<PlanCompras> GetPlanCompraAnio(string anio)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<PlanCompras> planes = bl.GetPlanCompraAnio(anio, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return planes;
-            }
-            else
-                return new List<PlanCompras>();
-        }
-
-        public PlanCompras GetPlanCompraId(int id_plan)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            PlanCompras plan = bl.GetPlanCompraId(id_plan, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return plan;
-            }
-            else
-                return new PlanCompras();
-        }
-
-        public Presupuesto GetPresupuestoPendiente()
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            Presupuesto presupuesto = bl.GetPresupuestoPendiente(out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return presupuesto;
-            }
-            else
-                return new Presupuesto();
-        }
-
-        public List<Usuario> GetResponsablesActivos()
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<Usuario> planes = bl.GetResponsablesActivos(out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return planes;
-            }
-            else
-                return new List<Usuario>();
-        }
-
-        public List<SolicitudRecursos> GetSolicitudRecursosPeriodo(string periodo)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<SolicitudRecursos> solicitudes = bl.GetSolicitudRecursosPeriodo(periodo, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return solicitudes;
-            }
-            else
-                return new List<SolicitudRecursos>();
-        }
-
-        public CollectionItemOrdenCompra GetDetalleSolicitudparaOC(int idSolicitud)
-        {
-            blCompras bl = new blCompras();
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-            CollectionItemOrdenCompra ocol = bl.GetDetalleSolicitudparaOC(idSolicitud, user.Codigo);
-            return ocol;
-        }
-
-        public CollectionItemPlanCompras GetItemsGroupSolicitudRecursosPeriodo(string periodo, string usuario)
-        {
-            blCompras bl = new blCompras();
-            CollectionItemPlanCompras ocol = bl.GetItemsGroupSolicitudRecursosPeriodo(periodo, usuario);
-            return ocol;
-        }
-
-        public CollectionItemPlanCompras GetTemporalItemsPlan(int idproveedor, int idpresentacion, string usuario)
-        {
-            blCompras bl = new blCompras();
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-            CollectionItemPlanCompras ocol = bl.GetTemporalItemsPlan(idproveedor, idpresentacion, string.IsNullOrEmpty(usuario) ? user.Codigo : usuario);
-            return ocol;
-        }
-
-
-        public CollectionItemPlanCompras GetTemporalItemsPlanID(int idplan, string usuario)
-        {
-            blCompras bl = new blCompras();
-            CollectionItemPlanCompras ocol = bl.GetTemporalItemsPlanID(idplan, usuario);
-            return ocol;
-        }
-
-
-        public List<ItemPlanCompras> GetItemsGroupSolicitudRecursosId(int id)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<ItemPlanCompras> ocol = bl.GetItemsGroupSolicitudRecursosId(id, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return ocol;
-            }
-            else
-                return new List<ItemPlanCompras>();
-        }
-
-        public string SavePlanCompra(
-            string usuario,
-            string fecha,
-            string periodo)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-            bl.SavePlanCompra(usuario, user.Codigo, Convert.ToDateTime(fecha), periodo, out transaction);
-            return transaction.type + "-" + transaction.message;
-
-        }
-
-        public string GetPlanCompraVigente()
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = bl.GetPlanCompraVigente();
-            if (transaction.type == TypeTransaction.ERR)
-                return transaction.message;
-            else
-                return "";
-        }
-
-        public string GetDatosCabeceraOrden(int idOrden)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = bl.GetDatosCabeceraOrden(idOrden);
-            if (transaction.type == TypeTransaction.ERR)
-                return transaction.message;
-            else
-                return "";
-        }
-
+        #region Proveedores
         public Proveedor GetProveedor(int idProveedor)
         {
             blCompras bl = new blCompras();
@@ -184,29 +29,6 @@ namespace PETCenter.WebApplication.Controllers.ajax
                 return provl;
             else
                 return new Proveedor();
-        }
-        //Transaction GetDatosCabeceraOrden(int idOrden)
-
-        public List<RecursoProveedor> GetPresentacionRecursosProveedor(int idpresentacion, int cantidad)
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<RecursoProveedor> ocol = bl.GetPresentacionRecursosProveedor(idpresentacion, cantidad, out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return ocol;
-            }
-            else
-                return new List<RecursoProveedor>();
-        }
-
-
-        //Ultimo CUS
-        public CollectionOrdenCompra GetOrdenCompra_Busqueda(string fechaIni, string fechaFin, string idProveedor, int IsPlanificada)
-        {
-            blCompras bl = new blCompras();
-            CollectionOrdenCompra ocol = bl.GetOrdenCompra_Busqueda(Convert.ToDateTime(fechaIni), Convert.ToDateTime(fechaFin), idProveedor, IsPlanificada);
-            return ocol;
         }
 
         public string GuardarProveedor(string tipoDocumento, string numeroDocumento, string razonSocial, string direccion, string telefono, string contacto, string estado, string idproveedor)
@@ -266,60 +88,6 @@ namespace PETCenter.WebApplication.Controllers.ajax
             return provl;
         }
 
-        public List<Proveedor> GetProveedores()
-        {
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            List<Proveedor> ocol = bl.GetProveedores(out transaction);
-            if (transaction.type == TypeTransaction.OK)
-            {
-                return ocol;
-            }
-            else
-                return new List<Proveedor>();
-        }
-
-        public CollectionItemOrdenCompra GetDetalleOrdenCompra_Id(int IdOrden)
-        {
-            blCompras bl = new blCompras();
-            CollectionItemOrdenCompra ocol = bl.GetDetalleOrdenCompra_Id(IdOrden);
-            return ocol;
-        }
-
-
-        //aar oc
-        public string GeneraOrdenessegunPlan(int idPlan)
-        {
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            int result = bl.GeneraOrdenessegunPlan(idPlan, user.Codigo, out transaction);
-            return transaction.message;
-            //if (transaction.type == TypeTransaction.OK)
-            //{
-            //    return result;
-            //}
-            //else
-            //    return 0;
-        }
-
-        //generar solicitud
-        public string GeneraOrdenessegunSolicitud(int idSolicitud)
-        {
-            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
-
-            blCompras bl = new blCompras();
-            Transaction transaction = Common.InitTransaction();
-            int result = bl.GeneraOrdenessegunSolicitud(idSolicitud, user.Codigo, out transaction);
-            return transaction.message;
-            //if (transaction.type == TypeTransaction.OK)
-            //{
-            //    return result;
-            //}
-            //else
-            //    return 0;
-        }
-
         public string GeneraProveedor(int puntaje, string razonSocial, string direccion, string tipoDocumento, string numeroDocumento, string telefono, string contacto)
         {
             Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
@@ -359,38 +127,44 @@ namespace PETCenter.WebApplication.Controllers.ajax
             //    return 0;
         }
 
-        public string GetOrdenesporSolicitud(int idSolicitud)
+        public string GetHTMLTipoDocumento(int idTipoDocumento, string control)
         {
-            blCompras bl = new blCompras();
-            CollectionItemOrdenCompra ocol = bl.GetOrdenesporSolicitud(idSolicitud);
-            var json = new JavaScriptSerializer().Serialize(ocol);
-            return json;
+            string HTML = "";
+            switch (idTipoDocumento) 
+            {
+                //$(\"#{0}\").val('');
+                case 2:
+                    HTML = Common.InvokeTextHTML(string.Format("$(\"#{0}\").mask(\"00000000000\");$(\"#{0}\").focus();", control));
+                    break;
+                case 1:
+                    HTML = Common.InvokeTextHTML(string.Format("$(\"#{0}\").mask(\"00000000\");$(\"#{0}\").focus();", control));
+                    break;
+                case 3:
+                    HTML = Common.InvokeTextHTML(string.Format("$(\"#{0}\").mask(\"AAAAAAAAA\");$(\"#{0}\").focus();", control));
+                    break;
+            }
+            return HTML;
+
         }
 
+        #endregion
 
-        public CollectionOrdenCompra GetOrdenCompra_Plan(int IdPlan)
+        #region SolicitudRecurso
+        public string GetCabeceraSolicitud() 
         {
-            blCompras bl = new blCompras();
-            CollectionOrdenCompra ocol = bl.GetOrdenCompra_Plan(IdPlan);
-            return ocol;
+            Usuario user = (Usuario)System.Web.HttpContext.Current.Session[Constant.nameUser];
+            string HTML = string.Empty;
+            HTML = Common.InvokeTextHTML(string.Format(
+                "$(\"#txtFechaRegistroModal\").val(\"{0}\");" +
+                "$(\"#txtAreaModal\").val(\"{1}\");" +
+                "$(\"#txtResponsableModal\").val(\"{2}\");" +
+                "$(\"#txtTotalModal\").val(\"{3}\");", 
+                DateTime.Now.ToShortDateString(),
+                user.Area.Descripcion,
+                user.Nombre + " " + user.ApellidoPaterno + " " + user.ApellidoMaterno,
+                "0.00"));
+            return HTML;
         }
-
-
-        public List<SolicitudRecursos> GetSolicitudesPrioridad()
-        {
-            blCompras bl = new blCompras();
-            List<SolicitudRecursos> ocol = bl.GetSolicitudesPrioridad();
-            return ocol;
-        }
-
-
-        public List<PlanCompras> GetPlanCompraActivos()
-        {
-            blCompras bl = new blCompras();
-            List<PlanCompras> ocol = new List<PlanCompras>();
-            ocol.Add(bl.GetPlanCompraActivos());
-            return ocol;
-        }
-
+        #endregion
     }
 }

@@ -27,7 +27,9 @@ namespace PETCenter.DataAccess.Seguridad
                     be.ApellidoPaterno = dr["AP_USUA"].ToString();
                     be.ApellidoMaterno = dr["AM_USUA"].ToString();
                     be.DNI = dr["DNI_USUA"].ToString();
-                    be.Area = Convert.ToInt32(dr["CO_AREA"]);
+                    be.Area = new Entities.Compras.Area();
+                    be.Area.idArea = Convert.ToInt32(dr["CO_AREA"]);
+                    be.Area.Descripcion = dr["DE_AREA"].ToString();
                     be.Alias = dr["AL_USUA"].ToString();
                 }
             }

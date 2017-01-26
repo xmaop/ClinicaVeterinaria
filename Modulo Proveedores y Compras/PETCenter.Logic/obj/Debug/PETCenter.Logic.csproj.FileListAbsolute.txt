@@ -26,20 +26,6 @@ C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Lo
 C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.csprojResolveAssemblyReference.cache
 C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.dll
 C:\Users\Israel\Documents\UPC\Taller de Proyectos 3\Fuentes y BD\TP\PETCenter.Logic\obj\Debug\PETCenter.Logic.pdb
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.pdb
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Entities.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.ServiceLocation.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.pdb
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Entities.pdb
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.csprojResolveAssemblyReference.cache
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.dll
-F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.pdb
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.dll
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.pdb
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.dll
@@ -54,3 +40,17 @@ D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCent
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.csprojResolveAssemblyReference.cache
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.dll
 D:\Project\Others\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Logic.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Entities.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.DataAccess.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\bin\Debug\PETCenter.Entities.pdb
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.csprojResolveAssemblyReference.cache
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.dll
+F:\Data\DEV\UPC\ClinicaVeterinaria\Modulo Proveedores y Compras\PETCenter.Logic\obj\Debug\PETCenter.Logic.pdb
