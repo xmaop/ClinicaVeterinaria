@@ -13,17 +13,20 @@ namespace PETCenter.Entities.Compras
     /// <summary>
     /// Contains definition for SolicitudRecursos Class
     /// </summary>
-    public class SolicitudRecursos
+    public class SolicitudRecurso
     {
         public int idSolicitudRecursos { get; set; }
         public string NumSolicitudRecursos { get; set; }
         public DateTime Fecha { get; set; }
-        public bool Prioridad { get; set; }
+        public string DesFecha { get; set; }
+        public string DesPrioridad { get; set; }
+        public int Prioridad { get; set; }
         public string Observacion { get; set; }
         public string Estado { get; set; }
+        public string DesEstado { get; set; }
         public Empleado Empleado { get; set; }        
         public PlanCompra PlanCompra { get; set; }
-
+        public string Motivo { get; set; }
 
     }
 }

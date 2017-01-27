@@ -1,0 +1,152 @@
+﻿<div class="container-fluid ContentBanner">
+    <div class="col-md-9">
+        <div class="col-xs-12" style="padding: 5px 5px 5px 5px;height: 29px;">
+            <span>Aprobar Solicitud de Recursos</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+            <div class="col-xs-1 col-sm-1 home-buttom" onclick="AprobarSolicitud(); return false;" style="width:1px">
+                <center><i>&nbsp;</i></center>
+            </div>
+            <div class="col-xs-6 col-sm-6 home-buttom" onclick="getSolicitudAprobacion(); return false;">
+                <center><i class="fa fa-search">&nbsp;</i> Buscar</center>
+            </div>
+
+        </div>
+</div>
+
+<div class="container-fluid ContentPage">
+    <div id="contentBusquedaAvanzadaA" class="row">
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" style="width:130px">Nro Solicitud:</span>
+                <input type="text" class="form-control input-lg text-uppercase" id="txtNumeroSolicitud" />
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" style="width:130px">Area:</span>
+                <input id="txtArea" class="form-control input-lg text-uppercase text-uppercase" />
+
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" style="width:130px">Responsable:</span>
+                <input id="txtResponsable" class="form-control input-lg text-uppercase text-uppercase" style="width:307px" />
+
+            </div>
+        </div>
+    </div>
+    <div id="contentBusquedaAvanzadaB" class="row">
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" style="width:130px">Fecha Inicio:</span>
+                <input type="text" class="form-control input-lg text-uppercase" id="txtFechaInicio" />
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon" style="width:130px">Fecha Fin:</span>
+                <input type="text" class="form-control input-lg text-uppercase" id="txtFechaFin" />
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-4">
+            <div class="input-group input-group-sm">
+                <!--<span class="input-group-addon" style="width:130px">Estado</span>
+                <select class="form-control input-lg text-uppercase" id="ddlEstado">
+                    <option value="0">[ Todos ]</option>
+                    <option value="1">EMITIDO</option>
+                    <option value="2">EST 1</option>
+                    <option value="3">EST 2</option>
+                </select>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--GRILLA-->
+<div class="container-fluid ContentBannerBody">
+    <div class="col-xs-12" style="padding: 5px 5px 5px 20px;height: 29px;margin: 0px 0px 0px 0px;">
+        <span>Listado de Solicitud de Recursos Aprobación</span>
+    </div>
+</div>
+<div id="grid-view">
+    <div id="gridSolicitudAprobacion" class="label-sm grid-setcursor pull-left">
+    </div>
+</div>
+
+
+<!--MODAL-->
+<div class="modal fade" id="SolicitudAprobacionModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index:99997">
+    <div class="modal-dialog" style="width:95%;">
+        <div class="modal-content">
+            <div class="modal-header PopupBanner" id="SolicitudModal_header">
+                Detalle Solicitud de Recursos
+            </div>
+            <div class="modal-body" id="SolicitudModal_body">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-4">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon" style="width:130px">Presupuesto</span>
+                            <input type="text" class="form-control input-lg text-uppercase" id="txtPresupuestoModal" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-4">
+                       
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-4">
+                        
+                    </div>
+                </div>
+
+                <div id="grid-view1" class="row" style="margin-top:10px;margin-left:5px;margin-right:5px;">
+                    <div id="gridSolicitudAprobacionModal" class="label-sm grid-setcursor pull-left">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                       
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon" style="width:130px;background-color:#FFF;border:0;">Estado:</span>
+                            <input type="text" class="form-control input-lg text-uppercase" id="txtEstado" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon" style="width:130px;background-color:#FFF;border:0;">Total:</span>
+                            <input type="text" class="form-control input-lg text-uppercase" id="txtTotal" value="00.00" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon" style="width:130px;background-color:#FFF;border:0;">Observación:</span>
+                            <textarea id="taObservacion" rows="3" style="width:450px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="home-buttom col-md-3" onclick="agregarItemRecurso(); return false;" style="margin-right:3px;">
+                            <center><i class="fa fa-floppy-o">&nbsp;</i> Guardar</center>
+                        </div>
+                        <div class="home-buttom col-md-3" onclick="generarOrdenesCompra();" style="margin-right:3px;">
+                            <center><i class="fa fa-arrow-left">&nbsp;</i> Cancelar</center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" id="SolicitudModal_footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../Content/scripts/pet/pgAprobarSolicitudRecursos.js"></script>

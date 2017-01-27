@@ -117,9 +117,10 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Administracion\pgAprobarSolicitudRecursos.html" />
     <Content Include="Administracion\pgActualizarInformacionSolicitud.html" />
     <Content Include="Administracion\pgActualizarProveedor.html" />
-    <Content Include="Administracion\pgAprobarSolicitudRecursos.html" />
+    <Content Include="Administracion\pgAprobarSolicitudRecursos_.html" />
     <Content Include="Administracion\pgGestionProveedor.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
@@ -348,6 +349,7 @@
     <Content Include="Content\scripts\Mantenimientos\Ubicaciones.js" />
     <Content Include="Content\scripts\modal.js" />
     <Content Include="Content\scripts\pet\ordenCompra.js" />
+    <Content Include="Content\scripts\pet\pgAprobarInformacionSolicitud.js" />
     <Content Include="Content\scripts\pet\pgActualizarInformacionSolicitud.js" />
     <Content Include="Content\scripts\pet\pgAprobarSolicitudRecursos.js" />
     <Content Include="Content\scripts\pet\planCompras.js" />

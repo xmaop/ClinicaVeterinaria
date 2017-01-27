@@ -56,14 +56,23 @@
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\Transaction.cs" />
     <Compile Include="Compras\Area.cs" />
+    <Compile Include="Compras\CollectionEmpleado.cs" />
+    <Compile Include="Compras\CollectionArea.cs" />
+    <Compile Include="Compras\CollectionSolicitudRecursos.cs" />
+    <Compile Include="Compras\CollectionPresentacionRecurso.cs" />
+    <Compile Include="Compras\CollectionItemSolicitudRecurso.cs" />
+    <Compile Include="Compras\CollectionRecurso.cs" />
     <Compile Include="Compras\CollectionProveedores.cs" />
     <Compile Include="Compras\Empleado.cs" />
+    <Compile Include="Compras\ItemSolicitudRecurso.cs" />
     <Compile Include="Compras\PlanCompra.cs" />
+    <Compile Include="Compras\PresentacionRecurso.cs" />
+    <Compile Include="Compras\Recurso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\Option.cs" />
     <Compile Include="Compras\Proveedor.cs" />
     <Compile Include="Seguridad\Usuario.cs" />
-    <Compile Include="Compras\SolicitudRecursos.cs" />
+    <Compile Include="Compras\SolicitudRecurso.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

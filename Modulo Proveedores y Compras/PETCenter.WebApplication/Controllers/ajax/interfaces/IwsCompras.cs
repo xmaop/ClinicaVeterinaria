@@ -61,9 +61,88 @@ namespace PETCenter.WebApplication.Controllers.ajax
         [WebInvoke(Method = "POST", UriTemplate = "GetCabeceraSolicitud", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         string GetCabeceraSolicitud();
-        
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "InsertarSolicitudRecursos", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string InsertarSolicitudRecursos(int prioridad, string observacion);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "AnularSolicitudRecursos", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string AnularSolicitudRecursos(int solicitud, string motivo);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "AprobarSolicitudRecursos", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string AprobarSolicitudRecursos(int solicitud, string motivo, string estado);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "ActualizarSolicitudRecursos", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        string ActualizarSolicitudRecursos(string codigosolicitud, string observacion);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetSolicitudRecursos_Busqueda", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionSolicitudRecursos GetSolicitudRecursos_Busqueda(
+            int idsolicitudrecursos, string numerosolicitud, int area, int responsable, string fechainicio, string fechafin, string estado);
+
         #endregion
 
+        #region Recursos
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetRecurso", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionRecurso GetRecurso(int idrecurso);
+        #endregion
+
+        #region Area
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetArea", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionArea GetArea(int idarea);
+        #endregion
+
+        
+
+        #region Empleado
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetEmpleado", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionEmpleado GetEmpleado(int idempleado, int idarea);
+        #endregion
+
+        #region PresentacionRecursos
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetPresentacionRecurso", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionPresentacionRecurso GetPresentacionRecurso(int idrecurso, int idpresentacion);
+        #endregion
+
+        #region ItemSolicitudRecurso
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetItemSolicitudRecurso_A", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionItemSolicitudRecurso GetItemSolicitudRecurso_A(int idsolicitudrecurso, int idpresentacionrecurso, int cantidad);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetItemSolicitudRecurso_I", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionItemSolicitudRecurso GetItemSolicitudRecurso_I(int idsolicitudrecurso, int idpresentacionrecurso, int cantidad);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetItemSolicitudRecurso_M", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionItemSolicitudRecurso GetItemSolicitudRecurso_M(int idsolicitudrecurso, int idpresentacionrecurso, int cantidad);        
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "GetItemSolicitudRecurso_D", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        CollectionItemSolicitudRecurso GetItemSolicitudRecurso_D(int idsolicitudrecurso, int idpresentacionrecurso, int cantidad);
+        #endregion
+
+        
     }
 
 

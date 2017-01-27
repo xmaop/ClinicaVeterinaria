@@ -8,6 +8,7 @@ namespace PETCenter.Entities.Common
     public class Constant
     {
         public const string nameUser = "user";
+        public const string itemsolicitudrecursos = "itemsolicitudrecursos";
         public const string nameOptions = "options";
         public const string quote = "\"";
 
