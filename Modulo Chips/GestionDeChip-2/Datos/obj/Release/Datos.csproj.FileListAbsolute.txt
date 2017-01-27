@@ -1,0 +1,48 @@
+C:\BPCS\Datos\bin\Release\Datos.dll
+C:\BPCS\Datos\bin\Release\Datos.pdb
+C:\BPCS\Datos\bin\Release\Entidad.dll
+C:\BPCS\Datos\bin\Release\log4net.dll
+C:\BPCS\Datos\bin\Release\Entidad.pdb
+C:\BPCS\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\BPCS\Datos\obj\Release\Datos.dll
+C:\BPCS\Datos\obj\Release\Datos.pdb
+D:\Net\pobNet\Datos\bin\Release\Datos.dll
+D:\Net\pobNet\Datos\bin\Release\Datos.pdb
+D:\Net\pobNet\Datos\bin\Release\Entidad.dll
+D:\Net\pobNet\Datos\bin\Release\log4net.dll
+D:\Net\pobNet\Datos\bin\Release\Entidad.pdb
+D:\Net\pobNet\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pobNet\Datos\obj\Release\Datos.dll
+D:\Net\pobNet\Datos\obj\Release\Datos.pdb
+C:\net\pto\Datos\bin\Release\Datos.dll
+C:\net\pto\Datos\bin\Release\Datos.pdb
+C:\net\pto\Datos\bin\Release\Entidad.dll
+C:\net\pto\Datos\bin\Release\log4net.dll
+C:\net\pto\Datos\bin\Release\Entidad.pdb
+C:\net\pto\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\net\pto\Datos\obj\Release\Datos.dll
+C:\net\pto\Datos\obj\Release\Datos.pdb
+D:\Net\pto - copia\Datos\bin\Release\Datos.dll
+D:\Net\pto - copia\Datos\bin\Release\Datos.pdb
+D:\Net\pto - copia\Datos\bin\Release\Entidad.dll
+D:\Net\pto - copia\Datos\bin\Release\log4net.dll
+D:\Net\pto - copia\Datos\bin\Release\Entidad.pdb
+D:\Net\pto - copia\Datos\obj\Release\Datos.dll
+D:\Net\pto - copia\Datos\obj\Release\Datos.pdb
+D:\Net\pto - copia\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pto\Datos\bin\Release\Datos.dll
+D:\Net\pto\Datos\bin\Release\Datos.pdb
+D:\Net\pto\Datos\bin\Release\Entidad.dll
+D:\Net\pto\Datos\bin\Release\log4net.dll
+D:\Net\pto\Datos\bin\Release\Entidad.pdb
+D:\Net\pto\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pto\Datos\obj\Release\Datos.dll
+D:\Net\pto\Datos\obj\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.pdb
