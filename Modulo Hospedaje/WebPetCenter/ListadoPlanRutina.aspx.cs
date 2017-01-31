@@ -22,7 +22,7 @@ namespace WebPetCenter
             {
                 this.gvPlanRutina.RowEditing += new GridViewEditEventHandler(gvPlanRutina_RowEditing);
 
-                ucwTituloBandeja.Texto = "Plan Rutina";
+                ucwTituloBandeja.Texto = "Lista General de Rutinas";
                 CargarData();
                 LlenarComboRutina(cboTipoRutina);
                 LlenarComboExpediente(cboExpediente);
@@ -281,18 +281,18 @@ namespace WebPetCenter
                 String Id = gvPlanRutina.DataKeys[e.RowIndex].Values["Id_Plan"].ToString();
                 DateTime MinAplicacion = DateTime.Parse(gvPlanRutina.DataKeys[e.RowIndex].Values["MinAplicacion"].ToString());
 
-                //if (DateTime.Compare(MinAplicacion, DateTime.Now) < 0)
-                //{
-                //    MessageBox("Alerta", this.Page, "No se puede eliminar el registro. Ya se aplicó uno o más Rutinas.");
+                if (DateTime.Compare(MinAplicacion, DateTime.Now) < 0)
+                {
+                    MessageBox("Alerta", this.Page, "No se puede eliminar el registro. Ya se aplicó uno o más Rutinas.");
 
-                //}
-                //else
-                //{
+                }
+                else
+                {
                     int correlativo = Convert.ToInt32(Id);
                     this.Eliminar(correlativo);
                     MessageBox("Confirmación", this.Page, "Se eliminó el registro correctamente");
                     CargarData();
-                //}
+                }
             }
             catch (Exception arex)
             {
@@ -373,8 +373,15 @@ namespace WebPetCenter
                 var fecha = gvDetalle.Rows[e.NewEditIndex].FindControl("lblFecha_Aplicacion") as Label;
 
                 lblDetalleRutina.Text = "Detalle Rutina " + fecha.Text.ToString();
+
+               
                 Int32 strCodigo = Int32.Parse(codigo.Text);
                 hIdDetAplicacion.Value = strCodigo.ToString();
+                txtHoraAplicacion.Text = string.Empty;
+                cboTipoRutina.SelectedIndex = 0;
+                txtObservacion.Text = string.Empty;
+
+                
                 gvAplicacion.DataSource = ListaDetalle[strCodigo - 1].ListadDetalleSec;
                 gvAplicacion.DataBind();
                 ListaDetalleApl = ListaDetalle[strCodigo - 1].ListadDetalleSec;
@@ -422,6 +429,7 @@ namespace WebPetCenter
             {
                 cboExpediente.Enabled = false;
                 lblCronograma.Visible = true;
+               
                 gvDetalle.DataSource = ListaDetalle;
                 gvDetalle.DataBind();
             }
@@ -496,7 +504,7 @@ namespace WebPetCenter
                     objBE.Id_Tipo_Rutina = Int32.Parse(cboTipoRutina.SelectedValue.ToString());
                     objBE.Rutina = cboTipoRutina.SelectedItem.Text;
                     objBE.Observacion = txtObservacion.Text;
-
+                   
                     foreach (BEPlanRutinaDetAp obj in ListaApp)
                     {
                         if ( obj.HoraAplicacion.Equals(objBE.HoraAplicacion))
@@ -510,6 +518,7 @@ namespace WebPetCenter
 
                     if (conta == 0)
                     {
+                       
                          ListaApp.Add(objBE);
                     }
                    
@@ -526,6 +535,7 @@ namespace WebPetCenter
                 }
                 if (conta == 0)
                 {
+                    
                     ListaDetalleApl = ListaApp;
                     UpdateItem();
                     upModal.Update();

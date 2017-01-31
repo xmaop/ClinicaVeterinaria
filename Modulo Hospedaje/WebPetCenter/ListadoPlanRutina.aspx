@@ -112,12 +112,12 @@
             
             <tr>
                   <td> <div class="form-inline">
-            <label for="InputPlan">Codigo :</label>
-            <input type="text" runat="server" class="form-control" id="InputPlan" placeholder="Codigo Plan"  />
+            <label for="InputPlan">Cod. Rutina :</label>
+            <input type="text" runat="server" class="form-control" id="InputPlan" placeholder="Código Rutina"  />
             <label for="InputServicio">Hospedaje:</label>
-            <input type="text" runat="server" class="form-control" id="InputServicio" placeholder="Codigo Hospedaje"  />
+            <input type="text" runat="server" class="form-control" id="InputServicio" placeholder="Código Hospedaje"  />
             <label for="InputMascota">Paciente:</label>
-            <input type="text" runat="server" class="form-control" id="InputMascota" placeholder="Codigo Paciente"  />
+            <input type="text" runat="server" class="form-control" id="InputMascota" placeholder="Código Paciente"  />
             <label for="InputNombreMascota">Nombre:</label>
             <input type="text" runat="server" class="form-control" id="InputNombreMascota" placeholder="Nombre Paciente" />
             <label for="InputEspecie">Especie:</label>
@@ -139,37 +139,24 @@
                           onrowdeleting="gvPlanRutina_RowDeleting"  OnRowDataBound="gvPlanRutina_RowDataBound" >
                     <Columns>
                         
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:ImageButton ID="imbEditRow" runat="server" CommandName="Edit" ImageUrl="~/Imagenes/Iconos/ico_editadetalleregistro.png"
-                                    CausesValidation="false" ToolTip="Modificar" />
-                                    <asp:Label visible="false" ID="lblCodEdit" runat="server" Text='<%# Bind("Id_Plan") %>' />
-                            </ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="30px" />
-                        </asp:TemplateField>
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:ImageButton ID="imbDeleteRow" runat="server" CommandName="Delete" CausesValidation="false" ImageUrl="~/Imagenes/Iconos/ico_eliminaregistro.png"
-                                    ToolTip="Eliminar" /></ItemTemplate>
-                            <ItemStyle HorizontalAlign="Center" Width="30px" />
-                        </asp:TemplateField>
+                       
 
                        <asp:TemplateField HeaderText="Id_Plan" SortExpression="Id_Plan" Visible="False">
                        <ItemTemplate>
                          <asp:Label ID="lblIdPlanDet" runat="server" Text='<%# Bind("Id_Plan") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Codigo" SortExpression="Codigo"  HeaderStyle-Width="100px">
+                 <asp:TemplateField HeaderText="Cod. Rutina" SortExpression="Codigo"  HeaderStyle-Width="100px">
                      <ItemTemplate>
                          <asp:Label ID="lblCodigo" runat="server" Text='<%# Bind("Codigo") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Hospedaje" SortExpression="Hospedaje"  HeaderStyle-Width="100px">
+                 <asp:TemplateField HeaderText="Cod. Hospedaje" SortExpression="Hospedaje"  HeaderStyle-Width="100px">
                      <ItemTemplate>
                          <asp:Label ID="lblHospedaje" runat="server" Text='<%# Bind("Servicio") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Codigo Paciente" SortExpression="CodigoMascota" HeaderStyle-Width="140px">
+                 <asp:TemplateField HeaderText="Cod. Paciente" SortExpression="CodigoMascota" HeaderStyle-Width="140px">
                      <ItemTemplate>
                          <asp:Label ID="lblCodigoMascota" runat="server" Text='<%# Bind("CodigoMascota") %>'></asp:Label>
                      </ItemTemplate>
@@ -204,13 +191,30 @@
                      </ItemTemplate>
                     <HeaderStyle Width="120px"></HeaderStyle>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="# días" SortExpression="DiasHospedaje" HeaderStyle-Width="140px" >
+                 <asp:TemplateField HeaderText="N° días" SortExpression="DiasHospedaje" HeaderStyle-Width="140px" >
                      <ItemTemplate>
                          <asp:Label ID="lblDiasHospedaje" runat="server" Text='<%# Bind("DiasHospedaje") %>'></asp:Label>
                      </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center"  Width="70px"></ItemStyle>
                     <HeaderStyle Width="70px"></HeaderStyle>
                  </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Editar">
+                            <ItemTemplate>
+                                <asp:ImageButton ID="imbEditRow" runat="server" CommandName="Edit" ImageUrl="~/Imagenes/Botones/bot_editar_on.png"
+                                    CausesValidation="false" ToolTip="Editar" />
+                                    <asp:Label visible="false" ID="lblCodEdit" runat="server" Text='<%# Bind("Id_Plan") %>' />
+                            </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" Width="30px" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Eliminar">
+                            <ItemTemplate>
+                                <asp:ImageButton ID="imbDeleteRow" runat="server" CommandName="Delete" CausesValidation="false" ImageUrl="~/Imagenes/Botones/bot_eliminar_on.png"
+                                    ToolTip="Eliminar" /></ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" Width="30px" />
+                        </asp:TemplateField>
+
+
                        </Columns>
              <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" Font-Size ="11px" HorizontalAlign="Center" />
              <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"  Font-Size ="11px" HorizontalAlign="Center"/>
@@ -233,14 +237,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
+                        <h2 class="modal-title"><asp:Label ID="lblModalTitle" runat="server" Text="" Font-Size="Larger" Font-Bold="True"></asp:Label></h2>
                     </div>
                     <div class="modal-body">
                         <asp:Label ID="lblModalBody" CssClass="TituloPersiana" runat="server" Text=""></asp:Label>
                                     <div class="form-group">
                         <table style="width:100%">
                             <tr>
-                                <td><label  class="form-control-label">Hospedaje:</label></td>
+                                <td><label  class="form-control-label">Cod. Hospedaje:</label></td>
                                 <td><input type="hidden" class="form-control" id="hndIdServicio" runat="server" style="width:120px" >
                                     <asp:DropDownList id="cboExpediente" runat="server" style="width:120px" AutoPostBack="True" onselectedindexchanged="cboExpediente_Change" ></asp:DropDownList>
                                 </td>
@@ -263,11 +267,11 @@
                                
                                         </tr>
                                         <tr>
-                                            <td><label  class="form-control-label">Edad:</label></td>
+                                            <td><label  class="form-control-label">Edad (Años):</label></td>
                                             <td><input type="text" class="form-control" id="txtAnioMascota" runat="server" style="width:60px" disabled></td>
                                             <td><label  class="form-control-label">Sexo:</label></td>
                                             <td><input type="text" class="form-control" id="txtSexoMascota" runat="server" style="width:60px" disabled></td>
-                                            <td><label  class="form-control-label">Peso:</label></td>
+                                            <td><label  class="form-control-label">Peso (Kg.):</label></td>
                                             <td><input type="text" class="form-control" id="txtPesoMascota" runat="server" style="width:60px" disabled></td>
                                             
                                         </tr>
@@ -319,7 +323,7 @@
                         <asp:TemplateField HeaderText="Editar">
                             <ItemTemplate>
                                 <asp:ImageButton ID="imbEditRow" runat="server" CommandName="Edit" ImageUrl="~/Imagenes/Iconos/ico_editadetalleregistro.png"
-                                    CausesValidation="false" ToolTip="Modificar" />
+                                    CausesValidation="false" ToolTip="Editar" />
                                     <asp:Label visible="false" ID="lblCodEdit" runat="server" Text='<%# Bind("Id_Secuencia") %>' />  
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Center" Width="30px" />
@@ -367,7 +371,7 @@
                                         <tr>
                                             <td><label  class="form-control-label">Observación:</label></td>
                                             <td colspan="4"><asp:TextBox ID="txtObservacion"   runat="server" Width="350px" Height="20px" Font-Size="Small" TextMode="MultiLine" Rows="3"></asp:TextBox></td>
-                                           <td><asp:ImageButton ID="btnAgregar" ValidationGroup="Detalle"   CausesValidation="true"  runat="server" Height="30px" ImageAlign="Baseline" ImageUrl="~/Image/Grabar.png" OnClick="btnAgregar_Click" OnClientClick="javascript:return ValidateDetalle()"  Width="30px" ToolTip="Agregar" /></td>
+                                           <td><asp:ImageButton ID="btnAgregar" ValidationGroup="Detalle"   CausesValidation="true"  runat="server" Height="30px" ImageAlign="Baseline" ImageUrl="~/Imagenes/Botones/boton_agregar_.gif" OnClick="btnAgregar_Click" OnClientClick="javascript:return ValidateDetalle()"  Width="80px" ToolTip="Agregar" /></td>
                                         </tr>
                                         <tr>
                                             <td colspan="6">
@@ -394,7 +398,7 @@
                                                     <asp:TemplateField HeaderText="Editar">
                                                     <ItemTemplate>
                                                     <asp:ImageButton ID="imbEditRow" runat="server" CommandName="Edit" ImageUrl="~/Imagenes/Iconos/ico_editadetalleregistro.png"
-                                                    ToolTip="Modificar"  />
+                                                    ToolTip="Editar"  />
                                                     <asp:Label visible="false" ID="lblCodEdit" runat="server" Text='<%# Bind("Id_SecuenciaDet") %>' />
                                                     </ItemTemplate>
                                                     <ItemStyle HorizontalAlign="Center" Width="30px" />

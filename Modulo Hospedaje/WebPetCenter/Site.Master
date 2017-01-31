@@ -60,7 +60,10 @@
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="~/ListadoServicioHospedaje">Servicio de Hospedaje</a></li>
                                 <li><a runat="server" href="~/ListadoPlanAlimenticio">Plan Alimenticio</a></li>
-                                <li><a runat="server" href="~/ListadoPlanRutina">Rutina</a></li>                  
+                                <li><a runat="server" href="~/ListadoPlanRutina">Rutina</a></li>        
+                                <li><a runat="server" href="~/ListadoCaniles">Caniles</a></li>         
+                                <li><a runat="server" href="~/PanelControl">Control de Capacidad de Atención</a></li>
+                                <li><a runat="server" href="~/ReportedeSalidaMascotas">Reporte de Ingreso y Salida de Pacientes</a></li>                            
                                 <%--<li><a href="#"><i class="fa fa-fw fa-envelope">&nbsp;</i>Notificaciones</a></li>--%>
                                 <%--<li class="divider"></li>
                                 <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Cerrar Sesión</a></li>--%>

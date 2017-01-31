@@ -42,6 +42,30 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\PetCenter.Negocio\bin\Debug\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v16.2.Web, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.2.Presets, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.2.Win, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraMap.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -112,6 +136,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Controles\ucwAceptarCerrar.ascx" />
     <Content Include="Controles\ucwAsterisco.ascx" />
+    <Content Include="Controles\ucwVerDisponibilidad.ascx" />
     <Content Include="Controles\ucwBuscarLimpiar.ascx" />
     <Content Include="Controles\ucwFecha.ascx" />
     <Content Include="Controles\ucwGrabarCerrar.ascx" />
@@ -390,6 +415,8 @@
     <Content Include="Image\icon_trash-it.png" />
     <Content Include="Image\office_calendar.png" />
     <Content Include="Image\PlanAlimenticio.jpg" />
+    <Content Include="ListadoCanilesDisponibilidad.aspx" />
+    <Content Include="ListadoCaniles.aspx" />
     <Content Include="ListadoPlanRutina.aspx" />
     <Content Include="ListadoServicioHospedaje.aspx" />
     <Content Include="ListadoPlanAlimenticio.aspx" />
@@ -397,8 +424,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="PanelControl.aspx" />
     <Content Include="Principal\controles.skin" />
     <Content Include="App_Themes\Principal\controles.skin" />
+    <Content Include="ReportedeSalidaMascotas.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\222.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -482,6 +511,13 @@
     <Compile Include="Controles\ucwAsterisco.ascx.designer.cs">
       <DependentUpon>ucwAsterisco.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controles\ucwVerDisponibilidad.ascx.cs">
+      <DependentUpon>ucwVerDisponibilidad.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ucwVerDisponibilidad.ascx.designer.cs">
+      <DependentUpon>ucwVerDisponibilidad.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controles\ucwBuscarLimpiar.ascx.cs">
       <DependentUpon>ucwBuscarLimpiar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -531,12 +567,32 @@
     <Compile Include="Controles\ucwTituloPopup.ascx.designer.cs">
       <DependentUpon>ucwTituloPopup.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dashboard1.Designer.cs">
+      <DependentUpon>Dashboard1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoCanilesDisponibilidad.aspx.cs">
+      <DependentUpon>ListadoCanilesDisponibilidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoCanilesDisponibilidad.aspx.designer.cs">
+      <DependentUpon>ListadoCanilesDisponibilidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoCaniles.aspx.cs">
+      <DependentUpon>ListadoCaniles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoCaniles.aspx.designer.cs">
+      <DependentUpon>ListadoCaniles.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListadoPlanRutina.aspx.cs">
       <DependentUpon>ListadoPlanRutina.aspx</DependentUpon>
@@ -562,7 +618,27 @@
     <Compile Include="ListadoServicioHospedaje.aspx.designer.cs">
       <DependentUpon>ListadoServicioHospedaje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PanelControl.aspx.cs">
+      <DependentUpon>PanelControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelControl.aspx.designer.cs">
+      <DependentUpon>PanelControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportedeSalidaMascotas.aspx.cs">
+      <DependentUpon>ReportedeSalidaMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportedeSalidaMascotas.aspx.designer.cs">
+      <DependentUpon>ReportedeSalidaMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSalidaMascotas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteSalidaMascotas.Designer.cs">
+      <DependentUpon>ReporteSalidaMascotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -593,6 +669,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PetCenter.Datos\PetCenter.Datos.csproj">
+      <Project>{f49fab10-00c7-42c9-943f-23637737c0a2}</Project>
+      <Name>PetCenter.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetCenter.DBUtility\PetCenter.DBUtility.csproj">
       <Project>{60c00723-278d-48d4-9778-80fba08db65e}</Project>
       <Name>PetCenter.DBUtility</Name>
@@ -601,10 +681,23 @@
       <Project>{176f8980-ac28-4f0b-ba54-3d834a57d8e8}</Project>
       <Name>PetCenter.Entidad</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PetCenter.ExceptionManagement\PetCenter.ExceptionManagement.csproj">
+      <Project>{f0ec6238-f384-47e5-af95-d082c84ecf1c}</Project>
+      <Name>PetCenter.ExceptionManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PetCenter.Negocio\PetCenter.Negocio.csproj">
       <Project>{93784d9c-9a98-4dfe-8130-d5203bf55450}</Project>
       <Name>PetCenter.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dashboard1.resx">
+      <DependentUpon>Dashboard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ReporteSalidaMascotas.resx">
+      <DependentUpon>ReporteSalidaMascotas.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

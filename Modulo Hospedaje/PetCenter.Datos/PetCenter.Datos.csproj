@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DACanil.cs" />
     <Compile Include="DAPlanRutina.cs" />
     <Compile Include="DARevisionMedica.cs" />
     <Compile Include="DAServicioHospedaje.cs" />

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLCanil.cs" />
     <Compile Include="BLPlanRutina.cs" />
     <Compile Include="BLRevisionMedica.cs" />
     <Compile Include="BLServicioHospedaje.cs" />

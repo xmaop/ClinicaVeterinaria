@@ -12,6 +12,14 @@ C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\bin\Debu
 C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.dll
 C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.pdb
 C:\Users\Jullyzza\Downloads\PetCenter (1)\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidad.csprojResolveAssemblyReference.cache
+D:\DDD\PetCenter\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.dll
+D:\DDD\PetCenter\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.pdb
+D:\DDD\PetCenter\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.dll
+D:\DDD\PetCenter\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.dll
