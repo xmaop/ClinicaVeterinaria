@@ -67,13 +67,31 @@ namespace WebPetCenter {
         protected global::System.Web.UI.HtmlControls.HtmlInputText InputNombreCanil;
         
         /// <summary>
-        /// InputEspecie control.
+        /// InputEspecieCbo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputEspecie;
+        protected global::System.Web.UI.WebControls.DropDownList InputEspecieCbo;
+        
+        /// <summary>
+        /// InputTamanioCbo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList InputTamanioCbo;
+        
+        /// <summary>
+        /// InputEstadoCbo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList InputEstadoCbo;
         
         /// <summary>
         /// _Operacion control.
@@ -157,13 +175,13 @@ namespace WebPetCenter {
         protected global::System.Web.UI.WebControls.TextBox txtCanil;
         
         /// <summary>
-        /// txtCapacidad control.
+        /// cboTipoRaza control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCapacidad;
+        protected global::System.Web.UI.WebControls.DropDownList cboTipoRaza;
         
         /// <summary>
         /// cboEspecie control.
@@ -173,6 +191,15 @@ namespace WebPetCenter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cboEspecie;
+        
+        /// <summary>
+        /// txtObservaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
         /// chkLimpio control.

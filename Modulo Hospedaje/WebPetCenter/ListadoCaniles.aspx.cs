@@ -23,7 +23,11 @@ namespace WebPetCenter
 
                 ucwTituloBandeja.Texto = "Canil";
                 CargarData();
-                LlenarComboEspecie(cboEspecie);
+                LlenarComboEspecie(cboEspecie, "Seleccionar");
+                LlenarComboTipoRaza(cboTipoRaza, "Seleccionar");
+                LlenarComboEspecie(InputEspecieCbo, "Todos");
+                LlenarComboTipoRaza(InputTamanioCbo, "Todos");
+                LlenarComboEstado(InputEstadoCbo, "Todos");
             }
             else
             {
@@ -36,20 +40,49 @@ namespace WebPetCenter
             }
 
         }
-        void LlenarComboEspecie(DropDownList cbo)
+        void LlenarComboEstado(DropDownList cbo, String texto)
         {
             try
             {
-                Bind(objBL.ListarEspecie(), "codigo", "Nombre", cbo);
-                cbo.Items.Insert(0, new ListItem("--Seleccione--", "-1"));
+                cbo.Items.Insert(0, new ListItem("--" + texto + "--", "-1"));
+                cbo.Items.Insert(1, new ListItem("LIBRE", "1"));
+                cbo.Items.Insert(2, new ListItem("OCUPADO", "2"));
+                cbo.Items.Insert(3, new ListItem("SUCIO", "3"));
             }
-            
+
             catch (Exception ex)
             {
                 MessageBox("Error", this, ex.Message);
             }
         }
-      
+
+        void LlenarComboEspecie(DropDownList cbo, String texto)
+        {
+            try
+            {
+                Bind(objBL.ListarEspecie(), "codigo", "Nombre", cbo);
+                cbo.Items.Insert(0, new ListItem("--" + texto + "--", "-1"));
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox("Error", this, ex.Message);
+            }
+        }
+
+        void LlenarComboTipoRaza(DropDownList cbo, String texto)
+        {
+            try
+            {
+                Bind(objBL.ListarTamanio(), "codigo", "Nombre", cbo);
+                cbo.Items.Insert(0, new ListItem("--" + texto + "--", "-1"));
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox("Error", this, ex.Message);
+            }
+        }
         public void Bind(Object values, string valuefield, string textfield, DropDownList ddl)
         {
             ddl.DataSource = values;
@@ -62,9 +95,9 @@ namespace WebPetCenter
       {
 
           try
-          {
-              gvCaniles.DataSource = objBL.ListarCaniles(InputCodigo.Value, InputNombreCanil.Value, InputEspecie.Value);
-              gvCaniles.DataBind();
+            {
+                gvCaniles.DataSource = objBL.ListarCaniles(InputCodigo.Value, InputNombreCanil.Value, Int32.Parse((InputEspecieCbo.SelectedValue==""?"-1": InputEspecieCbo.SelectedValue)), Int32.Parse((InputTamanioCbo.SelectedValue == "" ? "-1" : InputTamanioCbo.SelectedValue)), Int32.Parse((InputEstadoCbo.SelectedValue == "" ? "-1" : InputEstadoCbo.SelectedValue) ));
+                gvCaniles.DataBind();
           }
           catch (Exception ex)
           {
@@ -89,13 +122,13 @@ namespace WebPetCenter
         
         protected void OnOnExportar(Object sender, EventArgs e)
         {
-            List<BECanil> dtDatos = objBL.ListarCaniles(InputCodigo.Value, InputNombreCanil.Value, InputEspecie.Value);
-          
+            List<BECanil> dtDatos = objBL.ListarCaniles(InputCodigo.Value, InputNombreCanil.Value, Int32.Parse((InputEspecieCbo.SelectedValue == "" ? "-1" : InputEspecieCbo.SelectedValue)), Int32.Parse((InputTamanioCbo.SelectedValue == "" ? "-1" : InputTamanioCbo.SelectedValue)), Int32.Parse((InputEstadoCbo.SelectedValue == "" ? "-1" : InputEstadoCbo.SelectedValue)));
             try
             {
 
-           
-                String[] aHeaders = { "Codigo", "Nombre","Especie","Tamaño" };
+
+
+                String[] aHeaders = { "Codigo", "Nombre", "Especie", "Tamaño", "Observaciones","Estado" };
 
                 string mHeader = null;
                 if ((dtDatos.Count > 0))
@@ -128,11 +161,11 @@ namespace WebPetCenter
                         mHeader = mHeader + "<td style='background-color:#F7F6F3'>" + obj.Nombre + "</td>";
                         mHeader = mHeader + "<td style='background-color:#F7F6F3'>" + obj.Especie + "</td>";
                         mHeader = mHeader + "<td style='background-color:#F7F6F3'>" + obj.Tamanio + "</td>";
+                        mHeader = mHeader + "<td style='background-color:#F7F6F3'>" + obj.Observaciones + "</td>";
+                        mHeader = mHeader + "<td style='background-color:#F7F6F3'>" + obj.Estado + "</td>";
 
                         mHeader = mHeader + "</tr>";
                     }
-
-
 
 
                     Response.Clear();
@@ -163,7 +196,9 @@ namespace WebPetCenter
         }
         protected void OnOnLimpiar(Object sender, EventArgs e)
         {
-            InputEspecie.Value = "";
+            InputEspecieCbo.SelectedValue = "-1";
+            InputTamanioCbo.SelectedValue = "-1";
+            InputEstadoCbo.SelectedValue = "-1";
             InputCodigo.Value = "";
             InputNombreCanil.Value = "";
             CargarData();
@@ -173,6 +208,7 @@ namespace WebPetCenter
         {
             try
             {
+
                 lblModalTitle.Text = "Editar Caniles";
                 trCodigoCanil.Visible = true;
                 LimpiarControles();
@@ -180,10 +216,12 @@ namespace WebPetCenter
                 hndIdCanil.Value = codigo.ToString();
                 txtCodigoCanil.Value = objBE.CodigoCanil.ToString();
                 txtCanil.Text = objBE.Nombre.ToString();
-                txtCapacidad.Text = objBE.Tamanio.ToString();
+                txtObservaciones.Text = objBE.Observaciones.ToString();
                 chkLimpio.Checked = objBE.limpio;
 
+                cboTipoRaza.SelectedValue = objBE.Id_Tamanio.ToString();
                 cboEspecie.SelectedValue = objBE.Id_Especie.ToString();
+                btnGrabar.Visible = (!objBE.ocupado);
                 upModal.Update();
             }
             catch (Exception ex)
@@ -235,7 +273,7 @@ namespace WebPetCenter
             try
             {
                 String Id = gvCaniles.DataKeys[e.RowIndex].Values["Id_Canil"].ToString();
-                Boolean ocupado =  (gvCaniles.DataKeys[e.RowIndex].Values["ocupado"].ToString()=="1");
+                Boolean ocupado =  (gvCaniles.DataKeys[e.RowIndex].Values["ocupado"].ToString()=="True");
 
                 if (ocupado)
                 {
@@ -279,8 +317,9 @@ namespace WebPetCenter
             {
                 BECanil objNew = new BECanil();
                 objNew.Nombre = txtCanil.Text;
-                objNew.Tamanio = txtCapacidad.Text;
-                objNew.Id_Especie  = Int32.Parse(cboEspecie.SelectedValue);
+                objNew.Id_Tamanio = Int32.Parse(cboTipoRaza.SelectedValue);
+                objNew.Id_Especie = Int32.Parse(cboEspecie.SelectedValue);
+                objNew.Observaciones = txtObservaciones.Text;
                 objNew.limpio = chkLimpio.Checked;
 
 
@@ -315,7 +354,8 @@ namespace WebPetCenter
         void LimpiarControles()
         {
             txtCanil.Text = "";
-            txtCapacidad.Text = "";
+            txtObservaciones.Text = "";
+            cboTipoRaza.SelectedValue = "-1";
             cboEspecie.SelectedValue = "-1";
             hndIdCanil.Value = "";
             chkLimpio.Checked = false;

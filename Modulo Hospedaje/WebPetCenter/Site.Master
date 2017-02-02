@@ -54,16 +54,17 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="sectionname">
+                            <a href="~/" class="dropdown-toggle" aria-expanded="false" data-toggle="dropdown" id="sectionname">
                                 <i class="fa fa-user">Hospedaje</i>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="~/ListadoServicioHospedaje">Servicio de Hospedaje</a></li>
                                 <li><a runat="server" href="~/ListadoPlanAlimenticio">Plan Alimenticio</a></li>
-                                <li><a runat="server" href="~/ListadoPlanRutina">Rutina</a></li>        
-                                <li><a runat="server" href="~/ListadoCaniles">Caniles</a></li>         
+                                <li><a runat="server" href="~/ListadoPlanRutina">Rutinas</a></li>        
+                                <li><a runat="server" href="~/ListadoCaniles">Caniles</a></li>  
+                                <li><a runat="server" href="~/ListadoTurnos">Turnos</a></li> 
                                 <li><a runat="server" href="~/PanelControl">Control de Capacidad de Atención</a></li>
-                                <li><a runat="server" href="~/ReportedeSalidaMascotas">Reporte de Ingreso y Salida de Pacientes</a></li>                            
+                                <li><a runat="server" href="~/ReportedeSalidaMascotas">Reporte de Ingreso y Salida de Pacientes</a></li>                    
                                 <%--<li><a href="#"><i class="fa fa-fw fa-envelope">&nbsp;</i>Notificaciones</a></li>--%>
                                 <%--<li class="divider"></li>
                                 <li><a href="#" id="sectionclosed" onclick="ClosedSession();return false;"><i class="fa fa-fw fa-power-off">&nbsp;</i>Cerrar Sesión</a></li>--%>

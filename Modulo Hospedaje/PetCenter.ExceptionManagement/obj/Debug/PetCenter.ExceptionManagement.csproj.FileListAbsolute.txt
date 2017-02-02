@@ -36,3 +36,4 @@ D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCent
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.csproj.GenerateResource.Cache
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.ExceptionManagement\obj\Debug\PetCenter.ExceptionManagement.csprojResolveAssemblyReference.cache

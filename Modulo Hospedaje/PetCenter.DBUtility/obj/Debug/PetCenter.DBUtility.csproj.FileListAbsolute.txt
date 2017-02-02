@@ -27,3 +27,4 @@ D:\Proyectos\Otros\UPC\PetCenter\PetCenter.DBUtility\bin\Debug\Microsoft.Practic
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.DBUtility\bin\Debug\Microsoft.Practices.Unity.Interception.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.DBUtility\obj\Debug\PetCenter.DBUtility.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.DBUtility\obj\Debug\PetCenter.DBUtility.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.DBUtility\obj\Debug\PetCenter.DBUtility.csprojFakesResolveAssemblyReference.cache

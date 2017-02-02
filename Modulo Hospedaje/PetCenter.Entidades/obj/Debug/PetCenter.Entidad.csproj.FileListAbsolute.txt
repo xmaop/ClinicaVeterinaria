@@ -24,3 +24,4 @@ D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidad
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\bin\Debug\PetCenter.Entidades.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidades.pdb
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Entidades\obj\Debug\PetCenter.Entidad.csprojResolveAssemblyReference.cache

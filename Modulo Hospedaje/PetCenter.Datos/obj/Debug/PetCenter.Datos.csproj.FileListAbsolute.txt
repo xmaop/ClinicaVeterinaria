@@ -44,6 +44,7 @@ D:\DDD\PetCenter\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.DBUtility.pdb
 D:\DDD\PetCenter\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.Entidades.pdb
 D:\DDD\PetCenter\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.ExceptionManagement.pdb
 C:\Users\user\Documents\Visual Studio 2015\Projects\PetCenter\PetCenter.Datos\obj\Debug\PetCenter.Datos.csprojResolveAssemblyReference.cache
+D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\obj\Debug\PetCenter.Datos.csprojResolveAssemblyReference.cache
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.Datos.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.Datos.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\AVT.Framework.DataAccess.dll
@@ -58,6 +59,5 @@ D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.ExceptionMa
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.DBUtility.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.Entidades.pdb
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\bin\Debug\PetCenter.ExceptionManagement.pdb
-D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\obj\Debug\PetCenter.Datos.csprojResolveAssemblyReference.cache
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\obj\Debug\PetCenter.Datos.dll
 D:\Proyectos\Otros\UPC\PetCenter\PetCenter.Datos\obj\Debug\PetCenter.Datos.pdb

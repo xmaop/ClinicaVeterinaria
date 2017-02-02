@@ -52,13 +52,14 @@ namespace PetCenter.DataAccess
                     Id_Canil = Convert.ToInt32(helper.GetValue<Int32>("Id_Canil")),
                     Codigo = Convert.ToInt32(helper.GetValue<Int32>("Id_Canil")),
                     CodigoCanil =helper.GetValue<String>("Codigo"),
-                    Tamanio = helper.GetValue<String>("tamanio").ToString(),                   
+                    Id_Tamanio = helper.GetValue<Int32>("Id_Tamanio"),                   
                     Especie = helper.GetValue<String>("Especie").ToString(),
                     Nombre = helper.GetValue<String>("Nombre").ToString(),
                     Estado = helper.GetValue<String>("Estado").ToString(),
                     Id_Especie = Convert.ToInt32(helper.GetValue<Int32>("tipoEspecie")),
                     limpio = helper.GetValue<Boolean>("limpio"),
-                    ocupado = helper.GetValue<Boolean>("ocupado")
+                    ocupado = helper.GetValue<Boolean>("ocupado"),
+                    Observaciones = helper.GetValue<String>("Descripcion")
 
                 };
             });
@@ -96,21 +97,23 @@ namespace PetCenter.DataAccess
      
         #endregion
 
-        public List<BECanil> ListarCaniles(String InputCodigo, String InputNombreCanil, String InputEspecie)
+        public List<BECanil> ListarCaniles(String InputCodigo, String InputNombreCanil,Int32 InputEspecie, Int32 InputTamanio, Int32 InputEstado)
         {
-            List<BECanil> lista = base.ExecuteGetList<BECanil>(getListarCaniles(db, InputCodigo, InputNombreCanil, InputEspecie),
+            List<BECanil> lista = base.ExecuteGetList<BECanil>(getListarCaniles(db, InputCodigo, InputNombreCanil, InputEspecie, InputTamanio, InputEstado),
                                                                        getListarCaniles());
 
 
             return lista;
         }
 
-        public DbCommand getListarCaniles(Database db, String InputCodigo, String InputNombreCanil, String InputEspecie)
+        public DbCommand getListarCaniles(Database db, String InputCodigo, String InputNombreCanil, Int32 InputEspecie, Int32 InputTamanio, Int32 InputEstado)
         {
             DbCommand dbCommand = db.GetStoredProcCommand("GHA_USP_VET_sel_Caniles");
             db.AddInParameter(dbCommand, "@CodigoCanil", DbType.String, InputCodigo);
             db.AddInParameter(dbCommand, "@NombreCanil", DbType.String, InputNombreCanil);
-            db.AddInParameter(dbCommand, "@Especie", DbType.String, InputEspecie);
+            db.AddInParameter(dbCommand, "@Especie", DbType.Int32, InputEspecie);
+            db.AddInParameter(dbCommand, "@Tamanio", DbType.Int32, InputTamanio);
+            db.AddInParameter(dbCommand, "@Estado", DbType.Int32, InputEstado);
             return dbCommand;
         }
         public DomainObjectFactoryBase<BECanil> getListarCaniles()
@@ -129,8 +132,9 @@ namespace PetCenter.DataAccess
                     Estado = helper.GetValue<String>("Estado").ToString(),
                     Id_Especie = Convert.ToInt32(helper.GetValue<Int32>("tipoEspecie")),
                     limpio = helper.GetValue<Boolean>("limpio"),
-                    ocupado = helper.GetValue<Boolean>("ocupado")
-                    
+                    ocupado = helper.GetValue<Boolean>("ocupado"),
+                    Canilurl = helper.GetValue<String>("Canilurl"),
+                    Estado2 = helper.GetValue<String>("Estado2")
                     
                 };
             });
@@ -164,9 +168,9 @@ namespace PetCenter.DataAccess
             DbCommand dbCommand = db.GetStoredProcCommand("GHA_USP_VET_ins_Canil");
 
             db.AddInParameter(dbCommand, "@Id_Canil", DbType.Int32, identity.Id_Canil);
-            db.AddInParameter(dbCommand, "@tamanio", DbType.String, identity.Tamanio);
+            db.AddInParameter(dbCommand, "@tamanio", DbType.Int32, identity.Id_Tamanio);
             db.AddInParameter(dbCommand, "@TipoEspecie", DbType.Int32, identity.Id_Especie);
-            db.AddInParameter(dbCommand, "@Descripcion", DbType.String, identity.descripcion);
+            db.AddInParameter(dbCommand, "@Descripcion", DbType.String, identity.Observaciones);
             db.AddInParameter(dbCommand, "@Nombre", DbType.String, identity.Nombre);
             db.AddInParameter(dbCommand, "@limpio", DbType.Boolean, identity.limpio);
 
@@ -193,7 +197,42 @@ namespace PetCenter.DataAccess
         #endregion
 
 
-        
+
+
+
+        public DbCommand GetListarTamanio(Database db)
+        {
+            DbCommand dbCommand = db.GetStoredProcCommand("GHA_USP_VET_list_Tamanio");
+
+            return dbCommand;
+        }
+
+        public List<BETamanio> ListarTamanio()
+        {
+            List<BETamanio> lista = base.ExecuteGetList<BETamanio>(GetListarTamanio(db),
+                                                                           GetTamanio());
+            return lista;
+        }
+
+        public DomainObjectFactoryBase<BETamanio> GetTamanio()
+        {
+            DomainObjectFactoryBase<BETamanio> domainFactory = new DomainObjectFactoryBase<BETamanio>(delegate (IDataReader myReader)
+            {
+                MapHelper helper = new MapHelper(myReader);
+                return new BETamanio()
+                {
+
+                    Codigo = helper.GetValue<Int32>("codigo"),
+                    Nombre = helper.GetValue<String>("descripcion"),
+
+
+                };
+
+            });
+
+            return domainFactory;
+        }
+
 
         public DbCommand GetListarEspecie(Database db)
         {

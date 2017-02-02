@@ -24,8 +24,8 @@
            if ($("input[id=MainContent_txtCanil]").val() == "") {
                sMensaje = sMensaje + "* Nombre de Canil." + "</br>";
            }
-           if ($("input[id=MainContent_txtCapacidad]").val() == "") {
-               sMensaje = sMensaje + "* Capacidad máxima." + "</br>";
+           if ($("input[id=MainContent_cboTipoRaza]").val() == "" || $("#MainContent_cboTipoRaza").val() == "-1") {
+               sMensaje = sMensaje + "* Tipo raza." + "</br>";
            }
            if ($("#MainContent_cboEspecie").val() == "" || $("#MainContent_cboEspecie").val() == "-1") {
                sMensaje = sMensaje + "* Especie." + "</br>";
@@ -104,11 +104,15 @@
                   <td> 
                       <div class="form-inline">
             <label for="InputPlan">Codigo :</label>
-            <input type="text" runat="server" class="form-control" id="InputCodigo" placeholder="Codigo Canil"  />
-            <label for="InputNombreMascota">Nombre:</label>
-            <input type="text" runat="server" class="form-control" id="InputNombreCanil" placeholder="Nombre Canil" />
+            <input type="text" runat="server" class="form-control" id="InputCodigo" placeholder="Codigo Canil"  style="display:none"/>
+            <label for="InputNombreMascota" style="display:none">Nombre:</label>
+            <input type="text" runat="server" class="form-control" id="InputNombreCanil" placeholder="Nombre" />
             <label for="InputEspecie">Especie:</label>
-            <input type="text" runat="server" class="form-control" id="InputEspecie" placeholder="Especie" />
+             <asp:DropDownList class="form-control" id="InputEspecieCbo" runat="server" style="width:120px"></asp:DropDownList>
+            <label for="InputTamanio">Tamaño Canil:</label>
+             <asp:DropDownList class="form-control" id="InputTamanioCbo" runat="server" style="width:120px"></asp:DropDownList>
+            <label for="InputTamanio">Estado:</label>
+             <asp:DropDownList class="form-control" id="InputEstadoCbo" runat="server" style="width:120px"></asp:DropDownList>
         </div></td>
                 
                   
@@ -119,18 +123,48 @@
                 </div>
     
 <asp:HiddenField runat="server" ID="_Operacion" Value="" />
-     <div class="container">
+     <div class="container" style="vertical-align:central; align-content:center">
                              
                   
-                    <asp:DataList ID="gvCaniles" runat="server" RepeatDirection="Horizontal" OnItemDataBound="gvCaniles_ItemDataBound">
+                    <asp:DataList ID="gvCaniles" runat="server" RepeatDirection="Horizontal" OnItemDataBound="gvCaniles_ItemDataBound" RepeatColumns="6">
                         <ItemTemplate>
                                <asp:HiddenField ID="hndStatus" runat="server" Value='<%#DataBinder.Eval(Container.DataItem,"Estado")%>'  />
+                            <asp:Panel ID="Panel1" runat="server" ></asp:Panel>
+                                  <table border="1" style="border:thin; border-color:black;width:100%" >
+                                      <tr><td align="center">
+                                         <asp:Label id="Label1" runat="server" style="font-size:14px; font-weight:bold"  Text='<%#DataBinder.Eval(Container.DataItem,"CodigoCanil")%>'/>                              
+                                      </td>
+                                      </tr>
+
+                                      <tr><td>
+                                         <asp:ImageButton ID="btnCanil" runat="server" BorderStyle="Outset" BorderColor="WhiteSmoke"    Height="140px" Width="140px" ImageAlign="AbsBottom" AlternateText='<%#DataBinder.Eval(Container.DataItem,"Especie") %>'  ImageUrl='<%#DataBinder.Eval(Container.DataItem,"Canilurl")%>'  CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id_Canil")%>' OnClick="btnCanil_Click" />
                     
-                            <asp:Button ID="btnCanil" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CodigoCanil")%>' Height="69px" Width="140px" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id_Canil")%>' OnClick="btnCanil_Click"   />
+                                    </td> </tr>
+                                      <tr><td align="center">
+                                           <asp:Button ID="btnCanil2" runat="server" Font-Bold="true" BorderStyle="Outset" Height="30px" Width="140px" Text='<%#DataBinder.Eval(Container.DataItem,"Estado2") %>'   CommandArgument='<%#DataBinder.Eval(Container.DataItem,"Id_Canil")%>' OnClick="btnCanil2_Click" />
+                                                  
+                                      </td></tr>
+                                           </table>
                         </ItemTemplate>
                     </asp:DataList>
-                             
-                  
+                   <table style="width:100%">
+                                      <tr>
+                                          <td align="right">
+                   <table border="1" style="border:thin; border-color:black;width:20%">
+                                      <tr>
+                                          <td align="center">P</td>
+                                          <td align="center">M</td>
+                                          <td align="center">G</td>
+                                      </tr>
+                                      <tr>
+                                          <td align="center">PEQUEÑO</td>
+                                          <td align="center">MEDIANO</td>
+                                          <td align="center">GRANDE</td>
+                                      </tr>
+                        </table>
+                                       </td>
+                                      </tr>
+                        </table>
                     </div>
 
     </div>
@@ -158,27 +192,35 @@
                                
                             </tr>
                             <tr>
-                                <td><label  class="form-control-label">Nombre Canil:</label></td>
+                                <td><label  class="form-control-label">Nombre:</label></td>
                                 <td> <asp:TextBox ID="txtCanil" class="form-control"  runat="server" Width="120px" Height="20px" Font-Size="Small" ></asp:TextBox>
 
                                 </td>
                                 <td></td>
                                  </tr>
                             <tr>
-                                <td><label  class="form-control-label">Capacidad Maxima:</label></td>
-                                <td> <asp:TextBox ID="txtCapacidad" class="form-control"  runat="server" Width="120px" Height="20px" Font-Size="Small" ></asp:TextBox>
-
-                                </td>
-                                <td></td>
-                                 </tr>
+                                <td><label  class="form-control-label">Tamaño canil:</label></td>
+                                <td><asp:DropDownList class="form-control" id="cboTipoRaza" runat="server" style="width:120px"></asp:DropDownList></td>
+                                  </tr>
                             <tr>
                                 <td><label  class="form-control-label">Especie:</label></td>
                                 <td><asp:DropDownList class="form-control" id="cboEspecie" runat="server" style="width:120px"></asp:DropDownList></td>
                                   </tr>
                             <tr>
-                                <td><label  class="form-control-label">Limpio:</label></td>
-                                <td><asp:CheckBox class="form-control" id="chkLimpio" runat="server" ></asp:CheckBox></td>
-                                  </tr>
+                                <td>
+                                    <label class="form-control-label">
+                                    Observaciones:</label></td>
+                                <td>
+                                    <asp:TextBox ID="txtObservaciones" runat="server" class="form-control" Font-Size="Small" Height="150px" Rows="10" TextMode="MultiLine" Width="520px"></asp:TextBox>
+                                </td>
+                            <tr>
+                                <td>
+                                    <label class="form-control-label">
+                                    Limpio:</label></td>
+                                <td>
+                                    <asp:CheckBox ID="chkLimpio" runat="server" class="form-control" />
+                                </td>
+                            </tr>
                             </table>
 <hr>
                                         <table>

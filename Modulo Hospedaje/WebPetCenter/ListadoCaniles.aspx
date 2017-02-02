@@ -24,11 +24,11 @@
            if ($("input[id=MainContent_txtCanil]").val() == "") {
                sMensaje = sMensaje + "* Nombre de Canil." + "</br>";
            }
-           if ($("input[id=MainContent_txtCapacidad]").val() == "") {
-               sMensaje = sMensaje + "* Capacidad máxima." + "</br>";
+           if ($("input[id=MainContent_cboTipoRaza]").val() == "" || $("#MainContent_cboTipoRaza").val() == "-1") {
+               sMensaje = sMensaje + "* Tipo raza." + "</br>";
            }
            if ($("#MainContent_cboEspecie").val() == "" || $("#MainContent_cboEspecie").val() == "-1") {
-               sMensaje =  sMensaje + "* Especie." + "</br>";
+               sMensaje = sMensaje + "* Especie." + "</br>";
            }
            if (sMensaje != "") {
                sMensaje = "Debe ingresar los siguientes valores antes de continuar</br>" + sMensaje;
@@ -106,9 +106,14 @@
             <label for="InputPlan">Codigo :</label>
             <input type="text" runat="server" class="form-control" id="InputCodigo" placeholder="Codigo Canil"  />
             <label for="InputNombreMascota">Nombre:</label>
-            <input type="text" runat="server" class="form-control" id="InputNombreCanil" placeholder="Nombre Canil" />
+            <input type="text" runat="server" class="form-control" id="InputNombreCanil" placeholder="Nombre" />
             <label for="InputEspecie">Especie:</label>
-            <input type="text" runat="server" class="form-control" id="InputEspecie" placeholder="Especie" />
+             <asp:DropDownList class="form-control" id="InputEspecieCbo" runat="server" style="width:120px"></asp:DropDownList>
+            <label for="InputTamanio">Tamaño Canil:</label>
+             <asp:DropDownList class="form-control" id="InputTamanioCbo" runat="server" style="width:120px"></asp:DropDownList>
+            <label for="InputTamanio">Estado:</label>
+             <asp:DropDownList class="form-control" id="InputEstadoCbo" runat="server" style="width:120px"></asp:DropDownList>
+                         
         </div></td>
                 
                   
@@ -151,7 +156,7 @@
                          <asp:Label ID="lblCodigo" runat="server" Text='<%# Bind("CodigoCanil") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Nombre Canil" SortExpression="NombreCanil" HeaderStyle-Width="140px">
+                 <asp:TemplateField HeaderText="Nombre" SortExpression="NombreCanil" HeaderStyle-Width="140px">
                      <ItemTemplate>
                          <asp:Label ID="lblNombreCanil" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
                      </ItemTemplate>
@@ -211,29 +216,36 @@
                                
                             </tr>
                             <tr>
-                                <td><label  class="form-control-label">Nombre Canil:</label></td>
+                                <td><label  class="form-control-label">Nombre:</label></td>
                                 <td> <asp:TextBox ID="txtCanil" class="form-control"  runat="server" Width="120px" Height="20px" Font-Size="Small" ></asp:TextBox>
 
                                 </td>
                                 <td></td>
                                  </tr>
                             <tr>
-                                <td><label  class="form-control-label">Capacidad Maxima:</label></td>
-                                <td> <asp:TextBox ID="txtCapacidad" class="form-control"  runat="server" Width="120px" Height="20px" Font-Size="Small" ></asp:TextBox>
-
-                                </td>
-                                <td></td>
-                                 </tr>
+                                <td><label  class="form-control-label">Tamaño canil:</label></td>
+                                <td><asp:DropDownList class="form-control" id="cboTipoRaza" runat="server" style="width:120px"></asp:DropDownList></td>
+                                  </tr>
                             <tr>
                                 <td><label  class="form-control-label">Especie:</label></td>
                                 <td><asp:DropDownList class="form-control" id="cboEspecie" runat="server" style="width:120px"></asp:DropDownList></td>
                                   </tr>
                             <tr>
-                                <td><label  class="form-control-label">Limpio:</label></td>
-                                <td><asp:CheckBox class="form-control" id="chkLimpio" runat="server" ></asp:CheckBox></td>
-                                  </tr>
+                                <td>
+                                    <label class="form-control-label">
+                                    Observaciones:</label></td>
+                                <td>
+                                    <asp:TextBox ID="txtObservaciones" runat="server" class="form-control" Font-Size="Small" Height="150px" Rows="10" TextMode="MultiLine" Width="520px"></asp:TextBox>
+                                </td>
+                            <tr>
+                                <td>
+                                    <label class="form-control-label">
+                                    Limpio:</label></td>
+                                <td>
+                                    <asp:CheckBox ID="chkLimpio" runat="server" class="form-control" />
+                                </td>
+                            </tr>
                             </table>
-<hr>
                                         <table>
                             <tr style="vertical-align:top">
                                 <td colspan="3" >

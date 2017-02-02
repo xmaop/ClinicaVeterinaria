@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,12 +60,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\DAO.cs" />
+    <Compile Include="Configuration\Global.cs" />
+    <Compile Include="Configuration\Query.cs" />
     <Compile Include="DACanil.cs" />
     <Compile Include="DAPlanRutina.cs" />
     <Compile Include="DARevisionMedica.cs" />
     <Compile Include="DAServicioHospedaje.cs" />
     <Compile Include="DAPlanAlimenticio.cs" />
+    <Compile Include="DATurno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\daSeguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PetCenter.DBUtility\PetCenter.DBUtility.csproj">

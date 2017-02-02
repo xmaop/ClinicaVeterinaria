@@ -15,11 +15,11 @@ namespace PetCenter.Negocio
         private readonly DACanil da = new DACanil();
         #endregion
 
-        public List<BECanil> ListarCaniles(String InputCodigo, String InputNombreCanil,  String InputEspecie)
+        public List<BECanil> ListarCaniles(String InputCodigo, String InputNombreCanil,  Int32 InputEspecie, Int32 InputTamanio, Int32 InputEstado)
         {
             try
             {
-                return da.ListarCaniles(InputCodigo, InputNombreCanil, InputEspecie);
+                return da.ListarCaniles(InputCodigo, InputNombreCanil, InputEspecie, InputTamanio, InputEstado);
             }
             catch (Exception ex)
             {
@@ -90,7 +90,23 @@ namespace PetCenter.Negocio
 
 
 
-          public List<BEEspecie> ListarEspecie()
+        public List<BETamanio> ListarTamanio()
+        {
+            try
+            {
+                return da.ListarTamanio();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.Publish(ex);
+                throw new PetCenter.BusinessCommon.PetCenterBusinessException(ex);
+
+
+            }
+        }
+
+
+        public List<BEEspecie> ListarEspecie()
           {
               try
               {
