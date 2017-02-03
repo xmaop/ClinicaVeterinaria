@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -255,6 +258,78 @@ namespace PetCenter_GCP.Common
                 totalPages = (int)(((float)nroRegistros / (float)rowsperPage));
             else
                 totalPages = (int)(((float)nroRegistros / (float)rowsperPage) + 1);
+        }
+
+        public static String ParseString(object value)
+        {
+            String cadena;
+            cadena = Convert.ToString(value);
+            if (cadena != null && cadena != string.Empty)
+            {
+                return cadena;
+            }
+            else
+            {
+                return String.Empty;
+            }
+        }
+
+        public static bool EnviarMail(string strDe, string strPara, string strTitulo, string strMensaje, bool IsHTML, List<Attachment> attaches = null)
+        {
+            //Parametros
+            string strServidor = ParseString(ConfigurationManager.AppSettings["SMPTServer"]);
+            string strUsuario = ParseString(ConfigurationManager.AppSettings["SMPTUser"]);
+            string strPassword = ParseString(ConfigurationManager.AppSettings["SMPTPassword"]);
+            strDe = string.IsNullOrEmpty(strDe) ? ParseString(ConfigurationManager.AppSettings["SMPTFromUser"]) : strDe;
+            var arrPara = strPara.Split(';');
+            //Declaracion de variables
+            MailMessage objMail = new MailMessage();
+
+            SmtpClient objClient = new SmtpClient(strServidor);
+            objClient.Port = 587;
+            objClient.Host = "smtp.gmail.com";
+            objClient.UseDefaultCredentials = false;
+            foreach (var item in arrPara)
+            {
+                if (item != string.Empty)
+                    objMail.To.Add(item);
+            }
+            objMail.From = new MailAddress(strDe);
+            objMail.Subject = strTitulo;
+            objMail.Body = "<html><head> <meta charset=\"utf-8\" /><meta http-equiv=Content-Type content=\"text/html; \"></head><body> " + strMensaje + "</body></html>";
+            objMail.IsBodyHtml = IsHTML;
+            if (attaches != null)
+            {
+                foreach (Attachment attach in attaches)
+                    objMail.Attachments.Add(attach);
+            }
+            objClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            objClient.EnableSsl = true;
+            objClient.Credentials = new NetworkCredential(strUsuario, strPassword);
+            try
+            {
+                objClient.Send(objMail);
+            }
+            catch (SmtpException ex)
+            {
+                //throw new ApplicationException("Error al enviar correo electronico:" + ex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                //throw new ApplicationException("Error al enviar correo electronico:" + ex.Message);
+                return false;
+            }
+            finally
+            {
+                objMail.Dispose();
+            }
+            return true;
+        }
+
+        public static bool EnviarSMS(string strPara, string strMensaje)
+        {
+            return true;
         }
     }
 

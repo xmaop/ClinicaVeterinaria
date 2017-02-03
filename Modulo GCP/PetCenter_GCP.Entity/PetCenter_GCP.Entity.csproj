@@ -45,10 +45,13 @@
     <Compile Include="DistritoEntity.cs" />
     <Compile Include="EspecieEntity.cs" />
     <Compile Include="GenericEntity.cs" />
+    <Compile Include="NotificacionEntity.cs" />
     <Compile Include="OrdenAtencionEntity.cs" />
     <Compile Include="PacienteEntity.cs" />
+    <Compile Include="ParametroEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RazaEntity.cs" />
+    <Compile Include="ReporteEntity.cs" />
     <Compile Include="SedeEntity.cs" />
     <Compile Include="ServicioEntity.cs" />
     <Compile Include="TipoClienteEntity.cs" />

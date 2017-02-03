@@ -1,0 +1,48 @@
+﻿@using PetCenter_GCP.Common
+@model PetCenter_GCP.Entity.NotificacionEntity
+<script src="@Url.Content("~/Scripts/incidencia.js")" type="text/javascript"></script>
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitDialog();
+        var Id = '@ViewBag.Id';
+        var IdDialog = $(dlgrFocus)[0].childNodes[1].id;
+
+        $.dlg("#hdIdNotificacion").val(Id);
+        InitBottonsCons('list', 'hdIndex');
+
+        $.dlg("#divMensaje").html('@Html.Raw(Model.detalle)');
+    });
+</script>
+<div class="content_modal" id="divFields">
+    <input type="hidden" id="hdDialogState" />
+    <div class="item_form">
+        <div class="item_label">Tipo Envío:</div>
+        <div class="item_campo">
+            <input type="text" id="txtTipoEnvio" maxlength="50" disabled="disabled" value='@Model.descTipoEnvio' />
+        </div>
+        <div class="item_label">Cliente:</div>
+        <div class="item_campo">
+            <input type="text" id="txtCliente" maxlength="50" disabled="disabled" value='@Html.Raw(Model.nomCliente)' />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Fecha Envío:</div>
+        <div class="item_campo">
+            <input type="text" id="txtFechaEnvio" maxlength="50" disabled="disabled" value='@Model.fechaEnvio.ToString("dd/MM/yyyy HH:mm")' />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Contenido:</div>
+        <div class="item_campo" style="width: 750px !important;">
+            <div id="divMensaje"></div>
+            @*<textarea id="txtContenido" rows="3" cols="26" maxlength="300" style="width: 100%;"></textarea>*@
+        </div>
+    </div>
+    <input type="hidden" value="0" id="hdIdNotificacion" />
+    <input type="hidden" id="hdIndex" />
+</div>

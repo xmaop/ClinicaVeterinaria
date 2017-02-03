@@ -76,6 +76,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -222,11 +226,13 @@
     <Content Include="Content\images\chk_checked_disabled.png" />
     <Content Include="Content\images\chk_unchecked.png" />
     <Content Include="Content\images\clean.png" />
+    <Content Include="Content\images\completeact.png" />
     <Content Include="Content\images\contact.png" />
     <Content Include="Content\images\Delete.png" />
     <Content Include="Content\images\down.gif" />
     <Content Include="Content\images\Edit.png" />
     <Content Include="Content\images\Edit_disabled.png" />
+    <Content Include="Content\images\email.png" />
     <Content Include="Content\images\foot_login.png" />
     <Content Include="Content\images\icon_botones.png" />
     <Content Include="Content\images\icon_check_green.png" />
@@ -234,17 +240,21 @@
     <Content Include="Content\images\input_login.png" />
     <Content Include="Content\images\input_login2.png" />
     <Content Include="Content\images\left.png" />
+    <Content Include="Content\images\legend.png" />
     <Content Include="Content\images\line_login.png" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\logo_login.png" />
     <Content Include="Content\images\menu.png" />
     <Content Include="Content\images\no_found.png" />
+    <Content Include="Content\images\pet.png" />
     <Content Include="Content\images\replaceFact.png" />
     <Content Include="Content\images\right.png" />
     <Content Include="Content\images\searchC.png" />
+    <Content Include="Content\images\setting.png" />
     <Content Include="Content\images\td_over.png" />
     <Content Include="Content\images\thead.png" />
+    <Content Include="Content\images\timeline.png" />
     <Content Include="Content\Styles\site\alertNotify.css" />
     <Content Include="Content\Styles\jquery.colorbox\colorbox.css" />
     <Content Include="Content\Styles\jquery.colorbox\images\border1.png" />
@@ -427,12 +437,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\NotificarClienteController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContenedorController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrdenAtencionController.cs" />
+    <Compile Include="Controllers\ReporteAtencionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -454,6 +466,15 @@
     <Content Include="Views\Paciente\Consultar_HistoricoCliente_Modal.cshtml" />
     <Content Include="Views\Cliente\Consultar_Paciente_Modal.cshtml" />
     <Content Include="Views\OrdenAtencion\MainViewOrdenAtencion.cshtml" />
+    <Content Include="Views\Shared\_Menu1.cshtml" />
+    <Content Include="Views\Shared\_SelectGrid.cshtml" />
+    <Content Include="Views\NotificarCliente\MainViewNotificarCliente.cshtml" />
+    <Content Include="Views\NotificarCliente\Consultar_DetalleEnvio_Modal.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteAtencion.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteIngreso.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteEspecie.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

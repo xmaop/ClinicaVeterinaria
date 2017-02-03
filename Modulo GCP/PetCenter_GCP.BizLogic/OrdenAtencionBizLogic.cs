@@ -60,11 +60,53 @@ namespace PetCenter_GCP.BizLogic
             }
         }
 
+        public List<OrdenAtencionEntity> GetListadoOrdenAtencionNotif(List<object> parametro)
+        {
+            try
+            {
+                return dataAccess.GetListadoOrdenAtencionNotif(parametro);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.BizLogic, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
         public bool UpdEstadoOrdenAtencion(List<object> parametro)
         {
             try
             {
                 return dataAccess.UpdEstadoOrdenAtencion(parametro);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.BizLogic, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public List<OrdenAtencionEntity> GetClientesANotificar(List<object> parametro)
+        {
+            try
+            {
+                return dataAccess.GetClientesANotificar(parametro);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.BizLogic, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public bool UpdOTClienteNotificado(List<object> parametro)
+        {
+            try
+            {
+                return dataAccess.UpdOTClienteNotificado(parametro);
             }
             catch (Exception ex)
             {

@@ -73,6 +73,27 @@ namespace PetCenter_GCP.DataAccess
             }
         }
 
+        public List<OrdenAtencionEntity> GetListadoOrdenAtencionNotif(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
+                parametrosSql.Add(new EstructuraParametro("@fechaInicio", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
+                parametrosSql.Add(new EstructuraParametro("@fechaFin", SqlDbType.VarChar, ParameterDirection.Input, parametro[1]));
+                parametrosSql.Add(new EstructuraParametro("@id_Sede", SqlDbType.VarChar, ParameterDirection.Input, parametro[2]));
+                parametrosSql.Add(new EstructuraParametro("@estado", SqlDbType.VarChar, ParameterDirection.Input, parametro[3]));
+                parametrosSql.Add(new EstructuraParametro("@flgNotificar", SqlDbType.VarChar, ParameterDirection.Input, parametro[4]));
+
+                return EjecutarGenericDataReader<OrdenAtencionEntity>("GCP_getListadoOrdenAtencionNotif", parametrosSql);
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
         public bool UpdEstadoOrdenAtencion(List<object> parametro)
         {
             try
@@ -82,6 +103,43 @@ namespace PetCenter_GCP.DataAccess
                 parametros.Add(new EstructuraParametro("@estado", SqlDbType.VarChar, ParameterDirection.Input, parametro[1]));
 
                 return EjecutarProcedimiento("GCP_updEstadoOrdenAtencion", parametros);
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public List<OrdenAtencionEntity> GetClientesANotificar(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
+                parametrosSql.Add(new EstructuraParametro("@id_Ordenes", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
+
+                return EjecutarGenericDataReader<OrdenAtencionEntity>("GCP_getClientesANotificar", parametrosSql);
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public bool UpdOTClienteNotificado(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametros = new List<EstructuraParametro>();
+                parametros.Add(new EstructuraParametro("@id_OrdenAtencion", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
+                parametros.Add(new EstructuraParametro("@tipoEnvio", SqlDbType.Char,  ParameterDirection.Input, parametro[1]));
+                parametros.Add(new EstructuraParametro("@asunto", SqlDbType.VarChar, ParameterDirection.Input, parametro[2]));
+                parametros.Add(new EstructuraParametro("@detalle", SqlDbType.VarChar, ParameterDirection.Input, parametro[3]));
+
+                return EjecutarProcedimiento("GCP_updClienteNotificado", parametros);
             }
             catch (Exception ex)
             {

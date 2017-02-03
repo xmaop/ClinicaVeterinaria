@@ -13,3 +13,12 @@ C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\Pet
 C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.dll
 C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.pdb
 C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Entity\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Entity\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.csprojResolveAssemblyReference.cache
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.Entity\bin\Debug\PetCenter_GCP.Entity.dll
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.Entity\bin\Debug\PetCenter_GCP.Entity.pdb
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.dll
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.Entity\obj\Debug\PetCenter_GCP.Entity.pdb

@@ -6,3 +6,17 @@ C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug
 C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.dll
 C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.pdb
 C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\bin\Debug\PetCenter_GCP.ViewEngine.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\bin\Debug\PetCenter_GCP.ViewEngine.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.Common.CommonResources.resources
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.Resources.RazorResources.resources
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.csproj.GenerateResource.Cache
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.pdb
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\bin\Debug\PetCenter_GCP.ViewEngine.dll
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\bin\Debug\PetCenter_GCP.ViewEngine.pdb
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.Common.CommonResources.resources
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.Resources.RazorResources.resources
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.csproj.GenerateResource.Cache
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.dll
+C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.ViewEngine\obj\Debug\PetCenter_GCP.ViewEngine.pdb

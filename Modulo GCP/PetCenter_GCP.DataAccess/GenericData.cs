@@ -157,5 +157,37 @@ namespace PetCenter_GCP.DataAccess
                 throw;
             }
         }
+
+        public List<GenericEntity> GetTipoNotificar()
+        {
+            try
+            {
+                List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
+
+                return EjecutarGenericDataReader<GenericEntity>("GCP_getTipoNotificar", parametrosSql);
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public List<ParametroEntity> GetParametroByCodigo(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
+                parametrosSql.Add(new EstructuraParametro("@codigo", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
+                return EjecutarGenericDataReader<ParametroEntity>("GCP_getParametroByTipo", parametrosSql);
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
     }
 }

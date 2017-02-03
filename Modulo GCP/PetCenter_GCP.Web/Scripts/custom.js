@@ -1927,8 +1927,8 @@ function OpenDialogId(e, i, t, o, n, a) {
         draggable: !0,
         title: e
     }), $("#" + l).dialogExtend({
-        minimizable: !0,
-        maximizable: !0,
+        minimizable: !1,
+        maximizable: !1,
         titlebar: "transparent",
         minimizeLocation: "right",
         icons: {

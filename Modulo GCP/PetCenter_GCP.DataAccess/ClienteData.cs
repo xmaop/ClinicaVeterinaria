@@ -163,5 +163,26 @@ namespace PetCenter_GCP.DataAccess
                 throw;
             }
         }
+
+        public string ValidarDocumentoRepetido(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametros = new List<EstructuraParametro>();
+                parametros.Add(new EstructuraParametro("@id_Cliente", SqlDbType.Int, ParameterDirection.Input, parametro[0]));
+                parametros.Add(new EstructuraParametro("@nroDocumento", SqlDbType.VarChar, ParameterDirection.Input, parametro[1]));
+                parametros.Add(new EstructuraParametro("@id_TipoCliente", SqlDbType.Int, ParameterDirection.Input, parametro[2]));
+
+                parametros.Add(new EstructuraParametro("@mensaje", SqlDbType.VarChar, 100, ParameterDirection.Output, null));
+
+                return EjecutaNonQueryReturnValue("GCP_valTipoDocCliente", parametros, "@mensaje").ToString();
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
     }
 }

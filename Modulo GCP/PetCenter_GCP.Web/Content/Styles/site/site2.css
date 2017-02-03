@@ -538,3 +538,7 @@ legend {
     padding: 8px 5px 5px 20px;
     text-align: right;
 }
+
+.right{
+    text-align: right;
+}

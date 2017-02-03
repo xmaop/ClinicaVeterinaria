@@ -60,7 +60,7 @@
         if (Id != "0") {
             $.dlg("#hdIdCliente").val('@Model.id_Cliente');
             $.dlg("#txtCodCliente").val('@Model.codigoCliente');
-            $.dlg("#txtNomCliente").val('@Model.nomCliente');
+            $.dlg("#txtNomCliente").val('@Html.Raw(Model.nomCliente)');
             $.dlg("#txtNombre").val('@Model.nombre');
             $.dlg("#txtCodigo").val('@Model.codigo');
             $.dlg("#txtFechaNac").val('@Model.fechaNacimiento.ToString("dd/MM/yyyy")');

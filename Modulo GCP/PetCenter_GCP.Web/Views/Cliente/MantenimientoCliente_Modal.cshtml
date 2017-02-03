@@ -52,7 +52,7 @@
                 $.dlg("#divNatural").show();
             }
             else {
-                $.dlg("#txtRazonSocial").val('@Model.razonSocial');
+                $.dlg("#txtRazonSocial").val('@Html.Raw(Model.razonSocial)');
                 $.dlg("#txtRUC").val('@Model.nroDocumento');
                 $.dlg("#divJuridico").show();
             }
@@ -156,6 +156,16 @@
                             else {
                                 $("#ddlTipoDocumento").html(optiondefaultText);
                                 $("#divNatural,#divJuridico").hide();
+
+                                $.dlg("#divMensaje ul").html("");
+                                $.dlg("#divMensaje").fadeOut("fast");
+                                SetBackgroundField("ddlTipoDocumento", '');
+                                SetBackgroundField("txtNomContacto", '');
+                                SetBackgroundField("txtEmailContacto", '');
+                                SetBackgroundField("txtCelular", '');
+                                SetBackgroundField("txtEmail", '');
+                                SetBackgroundField("ddlDistrito", '');
+                                SetBackgroundField("txtDireccion", '');
                             }
                         });
                     }
@@ -430,32 +440,57 @@
 
         if (estado) {
             $.ajaxSetup({ cache: false });
-            if (estado) {
-                $.ajaxSetup({ cache: false });
-                jQuery.ajax({
-                    type: 'POST',
-                    url: baseUrl + 'Cliente/Mantener',
-                    dataType: 'json',
-                    contentType: 'application/json; charset=utf-8',
-                    data: JSON.stringify({
-                        'model': NewItem.data
-                    }),
-                    async: true,
-                    success: function (data) {
-                        if (data != null) {
-                            if (data.success) {
-                                message('Confirmación:', data.message, 'success');
-                                jQuery("#listCliente").trigger('reloadGrid');
-                                CloseDialog(dlgrFocus);
-                            } else
-                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
-                        }
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+            jQuery.ajax({
+                type: 'GET',
+                url: baseUrl + 'Cliente/ValidarDocumentoRepetido',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: {
+                    id_Cliente: NewItem.data.id_Cliente == "" ? 0 : NewItem.data.id_Cliente,
+                    nroDocumento: NewItem.data.nroDocumento,
+                    id_TipoCliente: NewItem.data.tipoCliente
+                },
+                async: false,
+                success: function (data) {
+                    if (data != null) {
+                        if (data.success) {
+                            if (data.message != "") {
+                                AppendMessage(data.message);
+                                UnblockandShowErrors();
+                            }
+                            else {
+                                jQuery.ajax({
+                                    type: 'POST',
+                                    url: baseUrl + 'Cliente/Mantener',
+                                    dataType: 'json',
+                                    contentType: 'application/json; charset=utf-8',
+                                    data: JSON.stringify({
+                                        'model': NewItem.data
+                                    }),
+                                    async: true,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                message('Confirmación:', data.message, 'success');
+                                                jQuery("#listCliente").trigger('reloadGrid');
+                                                CloseDialog(dlgrFocus);
+                                            } else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                        } else
+                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
                     }
-                });
-            }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
         }
+
         return false;
     }
 
@@ -476,6 +511,17 @@
             $.dlg("#divJuridico").show();
             $.dlg("#divNatural").hide();
         }
+
+        $.dlg("#divMensaje ul").html("");
+        $.dlg("#divMensaje").fadeOut("fast");
+        SetBackgroundField("ddlTipoDocumento", '');
+        SetBackgroundField("txtNomContacto", '');
+        SetBackgroundField("txtEmailContacto", '');
+        SetBackgroundField("txtCelular", '');
+        SetBackgroundField("txtEmail", '');
+        SetBackgroundField("ddlDistrito", '');
+        SetBackgroundField("txtDireccion", '');
+        SetBackgroundField("ddlTipoCliente", '');
     }
 </script>
 <div class="mensaje" id="divMensaje" style="display: none; width: 83%;">
@@ -560,7 +606,7 @@
         </div>
         <div class="item_label">Telf. Fijo:</div>
         <div class="item_campo">
-            <input type="text" id="txtTelefono" maxlength="10" />
+            <input type="text" id="txtTelefono" maxlength="12" />
         </div>
     </div>
     <div class="item_form">

@@ -55,7 +55,7 @@ label {
 }
 
 .page-header-fixed {
-    padding-top: 54px;
+    padding-top: 5px;
 }
 
 .page-without-sidebar .content {
@@ -768,8 +768,8 @@ label {
 }
 
 .content {
-    margin-left: 220px;
-    padding: 20px 25px;
+    /*margin-left: 220px;*/
+    padding: 0px 25px;
 }
 
     .content.content-full-width {

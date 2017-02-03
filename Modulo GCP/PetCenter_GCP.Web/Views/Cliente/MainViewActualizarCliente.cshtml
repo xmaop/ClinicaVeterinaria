@@ -162,11 +162,11 @@
     }
 </script>
 <div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
-    <div class="panel-heading" style="background: #80bd00; color:#ffffff">
-        <div class="panel-heading-btn">
-        </div>
-        <h4 class="panel-title"><strong>LISTADO DE CLIENTES</strong></h4>
-    </div>
+    @*<div class="panel-heading" style="background: #80bd00; color:#ffffff">
+            <div class="panel-heading-btn">
+            </div>
+            <h4 class="panel-title"><strong>LISTADO DE CLIENTES</strong></h4>
+        </div>*@
     <div class="contenido">
         <div id="ContenidogDialog">
         </div>
@@ -174,28 +174,26 @@
             <ul id="ulMessage"></ul>
         </div>
         @*<div id="Alerta" style="text-align: left; padding: 10px !important; margin: 12px 50px 0 10px; min-height: 20px; font-size: 12px;" class="@ViewBag.cssAlert" role="alert"><strong>Información:</strong><span style="margin-left: 15px;">@ViewBag.messageAlert</span></div>
-        <div class="item_form" style="clear:both; padding-top: 10px;">
-            <div class="item_label">Nivel Educativo:</div>
-            <div class="item_campo" style="width: 150px;">
-                <select id="dlNivelEducativo"></select>
+            <div class="item_form" style="clear:both; padding-top: 10px;">
+                <div class="item_label">Nivel Educativo:</div>
+                <div class="item_campo" style="width: 150px;">
+                    <select id="dlNivelEducativo"></select>
+                </div>
             </div>
-        </div>
-        <div class="item_form">
-            <div class="item_label">Grado:</div>
-            <div class="item_campo" style="width: 150px;">
-                <select id="dlGrado"></select>
-            </div>
-        </div>*@
+            <div class="item_form">
+                <div class="item_label">Grado:</div>
+                <div class="item_campo" style="width: 150px;">
+                    <select id="dlGrado"></select>
+                </div>
+            </div>*@
         <div class="item_form">
             @*<div class="item_label">Curso:</div>
-            <div class="item_campo" style="width: 150px;">
-                <select id="dlCurso"></select>
-            </div>*@
-            <div class="item_label">
+                <div class="item_campo" style="width: 150px;">
+                    <select id="dlCurso"></select>
+                </div>*@
                 <div class="form-group right">
                     <button type="button" id="btNuevoCliente" class="btn btn-primary">Nuevo</button>
                 </div>
-            </div>
         </div>
         <div class="item_form">
             <fieldset>
@@ -207,28 +205,28 @@
             </fieldset>
         </div>
         @*<div class="item_form">
-            <fieldset>
-                <legend>Indicadores</legend>
-                <div class="grilla_custom">
-                    <table id="listIndicador"></table>
-                    <div id="pagerIndicador"></div>
-                </div>
-            </fieldset>
-        </div>
-        <div class="item_form">
-            <fieldset style="float:left;">
-                <legend>Instrumentos de Evaluación</legend>
-                <div class="item_label" style="float: right; margin-right: 16px; width: auto;">
-                    <div class="form-group">
-                        <button type="button" id="btAddIns" class="btn btn-info">Agregar</button>
-                        <button type="button" id="btSaveIns" class="btn btn-info">Guardar</button>
+                <fieldset>
+                    <legend>Indicadores</legend>
+                    <div class="grilla_custom">
+                        <table id="listIndicador"></table>
+                        <div id="pagerIndicador"></div>
                     </div>
-                </div>
-                <div class="grilla_custom" style="float: left;">
-                    <table id="listInstrumento"></table>
-                    <div id="pagerInstrumento"></div>
-                </div>
-            </fieldset>
-        </div>*@
+                </fieldset>
+            </div>
+            <div class="item_form">
+                <fieldset style="float:left;">
+                    <legend>Instrumentos de Evaluación</legend>
+                    <div class="item_label" style="float: right; margin-right: 16px; width: auto;">
+                        <div class="form-group">
+                            <button type="button" id="btAddIns" class="btn btn-info">Agregar</button>
+                            <button type="button" id="btSaveIns" class="btn btn-info">Guardar</button>
+                        </div>
+                    </div>
+                    <div class="grilla_custom" style="float: left;">
+                        <table id="listInstrumento"></table>
+                        <div id="pagerInstrumento"></div>
+                    </div>
+                </fieldset>
+            </div>*@
     </div>
 </div>

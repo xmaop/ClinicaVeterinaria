@@ -1,0 +1,468 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<style>
+    textarea {
+        resize: none;
+    }
+</style>
+<script type="text/javascript">
+    var optionTodosText = "<option value=''>-- TODOS --</option>";
+    var optionDefaultText = "<option value=''>-- SELECCIONE --</option>";
+    $(document).ready(function () {
+        setInputSelects();
+        setInputDate();
+        fnGrillaOrdenAtencion();
+    });
+
+    function fnGrillaOrdenAtencion() {
+        jQuery("#list").jqGrid({
+            url: baseUrl + "NotificarCliente/ConsultarOrdenes",
+            datatype: 'json',
+            mtype: 'GET',
+            postData: ({
+                fechaInicio: function () { return $('#txtFecInicio').val(); },
+                fechaFin: function () { return $('#txtFecFin').val(); },
+                descSede: function () { return $("#ddlSede").val();; },
+                flgNotificar: function () { return $("#ddlNotificar").val(); }
+            }),
+            contentType: "application/json; charset=utf-8",
+            colNames: ['id_OrdenAtencion', 'id_Cliente', 'id_Paciente', 'Nro. Orden', 'Fecha Atención', 'Hora Inicio', 'Hora Fin',
+                'Sede', 'Servicio', 'Nombre Cliente', 'Cód. Cliente', 'Tipo Cliente', 'Tipo Doc. Cliente', 'Nro. Doc. Cliente', 'Nombre Paciente', 'Cód. Paciente', 'Email', 'Celular', 'Estado Orden', '¿Notificó?', 'Fecha Envío', 'Acción', 'Detalle Envío'],
+            colModel: [
+                { name: 'id_OrdenAtencion', index: 'id_OrdenAtencion', hidden: true },
+                { name: 'id_Cliente', index: 'id_Cliente', hidden: true },
+                { name: 'id_Paciente', index: 'id_Paciente', hidden: true },
+                { name: 'codigo', index: 'codigo', width: 70 },
+                { name: 'fecha', index: 'fecha', width: 80 },
+                { name: 'horaInicio', index: 'horaInicio', width: 40 },
+                { name: 'horaFin', index: 'horaFin', width: 40 },
+                { name: 'descSede', index: 'descSede', width: 100, hidden: true },
+                { name: 'descServicio', index: 'descServicio', width: 120, hidden: true },
+                { name: 'nomCliente', index: 'nomCliente', width: 180 },
+                { name: 'codigoCliente', index: 'codigoCliente', width: 80 },
+                { name: 'descTipoCliente', index: 'descTipoCliente', width: 60 },
+                { name: 'descTipoDocCliente', index: 'descTipoDocCliente', width: 80, hidden: true },
+                { name: 'nroDocCliente', index: 'nroDocCliente', width: 80, hidden: true },
+                { name: 'nomPaciente', index: 'nomPaciente', width: 120, hidden: true },
+                { name: 'codigoPaciente', index: 'codigoPaciente', width: 80, hidden: true },
+                { name: 'emailCliente', index: 'emailCliente', width: 130 },
+                { name: 'celularCliente', index: 'celularCliente', width: 60 },
+                { name: 'descEstado', index: 'descEstado', width: 80 },
+                { name: 'notifico', index: 'notifico', width: 60 },
+                { name: 'fechaEnvio', index: 'fechaEnvio', width: 60 },
+                {
+                    name: 'act', index: 'act', width: 40, sortable: false, align: 'center', resizable: false,
+                    formatter: function (cellvalue, options, rowObject) {
+                        return ShowActions(cellvalue, options, rowObject);
+                    }, search: false, hidedlg: true
+                },
+                {
+                    name: 'act2', index: 'act2', width: 40, sortable: false, align: 'center', resizable: false,
+                    formatter: function (cellvalue, options, rowObject) {
+                        return ShowActions2(cellvalue, options, rowObject);
+                    }, search: false, hidedlg: true
+                }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: jQuery('#pager'),
+            rowNum: 10,
+            rownumbers: true,
+            scrollOffset: 0,
+            rowList: [10, 20, 30, 40, 50],
+            sortname: 'idCliente',
+            sortorder: 'asc',
+            viewrecords: true,
+            width: '1240',
+            height: 'auto',
+            altRows: true,
+            footerrow: true,
+            altclass: 'jQGridAltRowClass',
+            loadComplete: function (data) {
+                if (data != null) {
+                    var Index = $("#hdMainIndex").val();
+                    jQuery("#list").setSelection(Index, true);
+                }
+            },
+            beforeRequest: function () {
+                var grid = $(this);
+                var postdata = grid.jqGrid('getGridParam', 'postData');
+                if (postdata != undefined && postdata.filters != undefined) {
+                    postdata.fechaInicio = $('#txtFecInicio').val();
+                    postdata.fechaFin = $('#txtFecFin').val();
+                    postdata.descSede = $("#ddlSede").val();
+                    postdata.flgNotificar = $("#ddlNotificar").val();
+                } else {
+                    jQuery.extend(postdata, {
+                    });
+                }
+                return [true, ''];
+            }
+        });
+        jQuery("#list").jqGrid('navGrid', "#pager", {
+            add: false, edit: false, refresh: false, del: false, search: false
+        });
+        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        ScrollDynamicGridPage("list");
+    }
+
+    $.jgrid.extend({
+        AgregarCheckMain: function (Id, IdCliente, ImageCheck, RowId, evt) {
+            AgregarCheckMainRow(Id, IdCliente, ImageCheck, RowId, evt);
+        },
+        VerDetalle: function (id_OrdenAtencion, Index) {
+            VerDetalleRow(id_OrdenAtencion, Index);
+            return false;
+        }
+    });
+
+    function AgregarCheckMainRow(Id, IdCliente, ImageCheck, RowId, evt) {
+        $.ajaxSetup({ cache: false });
+        jQuery.ajax({
+            type: 'GET',
+            url: baseUrl + 'NotificarCliente/validarCheckedRow',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json; charset=utf-8',
+            data: {
+                idOrdenAtencion: Id,
+                idCliente: IdCliente,
+                imageCheck: ImageCheck
+            },
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        $("#divMensaje ul").html("");
+                        if (data.message != "") {
+                            AppendMessagePage(data.message);
+                            $("#divMensaje").fadeIn("slow");
+                        }
+                        else {
+                            // Para evitar que se ejecute el evento onSelectRow
+                            $("#hdMainIndex").val(RowId);
+                            var e = window.event || evt;
+                            if (e.stopPropagation) e.stopPropagation(); else e.cancelBubble = true;
+
+                            $("#divMensaje").fadeOut("fast");
+                            $("#list").trigger('reloadGrid', [{ current: true }]);
+                        }
+                    } else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                messageErrorAjax('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA', XMLHttpRequest.status, baseUrl + 'NotificarCliente/validarCheckedRow', JSON.stringify({
+                    idOrdenAtencion: Id,
+                    imageCheck: ImageCheck
+                }));
+            }
+        });
+    }
+
+    function ShowActions(cellvalue, options, rowObject) {
+        var img = "";
+        var id = options.rowId + "_check";
+
+        if (rowObject[21] != "N")
+            img = "&nbsp;<a href='javascript:;' id='" + id + "'>" + "<img src='@Url.Content("~/Content/images/completeact.png")' border='0' alt='Envío exitoso' title='Envío exitoso' /></a>";
+        else {
+            if (rowObject[22] == "S")
+
+                img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_checked.png")' border='0' /></a>";
+            else
+                img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_unchecked.png")' border='0' /></a>";
+        }
+        return img;
+    }
+
+    function ShowActions2(cellvalue, options, rowObject) {
+        var viewhistory = "<a href='javascript:;' onclick=\"return jQuery('#list').VerDetalle('" + rowObject[0] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/replaceFact.png")' alt='Ver Detalle' title='Ver Detalle' border='0' /></a>";
+
+        return viewhistory;
+    }
+
+    function setInputSelects() {
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'OrdenAtencion/GetSede',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optionTodosText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_Sede + "'>" + data.lst[key].nombre + "</option>";
+                            }
+                        };
+                        $("#ddlSede").html(items);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + 'NotificarCliente/GetTipoNotificar',
+                data: {
+                },
+                dataType: 'Json',
+                async: false,
+                success: function (data) {
+                    if (data != null) {
+                        if (data.success) {
+                            var items = optionTodosText;
+                            for (var key in data.lst) {
+                                if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                    items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+                                }
+                            };
+                            $("#ddlNotificar").html(items);
+                        }
+                        else
+                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+
+        function setInputDate() {
+            $('#txtFecInicio').datepicker(
+                                {
+                                    dateFormat: 'dd/mm/yy',
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    showWeek: false,
+                                    firstDay: 1,
+                                    inline: true,
+                                    maxDate: new Date(),
+                                    onSelect: function (date) {
+                                        $('#txtFecInicio').val(date);
+                                    }
+                                });
+            $('#txtFecInicio').mask('99/99/9999');
+            $('#txtFecInicio').live('blur', function () {
+                if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                    this.value = '';
+            });
+
+            $('#txtFecFin').datepicker(
+                                    {
+                                        dateFormat: 'dd/mm/yy',
+                                        changeMonth: true,
+                                        changeYear: true,
+                                        showWeek: false,
+                                        firstDay: 1,
+                                        inline: true,
+                                        maxDate: new Date(),
+                                        onSelect: function (date) {
+                                            $('#txtFecFin').val(date);
+                                        }
+                                    });
+            $('#txtFecFin').mask('99/99/9999');
+            $('#txtFecFin').live('blur', function () {
+                if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                    this.value = '';
+            });
+        }
+
+        function onClickBuscarOrden() {
+            var fecinicio = $.trim($("#txtFecInicio").val());
+            var fecfin = $.trim($("#txtFecFin").val());
+
+            //if (fecinicio == "") {
+            //    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+            //    return false;
+            //}
+
+            if (fecinicio != "") {
+                if (!isValidDate(fecinicio)) {
+                    message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
+                    return false;
+                }
+            }
+
+            if (fecfin != "") {
+                if (!isValidDate(fecfin)) {
+                    message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
+                    return false;
+                }
+                else if (fecinicio == "") {
+                    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+                    return false;
+                }
+                else if (compareDate(fecfin, fecinicio, false)) {
+                    message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
+                    return false;
+                }
+            }
+
+            $("#list").setGridParam({ datatype: 'json', page: 1 }).trigger('reloadGrid');
+        }
+
+
+        function onClickNotificarMail() {
+            if (confirm('¿Está seguro(a) que desea notificar vía Email?')) {
+                EnviarNotificacion('@Constantes.TipoParametro.EMAIL');
+            }
+        }
+
+        function onClickNotificarSms() {
+            if (confirm('¿Está seguro(a) que desea notificar vía Mensaje de texto (SMS)?')) {
+                EnviarNotificacion('@Constantes.TipoParametro.SMS');
+            }
+        }
+
+        function EnviarNotificacion(TipoEnvio) {
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + 'NotificarCliente/EnviarNotificacion',
+                data: {
+                    tipoEnvio: TipoEnvio
+                },
+                dataType: 'Json',
+                async: false,
+                success: function (data) {
+                    if (data != null) {
+                        if (data.success) {
+                            $("#list").trigger('reloadGrid', [{ current: true }]);
+                        }
+                        else
+                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+
+        function VerDetalleRow(id_OrdenAtencion, Index) {
+            var URL = "NotificarCliente/Consultar_DetalleEnvio_Modal?Parameter01=" + id_OrdenAtencion + "&Parameter02=" + Index;
+            OpenDialogId('Consultar Detalle Envío', 700, URL, '@Constantes.ModalKeys.CONSULTA' + id_OrdenAtencion, "Consultando Detalle Envío : " + id_OrdenAtencion);
+            return false;
+        }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    @*<div class="panel-heading" style="background: #80bd00; color:#ffffff">
+            <div class="panel-heading-btn">
+            </div>
+            <h4 class="panel-title"><strong>CONSULTA DE ORDEN DE ATENCIÓN</strong></h4>
+        </div>*@
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        @*<div id="Alerta" style="text-align: left; padding: 10px !important; margin: 12px 50px 0 10px; min-height: 20px; font-size: 12px;" class="@ViewBag.cssAlert" role="alert"><strong>Información:</strong><span style="margin-left: 15px;">@ViewBag.messageAlert</span></div>*@
+        <div class="item_form" style="clear:both; padding-top: 10px;">
+            <div class="item_labelMain">Fecha Inicio:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecInicio" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+            <div class="item_labelMain">Fecha Fin:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_labelMain">Notificación:</div>
+            <div class="item_campo">
+                <select id="ddlNotificar"></select>
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_labelMain">Sede:</div>
+            <div class="item_campo">
+                <select id="ddlSede"></select>
+            </div>
+        </div>
+        <fieldset style="display: none;">
+            <legend>Datos Cliente</legend>
+            <div class="item_form">
+                <div class="item_labelMain">Tipo Cliente:</div>
+                <div class="item_campo">
+                    <select id="ddlTipoCliente"></select>
+                </div>
+                <div class="item_labelMain">Tipo Documento:</div>
+                <div class="item_campo">
+                    <select id="ddlTipoDocCliente"></select>
+                </div>
+            </div>
+            <div class="item_form">
+                <div class="item_labelMain">Nro. Documento:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtNroDocCliente" disabled="disabled" />
+                </div>
+                <div class="item_labelMain">Nombre o Razón Social:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtNomCliente" maxlength="200" />
+                </div>
+                <div class="item_labelMain">Código Cliente:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtCodCliente" maxlength="8" />
+                </div>
+            </div>
+        </fieldset>
+        <div class="item_form">
+            <div class="item_labelMain">
+                <div class="form-group right">
+                    <button type="button" id="btBuscar" onclick="return onClickBuscarOrden();" class="btn btn-primary">Buscar</button>
+                    <button type="button" id="btNotificar" onclick="return onClickNotificarMail();" class="btn btn-primary">Notificar : Email</button>
+                    <button type="button" id="btNotificarSms" onclick="return onClickNotificarSms();" class="btn btn-primary">Notificar : SMS</button>
+                </div>
+            </div>
+        </div>
+        <div class="item_form">
+            <fieldset>
+                <legend>Listado de Orden de Atención</legend>
+                <div class="grilla_custom">
+                    <table id="list"></table>
+                    <div id="pager"></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div style="display: none;">
+    <div id="divContentCargaCdr" class="item_form">
+        <div class="item_form">
+            <h2>Notificación SMS</h2>
+        </div>
+        <div class="item_form">
+            <div class="item_label">Mensaje:</div>
+            <div class="item_campo" style="width: 750px !important;">
+                <textarea id="txtComentario" rows="3" placeholder="Ingrese un comentario" cols="26" maxlength="300" style="width: 100%;"></textarea>
+            </div>
+        </div>
+        <div style="padding-top: 4px;">
+            <button type="button" id="btnCargarCdr" onclick="CargarCdr();" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)" onblur="onblurBtn(this)" class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+                Enviar SMS <span class="ui-icon ui-icon-disk"></span>
+            </button>
+        </div>
+        <div class="mensaje" id="divMensajeUpCdr" style="width:92%; max-height:150px; display: none;">
+            <ul id="ulMessageUpCdr"></ul>
+        </div>
+    </div>
+    <input type="hidden" id="hdTipoEnvio" />
+</div>

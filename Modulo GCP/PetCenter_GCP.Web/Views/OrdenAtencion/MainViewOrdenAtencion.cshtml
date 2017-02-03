@@ -33,7 +33,7 @@
                 codigoPaciente: function () { return $.trim($("#txtCodPaciente").val()); }
             }),
             contentType: "application/json; charset=utf-8",
-            colNames: ['id_OrdenAtencion', 'id_Cliente', 'id_Paciente', 'Nro. Orden', 'Fecha Registro', 'Hora Inicio', 'Hora Fin',
+            colNames: ['id_OrdenAtencion', 'id_Cliente', 'id_Paciente', 'Nro. Orden', 'Fecha Programada', 'Hora Inicio', 'Hora Fin',
                 'Sede', 'Servicio', 'Nombre Cliente', 'Cód. Cliente', 'Tipo Cliente', 'Tipo Doc. Cliente', 'Nro. Doc. Cliente', 'Nombre Paciente', 'Cód. Paciente', 'Estado Orden', 'Acción'],
             colModel: [
                 { name: 'id_OrdenAtencion', index: 'id_OrdenAtencion', hidden: true },
@@ -49,7 +49,7 @@
                 { name: 'codigoCliente', index: 'codigoCliente', width: 80 },
                 { name: 'descTipoCliente', index: 'descTipoCliente', width: 60 },
                 { name: 'descTipoDocCliente', index: 'descTipoDocCliente', width: 80 },
-                { name: 'nroDocCliente', index: 'nroDocCliente', width: 80 },
+                { name: 'nroDocCliente', index: 'nroDocCliente', width: 90 },
                 { name: 'nomPaciente', index: 'nomPaciente', width: 120 },
                 { name: 'codigoPaciente', index: 'codigoPaciente', width: 80 },
                 { name: 'descEstado', index: 'descEstado', width: 100 },
@@ -79,7 +79,7 @@
             sortname: 'idCliente',
             sortorder: 'asc',
             viewrecords: true,
-            width: '1000',
+            width: '1250',
             height: 'auto',
             altRows: true,
             footerrow: true,
@@ -348,7 +348,7 @@
                             if (data.lst[key] && data.lst.hasOwnProperty(key)) {
                                 items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
 
-                                itemsDialog += "<option" + (data.lst[key].codigo != '@Constantes.EstadoOrden.Atendido' ? " disabled='disabled'" : "") + " value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+                                itemsDialog += (data.lst[key].codigo != '@Constantes.EstadoOrden.Atendido' ? "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>" : "");
                             }
                         };
                         $("#ddlEstadoOrden").html(items);
@@ -496,11 +496,11 @@
     }
 </script>
 <div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
-    <div class="panel-heading" style="background: #80bd00; color:#ffffff">
+    @*<div class="panel-heading" style="background: #80bd00; color:#ffffff">
         <div class="panel-heading-btn">
         </div>
         <h4 class="panel-title"><strong>CONSULTA DE ORDEN DE ATENCIÓN</strong></h4>
-    </div>
+    </div>*@
     <div class="contenido">
         <div id="ContenidogDialog">
         </div>

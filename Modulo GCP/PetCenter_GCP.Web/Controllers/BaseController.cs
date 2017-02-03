@@ -162,6 +162,7 @@ namespace PetCenter_GCP.Web.Controllers
                            where (string.IsNullOrEmpty(r.nomCliente) ? r.razonSocial : r.nombreCompleto).ToUpperIgnoreNull().Contains(GetFilterValue(f, "nomCliente").ToUpperIgnoreNull()) &&
                                  r.codigo.ToUpperIgnoreNull().Contains(GetFilterValue(f, "codigo").ToUpperIgnoreNull()) &&
                                   r.descTipoDocumento.ToUpperIgnoreNull().Contains(GetFilterValue(f, "descTipoDocumento").ToUpperIgnoreNull()) &&
+                                  (GetFilterValue(f, "tipoCliente") == "" || r.tipoCliente.ToString().Equals(GetFilterValue(f, "tipoCliente"))) &&
                                    r.nroDocumento.ToUpperIgnoreNull().Contains(GetFilterValue(f, "nroDocumento").ToUpperIgnoreNull())
                            select r).ToList();
                 }
@@ -265,6 +266,21 @@ namespace PetCenter_GCP.Web.Controllers
                 new LogCustomException().LogError(ExceptionEntity, ex.Source);
                 return ErrorJSon("Hubo un problema al obtener los datos. Intente nuevamente.");
             }
+        }
+
+        public ActionResult GetTipoClienteBase()
+        {
+            Dictionary<string, string> list = new Dictionary<string, string>();
+            using (GenericBizLogic sv = new GenericBizLogic())
+            {
+                List<TipoClienteEntity> lst = sv.GetTipoCliente();
+                list.Add(string.Empty, "-- TODOS --");
+                foreach (var item in lst)
+                {
+                    list.Add(item.id_TipoCliente, item.nombre);
+                }
+            }
+            return PartialView("_SelectGrid", list);
         }
     }
 }

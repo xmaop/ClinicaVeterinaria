@@ -101,10 +101,11 @@
             });
         });
 
-        function setMenu(elem, container, ControllerName, ActionName, OptionName) {
+        function setMenu(elem, container, ControllerName, ActionName, OptionName, imageName) {
             $(elem).addClass('active');
             $('#' + container).addClass('active');
-
+            $("#imgLinkedVP").attr("src", "/Content/images/" + imageName);
+            $("#bLinkVP").text(OptionName);
             $(function () { $("#tabcontent").load("/" + ControllerName + "/" + ActionName); });
         }
     </script>
@@ -113,7 +114,7 @@
     <div id="page-loader" class="fade in"><span class="spinner"></span></div>
     @*<form id="frmMaster">*@
     <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
-        @Html.Partial("_Menu")
+        @Html.Partial("_Menu1")
         <div id="content" class="content">
             @RenderSection("featured", required: false)
             @RenderBody()

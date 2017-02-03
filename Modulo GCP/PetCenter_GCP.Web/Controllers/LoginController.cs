@@ -62,6 +62,7 @@ namespace PetCenter_GCP.Web.Controllers
                 List<object> lsparameter = new List<object>();
                 lsparameter.Add(Login);
                 entity = sv.GetUsuarioByLogin(lsparameter);
+                /*entity = new UsuarioEntity() { nombres = "Gary", idEmpleado = 0, apPaterno = "Lujan", apMaterno = "Tello", cargo = "Analista", login = "glujan", password = "glujan" };*/
                 entity.login = Login.ToLower();
             }
             entity.password = Password;

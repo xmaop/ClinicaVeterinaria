@@ -20,8 +20,10 @@ namespace PetCenter_GCP.Entity
         public int id_Turno { get; set; }
         public int id_Servicio { get; set; }
         public string estado { get; set; }
-
+        public string flgNotificar { get; set; }
         // ---
+        public string emailCliente { get; set; }
+        public string celularCliente { get; set; }
         public string descSede { get; set; }
         public string descServicio { get; set; }
         public string nomCliente { get; set; }
@@ -35,6 +37,8 @@ namespace PetCenter_GCP.Entity
         public string descMotivoRechazo { get; set; }
         public string descEstado { get; set; }
         public int id_Cliente { get; set; }
+        public string imageCheck { get; set; }
+        public DateTime? fechaEnvio { get; set; }
         // ---
     }
 }

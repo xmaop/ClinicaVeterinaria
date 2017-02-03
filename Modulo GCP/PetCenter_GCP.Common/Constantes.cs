@@ -29,11 +29,7 @@ namespace PetCenter_GCP.Common
 
         public class MenuOpciones
         {
-            public const string INDICADOR = "indicador001";
-            public const string COMPETENCIA = "competencia001";
-            public const string INSTRUMENTO = "instrumento001";
-            public const string MANTINDICADOR = "MANTINDICADOR";
-            public const string MANTCOMPETENCIA = "MANTCOMPETENCIA";
+            public const string MANTNOTIFICARCLIENTE = "MANTNOTIFICARCLIENTE";
             public const string COPIAINDICADOR = "COPIAINDICADOR";
             public const string CLONADOR = "CLONADOR";
         }
@@ -46,6 +42,7 @@ namespace PetCenter_GCP.Common
         public class GenericProperties
         {
             public const string SuccessCode = "200";
+            public const string Zero = "0";
             public const string Uno = "1";
         }
 
@@ -109,6 +106,12 @@ namespace PetCenter_GCP.Common
             public const string RUC = "RUC";
         }
 
+        public class TipoParametro
+        {
+            public const string EMAIL = "EMAIL";
+            public const string SMS = "SMS";
+        }
+
         public class FileUploadOptions
         {
             public static string SizeLimitBytes
@@ -134,6 +137,12 @@ namespace PetCenter_GCP.Common
         public class ModalKeys
         {
             public const string CONSULTA = "VER";
+        }
+
+        public class TipoNotificacion
+        {
+            public const string Email = "Email";
+            public const string Sms = "SMS";
         }
     }
 }

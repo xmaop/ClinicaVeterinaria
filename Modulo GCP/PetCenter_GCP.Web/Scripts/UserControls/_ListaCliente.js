@@ -32,7 +32,7 @@ function fnGrillaCliente(idObj_IdCliente, idObj_NomCliente, idObj_CodCliente, is
             { name: 'id_Cliente', index: 'id_Cliente', hidden: true, hidedlg: true },
             { name: 'nomCliente', index: 'nomCliente' },
             { name: 'codigo', index: 'codigo' },
-            { name: 'tipoCliente', index: 'tipoCliente',stype: 'select', searchoptions: { dataUrl: baseUrl + 'Base/GetTipoCliente' } },
+            { name: 'tipoCliente', index: 'tipoCliente',stype: 'select', searchoptions: { dataUrl: baseUrl + 'Base/GetTipoClienteBase' } },
             { name: 'descTipoDocumento', index: 'descTipoDocumento' },
             { name: 'nroDocumento', index: 'nroDocumento' }
         ],

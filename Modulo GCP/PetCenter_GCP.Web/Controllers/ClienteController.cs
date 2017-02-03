@@ -381,5 +381,36 @@ namespace PetCenter_GCP.Web.Controllers
             }
             return RedirectToAction("Index", "Contenedor");
         }
+
+        [HttpGet]
+        public JsonResult ValidarDocumentoRepetido(int id_Cliente, string nroDocumento, int id_TipoCliente)
+        {
+            string mensaje = string.Empty;
+            try
+            {
+                List<ClienteEntity> lst = new List<ClienteEntity>();
+                using (ClienteBizLogic sv = new ClienteBizLogic())
+                {
+                    List<object> parametro = new List<object>();
+                    parametro.Add(id_Cliente);
+                    parametro.Add(nroDocumento);
+                    parametro.Add(id_TipoCliente);
+                    mensaje = sv.ValidarDocumentoRepetido(parametro);
+                }
+
+                return Json(
+                    new
+                    {
+                        success = true,
+                        message = mensaje
+                    }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.ValidateRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                return ErrorJSon("Hubo un problema al obtener los datos. Intente nuevamente.");
+            }
+        }
     }
 }
