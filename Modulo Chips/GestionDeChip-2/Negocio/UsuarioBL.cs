@@ -20,6 +20,11 @@ namespace Negocio
             return oUsuarioDAO.ListaUsuarios();
         }
 
+        public DataTable VerOrdenesActualizacion()
+        {
+            return oUsuarioDAO.VerOrdenesActualizacion();
+        }
+
         public DataTable ListaGenerarTarjeta()
         {
             return oUsuarioDAO.ListaGenerarTarjeta();

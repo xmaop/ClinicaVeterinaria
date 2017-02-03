@@ -42,6 +42,7 @@
     <Compile Include="ModuloBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteBE.cs" />
+    <Compile Include="TareaBE.cs" />
     <Compile Include="UsuarioBE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

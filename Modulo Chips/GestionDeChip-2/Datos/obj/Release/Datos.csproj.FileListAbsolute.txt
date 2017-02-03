@@ -46,3 +46,11 @@ C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Release\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.dll
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Release\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Release\Datos.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Release\Datos.pdb

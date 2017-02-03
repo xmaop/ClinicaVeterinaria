@@ -240,11 +240,23 @@ public partial class RegistraImpChip : System.Web.UI.Page
         this.eExporter.DownloadName = fileName.Trim() + DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString() + DateTime.Today.Day.ToString();
         bool singleGridPerSheet = false;
         this.eExporter.EnableStylesExport = false;
-        this.eExporter.DataExportMode = DataExportMode.DataInGridOnly;
+        ////this.eExporter.DataExportMode = DataExportMode.DataInGridOnly;
         this.eExporter.WorkbookFormat = Infragistics.Documents.Excel.WorkbookFormat.Excel2007;
 
         this.eExporter.Export(singleGridPerSheet, this.WebDataGrid1);
     }
 
+    protected void BtnBuscar_Click(object sender, EventArgs e)
+    {
+        if (txtidOrdenAtencion.Text == "")
+        {
+            txtidOrdenAtencion.Text = "0";
+        }
 
+        this.SqlDataSource1.SelectCommand = "ACI_USP_VET_sel_OrdenesGenerarTarjetaId";
+        this.SqlDataSource1.SelectParameters["idOrdenAtencion"].DefaultValue = txtidOrdenAtencion.Text.ToString();
+        this.SqlDataSource1.SelectCommandType = SqlDataSourceCommandType.StoredProcedure;
+        this.SqlDataSource1.DataBind();
+       
+    }
 }

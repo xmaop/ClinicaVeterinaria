@@ -18,61 +18,61 @@
         TBODY.Nivel1 > TR > TD
         {
             background: #E6E6E6;
-            font-size:xx-small;
+            font-size:medium;
         }
         TBODY > TR.Nivel1Alt > TD
         {
             background: #00FF00;
-            font-size:xx-small;
+            font-size:medium;
         }
 
         TBODY.Nivel2 > TR > TD
         {
             background: #C4ECFF;
-            font-size:xx-small;
+            font-size:medium;
         }
         TBODY > TR.Nivel2Alt > TD
         {
             background: #C4ECFF;
-            font-size:xx-small;
+            font-size:medium;
         }
 
 
         TBODY.Nivel3 > TR > TD
         {
             background: #E1FFE1;
-            font-size:xx-small;
+            font-size:medium;
         }
 
         TBODY > TR.Nivel3Alt > TD
         {
             background: #E1FFE1;
-            font-size:xx-small;
+            font-size:medium;
         }
 
         TBODY.Nivel4 > TR > TD
         {
             background:#ffffff;
-            font-size:xx-small;
+            font-size:medium;
         }
 
         TBODY > TR.Nivel4Alt > TD
         {
             background: #ffffff;
-            font-size:xx-small;
+            font-size:medium;
         }
 
 
         TBODY.Nivel5 > TR > TD
         {
             background:#FF0000;
-            font-size:xx-small;
+            font-size:medium;
         }
 
         TBODY > TR.Nivel5Alt > TD
         {
             background: #FF0000;
-            font-size:xx-small;
+            font-size:medium;
         }
         </style>
 
@@ -97,14 +97,13 @@
 		        <div class="span12">
 			        <div class="widget-box">
 				        <div class="widget-header widget-header-blue widget-header-flat">
-					        <h4><span class="auto-style1">Registrar Implantación de Chip</span>&nbsp;
+					        <h4><span class="auto-style1">Registrar implantación de chip</span>&nbsp;
                             </h4>
 				        </div>
                         <div>
                             &nbsp;&nbsp;
                             <asp:Button ID="BtnExporta" runat="server" Text="Exportar" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnExporta_Click" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input id="Text1" style="background-color: #00FF00" type="text" width="40" /> Implantado
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="Text3" style="background-color: #FFFFFF" type="text" width="40" />&nbsp; Pendiente<input id="Text1" style="background-color: #00FF00" type="text" width="40" /> Implantado
                             <input id="Text2" style="background-color: #FF0000" type="text" width="40" /> Rechazado</div>
 				        <div class="widget-body">
 					        <div class="widget-main">
@@ -114,7 +113,7 @@
                                          <ig:WebDataGrid ID="WebDataGrid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnInitializeRow="WebDataGrid1_InitializeRow" Height="800px" Width="100%" Visible="true">
                                          <Columns>
                                              <ig:BoundDataField DataFieldName="idOrdenAtencion" Key="idOrdenAtencion">
-                                                 <Header Text="No.Orden Atención">
+                                                 <Header Text="No.orden atención">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="especie" Key="especie" >
@@ -122,23 +121,23 @@
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="nombre" Key="nombre" >
-                                                 <Header Text="Nombre del Paciente">
+                                                 <Header Text="Nombre del paciente">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="Edad" Key="Edad">
-                                                 <Header Text="Edad (Años.Semanas)">
+                                                 <Header Text="Edad (años y semanas)">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="TipoDocumento_Identidad" Key="TipoDocumento_Identidad">
-                                                 <Header Text="Tipo Documento">
+                                                 <Header Text="Tipo documento">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="Documento_Identidad" Key="Documento_Identidad">
-                                                 <Header Text="No. Documento">
+                                                 <Header Text="No. documento">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="Cliente" Key="Cliente">
-                                                 <Header Text="Nombre del Cliente">
+                                                 <Header Text="Nombre del cliente">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="estado" Key="estado" >
@@ -148,7 +147,7 @@
                                              <ig:TemplateDataField  Key="keyBtnOpciones"  Header-Text="Opciones">
                                              <ItemTemplate>
                                                  <asp:ImageButton ID="imgEditar" runat="server" ToolTip="Editar" CommandName="Editar" Width="20px"  Height="20px" CommandArgument='<%# DataBinder.Eval(((Infragistics.Web.UI.TemplateContainer)Container).DataItem, "idOrdenAtencion") %>' ImageUrl="~/Images/ic_action_edit.png" OnClick="imageBtnEditar_Click"/>
-                                                 <asp:ImageButton ID="ImgHistorico" runat="server" ToolTip="Ver Histórico" CommandName="Historico" Width="20px"  Height="20px" CommandArgument='<%# DataBinder.Eval(((Infragistics.Web.UI.TemplateContainer)Container).DataItem, "idOrdenAtencion")  %>' ImageUrl="~/Images/ic_action_database.png" OnClick="imageBtnHistorico_Click"/>
+                                                 <asp:ImageButton ID="ImgHistorico" runat="server" ToolTip="Ver histórico" CommandName="Historico" Width="20px"  Height="20px" CommandArgument='<%# DataBinder.Eval(((Infragistics.Web.UI.TemplateContainer)Container).DataItem, "idOrdenAtencion")  %>' ImageUrl="~/Images/ic_action_database.png" OnClick="imageBtnHistorico_Click"/>
                                              </ItemTemplate>
                                              </ig:TemplateDataField>
                                          </Columns>
@@ -156,10 +155,6 @@
                                              <ig:Selection></ig:Selection>
                                              <ig:Activation></ig:Activation>
                                              <ig:RowSelectors></ig:RowSelectors>
-                                             <%--<ig:Filtering FilterType ="ExcelStyleFilter">
-                                             </ig:Filtering>--%>
-                                             <ig:Filtering></ig:Filtering>
-                                             <%--<ig:ColumnResizing></ig:ColumnResizing>--%>
                                              <ig:Sorting>
                                              </ig:Sorting>
                                          </Behaviors>

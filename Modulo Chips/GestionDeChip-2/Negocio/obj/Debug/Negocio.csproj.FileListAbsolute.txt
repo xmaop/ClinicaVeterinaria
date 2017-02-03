@@ -68,3 +68,13 @@ C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.dll
 C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.pdb

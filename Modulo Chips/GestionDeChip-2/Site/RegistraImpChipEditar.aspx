@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador.master" AutoEventWireup="true" CodeFile="RegistraImpChipEditar.aspx.cs" Inherits="workflowdet" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador.master" AutoEventWireup="true" CodeFile="RegistraImpChipEditar.aspx.cs" Inherits="RegistraImpChipEditar" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -94,7 +94,7 @@
                                             <td class="auto-style3" style="text-align: left; font-size: medium; font-weight: bold;" colspan="12">DATOS DE LA ORDEN</td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">No. DE ORDEN</td>
+                                            <td class="auto-style3" style="text-align: right">No. de orden</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtidOrdenAtencion" runat="server" Width="100px" Height="20px" Enabled="false"></asp:TextBox>
@@ -120,12 +120,12 @@
                                             <td class="style19" colspan="2"></td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">No. DE CHIP</td>
+                                            <td class="auto-style3" style="text-align: right">No. de chip</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtcodigo_Chip" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
-                                            <td class="auto-style18" style="text-align: left">FECHA DE REGISTRO</td>
+                                            <td class="auto-style18" style="text-align: left">Fecha de registro</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" colspan="2">:<asp:TextBox ID="txtfecha" runat="server" Enabled="False" Width="100px"></asp:TextBox>
                                                     <asp:Image ID="imgGENERA" runat="server" ImageUrl="~/Images/Calendar.png" ToolTip="Click para mostrar el calendario" Width="16px" />
@@ -134,7 +134,7 @@
                                             <td class="auto-style12">
                                             &nbsp;&nbsp;
                                                 </td>
-                                            <td class="style19">ESTADO</td>
+                                            <td class="style19">Estado</td>
                                             <td class="style19" colspan="2">
                                                 
                                                 <asp:TextBox ID="txtestado" runat="server" Height="20px" Width="300px" MaxLength="80" Enabled="False"></asp:TextBox>
@@ -153,13 +153,13 @@
                                             <asp:TextBox ID="txtidCliente" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style14">
-                                                TIPO DE CLIENTE</td>
+                                                Tipo de cliente</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtTipoCliente" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style14">
                                                 &nbsp;</td>
-                                            <td class="auto-style8" style="text-align: right">CODIGO</td>
+                                            <td class="auto-style8" style="text-align: right">Código</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style4">
                                                 <asp:TextBox ID="txtid_Mascota" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -173,13 +173,13 @@
                                             &nbsp;
                                                 </td>
                                             <td class="auto-style14">
-                                                TIPO Y No DOCUMENTO</td>
+                                                Tipo y No. documento</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtTipoDocumento_Identidad" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style14">
                                                 &nbsp;</td>
-                                            <td class="auto-style8" style="text-align: right">NOMBRE</td>
+                                            <td class="auto-style8" style="text-align: right">Nombre</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style4">
                                                 <asp:TextBox ID="txtnombrepaciente" runat="server" Height="20px" Width="300px" MaxLength="80" Enabled="False"></asp:TextBox>
@@ -192,7 +192,7 @@
                                             <td class="auto-style4" colspan="2">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">NOMBRE</td>
+                                            <td class="auto-style3" style="text-align: right">Nombre</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtNombre_Contacto" runat="server" Height="20px" Width="427px" MaxLength="80" Enabled="False"></asp:TextBox>
@@ -200,7 +200,7 @@
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" colspan="2">&nbsp;</td>
-                                            <td class="style19">FECHA DE NACIMIENTO</td>
+                                            <td class="style19">Fecha de nacimiento</td>
                                             <td class="style19">:</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtfecha_Nacimiento" runat="server" Enabled="False" Width="100px"></asp:TextBox>
@@ -209,7 +209,7 @@
                                                     </td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">TIPO Y No DOCUMENTO</td>
+                                            <td class="auto-style3" style="text-align: right">Tipo y No. Documento</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtTipoDocIdent_Contacto" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -217,7 +217,7 @@
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" colspan="2">&nbsp;</td>
-                                            <td class="style19">EDAD </td>
+                                            <td class="style19">Edad </td>
                                             <td class="style19">:</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtEdad" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -234,7 +234,7 @@
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" colspan="2">&nbsp;</td>
-                                            <td class="style19">ESPECIE</td>
+                                            <td class="style19">Especie</td>
                                             <td class="style19">:</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtespecie" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -249,7 +249,7 @@
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" colspan="2">&nbsp;</td>
-                                            <td class="style19">RAZA</td>
+                                            <td class="style19">Raza</td>
                                             <td class="style19">:</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtraza" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -261,11 +261,11 @@
                                         </tr>
                                         
                                         <tr>
-                                            <td class="auto-style2" colspan="12" style="font-size: medium; text-align: left; font-weight: bold;">EVALUACION MEDICA</td>
+                                            <td class="auto-style2" colspan="12" style="font-size: medium; text-align: left; font-weight: bold;">EVALUACI<span style="font-size: x-large; font-weight: normal">ó</span>N MEDICA</td>
                                         </tr>
                                         
                                         <tr>
-                                            <td class="auto-style2">ESTADO</td>
+                                            <td class="auto-style2">Estado</td>
                                             <td class="auto-style5">:</t:</td>
                                             <td class="auto-style7">
                                                 
@@ -278,7 +278,7 @@
                                                 
                                             </td>
                                             <td class="auto-style17" style="text-align: left">&nbsp;<td class="auto-style5">
-                                            <asp:Label ID="lblMotivo" runat="server" Text="MOTIVO" Visible="False"></asp:Label>
+                                            <asp:Label ID="lblMotivo" runat="server" Text="Motivo" Visible="False"></asp:Label>
                                             </td>
                                             <td class="auto-style5" colspan="2">
                                                 
@@ -298,13 +298,13 @@
                                         </tr>
                                         
                                         <tr>
-                                            <td class="auto-style2">OBSERVACIONES</td>
+                                            <td class="auto-style2">Notas y Observaciones</td>
                                             <td class="auto-style5">:<td class="auto-style7">
                                                 
                                                 <asp:TextBox ID="txtobservacion" runat="server" Height="79px" Width="427px" MaxLength="80" TextMode="MultiLine"></asp:TextBox>
                                             </td>
                                             <td class="auto-style17" style="text-align: left">&nbsp;<td class="auto-style5">
-                                            <asp:Label ID="lblMotivoObs" runat="server" Text="DETALLE" Visible="False"></asp:Label>
+                                            <asp:Label ID="lblMotivoObs" runat="server" Text="Detalle" Visible="False"></asp:Label>
                                             </td>
                                             <td class="auto-style5" colspan="2">
                                                 

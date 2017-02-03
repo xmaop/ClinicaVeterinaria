@@ -17,10 +17,11 @@ namespace Datos
         ConexionSQL oCnx = new ConexionSQL();
         ReporteBE oReporteBE = new ReporteBE();
         CuentaBE oCuentaBE = new CuentaBE();
-        private static ILog mLogger = LogManager.GetLogger("ReportesDAO");        
+        private static ILog mLogger = LogManager.GetLogger("ReportesDAO");
         #endregion
 
-        public bool ReporteInsert(ReporteBE BE) {
+        public bool ReporteInsert(ReporteBE BE)
+        {
 
             bool Result = false;
             SqlCommand cmd = new SqlCommand();
@@ -59,7 +60,8 @@ namespace Datos
                 mLogger.Error("CeCoInsert - Error la carga de los valores de los parametros: " + ex.Message);
                 throw;
             }
-            finally {
+            finally
+            {
 
                 oCnx.Desconectar();
             }
@@ -219,6 +221,114 @@ namespace Datos
 
         }
 
+
+
+        public bool DesactivarChip(ReporteBE BE, string usuario)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            bool Result = false;
+
+            try
+            {
+                cmd.Connection = oCnx.Conectar();
+                cmd.CommandText = "ACI_USP_VET_upd_DesactivarChip";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = BE.idOrdenAtencion;
+                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = usuario;
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    Result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                mLogger.Error("DesactivarChip - Error la carga de los valores de los parametros: " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                oCnx.Desconectar();
+            }
+            return Result;
+
+        }
+
+        public bool ActualizaFoto(int orden, string usuario, string foto)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            bool Result = false;
+
+            try
+            {
+                cmd.Connection = oCnx.Conectar();
+                cmd.CommandText = "ACI_USP_VET_upd_ActualizaFoto";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = orden;
+                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 15).Value = usuario;
+                cmd.Parameters.Add("@foto", SqlDbType.VarChar, 80).Value = foto;
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    Result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                mLogger.Error("ActualizaFoto - Error la carga de los valores de los parametros: " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                oCnx.Desconectar();
+            }
+            return Result;
+
+        }
+
+
+        public bool RechazarOrden(ReporteBE BE, string usuario, int codMotRechazo, string obs)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            bool Result = false;
+
+            try
+            {
+                cmd.Connection = oCnx.Conectar();
+                cmd.CommandText = "ACI_USP_VET_upd_RechazarOrden";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = BE.idOrdenAtencion;
+                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 50).Value = usuario;
+                cmd.Parameters.Add("@codMotRechazo", SqlDbType.Int).Value = codMotRechazo;
+                cmd.Parameters.Add("@obs", SqlDbType.VarChar, 200).Value = obs;
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    Result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                mLogger.Error("RechazarOrden - Error la carga de los valores de los parametros: " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                oCnx.Desconectar();
+            }
+            return Result;
+
+        }
+
         public bool ActualizaResponsables(string usuario, string aprobador, string empresa, string ceco, string ano)
         {
 
@@ -230,7 +340,7 @@ namespace Datos
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_UPD_RESPONSABLES";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@usuario", SqlDbType.VarChar,15).Value = usuario;
+                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 15).Value = usuario;
                 cmd.Parameters.Add("@aprobador", SqlDbType.VarChar, 15).Value = aprobador;
                 cmd.Parameters.Add("@empresa", SqlDbType.VarChar, 15).Value = empresa;
                 cmd.Parameters.Add("@ceco", SqlDbType.VarChar, 15).Value = ceco;
@@ -420,7 +530,7 @@ namespace Datos
                 cmd.CommandText = "PTO_UPD_CARGA_MASIVA";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Ano", SqlDbType.Int).Value = Ano;
-                cmd.Parameters.Add("@Destino", SqlDbType.Char,1).Value = Destino;
+                cmd.Parameters.Add("@Destino", SqlDbType.Char, 1).Value = Destino;
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -473,7 +583,7 @@ namespace Datos
             {
                 oCnx.Desconectar();
             }
-            return Result;       
+            return Result;
         }
 
         public bool AsignarCuenta(string COD_CUENTA, string COD_CECO, string ANO, int MES, decimal IMPORTE)
@@ -487,7 +597,7 @@ namespace Datos
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_UPD_ASIGNAR_CUENTA";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@COD_CUENTA", SqlDbType.VarChar,15).Value = COD_CUENTA;
+                cmd.Parameters.Add("@COD_CUENTA", SqlDbType.VarChar, 15).Value = COD_CUENTA;
                 cmd.Parameters.Add("@COD_CECO", SqlDbType.VarChar, 15).Value = COD_CECO;
                 cmd.Parameters.Add("@ANO", SqlDbType.Char, 4).Value = ANO;
                 cmd.Parameters.Add("@MES", SqlDbType.Int).Value = MES;
@@ -624,7 +734,7 @@ namespace Datos
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_SEL_PARAMETRO";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Par", SqlDbType.VarChar,80).Value = Par;
+                cmd.Parameters.Add("@Par", SqlDbType.VarChar, 80).Value = Par;
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
@@ -648,7 +758,7 @@ namespace Datos
         }
 
 
-        public string Correo(string Par,string CECO)
+        public string Correo(string Par, string CECO)
         {
             SqlCommand cmd = new SqlCommand();
             DataTable dt = new DataTable();
@@ -659,7 +769,7 @@ namespace Datos
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_SEL_CORREO";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@PAR", SqlDbType.Char,1).Value = Par;
+                cmd.Parameters.Add("@PAR", SqlDbType.Char, 1).Value = Par;
                 cmd.Parameters.Add("@CECO", SqlDbType.VarChar, 15).Value = CECO;
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -749,7 +859,8 @@ namespace Datos
 
         }
 
-        public DataTable ListarReportes() {
+        public DataTable ListarReportes()
+        {
 
             SqlCommand cmd = new SqlCommand();
             DataTable dt = new DataTable();
@@ -758,7 +869,7 @@ namespace Datos
             {
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_SEL_CECO";
-                cmd.CommandType = CommandType.StoredProcedure;                
+                cmd.CommandType = CommandType.StoredProcedure;
                 dt.Load(cmd.ExecuteReader());
                 return dt;
             }
@@ -786,9 +897,9 @@ namespace Datos
                 cmd.Connection = oCnx.Conectar();
                 cmd.CommandText = "PTO_SEL_CARGA_ARCHIVO";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@archivo", SqlDbType.VarChar,255).Value = archivo;
-                cmd.Parameters.Add("@ano", SqlDbType.Char,4).Value = ano;
-                cmd.Parameters.Add("@ceco", SqlDbType.VarChar,15).Value = ceco;
+                cmd.Parameters.Add("@archivo", SqlDbType.VarChar, 255).Value = archivo;
+                cmd.Parameters.Add("@ano", SqlDbType.Char, 4).Value = ano;
+                cmd.Parameters.Add("@ceco", SqlDbType.VarChar, 15).Value = ceco;
                 dt.Load(cmd.ExecuteReader());
                 return dt;
             }
@@ -830,7 +941,8 @@ namespace Datos
 
         }
 
-        public ReporteBE SeleccionaReporte(int IdReporte) {
+        public ReporteBE SeleccionaReporte(int IdReporte)
+        {
 
             SqlCommand cmd = new SqlCommand();
 
@@ -840,78 +952,80 @@ namespace Datos
                 cmd.CommandText = "ACI_USP_VET_get_OrdenDeImplantacion";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = IdReporte;
-                
-
-                 SqlDataReader dr = cmd.ExecuteReader();
-
-                 if (dr.HasRows)
-                 {
-                     dr.Read();
-                     oReporteBE.idOrdenAtencion = Convert.ToInt16(dr["idOrdenAtencion"]);
-                     oReporteBE.codigo_Chip = Convert.ToString(dr["codigo_Chip"]);
-                     oReporteBE.fecha = Convert.ToString(dr["fecha"]);
-                     oReporteBE.fechapaciente = Convert.ToString(dr["fechapaciente"]);
-                     oReporteBE.estado = Convert.ToString(dr["estado"]);
-                     oReporteBE.raza = Convert.ToString(dr["raza"]);
-                     oReporteBE.Edad = Convert.ToString(dr["Edad"]);
-                     oReporteBE.especie = Convert.ToString(dr["especie"]);
-                     oReporteBE.observacion = Convert.ToString(dr["observacion"]);
-                     oReporteBE.idCliente = Convert.ToString(dr["idCliente"]);
-                     oReporteBE.Cliente = Convert.ToString(dr["Cliente"]);
-                     oReporteBE.foto = Convert.ToString(dr["foto"]);
-                     oReporteBE.TipoCliente = Convert.ToString(dr["TipoCliente"]);
-                     oReporteBE.TipoDocumento_Identidad = Convert.ToString(dr["TipoDocumento_Identidad"]);
-                     oReporteBE.Documento_Identidad = Convert.ToString(dr["Documento_Identidad"]);
-                     oReporteBE.nombrepaciente = Convert.ToString(dr["nombrepaciente"]);
-                     oReporteBE.id_Mascota = Convert.ToString(dr["id_Mascota"]);
-                     oReporteBE.Nombre_Contacto = Convert.ToString(dr["Nombre_Contacto"]);
-                     oReporteBE.TipoDocIdent_Contacto = Convert.ToString(dr["TipoDocIdent_Contacto"]);
-                     oReporteBE.NroDocIdent_Contacto = Convert.ToString(dr["NroDocIdent_Contacto"]);
-                     oReporteBE.descripcionMotivoRechazo = Convert.ToString(dr["descripcionMotivoRechazo"]);
-                     oReporteBE.motivoRechazo = Convert.ToString(dr["motivoRechazo"]);
-                     oReporteBE.semanas = Convert.ToInt16(dr["semanas"]);
-                     oReporteBE.codigoTarjeta = Convert.ToString(dr["codigoTarjeta"]);
-                     oReporteBE.fechaExpiracion = Convert.ToString(dr["fechaExpiracion"]);
-                     oReporteBE.estadotrj = Convert.ToString(dr["estadotrj"]);
-                     oReporteBE.fechaEmision = Convert.ToString(dr["fechaEmision"]);
-                     oReporteBE.genero = Convert.ToString(dr["genero"]);
-                     oReporteBE.celular = Convert.ToString(dr["celular"]);
-                     oReporteBE.telefono = Convert.ToString(dr["telefono"]);
-                     oReporteBE.motivoGenerar = Convert.ToString(dr["motivoGenerar"]);
-                     
-                 }
 
 
-                
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    oReporteBE.idOrdenAtencion = Convert.ToInt16(dr["idOrdenAtencion"]);
+                    oReporteBE.codigo_Chip = Convert.ToString(dr["codigo_Chip"]);
+                    oReporteBE.fecha = Convert.ToString(dr["fecha"]);
+                    oReporteBE.fechapaciente = Convert.ToString(dr["fechapaciente"]);
+                    oReporteBE.estado = Convert.ToString(dr["estado"]);
+                    oReporteBE.raza = Convert.ToString(dr["raza"]);
+                    oReporteBE.Edad = Convert.ToString(dr["Edad"]);
+                    oReporteBE.especie = Convert.ToString(dr["especie"]);
+                    oReporteBE.observacion = Convert.ToString(dr["observacion"]);
+                    oReporteBE.idCliente = Convert.ToString(dr["idCliente"]);
+                    oReporteBE.Cliente = Convert.ToString(dr["Cliente"]);
+                    oReporteBE.foto = Convert.ToString(dr["foto"]);
+                    oReporteBE.TipoCliente = Convert.ToString(dr["TipoCliente"]);
+                    oReporteBE.TipoDocumento_Identidad = Convert.ToString(dr["TipoDocumento_Identidad"]);
+                    oReporteBE.Documento_Identidad = Convert.ToString(dr["Documento_Identidad"]);
+                    oReporteBE.nombrepaciente = Convert.ToString(dr["nombrepaciente"]);
+                    oReporteBE.id_Mascota = Convert.ToString(dr["id_Mascota"]);
+                    oReporteBE.Nombre_Contacto = Convert.ToString(dr["Nombre_Contacto"]);
+                    oReporteBE.TipoDocIdent_Contacto = Convert.ToString(dr["TipoDocIdent_Contacto"]);
+                    oReporteBE.NroDocIdent_Contacto = Convert.ToString(dr["NroDocIdent_Contacto"]);
+                    oReporteBE.descripcionMotivoRechazo = Convert.ToString(dr["descripcionMotivoRechazo"]);
+                    oReporteBE.motivoRechazo = Convert.ToString(dr["motivoRechazo"]);
+                    oReporteBE.semanas = Convert.ToInt16(dr["semanas"]);
+                    oReporteBE.codigoTarjeta = Convert.ToString(dr["codigoTarjeta"]);
+                    oReporteBE.fechaExpiracion = Convert.ToString(dr["fechaExpiracion"]);
+                    oReporteBE.estadotrj = Convert.ToString(dr["estadotrj"]);
+                    oReporteBE.fechaEmision = Convert.ToString(dr["fechaEmision"]);
+                    oReporteBE.genero = Convert.ToString(dr["genero"]);
+                    oReporteBE.celular = Convert.ToString(dr["celular"]);
+                    oReporteBE.telefono = Convert.ToString(dr["telefono"]);
+                    oReporteBE.motivoGenerar = Convert.ToString(dr["motivoGenerar"]);
+                    oReporteBE.fechaFoto = Convert.ToString(dr["fechaFoto"]);
+                    oReporteBE.fecha_Nacimiento = Convert.ToString(dr["fecha_Nacimiento"]);
+                }
+
+
+
                 return oReporteBE;
             }
 
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 mLogger.Error("Error clase: CeCoDAO - SeleccionaCeCo: " + ex.Message);
             }
 
-            finally 
-            { 
-                 oCnx.Desconectar();
+            finally
+            {
+                oCnx.Desconectar();
             }
 
             return oReporteBE;
-            
-            }
+
+        }
 
 
-        public CuentaBE SeleccionaCuenta(int IdCuenta)
+        public string Correo(int Orden)
         {
 
             SqlCommand cmd = new SqlCommand();
+            string iCorreo = "";
 
             try
             {
                 cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "PTO_SEL_IDCUENTA";
+                cmd.CommandText = "ACI_USP_VET_sel_Correo";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nId", SqlDbType.Int).Value = IdCuenta;
+                cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = Orden;
 
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -920,24 +1034,15 @@ namespace Datos
                 {
                     dr.Read();
 
-                    oCuentaBE.nId = Convert.ToInt16(dr["nId"]);
-                    oCuentaBE.CTA_COD_NODO1 = Convert.ToString(dr["CTA_COD_NODO1"]);
-                    oCuentaBE.CTA_NODO1 = Convert.ToString(dr["CTA_NODO1"]);
-                    oCuentaBE.CTA_COD_NODO2 = Convert.ToString(dr["CTA_COD_NODO2"]);
-                    oCuentaBE.CTA_NODO2 = Convert.ToString(dr["CTA_NODO2"]);
-                    oCuentaBE.COD_CUENTA = Convert.ToString(dr["COD_CUENTA"]);
-                    oCuentaBE.CUENTA = Convert.ToString(dr["CUENTA"]);
-                    oCuentaBE.ESTADO = Convert.ToInt16(dr["ESTADO"]);
+                    iCorreo = Convert.ToString(dr["correo"]);
                 }
 
-
-
-                return oCuentaBE;
+                return iCorreo;
             }
 
             catch (Exception ex)
             {
-                mLogger.Error("Error clase: ReportesDAO - SeleccionaReporte: " + ex.Message);
+                mLogger.Error("Error clase: PetCenter - Correo: " + ex.Message);
             }
 
             finally
@@ -945,90 +1050,37 @@ namespace Datos
                 oCnx.Desconectar();
             }
 
-            return oCuentaBE;
+            return iCorreo;
 
         }
 
-        public DataTable ListarReportesxModulo(int IdModulo)
+
+
+        public int Valida(int Id, string Campo)
         {
 
-            SqlCommand cmd = new SqlCommand();
-            DataTable dt = new DataTable();
+           SqlCommand cmd = new SqlCommand();
 
             try
             {
                 cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "BWEB_SEL_VERMODRPT";
+                cmd.CommandText = "ACI_USP_VET_sel_Valida";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nIdMod", SqlDbType.Int).Value = IdModulo;
+                cmd.Parameters.Add("@idOrdenAtencion", SqlDbType.Int).Value = Id;
+                cmd.Parameters.Add("@Campo", SqlDbType.VarChar, 50).Value = Campo;
 
-                dt.Load(cmd.ExecuteReader());
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                mLogger.Error("Error clase: ReportesDAO - ListarReportesxModulo: " + ex.Message);
-                return dt;
-            }
-            finally
-            {
-                oCnx.Desconectar();
-            }
+                SqlDataReader dr = cmd.ExecuteReader();
 
-        }
-
-        public DataTable ListadoReportesxModuloSinAsignar(int Compania, int IdModulo)
-        {
-
-            SqlCommand cmd = new SqlCommand();
-            DataTable dt = new DataTable();
-
-            try
-            {
-                cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "BWEB_SEL_ADDMODRPT";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nCia", SqlDbType.Int).Value = Compania;
-                cmd.Parameters.Add("@nIdMod", SqlDbType.Int).Value = IdModulo;
-
-                dt.Load(cmd.ExecuteReader());
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                mLogger.Error("Error clase: ReportesDAO - ListadoReportesxModuloSinAsignar: " + ex.Message);
-                return dt;
-            }
-            finally
-            {
-                oCnx.Desconectar();
-            }
-
-        }
-
-        public bool InsertaReporteaModulo(int IdModulo, int IdReporte, int Orden, string Estado) {
-
-            bool Result = false;
-            SqlCommand cmd = new SqlCommand();
-
-            try
-            {
-                cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "BWEB_INS_MODRPT";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nIdMod", SqlDbType.Int).Value = IdModulo;
-                cmd.Parameters.Add("@nIdRpt", SqlDbType.Int).Value = IdReporte;
-                cmd.Parameters.Add("@nOrden", SqlDbType.Int).Value = Orden;
-                cmd.Parameters.Add("@cEstado", SqlDbType.VarChar, 1).Value = Estado;
-                
-                if (cmd.ExecuteNonQuery() > 0)
+                if (dr.HasRows)
                 {
-                    Result = true;
+                    dr.Read();
+
+                   return Convert.ToInt16(dr["RPTA"]);
                 }
             }
             catch (Exception ex)
             {
-                mLogger.Error("InsertaReporteaModulo - Error la carga de los valores de los parametros: " + ex.Message);
+                mLogger.Error("Valida - Error la carga de los valores de los parametros: " + ex.Message);
                 throw;
             }
             finally
@@ -1037,75 +1089,11 @@ namespace Datos
                 oCnx.Desconectar();
             }
 
-            return Result;
-        
-        }
-
-        public DataTable ReportesSinAsignarxUsuario(int Compania, int Usuario)
-        {
-
-            SqlCommand cmd = new SqlCommand();
-            DataTable dt = new DataTable();
-
-            try
-            {
-                cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "BWEB_SEL_ADDRPTMENU";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nCia", SqlDbType.Int).Value = Compania;
-                cmd.Parameters.Add("@nIdUsr", SqlDbType.Int).Value = Usuario;
-                dt.Load(cmd.ExecuteReader());
-                return dt;
-            }
-
-            catch (Exception ex)
-            {
-                mLogger.Error("Error clase: ReporteDAO - ReportesSinAsignarxUsuario: " + ex.Message);
-                return dt;
-            }
-
-            finally
-            {
-                oCnx.Desconectar();
-            }
+            return 1;
 
         }
 
-        public bool InsertaReporteAlUsuario(int Usuario, int Compania, int Modulo, int Reporte)
-        {
 
-            bool Result = false;
-            SqlCommand cmd = new SqlCommand();
 
-            try
-            {
-                cmd.Connection = oCnx.Conectar();
-                cmd.CommandText = "BWEB_INS_OPCMENUUSUARIO";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nIdUsr", SqlDbType.Int).Value = Usuario;
-                cmd.Parameters.Add("@nCia", SqlDbType.Int).Value = Compania;
-                cmd.Parameters.Add("@nIdMod", SqlDbType.Int).Value = Modulo;
-                cmd.Parameters.Add("@nIdRpt", SqlDbType.Int).Value = Reporte;
-
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    Result = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                mLogger.Error("InsertaReporteAlUsuario - Error la carga de los valores de los parametros: " + ex.Message);
-                throw;
-            }
-            finally
-            {
-
-                oCnx.Desconectar();
-            }
-
-            return Result;
-
-        }
-    
     }
 }

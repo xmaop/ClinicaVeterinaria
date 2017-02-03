@@ -102,6 +102,32 @@ namespace Datos
         }
 
 
+        public DataTable VerOrdenesActualizacion()
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cmd.Connection = oCnx.Conectar();
+                cmd.CommandText = "ACI_USP_VET_sel_OrdenesDisponiblesActualizacion";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                mLogger.Error("Clase: PetCenter - VerOrdenesActualizacion: " + ex.Message);
+                throw;
+            }
+            finally
+            {
+                oCnx.Desconectar();
+            }
+        }
+
         public DataTable ListaGenerarTarjeta()
         {
             SqlCommand cmd = new SqlCommand();

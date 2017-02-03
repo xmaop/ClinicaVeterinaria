@@ -44,6 +44,7 @@
     <Compile Include="ModuloBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteBL.cs" />
+    <Compile Include="TareaBL.cs" />
     <Compile Include="UsuarioBL.cs" />
   </ItemGroup>
   <ItemGroup>

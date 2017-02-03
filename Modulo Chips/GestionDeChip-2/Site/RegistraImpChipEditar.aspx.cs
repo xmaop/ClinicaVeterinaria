@@ -10,7 +10,7 @@ using System.Data;
 using log4net;
 
 
-public partial class workflowdet : System.Web.UI.Page
+public partial class RegistraImpChipEditar : System.Web.UI.Page
 {
 
     #region Variables
@@ -19,7 +19,8 @@ public partial class workflowdet : System.Web.UI.Page
     ModuloBL oModuloBL = new ModuloBL();
 
     private static ILog mLogger = LogManager.GetLogger("ReporteDetails");
-    
+    public int vValida = 0;
+  
     #endregion
 
     private void Mensaje(string Mensaje)
@@ -106,6 +107,21 @@ public partial class workflowdet : System.Web.UI.Page
 
             if (!string.IsNullOrEmpty(Id))
             {
+
+
+                if (verValida(Convert.ToInt16(Id), "Cliente") == 0)
+                {
+                    Mensaje("El cliente vinculado a la orden se encuentra inactivo, por lo que la orden se mostrará en modo sólo consulta.");
+                    vValida = 1;
+                }
+
+                if (verValida(Convert.ToInt16(Id), "Paciente") == 0)
+                {
+                    Mensaje("El paciente vinculado a la orden se encuentra inactivo, por lo que la orden se mostrará en modo sólo consulta.");
+                    vValida = 1;
+                }
+
+
                 LblTitulo.Text = "Registrar Implantación de Chip";
 
                 oReporteBE = oReporteBL.SeleccionaReporte(Convert.ToInt16(Id));
@@ -123,12 +139,21 @@ public partial class workflowdet : System.Web.UI.Page
                 txtespecie.Text = oReporteBE.especie;
                 txtEdad.Text = oReporteBE.Edad;
                 txtNombre_Contacto.Text = oReporteBE.Nombre_Contacto;
-                txtTipoDocIdent_Contacto.Text = oReporteBE.TipoDocIdent_Contacto.ToString().Trim() + " - " + oReporteBE.NroDocIdent_Contacto.ToString().Trim();
+
+                if (oReporteBE.NroDocIdent_Contacto != null || oReporteBE.TipoDocIdent_Contacto != null) { 
+                    txtTipoDocIdent_Contacto.Text = oReporteBE.TipoDocIdent_Contacto.ToString().Trim() + " - " + oReporteBE.NroDocIdent_Contacto.ToString().Trim();
+                }
+
                 txtTipoCliente.Text = oReporteBE.TipoCliente;
-                txtTipoDocumento_Identidad.Text = oReporteBE.TipoDocumento_Identidad.ToString().Trim() + " - " + oReporteBE.Documento_Identidad.ToString().Trim();
+
+                if (oReporteBE.TipoDocumento_Identidad != null || oReporteBE.Documento_Identidad != null)
+                {
+                    txtTipoDocumento_Identidad.Text = oReporteBE.TipoDocumento_Identidad.ToString().Trim() + " - " + oReporteBE.Documento_Identidad.ToString().Trim();
+                }
+
                 txtid_Mascota.Text = Convert.ToString(oReporteBE.id_Mascota);
                 txtnombrepaciente.Text = oReporteBE.nombrepaciente;
-                txtfecha_Nacimiento.Text = Convert.ToDateTime(oReporteBE.fecha).ToShortDateString();
+                txtfecha_Nacimiento.Text = Convert.ToDateTime(oReporteBE.fecha_Nacimiento).ToShortDateString();
                 txtEdad.Text = Convert.ToString(oReporteBE.Edad);
                 txtobservacion.Text = Convert.ToString(oReporteBE.observacion);
 
@@ -145,6 +170,9 @@ public partial class workflowdet : System.Web.UI.Page
                     DdlEstado.Items[0].Attributes.Add("disabled", "disabled");
                     DdlEstado.Items[2].Attributes.Add("disabled", "disabled");
 
+                    //DdlEstado.Items.RemoveAt(0);
+                    //DdlEstado.Items.RemoveAt(2);
+
                     DdlEstado.Text = "Iniciar implantación";
                         
                     lblMotivo.Visible = false;
@@ -152,7 +180,12 @@ public partial class workflowdet : System.Web.UI.Page
                     lblMotivoObs.Visible = false;            
                     txtMotivoObs.Text = "";
                     txtMotivoObs.Visible = false;
-                    
+
+                }
+                else if (txtestado.Text == "Iniciar implantación")
+                {
+                    DdlEstado.Items[0].Attributes.Add("disabled", "disabled");
+                    DdlEstado.Items[1].Attributes.Add("disabled", "disabled");
                 }
                 else if (txtestado.Text == "Rechazado" || txtestado.Text == "Implantado")
                 {
@@ -164,9 +197,10 @@ public partial class workflowdet : System.Web.UI.Page
                         lblMotivo.Visible = true;
                         DdlMotivo.Visible = true;
                     }
-                    else {
+                    else
+                    {
                         lblMotivo.Visible = false;
-                        DdlMotivo.Visible = false;                    
+                        DdlMotivo.Visible = false;
                     }
 
 
@@ -178,16 +212,18 @@ public partial class workflowdet : System.Web.UI.Page
                         DdlMotivo.Enabled = false;
                         txtMotivoObs.Enabled = false;
                     }
-                    else { 
-                    
+                    else
+                    {
+
                     }
 
                     txtobservacion.Enabled = false;
                     DdlEstado.Enabled = false;
                     BtnGrabar.Enabled = false;
-                
+
                 }
-                else {
+                else
+                {
                     txtobservacion.Enabled = true;
                 }
 
@@ -197,11 +233,19 @@ public partial class workflowdet : System.Web.UI.Page
                 {
                     lblValidaEdad.Text = "La edad mínima para implantar un Chip en un Perro es de 3 semanas.";
                     lblValidaEdad.Visible = true;
+                    BtnGrabar.Enabled = false;
+                    DdlEstado.Items[0].Attributes.Add("disabled", "disabled");
+                    DdlEstado.Items[1].Attributes.Add("disabled", "disabled");
+                    DdlEstado.Items[2].Attributes.Add("disabled", "disabled");
                 }
                 else if (txtespecie.Text == "Gato" && vSem < 5)
                 {
                     lblValidaEdad.Text = "La edad mínima para implantar un Chip en un Gato es de 5 semanas.";
                     lblValidaEdad.Visible = true;
+                    BtnGrabar.Enabled = false;
+                    DdlEstado.Items[0].Attributes.Add("disabled", "disabled");
+                    DdlEstado.Items[1].Attributes.Add("disabled", "disabled");
+                    DdlEstado.Items[2].Attributes.Add("disabled", "disabled");
                 }
                 else {
                     lblValidaEdad.Visible = false;
@@ -211,7 +255,9 @@ public partial class workflowdet : System.Web.UI.Page
 
         }
 
-
+        if (vValida == 1) {
+            BtnGrabar.Enabled = false;
+        }
     }
 
 
@@ -268,6 +314,7 @@ public partial class workflowdet : System.Web.UI.Page
         Habilitar(true);
         Limpiar();
     }
+
     protected void BtnSalir_Click(object sender, EventArgs e)
     {
         try
@@ -281,6 +328,7 @@ public partial class workflowdet : System.Web.UI.Page
             throw;                
         }
     }
+
     protected void BtnActualizaResponsables_Click(object sender, EventArgs e)
     {
         string ano = Convert.ToString(Convert.ToInt16(DateTime.Today.Year.ToString()) + 1);
@@ -303,8 +351,14 @@ public partial class workflowdet : System.Web.UI.Page
         {
             lblMotivo.Visible = true;
             DdlMotivo.Visible = true;
+            BtnGrabar.Enabled = true;
         }
         else {
+            if (txtestado.Text == "Listo para implantación")
+            {
+                BtnGrabar.Enabled = false;
+            }
+
             lblMotivo.Visible = false;
             DdlMotivo.Visible = false;
 
@@ -324,11 +378,21 @@ public partial class workflowdet : System.Web.UI.Page
         {
             lblMotivoObs.Visible = true;
             txtMotivoObs.Visible = true;
+            BtnGrabar.Enabled = true;
         }
         else
         {
+            if (txtestado.Text == "Listo para implantación")
+            {
+                BtnGrabar.Enabled = false;
+            }
             lblMotivoObs.Visible = false;
             txtMotivoObs.Visible = false;
+        }
+
+        if (DdlEstado.Text == "Rechazado")
+        {
+            BtnGrabar.Enabled = true;
         }
 
         if (txtestado.Text == "Listo para implantación")
@@ -337,4 +401,27 @@ public partial class workflowdet : System.Web.UI.Page
             DdlEstado.Items[2].Attributes.Add("disabled", "disabled");
         }
     }
+
+
+    public int verValida(int Id, string Campo)
+    {
+
+        try
+        {
+
+            int Est = 0;
+
+            Est = oReporteBL.Valida(Id, Campo);
+            return Est;
+
+        }
+
+        catch (Exception ex)
+        {
+            mLogger.Error("PetCenter - BtnGrabar_Click: " + ex.Message);
+            throw;
+        }
+
+    }
+
 }

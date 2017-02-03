@@ -35,6 +35,12 @@ namespace Negocio
             return oReportesDAO.ReporteInsert(BE);
         }
 
+        public int Valida(int Id, string Campo)
+        {
+
+            return oReportesDAO.Valida(Id,Campo);
+        }
+
         public bool CuentaInsert(CuentaBE BE)
         {
 
@@ -54,7 +60,22 @@ namespace Negocio
         public bool DarBajaTarjeta(ReporteBE BE, string usuario)
         {
             return oReportesDAO.DarBajaTarjeta(BE, usuario);
-        }       
+        }
+
+        public bool DesactivarChip(ReporteBE BE, string usuario)
+        {
+            return oReportesDAO.DesactivarChip(BE, usuario);
+        }
+
+        public bool ActualizaFoto(int orden, string usuario, string foto)
+        {
+            return oReportesDAO.ActualizaFoto(orden,usuario,foto);
+        }
+
+        public bool RechazarOrden(ReporteBE BE, string usuario, int codMotivo, string obs)
+        {
+            return oReportesDAO.RechazarOrden(BE, usuario, codMotivo, obs);
+        } 
 
         public bool ActualizaResponsables(string usuario,string aprobador,string empresa,string ceco, string ano)
         {
@@ -138,34 +159,12 @@ namespace Negocio
         }
 
 
-        public CuentaBE SeleccionaCuenta(int IdCuenta)
+        public string Correo(int Orden)
         {
-            return oReportesDAO.SeleccionaCuenta(IdCuenta);
+            return oReportesDAO.Correo(Orden);
         }
 
-        public DataTable ListarReportesxModulo(int IdModulo)
-        {
-            return oReportesDAO.ListarReportesxModulo(IdModulo);
-        }
 
-        public DataTable ListadoReportesxModuloSinAsignar(int Compania, int IdModulo)
-        {
-            return oReportesDAO.ListadoReportesxModuloSinAsignar(Compania, IdModulo);
-        }
-
-        public bool InsertaReporteaModulo(int IdModulo, int IdReporte, int Orden, string Estado) {
-            return oReportesDAO.InsertaReporteaModulo(IdModulo, IdReporte, Orden, Estado);
-        }
-
-        public DataTable ReportesSinAsignarxUsuario(int Compania, int Usuario)
-        {
-            return oReportesDAO.ReportesSinAsignarxUsuario(Compania, Usuario);
-        }
-
-        public bool InsertaReporteAlUsuario(int Usuario, int Compania, int Modulo, int Reporte)
-        {
-            return oReportesDAO.InsertaReporteAlUsuario(Usuario, Compania, Modulo, Reporte);
-        }
 
     }
 

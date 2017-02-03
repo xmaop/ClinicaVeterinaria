@@ -556,3 +556,369 @@ Nombre del parámetro: index
 2017-01-24 10:23:33,471 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
 2017-01-24 11:44:40,496 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
 2017-01-24 11:49:28,336 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 16:56:06,670 ERROR 6 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Could not find stored procedure 'ACI_USP_VET_sel_OrdenesDisponiblesImplantacion'.
+2017-01-24 17:21:00,151 ERROR 8 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-24 23:18:00,433 ERROR 7 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-24 23:50:37,372 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 23:51:50,437 ERROR 25 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-24 23:51:50,452 ERROR 25 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:10:24,504 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:10:24,512 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:32:49,808 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:32:49,813 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 01:13:02,786 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:13:25,412 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:17:33,407 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:19:39,104 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:07:48,588 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:10:07,367 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:13:17,440 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:14:22,842 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:20,948 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:31,743 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:59,495 ERROR 8 UsuarioDAO - Clase: PetCenter - ListaGenerarTarjeta: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-25 12:44:47,534 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-25 12:45:20,748 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 12:46:06,372 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 12:51:24,104 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 14:49:00,175 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 15:38:05,892 ERROR 7 ReportesDAO - ActualizaFoto - Error la carga de los valores de los parametros: Could not find stored procedure 'ACI_USP_VET_upd_ActualizaFoto'.
+2017-01-25 16:01:27,735 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 16:53:56,661 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 16:55:39,887 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:29:30,053 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 18:36:17,474 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:37:09,972 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:39:42,833 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: Error al enviar correo.
+2017-01-25 18:46:47,840 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: Error al enviar correo.
+2017-01-25 19:09:53,635 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:11:58,391 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:16:25,689 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:18:37,413 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 20:33:43,233 ERROR 12 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:11:46,094 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:12:44,506 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:14:35,118 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:15:17,931 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:16:39,949 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:26:15,993 ERROR 8 ReportesDAO - Error clase: PetCenter - Correo: Procedure or function 'ACI_USP_VET_sel_Correo' expects parameter '@idOrdenAtencion', which was not supplied.
+2017-01-25 21:26:16,047 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: El parámetro 'addresses' no puede ser una cadena vacía.
+Nombre del parámetro: addresses
+2017-01-25 21:27:35,912 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:32:08,813 ERROR 17 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:33:23,715 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:56:40,657 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:02:10,432 ERROR 22 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:03:03,631 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:05:39,253 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:49:17,500 ERROR 37 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 22:56:13,882 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 22:56:43,801 ERROR 9 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 00:27:19,953 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:39:09,433 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:45:22,330 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:49:42,499 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:50:12,575 ERROR 10 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 00:50:17,363 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:29:13,491 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:29:33,025 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:40:45,201 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:41:07,180 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:44:49,535 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:47:01,152 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:51:27,838 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:52:08,626 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:04:48,860 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:07:32,827 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:26:17,250 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:29:33,155 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:34:27,659 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:04,987 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:26,862 ERROR 20 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:35,972 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:54:51,454 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:58:04,761 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 08:58:13,059 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:13:40,177 ERROR 39 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 09:23:23,822 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:28:25,913 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:53:38,565 ERROR 44 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:06:40,791 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:08:18,740 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:11:11,570 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:11:58,267 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:17:41,728 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:18:15,776 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:24:15,864 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:33:14,842 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:34:01,555 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:41:02,798 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:41:19,012 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:42:16,624 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:43:53,840 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:52:08,443 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:52:22,913 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:57:33,084 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 13:15:52,343 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 13:25:24,822 ERROR 38 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:06:34,305 ERROR 119 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:12:43,210 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:12:49,411 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:15:49,132 ERROR 108 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:25:36,926 ERROR 113 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:30:03,438 ERROR 115 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:30:23,359 ERROR 115 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:35:00,674 ERROR 114 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:36:05,073 ERROR 117 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:44:25,778 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:46:42,593 ERROR 103 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:46:57,943 ERROR 117 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:47:59,667 ERROR 103 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:55:03,848 ERROR 109 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:55:17,095 ERROR 111 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:00:43,919 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:01:19,967 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:23:01,754 ERROR 60 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 15:25:31,012 ERROR 59 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:25:50,769 ERROR 55 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:35:00,312 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:37:30,246 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 15:47:10,922 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 15:48:45,894 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:49:44,983 ERROR 23 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:50:56,945 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:23:53,738 ERROR 85 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:24:11,576 ERROR 84 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 16:24:31,657 ERROR 81 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 16:24:36,935 ERROR 80 UsuarioDAO - Clase: PetCenter - VerHistoricoPaciente: Invalid column name 'NoOrden'.
+2017-01-26 16:27:16,150 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:29:19,366 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:19:50,012 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:47:42,499 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:29,876 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:35,186 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:43,976 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:59,776 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:02:21,483 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:03:27,484 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:04:47,244 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:10:43,429 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:11:31,969 ERROR 23 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:13:06,158 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:15:45,084 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:16:17,676 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:16:34,216 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:35:03,826 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:35:28,014 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:36:05,911 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:37:12,566 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:38:24,069 ERROR 20 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:44:17,014 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:45:57,357 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:46:20,252 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:47:32,376 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:29:46,518 ERROR 61 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:34:28,880 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:36:03,365 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:38:30,963 ERROR 55 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:46:00,134 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:47:03,543 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:50:04,411 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:54:31,997 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:55:13,734 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:02:48,857 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:12:25,452 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:26:48,530 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:26:58,304 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:27:30,825 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:33,926 ERROR 39 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:40,852 ERROR 34 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:45,806 ERROR 36 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:51,096 ERROR 35 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:56,391 ERROR 39 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:45:17,084 ERROR 23 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:46:00,304 ERROR 23 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:46:00,404 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:46:42,736 ERROR 24 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:47:31,836 ERROR 24 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:48:14,505 ERROR 37 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:50:46,301 ERROR 7 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:50:46,313 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:51:41,200 ERROR 8 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:51:41,219 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:52:30,185 ERROR 5 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:53:27,142 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:53:55,007 ERROR 10 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:53:55,019 ERROR 10 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:54:38,612 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:55:06,075 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:55:40,747 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:56:00,417 ERROR 8 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:56:00,428 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:57:14,992 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:58:46,030 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:59:44,425 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:02:48,934 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:03:12,156 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:03:39,754 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:04:59,058 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:05:31,940 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:08:09,210 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:11:53,775 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-27 07:43:38,985 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 07:43:43,843 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 07:44:04,214 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 07:44:07,165 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 09:38:01,856 ERROR 5 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 09:38:06,222 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 09:39:20,784 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 09:39:31,046 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:55:38,500 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:10,125 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:16,893 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:28,160 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:50,108 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:09,923 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:17,336 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:23,617 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:16,855 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:23,996 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:34,507 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:46,949 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:07:11,236 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 08:17:08,299 ERROR 7 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Procedure or function ACI_USP_VET_ins_Tareas has too many arguments specified.
+2017-01-30 08:17:08,328 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function ACI_USP_VET_ins_Tareas has too many arguments specified.
+2017-01-30 08:18:40,506 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Procedure or function 'ACI_USP_VET_ins_Tareas' expects parameter '@Modalidad', which was not supplied.
+2017-01-30 08:18:40,524 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function 'ACI_USP_VET_ins_Tareas' expects parameter '@Modalidad', which was not supplied.
+2017-01-30 08:20:51,391 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-01-30 16:29:13,666 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:32:18,223 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:41:16,070 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:41:51,515 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:45:54,717 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:46:02,947 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 18:45:33,828 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Valor de tiempo de espera caducado. El periodo de tiempo de espera se agotó al intentar consumir la confirmación del protocolo de enlace previo al inicio de sesión. El motivo podría ser que se produjo un error en el protocolo de enlace o que el servidor no pudo responder a tiempo.  El tiempo invertido al intentar conectarse a este servidor fue: [Previo al inicio de sesión] inicialización=27947; protocolo de enlace=49; 
+2017-01-30 18:45:33,908 ERROR 8 UsuarioDAO - Clase: PetCenter - ListaGenerarTarjeta: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2017-01-31 09:42:57,155 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:47:13,257 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: El parámetro 'addresses' no puede ser una cadena vacía.
+Nombre del parámetro: addresses
+2017-01-31 09:51:57,048 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:52:08,241 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:52:38,957 ERROR 12 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 09:54:45,490 ERROR 23 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 09:58:17,509 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:58:39,862 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:59:23,363 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:59:46,464 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:23:13,497 ERROR 6 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 10:23:29,601 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:26:01,438 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:31:24,735 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:31:44,770 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:03:39,504 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:03:54,476 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:04:05,421 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:04:20,241 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:05:10,300 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 21:23:04,756 ERROR 10 UsuarioDAO - Clase: PetCenter - VerOrdenesActualizacion: Could not find stored procedure 'ACI_USP_VET_sel_OrdenesDisponiblesActualizacion'.
+2017-02-01 18:31:10,021 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:31:10,036 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:32:56,464 ERROR 10 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:32:56,464 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:36:19,307 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:36:19,322 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:40:29,204 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:40:29,220 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:41:31,762 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 18:43:32,059 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: No se puede encontrar una parte de la ruta de acceso 'C:\inetpub\wwwroot\PetCenter\TareasExportarDatos.csv'.
+2017-02-01 18:45:36,640 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 19:08:48,583 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: 'C:/UPC/Taller de Proyectos III/GestionDeChipAzure/Site/Tareas/ExportarDatos.csv' es una ruta de acceso física, pero se esperaba una ruta de acceso virtual.
+2017-02-01 19:11:18,689 ERROR 5 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 19:35:54,150 ERROR 8 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 23:24:16,670 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 23:26:59,489 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:04:22,117 ERROR 7 TareaDAO - Clase: PetCenter - SeleccionaRegistrosTarea: Procedure or function 'ACI_USP_VET_sel_RegistrosTarea' expects parameter '@CodTarea', which was not supplied.
+2017-02-02 12:04:22,126 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function 'ACI_USP_VET_sel_RegistrosTarea' expects parameter '@CodTarea', which was not supplied.
+2017-02-02 12:09:21,665 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:19:06,342 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:21:33,208 ERROR 14 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 14:22:02,711 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 15:47:11,061 ERROR 5 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:24:24,428 ERROR 11 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:28:32,188 ERROR 24 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:37:28,735 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:55:11,515 ERROR 8 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:02:08,991 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:08:25,567 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:22:38,605 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 17:22:50,825 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 17:22:59,734 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:03:53,619 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:14:28,120 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:19:12,432 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:07,286 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:16,794 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:26,657 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:35,137 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:26:53,184 ERROR 30 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:27:10,290 ERROR 29 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:28:31,124 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 19:29:04,337 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:29:42,398 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:40:29,116 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:40:39,047 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:01,517 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:09,949 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:39,142 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:57:39,383 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:58:07,286 ERROR 22 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:58:17,708 ERROR 26 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:58:22,701 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:07:56,754 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:08:07,939 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:08:58,199 ERROR 22 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 20:09:08,745 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:16,278 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:28,931 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:52,769 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:00,419 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:28,193 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:44,608 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:14:55,470 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:04,564 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:15,782 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:54,107 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:21,611 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:30,630 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:38,775 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:50,216 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:02,056 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:26,918 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:53,288 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:32:17,410 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:32:47,096 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:33:43,471 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:33:53,317 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:35:28,275 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:38:26,947 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:39:22,073 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:40:18,365 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:43:05,296 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:00:06,420 ERROR 27 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:00:52,639 ERROR 27 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:00:57,534 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:01:24,974 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:03:30,138 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:04:10,465 ERROR 17 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:04:33,778 ERROR 26 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 21:07:52,344 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:09:07,835 ERROR 12 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:09:19,304 ERROR 14 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 21:13:23,761 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:18:20,132 ERROR 15 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.

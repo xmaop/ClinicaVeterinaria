@@ -25,3 +25,7 @@ C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Debug\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.dll
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Debug\Entidad.pdb

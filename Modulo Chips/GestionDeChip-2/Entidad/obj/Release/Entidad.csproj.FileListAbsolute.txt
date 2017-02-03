@@ -20,3 +20,8 @@ C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Release\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.dll
 C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache

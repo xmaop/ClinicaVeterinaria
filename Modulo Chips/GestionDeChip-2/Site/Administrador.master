@@ -79,17 +79,17 @@
                                 <img src="Images/ic_action_user.png" alt="" />
 								Registrar Implantación de Chip<span class="menu-text"> </span>								
 							</a>
-							<a href="RegistraImpChip.aspx" class="dropdown-toggle" style="color: #FFFFFF">
+							<a href="ActualizarInfChip.aspx" class="dropdown-toggle" style="color: #FFFFFF">
                                 <img src="Images/ic_action_list_2.png" alt="" />
-								Actualizar Información de Chip<span class="menu-text"> </span>								
+								Desactivar Chip<span class="menu-text"> </span>								
 							</a>
 							<a href="GeneraTarjetaId.aspx" class="dropdown-toggle" style="color: #FFFFFF">
                                 <img src="Images/ic_action_tiles_large.png" alt="" />
 								Generar Tarjeta de Identificación<span class="menu-text"> </span>								
 							</a>
-							<a href="RegistraImpChip.aspx" class="dropdown-toggle" style="color: #FFFFFF">
+							<a href="ExportarAPetID.aspx" class="dropdown-toggle" style="color: #FFFFFF">
                                 <img src="Images/ic_action_users.png" alt="" />
-								Exportar Información a PETID<span class="menu-text"> </span>								
+								Exportar Información a PetID<span class="menu-text"> </span>								
 							</a>
 
 	</div>

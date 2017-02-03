@@ -37,12 +37,16 @@
 		        <div class="span12">
 			        <div class="widget-box">
 				        <div class="widget-header widget-header-blue widget-header-flat">
-					        <h4><span class="auto-style1">Generar Tarjeta de Identificación</span>
+					        <h4><span class="auto-style1">Generar tarjeta de identificación</span>
                             </h4>
 				        </div>
                         <div>
                             &nbsp;&nbsp;
                             <asp:Button ID="BtnExporta" runat="server" Text="Exportar" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnExporta_Click" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;No. de orden&nbsp;
+                                                <asp:TextBox ID="txtidOrdenAtencion" runat="server" Width="100px" Height="20px" Text="0"></asp:TextBox>
+                                            &nbsp;
+                            <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnBuscar_Click" />
                         </div>
 				        <div class="widget-body">
 					        <div class="widget-main">
@@ -52,7 +56,7 @@
                                          <ig:WebDataGrid ID="WebDataGrid1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Height="800px" Width="100%" Visible="true">
                                          <Columns>
                                              <ig:BoundDataField DataFieldName="idOrdenAtencion" Key="idOrdenAtencion">
-                                                 <Header Text="No.Orden Atención">
+                                                 <Header Text="No.orden atención">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="estado" Key="estado" >
@@ -60,7 +64,7 @@
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="motivo" Key="motivo" >
-                                                 <Header Text="Motivo de Orden">
+                                                 <Header Text="Motivo de orden">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="especie" Key="especie" >
@@ -68,23 +72,23 @@
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="nombre" Key="nombre" >
-                                                 <Header Text="Nombre del Paciente">
+                                                 <Header Text="Nombre del paciente">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="Edad" Key="Edad">
-                                                 <Header Text="Edad (Años.Semanas)">
+                                                 <Header Text="Edad (años y semanas)">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField DataFieldName="TipoDocumento_Identidad" Key="TipoDocumento_Identidad">
-                                                 <Header Text="Tipo Documento">
+                                                 <Header Text="Tipo documento">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="Documento_Identidad" Key="Documento_Identidad">
-                                                 <Header Text="No. Documento">
+                                                 <Header Text="No. documento">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:BoundDataField  DataFieldName="Cliente" Key="Cliente">
-                                                 <Header Text="Nombre del Cliente">
+                                                 <Header Text="Nombre del cliente">
                                                  </Header>
                                              </ig:BoundDataField>
                                              <ig:TemplateDataField  Key="keyBtnOpciones"  Header-Text="Opciones">
@@ -97,10 +101,6 @@
                                              <ig:Selection></ig:Selection>
                                              <ig:Activation></ig:Activation>
                                              <ig:RowSelectors></ig:RowSelectors>
-                                             <%--<ig:Filtering FilterType ="ExcelStyleFilter">
-                                             </ig:Filtering>--%>
-                                             <ig:Filtering></ig:Filtering>
-                                             <%--<ig:ColumnResizing></ig:ColumnResizing>--%>
                                              <ig:Sorting>
                                              </ig:Sorting>
                                          </Behaviors>
@@ -110,7 +110,30 @@
 
                                      <br />
                                     <div class="panel-footer" style="text-align:left; padding:10px 20px 10px 20px">
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Conexion %>" SelectCommand="ACI_USP_VET_sel_OrdenesGenerarTarjeta" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+<%--                                        <asp:SqlDataSource 
+                                            ID="SqlDataSource1" 
+                                            runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:Conexion %>" 
+                                            ProviderName="<%$ ConnectionStrings:Conexion.ProviderName %>"
+                                            SelectCommand="ACI_USP_VET_sel_OrdenesGenerarTarjetaId @a" 
+                                            SelectCommandType="StoredProcedure">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="txtidOrdenAtencion" Name="idOrdenAtencion" PropertyName="Text" />--
+                                                <asp:Parameter Name="a" DefaultValue="0" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>--%>
+
+                                        <asp:SqlDataSource 
+                                            ID="SqlDataSource1" 
+                                            runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:Conexion %>" 
+                                            ProviderName="<%$ ConnectionStrings:Conexion.ProviderName %>"
+                                            SelectCommand="ACI_USP_VET_sel_OrdenesGenerarTarjetaId"
+                                            SelectCommandType="StoredProcedure">
+                                            <SelectParameters>
+                                              <asp:ControlParameter ControlID="txtidOrdenAtencion" Type="String" Name="idOrdenAtencion" DefaultValue="" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
                                     </div>
 
                                     <br />

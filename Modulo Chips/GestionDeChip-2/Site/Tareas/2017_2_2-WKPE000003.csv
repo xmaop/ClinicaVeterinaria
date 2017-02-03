@@ -1,0 +1,2 @@
+codigo_Chip,estado,codigoTarjeta,Paciente,Especie,Raza,Genero,Fecha_Nacimiento,TipoCliente,TipoDocumento,Documento_Identidad,Cliente,Dirección,Distrito,Telefono,celular,Email,Contacto
+CHI00001,Inactivo            ,,Harry,Perro,Yorkshire terrier,Macho,15/09/2012 12:00:00 a.m.,Natural,DNI,45795881,Roberto Paredes Quintanilla,,Jesús María,014331234,976663355,carlosjjv@gmail.com,Jorge Vallejos Quispe

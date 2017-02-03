@@ -4,119 +4,128 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-    
+    <head id="head">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Iniciar Sessión</title>
+        <link href="./Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="./Content/css/font-talma.min.css" rel="stylesheet" type="text/css" />   
+        <link href="./Content/css/signin.css" rel="stylesheet" type="text/css" />
+        <link href="./Content/css/toastr.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Basic Page Needs
-  =================================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PetCenter</title>
-
-    <script type="text/javascript">
-
-        //function muestra_oculta(id) {
-        //    if (document.getElementById) { //se obtiene el id
-        //        var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
-        //        el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
-        //    }
-        //}
-        //window.onload = function () {/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
-        //    muestra_oculta('DivPass');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
-        //}
-    </script>
-
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <!-- Mobile Specific Metas
-    ===================================================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-    <!-- CSS
-    ================================================== -->
-
-    <!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-    
-    <link href="Styles/StyleLogin.css" rel="stylesheet" />
-
-    
-    <link type="image/x-icon" href="images/favicon.png" rel="icon" />
-    <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon" />
-    
+        <script language="javascript" src="./Content/scripts/common/jquery.js" type="text/javascript"></script>      
+        <script language="javascript" src="./Content/scripts/common/angular.js" type="text/javascript"></script>
+        <script language="javascript" src="./Content/scripts/kendo/kendo.all.min.js" type="text/javascript"></script>
+        <script language="javascript" src="./Content/scripts/kendo/kendo.timezones.min.js" type="text/javascript"></script>          
+        <script language="javascript" src="./Content/scripts/init.js" type="text/javascript"></script>   
+        <script language="javascript" src="./Content/scripts/modal.js" type="text/javascript"></script>
+        <script language="javascript" src="./Content/scripts/common/toastr.min.js" type="text/javascript"></script>
+        <script language="javascript" src="./Content/scripts/session/signin.js" type="text/javascript"></script> 
+        <script language="javascript" src="./Content/scripts/common/bootstrap.min.js" type="text/javascript"></script>
     </head>
-
-<body>
-    
-    <div class="container">
-        <div class="flat-form">
-            <br />
-            
-            <br />
-            <div style="text-align:right; padding:20px 25px 20px 20px; float:inherit;">
-            <asp:Image ID="Image5" runat="server" ImageUrl="~/Images/img-logo.png" Width="179px" Height="62px"/>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h1 style="text-align:center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: x-large;">CLINICA VETERINARIA</h1>
-            </div>
-            <hr />
-            <div id="login" class="form-action show">
-                <form id="FrmLogin" runat="server">
-
-                    <ul>
-                        <li>
-                            <asp:TextBox ID="TxtUsuario" runat="server" placeholder="Usuario"></asp:TextBox>
-                        </li>
-                        <li>
-                            <asp:TextBox ID="TxtContrasena" runat="server" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
-                        </li>
-                         <br />                
-                        <li>
-                            <asp:Button ID="BtnAceptar" runat="server" Text="Iniciar Sesión" CssClass="button" onclick="BtnAceptar_Click" />
-                        </li>
-                        <br />
-                        <li>
-                        <asp:Label ID="lblLogin" runat="server" ForeColor="White" />
-                        </li>
-                    </ul>
-                        
-                </form>
-            </div>
-            
-        </div>
-    </div>
-    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
-    <script src="Scripts/Login.js" type="text/javascript"></script>
-    
-   <%-- <!-----Mensaje --> 
-            <div id="avisoModal"  class="modal in" tabindex="-1" role="dialog">
-
-               <div class="modal-dialog" style="width:350px">
-                   <div class="modal-content">
-                        <div class="modal-header">
-                           <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                      <h3 id="H3">Mensaje</h3>
+    <body>
+        <%--<div class="modal-loading" id="modal"></div>--%>
+        <script language="javascript">
+            Showmodal(true);
+        </script>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="sig-content">
+            <div class="container sig-width">
+                <div class="row">     
+                    <form id="FrmLogin" runat="server">       
+                    <section class="col-md-12">
+                        <div>                            
+                            <br />
+                            <center>
+                            <p><br /><br /></p>
+                            </center>
+                        </div>  
+                        <hr />                      
+                        <div class="row">                    
+                            <div class="col-md-12">
+                                <asp:TextBox ID="TxtUsuario" runat="server" placeholder="Usuario" Width="98%">00000000000005</asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="TxtContrasena" runat="server" placeholder="Contraseña" TextMode="Password" Width="98%">123456</asp:TextBox>
+                            </div>                        
+                        </div>
+                        <hr />
+                        <div class="row">                        
+                            <div class="col-md-12" style="text-align: right">                            
+                                <asp:Button ID="BtnAceptar" runat="server" Text="Iniciar Sesión" CssClass="button" onclick="BtnAceptar_Click" />
                             </div>
-                           <div class="modal-body">
-                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                         <ContentTemplate>
-                              <asp:Label ID="lbl_Msj" runat="server" Text="Label"></asp:Label>
-                           </ContentTemplate>
-                           </asp:UpdatePanel>
-                         </div>
-                           <div class="modal-footer">                          
-                           <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Aceptar</button>
-                           </div>
-               
+                        </div>
+                    </section>
+
+                        <asp:Label ID="lblLogin" runat="server" ForeColor="White" />
+
+                    </form>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div id="outMessage"></div>
+            <style>
+
+                .modal-loading{
+                    position:absolute!important;
+                    z-index:99999!important;
+                }
+        
+                .k-loading-mask{
+                    z-index:2 !important;
+                }
+                .modal-static {
+                    position: fixed;
+                    top: 50% !important;
+                    left: 50% !important;
+                    margin-top: -100px;
+                    margin-left: -100px;
+                    overflow: visible !important;
+                    z-index:99999!important;
+                }
+
+                    .modal-static,
+                    .modal-static .modal-dialog,
+                    .modal-static .modal-content {
+                        width: 200px;
+                        height: 200px;
+                        /*background-color:transparent;*/                
+                    }
+
+                    .modal-static .modal-dialog,
+                    .modal-static .modal-content {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        /*background-color:transparent;*/ 
+                    }
+
+                    .modal-static .modal-content .icon {
+                    }
+                #FrmLogin {
+                    height: 297px;
+                }
+            </style>
+            <!-- Static Modal --> 
+            <div class="modal modal-static fade" id="processingModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="./Content/images/gears.gif" />
+                            <center><label class="pad-control text-uppercase">Cargando...</label></center>
                         </div>
                     </div>
                 </div>
             </div>
-
-   
- <!---FinMensaje---->--%>
-
-            </body>
+        </div>
+        </div>               
+        <script language="javascript">
+            Showmodal(false);
+        </script>
+    </body>
 </html>

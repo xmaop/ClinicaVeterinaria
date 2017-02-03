@@ -40,6 +40,7 @@ namespace Entidad
         public string celular { get; set; }
         public string telefono { get; set; }
         public string motivoGenerar { get; set; }
+        public string fechaFoto { get; set; }
     }
 
     public class CuentaBE

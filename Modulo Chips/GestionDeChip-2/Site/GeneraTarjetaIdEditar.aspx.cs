@@ -15,6 +15,7 @@ using System.Drawing;
 using System.Text;
 using System.Configuration;
 using Infragistics.Web.UI.GridControls;
+using System.Net.Mail;
 
 public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 {
@@ -27,6 +28,7 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
     public string idVar = "";
     public string vfoto = "";
+    public int vValida = 0;
 
     private static ILog mLogger = LogManager.GetLogger("ReporteDetails");
     
@@ -113,9 +115,23 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
             ListaParametros = URLDescrifrado.Split(';');
             Id = ListaParametros[0];
 
+            string vfechaFoto = "";
 
             if (!string.IsNullOrEmpty(Id))
             {
+
+                if (verValida(Convert.ToInt16(Id), "Cliente") == 0)
+                {
+                    Mensaje("El cliente vinculado a la orden se encuentra inactivo, por lo que la orden se mostrará en modo sólo consulta.");
+                    vValida = 1;
+                }
+
+                if (verValida(Convert.ToInt16(Id), "Paciente") == 0)
+                {
+                    Mensaje("El paciente vinculado a la orden se encuentra inactivo, por lo que la orden se mostrará en modo sólo consulta.");
+                    vValida = 1;
+                }
+
                 LblTitulo.Text = "Generar Tarjeta de Identificación";
 
                 oReporteBE = oReporteBL.SeleccionaReporte(Convert.ToInt16(Id));
@@ -132,8 +148,12 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
                 txtTipoCliente.Text = oReporteBE.TipoCliente;
                 txtid_Mascota.Text = Convert.ToString(oReporteBE.id_Mascota);
                 txtnombrepaciente.Text = oReporteBE.nombrepaciente;
-                txtfecha_Nacimiento.Text = Convert.ToDateTime(oReporteBE.fecha).ToShortDateString();
+                txtfecha_Nacimiento.Text = Convert.ToDateTime(oReporteBE.fecha_Nacimiento).ToShortDateString();
                 txtEdad.Text = Convert.ToString(oReporteBE.Edad);
+
+                if (oReporteBE.fechaFoto != "") { 
+                    vfechaFoto = Convert.ToDateTime(oReporteBE.fechaFoto).ToShortDateString();
+                }
 
                 txtespecie.Text = Convert.ToString(oReporteBE.especie);
                 txtraza.Text = Convert.ToString(oReporteBE.raza);
@@ -141,32 +161,57 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
                 txtcelular.Text = Convert.ToString(oReporteBE.celular);
                 txttelefono.Text = Convert.ToString(oReporteBE.telefono);
 
-                vfoto = oReporteBE.foto.ToString().Trim();
+                txtTipoDocumento_Identidad.Text = Convert.ToString(oReporteBE.TipoDocumento_Identidad) + " - " + Convert.ToString(oReporteBE.Documento_Identidad);
+                txtTipoDocIdent_Contacto.Text = Convert.ToString(oReporteBE.TipoDocIdent_Contacto) + " - " + Convert.ToString(oReporteBE.NroDocIdent_Contacto);
 
-                Image1.ImageUrl = @".\foto\" + vfoto;
+                if (oReporteBE.foto != null) { 
+                    vfoto = oReporteBE.foto.ToString().Trim();
+                    Image1.ImageUrl = @".\foto\" + vfoto;
+                }
 
                 vmotivoGenerar = Convert.ToString(oReporteBE.motivoGenerar);
 
-                if (txtestado.Text == "Pendiente" && vmotivoGenerar == "Por Inserción de chip")
+                if (txtestado.Text == "Pendiente" && vmotivoGenerar == "Por inserción de chip")
                 {
                     BtnDarDeBaja.Enabled = false;
                 }
-                else if (txtestado.Text == "Terminada")
+                else if (txtestado.Text == "Terminado")
                 {
                     BtnGrabar.Enabled = false;
                     BtnDarDeBaja.Enabled = false;
+                    BtnRechazar.Enabled = false;
+                }
+                else if (txtestado.Text == "Rechazado")
+                {
+                    BtnGrabar.Enabled = false;
+                    BtnDarDeBaja.Enabled = false;
+                    BtnRechazar.Enabled = false;
                 }
 
-                if (txtestado.Text == "Pendiente" && (vmotivoGenerar == "Por pérdida de Tarjeta" || vmotivoGenerar == "Por cambio de dueño"))
+
+
+                if (txtestado.Text == "Pendiente" && (vmotivoGenerar == "Por pérdida de tarjeta" || vmotivoGenerar == "Por cambio de dueño"))
                 {
                     BtnDarDeBaja.Enabled = true;
                     BtnGrabar.Enabled = false;
+
+                    Image1.BorderColor = System.Drawing.Color.Red;
+                    Image1.BorderStyle = BorderStyle.Solid;
+                    Image1.BorderWidth = 5;
+
+                    BtnActualizaFoto.Visible = true;
+                    FileUpload1.Visible = true;
                 }
 
                 if (txtestado.Text == "Pendiente" && (vmotivoGenerar == "Por expiración de tarjeta"))
                 {
-                    BtnDarDeBaja.Enabled = false;
+                    BtnDarDeBaja.Enabled = true;
                     BtnGrabar.Enabled = false;
+
+                    Image1.BorderColor = System.Drawing.Color.Red;
+                    Image1.BorderStyle = BorderStyle.Solid;
+                    Image1.BorderWidth = 5;
+
 
                     BtnActualizaFoto.Visible = true;
                     FileUpload1.Visible = true;
@@ -178,6 +223,33 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
                 if (oReporteBE.fechaExpiracion != "")
                 {
                     txtfechaExpiracion.Text = Convert.ToDateTime(oReporteBE.fechaExpiracion).ToShortDateString();
+
+                    // Fecha expiracion de tarjeta
+                        DateTime fechaF = Convert.ToDateTime(txtfechaExpiracion.Text).Date;
+                        DateTime FechAc = DateTime.Now.Date;
+
+                        // Difference in days, hours, and minutes.
+                        TimeSpan ts = FechAc - fechaF;
+
+                        // Difference in days.
+                        int diferenciaEnDias = ts.Days;
+
+                        if (diferenciaEnDias > 730)
+                        {
+                            BtnDarDeBaja.Enabled = true;
+                            BtnGrabar.Enabled = false;
+
+                            txtfechaExpiracion.BorderColor = System.Drawing.Color.Red;
+                            txtfechaExpiracion.BorderStyle = BorderStyle.Solid;
+                            txtfechaExpiracion.BorderWidth = 2;
+                        }
+                        else
+                        {
+                            txtfechaExpiracion.BorderColor = System.Drawing.Color.White;
+                            txtfechaExpiracion.BorderStyle = BorderStyle.None;
+                            txtfechaExpiracion.BorderWidth = 0;
+                        }
+                
                 }
 
                 txtfechaEmision.Text = "";
@@ -188,8 +260,50 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
                 txtcodigoTarjeta.Text = Convert.ToString(oReporteBE.codigoTarjeta);
 
+
+
+
+                // Fecha expiracion de foto
+                if (vfechaFoto != "") { 
+                    DateTime fechaF =  Convert.ToDateTime(vfechaFoto).Date;
+                    DateTime FechAc =  DateTime.Now.Date;
+
+                    if (fechaF < FechAc)
+                    {
+                        BtnDarDeBaja.Enabled = true;
+                        BtnGrabar.Enabled = false;
+
+                        Image1.BorderColor = System.Drawing.Color.Red;
+                        Image1.BorderStyle = BorderStyle.Solid;
+                        Image1.BorderWidth = 5;
+
+                        BtnActualizaFoto.Visible = true;
+                        FileUpload1.Visible = true;
+                    }
+                    else {
+
+                        Image1.BorderColor = System.Drawing.Color.White;
+                        Image1.BorderStyle = BorderStyle.None;
+                        Image1.BorderWidth = 0;
+
+                        BtnActualizaFoto.Visible = false;
+                        FileUpload1.Visible = false;
+                        BtnGrabar.Enabled = true;
+
+                        if (txtestado.Text == "Terminado")
+                        {
+                            BtnGrabar.Enabled = false;
+                        }
+                    }
+                }
+
             }
 
+        }
+
+        if (vValida == 1)
+        {
+            BtnGrabar.Enabled = false;
         }
 
 
@@ -206,17 +320,6 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
         idVar = txtidOrdenAtencion.Text;
         int idOrdenAtencion = Convert.ToInt16(idVar);
 
-        //DataTable dt = new DataTable();
-        //dt = oUsuarioBL.VerHistorico(idOrdenAtencion);
-
-        //if (dt.Rows.Count > 0) 
-        //{
-        //    Grd_Historico.DataSource = dt;
-        //    Grd_Historico.DataBind();
-
-        //}else{
-        //    Strcadena = "* No hay datos con los parámetros ingresados...";
-        //}
 
         Image2.ImageUrl = Image1.ImageUrl;
 
@@ -244,17 +347,17 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
             if (Est == true)
             {
-                Mensaje("Se generó la Tarjeta de Identificación");
+                Mensaje("Se generó la tarjeta de identificación");
                 Habilitar(false);
 
-                Response.Redirect(Request.Url.ToString());
-                //Context.ApplicationInstance.CompleteRequest();  
+                EnviarCorreo();
 
+                Response.Redirect(Request.Url.ToString());
                 return;
             }
             else
             {
-                Mensaje("No se generó la Tarjeta de Identificación");
+                Mensaje("No se generó la tarjeta de identificación");
                 return;
             }
 
@@ -271,12 +374,55 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
     }
 
+    protected void EnviarCorreo() {
+        //petcenterperu@gmail.com
+        //Abc123..
+
+        string SMTP = "smtp.gmail.com";
+        string De = "petcenterperu@gmail.com";
+        string Contrasena = "Abc123..";
+
+        string Contenido = "Estimado Cliente " + txtCliente.Text + " se ha generado la tarjeta de identificación para su mascota " + txtnombrepaciente.Text;
+        string Asunto = "Generación de Tarjeta de Identificación";
+        ////string Copia = Session["email"].ToString();
+
+        int vOrden = Convert.ToInt16(txtidOrdenAtencion.Text);
+        
+        //string Destinatario = oReporteBL.Correo(vOrden);
+        string Destinatario = "carlosjjv@gmail.com";
+
+        System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
+        correo.From = new System.Net.Mail.MailAddress("petcenterperu@gmail.com");
+        correo.To.Add(Destinatario);
+        correo.Subject = Asunto;
+        correo.Body = Contenido;
+        correo.IsBodyHtml = false;
+        correo.Priority = System.Net.Mail.MailPriority.Normal;
+        //
+        System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+        //
+        smtp.Host = SMTP;
+        smtp.Port = 587;
+        smtp.Credentials = new System.Net.NetworkCredential(De, Contrasena);
+        smtp.EnableSsl = true;
+        try
+        {
+            smtp.Send(correo);
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
 
     protected void BtnNuevo_Click(object sender, EventArgs e)
     {
         Habilitar(true);
         Limpiar();
     }
+
+
     protected void BtnSalir_Click(object sender, EventArgs e)
     {
         try
@@ -290,22 +436,7 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
             throw;                
         }
     }
-    protected void BtnActualizaResponsables_Click(object sender, EventArgs e)
-    {
-        string ano = Convert.ToString(Convert.ToInt16(DateTime.Today.Year.ToString()) + 1);
-        //bool Est = oReporteBL.ActualizaResponsables(DdlResponsable.SelectedValue.ToString(),DdlAprobador.SelectedValue.ToString(),DdlEmpresa.SelectedValue.ToString(),txtCOD_CECO.Text.ToString(),ano);
 
-        //if (Est == true)
-        //{
-        //    Mensaje("Se actualizaron los responsables para la plantilla del CeCo: " + txtCECO.Text.ToString() + " / " + ano + ".");
-        //    return;
-        //}
-        //else
-        //{
-        //    Mensaje("No se actualizó el CeCo, contacte con sistemas!!!");
-        //    return;
-        //}
-    }
 
     protected void BtnHistorial_Click(object sender, EventArgs e)
     {
@@ -337,6 +468,16 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
         ClientScript.RegisterStartupScript(Page.GetType(), "clientScript", Strcadena);
     }
 
+
+    protected void BtnRechazar_Click(object sender, EventArgs e)
+    {
+        ImageButton btn = sender as ImageButton;
+        string Strcadena = null;
+
+        Strcadena = "<script type='text/javascript'>$('#DivModalRechazar').modal('show')</script>";
+        ClientScript.RegisterStartupScript(Page.GetType(), "clientScript", Strcadena);
+    }
+
     protected void BtnBaja_Click(object sender, EventArgs e)
     {
         string Strcadena = null;
@@ -361,7 +502,52 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
             if (Est == true)
             {
-                Mensaje("Se dió de Baja a la Tarjeta de Identificación");
+                Mensaje("Se dió de baja a la tarjeta de identificación");
+                Habilitar(false);
+
+                Response.Redirect(Request.Url.ToString());
+                //Context.ApplicationInstance.CompleteRequest();  
+
+                return;
+            }
+            else
+            {
+                Mensaje("No se actualizó la Tarjeta de Identificación");
+                return;
+            }
+
+
+        }
+
+        catch (Exception ex)
+        {
+            mLogger.Error("PetCenter - BtnBajaAceptar_Click: " + ex.Message);
+            throw;
+        }
+
+
+    }
+
+
+    protected void BtnRechazarAceptar_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            int idOrdenAtencion = Convert.ToInt16(txtidOrdenAtencion.Text);
+
+            oReporteBE.idOrdenAtencion = idOrdenAtencion;
+
+            bool Est = false;
+
+            int vMotivo = radMotivo.SelectedIndex;
+
+            string Usuario = Convert.ToString(Session["Usuario"]);
+            Est = oReporteBL.RechazarOrden(oReporteBE, Usuario, vMotivo, txtRechazarObs.Text);
+
+            if (Est == true)
+            {
+                Mensaje("Se rechazó la orden");
                 Habilitar(false);
 
                 Response.Redirect(Request.Url.ToString());
@@ -390,34 +576,50 @@ public partial class GeneraTarjetaIdEditar : System.Web.UI.Page
 
     protected void BtnActualizaFoto_Click(object sender, EventArgs e)
     {
-        //bool estado = false;
-        //string COD_CUENTA = DdlCUENTA.SelectedValue.ToString();
-        //string COD_CECO = DdlCECO.SelectedValue.ToString();
-        //string ANO = txtAno.Text.ToString();
-        //int MES = Convert.ToInt16(DdlMes.SelectedValue.ToString());
-        //decimal IMPORTE = Convert.ToDecimal(txtImporte.Text.ToString());
 
+        if (FileUpload1.HasFile)
+        {
+            bool estado = false; 
+            string FileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            string Extension = Path.GetExtension(FileUpload1.PostedFile.FileName);
+            string Usuario = Convert.ToString(Session["Usuario"]);
 
-        //if (FileUpload1.HasFile)
-        //{
+            if (Extension == ".jpg")
+            {
+                estado = oReporteBL.ActualizaFoto(Convert.ToInt16(txtidOrdenAtencion.Text), Usuario, FileName);
+                FileUpload1.SaveAs(@"C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Site\foto\" + FileName);
 
-        //    string FileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
-        //    string Extension = Path.GetExtension(FileUpload1.PostedFile.FileName);
-        //    //string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
+                Response.Redirect(Request.Url.ToString());
+                return;
+            }
+            else {
+                Mensaje("El formato del archivo debe de ser .jpg");
+                return;
+            }
+            
+        }
+        
+    }
 
-        //    //FolderPath = "\\172.23.1.21\\Importa\\";
-        //    //string FilePath = Server.MapPath(FolderPath + FileName);
-        //    string FilePathBD = "C:\\Importa\\" + FileName;
+    public int verValida(int Id, string Campo)
+    {
 
-        //    //FileUpload1.SaveAs(FilePath);
-        //    FileUpload1.SaveAs(@"\\172.23.1.21\\Importa\\" + FileName);
-        //    AsignarCuentaDeArchivo(FilePathBD, Extension, "Yes", FileName, COD_CECO, ANO, MES, IMPORTE);
-        //}
-        //else
-        //{
-        //    estado = oReportesBL.AsignarCuenta(COD_CUENTA, COD_CECO, ANO, MES, IMPORTE);
-        //    Mensaje("Se asignó la cuenta al CeCo.");
-        //}
+        try
+        {
+
+            int Est = 0;
+
+            Est = oReporteBL.Valida(Id, Campo);
+            return Est;
+
+        }
+
+        catch (Exception ex)
+        {
+            mLogger.Error("PetCenter - verValida: " + ex.Message);
+            throw;
+        }
 
     }
+ 
 }

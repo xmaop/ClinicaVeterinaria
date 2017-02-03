@@ -54,3 +54,11 @@ C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\Entidad.pdb
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.dll
 C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.pdb

@@ -105,38 +105,23 @@
                                 <div class=" row-fluid position-relative">
                                     <table class="gen_form_buscar">
                                         <tr>
-                                            <td class="auto-style3" style="text-align: left; font-size: medium; font-weight: bold;" colspan="14">DATOS DE LA ORDEN</td>
+                                            <td class="auto-style3" style="text-align: left; font-size: medium; font-weight: bold;" colspan="15">DATOS DE LA ORDEN</td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">No. DE ORDEN</td>
+                                            <td class="auto-style3" style="text-align: right">No. de orden</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="3">
                                                 <asp:TextBox ID="txtidOrdenAtencion" runat="server" Width="100px" Height="20px" Enabled="false"></asp:TextBox>
                                             </td>
-                                            <td class="auto-style18"></td>
-                                            <td class="auto-style4">&nbsp;</td>
-                                            <td class="auto-style4" colspan="2"></td>
-                                            <td class="auto-style4">&nbsp;</td>
-                                            <td class="auto-style12"></td>
-                                            <td class="style19"></td>
-                                            <td class="style19" colspan="2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="auto-style3" style="text-align: right">No. DE CHIP</td>
+                                            <td class="auto-style18" style="text-align: left">Fecha de registro</td>
                                             <td class="auto-style4">:</td>
-                                            <td class="auto-style14" colspan="3">
-                                                <asp:TextBox ID="txtcodigo_Chip" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
-                                            </td>
-                                            <td class="auto-style18" style="text-align: left">FECHA DE REGISTRO</td>
-                                            <td class="auto-style4">&nbsp;</td>
-                                            <td class="auto-style4" colspan="2">:<asp:TextBox ID="txtfecha" runat="server" Enabled="False" Width="100px"></asp:TextBox>
+                                            <td class="auto-style4" colspan="3"><asp:TextBox ID="txtfecha" runat="server" Enabled="False" Width="100px"></asp:TextBox>
+                                                    <asp:CalendarExtender ID="txtfecha_CalendarExtender" runat="server" Enabled="True" TargetControlID="txtfecha" Format="dd/MM/yyyy" PopupButtonID="imgPopup1"></asp:CalendarExtender>
                                                     <asp:Image ID="imgGENERA" runat="server" ImageUrl="~/Images/Calendar.png" ToolTip="Click para mostrar el calendario" Width="16px" />
                                             </td>
                                             <td class="auto-style4">&nbsp;</td>
-                                            <td class="auto-style12">
-                                            &nbsp;&nbsp;
-                                                </td>
-                                            <td class="style19">ESTADO</td>
+                                            <td class="auto-style12"></td>
+                                            <td class="style19">Estado</td>
                                             <td class="style19" colspan="2">
                                                 
                                                 <asp:TextBox ID="txtestado" runat="server" Height="20px" Width="300px" MaxLength="80" Enabled="False"></asp:TextBox>
@@ -144,18 +129,17 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style21" style="text-align: right" colspan="14"></tr>
+                                            <td class="auto-style21" style="text-align: right" colspan="15"></tr>
                                         <tr>
-                                            <td class="auto-style22" style="text-align: left; font-size: medium; font-weight: bold;" colspan="6">CLIENTE<td class="auto-style22" style="border-left-style: solid;"><td class="auto-style22" style="font-size: medium; font-weight: bold;" colspan="2">PACIENTE<td class="auto-style22" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<asp:CalendarExtender ID="txtfecha_CalendarExtender" runat="server" Enabled="True" TargetControlID="txtfecha" Format="dd/MM/yyyy" PopupButtonID="imgPopup1"></asp:CalendarExtender>
-                                            <td class="auto-style22" style="text-align: left; font-size: medium; font-weight: bold;" colspan="3"></td>
+                                            <td class="auto-style22" style="text-align: left; font-size: medium; font-weight: bold;" colspan="6">CLIENTE<td class="auto-style22" style="border-left-style: solid;"><td class="auto-style22" style="font-size: medium; font-weight: bold;" colspan="3">PACIENTE<td class="auto-style22" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="auto-style22" style="text-align: left; font-size: medium; font-weight: bold;" colspan="3"></td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">CODIGO<td class="auto-style4">:</td>
+                                            <td class="auto-style3" style="text-align: right">Código<td class="auto-style4">:</td>
                                             <td class="auto-style14">
                                             <asp:TextBox ID="txtidCliente" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style14">
-                                                TIPO DE CLIENTE</td>
+                                                Tipo de cliente</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtTipoCliente" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
@@ -163,19 +147,19 @@
                                                 &nbsp;</td>
                                             <td class="auto-style14" style="border-left-style: solid">
                                                 &nbsp;</td>
-                                            <td class="auto-style14">
-                                                CODIGO</td>
+                                            <td class="auto-style14" colspan="2">
+                                                Código</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtid_Mascota" runat="server" Height="20px" Width="100px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
-                                            <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="auto-style8" style="text-align: left">FOTO</td>
+                                            <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="auto-style8" style="text-align: left">Foto</td>
                                             <td class="auto-style4">&nbsp;</td>
                                             <td class="auto-style4" rowspan="5" style="border-style: solid; vertical-align: middle; text-align: center;">
                                                 <asp:Image ID="Image1" runat="server" Height="150px" Width="200px" />
                                                 </td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style19" style="text-align: right">NOMBRE</td>
+                                            <td class="auto-style19" style="text-align: right">Nombre</td>
                                             <td class="auto-style19">:</td>
                                             <td class="auto-style20" colspan="4">
                                                 <asp:TextBox ID="txtCliente" runat="server" Height="20px" Width="427px" MaxLength="80" Enabled="False"></asp:TextBox>
@@ -183,8 +167,8 @@
                                                 </td>
                                             <td class="auto-style20" style="border-left-style: solid">
                                                 </td>
-                                            <td class="auto-style20">
-                                                NOMBRE</td>
+                                            <td class="auto-style20" colspan="2">
+                                                Nombre</td>
                                             <td class="auto-style20">
                                                 <asp:TextBox ID="txtnombrepaciente" runat="server" Height="20px" Width="100px" MaxLength="80" Enabled="False"></asp:TextBox>
                                                 </td>
@@ -192,15 +176,15 @@
                                             <td class="auto-style19"></td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">TIPO Y No DOCUMENTO</td>
+                                            <td class="auto-style3" style="text-align: right">Tipo y No documento</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="4">
                                                 <asp:TextBox ID="txtTipoDocumento_Identidad" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
                                             <td class="auto-style14" style="border-left-style: solid">
                                                 &nbsp;</td>
-                                            <td class="auto-style14">
-                                                FECHA DE NACIMIENTO</td>
+                                            <td class="auto-style14" colspan="2">
+                                                Fecha de nacimiento</td>
                                             <td class="auto-style14">
                                                 <asp:TextBox ID="txtfecha_Nacimiento" runat="server" Enabled="False" Width="100px"></asp:TextBox>
                                                     <asp:CalendarExtender ID="txtfecha_Nacimiento_CalendarExtender" runat="server" Enabled="True" TargetControlID="txtfecha_Nacimiento" Format="dd/MM/yyyy" PopupButtonID="imgPopup1"></asp:CalendarExtender>
@@ -212,19 +196,23 @@
                                         </tr>
                                         <tr>
                                             <td class="auto-style3" style="text-align: left; font-size: medium; text-decoration: underline; font-weight: bold;" colspan="6">CONTACTO</td>
-                                            <td class="auto-style3" colspan="3"></td>
+                                            <td class="auto-style3"></td>
+                                            <td class="auto-style3">No. de chip</td>
+                                            <td class="auto-style3" colspan="2">
+                                                <asp:TextBox ID="txtcodigo_Chip" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
+                                            </td>
                                             <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="auto-style8" style="text-align: right">&nbsp;</td>
                                             <td class="auto-style4">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">NOMBRE</td>
+                                            <td class="auto-style3" style="text-align: right">Nombre</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="3">
                                                 <asp:TextBox ID="txtNombre_Contacto" runat="server" Height="20px" Width="427px" MaxLength="80" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style4">EDAD</td>
+                                            <td class="auto-style4" colspan="2">Edad</td>
                                             <td class="auto-style4">
                                                 <asp:TextBox ID="txtEdad" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
@@ -232,35 +220,34 @@
                                             <td class="style19">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">TIPO Y No DOCUMENTO</td>
+                                            <td class="auto-style3" style="text-align: right">Tipo y No documento</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="3">
                                                 <asp:TextBox ID="txtTipoDocIdent_Contacto" runat="server" Height="20px" Width="200px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style4" colspan="5" style="font-size: medium; font-weight: bold">TARJETA DE IDENTIFICACION</td>
+                                            <td class="auto-style4" colspan="6" style="font-size: medium; font-weight: bold">TARJETA DE IDENTIFICACI<span style="font-size: x-large; font-weight: normal">ó</span>N</td>
                                             <td class="style19" colspan="2" style="text-align: right">
-                                                <asp:FileUpload ID="FileUpload1" runat="server" ToolTip="Seleciona la nueva foto para actualizar..." Visible="False"  ErrorMessage="Tipo de archivo no permitido" 
-      ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.jpg|.JPG|.jpeg|.JPEG)$" Width="300px"/>
+                                                <asp:FileUpload ID="FileUpload1" runat="server" ToolTip="Seleciona archivo Excel para importar las cuentas al CeCo" Width="300px" Visible="False" />
                                                 
                                                 <asp:Button ID="BtnActualizaFoto" runat="server" Text="Subir Foto" CssClass="btn btn-minier btn-default" Width="67px" OnClick="BtnActualizaFoto_Click" Visible="False" /> 
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">CELULAR</td>
+                                            <td class="auto-style3" style="text-align: right">Celular</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="3">
                                             <asp:TextBox ID="txtcelular" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style4">CODIGO</td>
+                                            <td class="auto-style4" colspan="2">Código</td>
                                             <td class="auto-style4">
                                                 <asp:TextBox ID="txtcodigoTarjeta" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
-                                            <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="style19">ESPECIE</td>
+                                            <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;" colspan="2">&nbsp;<td class="style19">Especie</td>
                                             <td class="style19">&nbsp;</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtespecie" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -268,20 +255,20 @@
                                         </tr>
 
                                         <tr>
-                                            <td class="auto-style3" style="text-align: right">TELEFONO</td>
+                                            <td class="auto-style3" style="text-align: right">Teléfono</td>
                                             <td class="auto-style4">:</td>
                                             <td class="auto-style14" colspan="3">
                                             <asp:TextBox ID="txttelefono" runat="server" Height="20px" Width="90px" MaxLength="15" Enabled="False"></asp:TextBox>
                                             </td>
                                             <td class="auto-style18">&nbsp;</td>
                                             <td class="auto-style4" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style4">FECHA DE REGISTRO</td>
+                                            <td class="auto-style4" colspan="2">Fecha de registro</td>
                                             <td class="auto-style4">
                                                 <asp:TextBox ID="txtfechaEmision" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
                                             <td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;">&nbsp;<td class="auto-style3" style="border-style: none; text-align: left; font-size: medium; font-weight: bold;">
                                                 <asp:Image ID="imgAPRUEBA1" runat="server" ImageUrl="~/Images/Calendar.png" ToolTip="Click para mostrar el calendario" />
-                                                <td class="style19">RAZA</td>
+                                                <td class="style19">Raza</td>
                                             <td class="style19">&nbsp;</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtraza" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -292,9 +279,13 @@
                                             <td class="auto-style2">&nbsp;</td>
                                             <td class="auto-style5">&nbsp;<td class="auto-style7" colspan="3">
                                                 
-                                                &nbsp;</td>
+
+                                            
+                                                
+
+                                            </td>
                                             <td class="auto-style17" style="text-align: left">&nbsp;<td class="auto-style5" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style5">FECHA DE EXPIRACION</td>
+                                            <td class="auto-style5" colspan="2">Fecha de expiración</td>
                                             <td class="auto-style5">
                                                 <asp:TextBox ID="txtfechaExpiracion" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
@@ -302,7 +293,7 @@
                                             <td>
                                                 <asp:Image ID="imgAPRUEBA0" runat="server" ImageUrl="~/Images/Calendar.png" ToolTip="Click para mostrar el calendario" />
                                                 </td>
-                                            <td class="style19">GENERO</td>
+                                            <td class="style19">Género</td>
                                             <td class="style19">&nbsp;</td>
                                             <td class="style19">
                                                 <asp:TextBox ID="txtgenero" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
@@ -315,7 +306,7 @@
                                                 
                                                 &nbsp;</td>
                                             <td class="auto-style17" style="text-align: left">&nbsp;<td class="auto-style5" style="border-left-style: solid">&nbsp;</td>
-                                            <td class="auto-style5">ESTADO</td>
+                                            <td class="auto-style5" colspan="2">Estado</td>
                                             <td class="auto-style5">
                                                 <asp:TextBox ID="txtestadotrj" runat="server" Height="20px" Width="150px" MaxLength="15" Enabled="False"></asp:TextBox>
                                                 </td>
@@ -325,14 +316,15 @@
                                             <td class="style19">&nbsp;</td>
                                             <td class="style19">&nbsp;</td>
                                             <td class="style19">
-                                                &nbsp;</td>
+                                        <asp:Button ID="BtnGrabar" runat="server" Text="Generar Tarjeta" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnGrabar_Click" /> 
+                                        &nbsp;&nbsp; <asp:Button ID="BtnDarDeBaja" runat="server" Text="Dar de Baja" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnBaja_Click" /> 
+                                            </td>
                                         </tr>
                                         
                                     </table>
 
                                     <div id="botones" class="modal-footer" style="text-align:center; padding:10px 20px 10px 20px">
-                                        <asp:Button ID="BtnGrabar" runat="server" Text="Generar Tarjeta" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnGrabar_Click" /> 
-                                        &nbsp;&nbsp;&nbsp;<asp:Button ID="BtnDarDeBaja" runat="server" Text="Dar de Baja" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnBaja_Click" /> 
+                                        &nbsp;<asp:Button ID="BtnRechazar" runat="server" Text="Rechazar" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnRechazar_Click" /> 
                                         &nbsp;&nbsp;
                                         <asp:Button ID="BtnReporte" runat="server" Text="Historial" CssClass="btn btn-minier btn-default" Width="100px" OnClick="BtnHistorial_Click" /> 
                                         &nbsp;&nbsp;
@@ -643,7 +635,7 @@
                         <div class="modal-header">
                            <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                      <h3 id="H2">Historial eventos para Tarjetas del Paciente <%= txtnombrepaciente.Text %></h3>
+                                      <h3 id="H2">Historial eventos para el paciente <%= txtnombrepaciente.Text %></h3>
                             </div>
                            <div class="modal-body">
                          <asp:UpdatePanel ID="UpdatePanel3" runat="server">
@@ -657,7 +649,13 @@
                                     <asp:BoundField DataField="estado" HeaderText="Estado" ItemStyle-HorizontalAlign="Center" >
                                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="observacion" HeaderText="Observación" ItemStyle-HorizontalAlign="Left">
+                                    <asp:BoundField DataField="NoChip" HeaderText="No. de chip" ItemStyle-HorizontalAlign="Left">
+                                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="NoOrden" HeaderText="No. de orden" ItemStyle-HorizontalAlign="Left">
+                                        <ItemStyle HorizontalAlign="Left"></ItemStyle>
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="Cliente" HeaderText="Nombre del cliente" ItemStyle-HorizontalAlign="Left">
                                         <ItemStyle HorizontalAlign="Left"></ItemStyle>
                                     </asp:BoundField>
 <%--                                    <asp:BoundField DataField="usuario" HeaderText="Usuario" ItemStyle-HorizontalAlign="Left">
@@ -685,10 +683,10 @@
                         <div class="modal-header">
                            <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                      <h3 id="H2">Confirmación de Baja</h3>
+                                      <h3 id="H2">Confirmación de baja</h3>
                             </div>
                            <div class="modal-body">
-                               ¿Está seguro de dar de Baja la Tarjeta de Identificación No. <%= txtcodigoTarjeta.Text %>?
+                               ¿Está seguro de dar de baja la tarjeta de identificación No. <%= txtcodigoTarjeta.Text%> ? 
                          </div>
                            <div class="modal-footer">                          
                                 <asp:Button ID="BtnBajaAceptar" runat="server" Text="Aceptar" CssClass=" btn btn-minier btn-default" Width="100px" OnClick="BtnBajaAceptar_Click"/>
@@ -700,6 +698,52 @@
                     </div>
                 </div>
             </div>    
+
+
+     <!-----Div Rechazar --> 
+            <div id="DivModalRechazar"  class="modal in" tabindex="-1" role="dialog">
+               <div class="modal-dialog" style="width:600px">
+                   <div class="modal-content">
+                        <div class="modal-header">
+                           <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                      <h3 id="H2">Rechazar orden de atención</h3>
+                            </div>
+                           <div class="modal-body">
+                            <table border="0">
+                              <tr>
+                                <td >Motivo</td>
+                                <td >:</td>
+                                <td colspan="3">
+                                           <asp:RadioButtonList ID="radMotivo" runat="server">
+                                                <asp:ListItem Selected="True">No. de chip incorrecto</asp:ListItem>
+                                                <asp:ListItem>Chip inoperativo</asp:ListItem>
+                                                <asp:ListItem>Otros</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Observaciones </td>
+                                <td>:</td>
+                                <td colspan="3">
+                                    <asp:TextBox ID="txtRechazarObs" runat="server" Height="79px" Width="427px" MaxLength="80" TextMode="MultiLine"></asp:TextBox>
+
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="5">&nbsp;</td>
+                              </tr>
+                            </table>
+                         </div>
+                           <div class="modal-footer">                          
+                                <asp:Button ID="BtnRechazarAceptar" runat="server" Text="Aceptar" CssClass=" btn btn-minier btn-default" Width="100px" OnClick="BtnRechazarAceptar_Click"/>
+                                <asp:Button ID="BtnCerrarRechazar" runat="server" Text="Cerrar" CssClass=" btn btn-minier btn-default" Width="100px"/>
+                           </div>
+               
+                        </div>
+                    </div>
+                </div>
+            </div> 
 
 </asp:Content>
 
