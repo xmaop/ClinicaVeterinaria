@@ -115,7 +115,28 @@ namespace WebPetCenter
                             Literal lit = new Literal();
                             lit.Text = "<br/>";
                             e.Cell.Controls.Add(lit);
-                            turno = obj.id_Turno;
+                            if (turno != obj.id_Turno)
+                            {
+                                Literal lit2 = new Literal();
+                                switch (obj.id_Turno)
+                                {
+                                    case 1:
+                                        lit2.Text = "Mañana<br/>";
+                                        break;
+                                    case 2:
+                                        lit2.Text = "Tarde<br/>";
+                                        break;
+                                    case 3:
+                                        lit2.Text = "Noche<br/>";
+                                        break;
+                                    default:
+                                        lit2.Text = "<br/>";
+                                        break;
+
+                                }
+                                e.Cell.Controls.Add(lit2);
+                            }
+                                turno = obj.id_Turno;
                         }
                         Button lbl = new Button();
                         lbl.Text = obj.Empleado;
@@ -350,7 +371,7 @@ namespace WebPetCenter
         }
         void CargarData()
         {
-            Calendar1.TodaysDate = DateTime.Parse("01" + "/" + (Int32.Parse(InputMesCbo.SelectedValue) < 10 ? "0" : "") + InputMesCbo.SelectedValue + "/" + InputAnioCbo.SelectedValue);
+           Calendar1.TodaysDate = DateTime.Parse("01" + "/" + (Int32.Parse(InputMesCbo.SelectedValue) < 10 ?"0": "") + InputMesCbo.SelectedValue + "/" + InputAnioCbo.SelectedValue);
            this.lstTurnos = objBL.ListarTurnos(Int32.Parse(InputMesCbo.SelectedValue), Int32.Parse(InputAnioCbo.SelectedValue));
             
             // _scheduleData = GetSchedule((Int32.Parse(InputMesCbo.SelectedValue) < 10 ? "0" : "") + InputMesCbo.SelectedValue, InputAnioCbo.SelectedValue);
@@ -422,8 +443,8 @@ namespace WebPetCenter
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
                     Response.Flush();
-                    Response.Close();
-                    Response.End();
+                    //Response.Close();
+                   // Response.End();
                 }
             }
             catch (Exception ex)
@@ -431,7 +452,7 @@ namespace WebPetCenter
 
                 if (!(ClientScript.IsClientScriptBlockRegistered("Mensaje")))
                 {
-                    MessageBox("Error", this.Page, "Too much data");
+                    MessageBox("Error", this.Page, "Error.");
                 }
             } 
         }
@@ -656,8 +677,10 @@ namespace WebPetCenter
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
                     Response.Flush();
-                    Response.Close();
-                    Response.End();
+                    //Response.Close();
+                    //Response.End();
+
+               
                 }
             }
             catch (Exception ex)
@@ -665,14 +688,18 @@ namespace WebPetCenter
 
                 if (!(ClientScript.IsClientScriptBlockRegistered("Mensaje")))
                 {
-                    MessageBox("Error", this.Page, "Too much data");
+                    MessageBox("Error", this.Page, "Error.");
                 }
             }
         }
 
         protected void OnExportarDet(Object sender, EventArgs e)
         {
-
+            if (Int32.Parse(cboEmpleadoExp.SelectedValue) == -1)
+            {
+                MessageBox("Error", this.Page, "Debe seleccionar a un empleado.");
+            }
+            else { 
             try
             {
 
@@ -732,8 +759,8 @@ namespace WebPetCenter
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
                     Response.Flush();
-                    Response.Close();
-                    Response.End();
+                    //Response.Close();
+                    //Response.End();
                 }
             }
             catch (Exception ex)
@@ -741,9 +768,10 @@ namespace WebPetCenter
 
                 if (!(ClientScript.IsClientScriptBlockRegistered("Mensaje")))
                 {
-                    MessageBox("Error", this.Page, "Too much data");
+                    MessageBox("Error", this.Page, "Error.");
                 }
             }
         }
     }
+}
 }

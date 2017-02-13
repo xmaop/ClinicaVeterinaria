@@ -37,19 +37,22 @@
             DevExpress.DashboardCommon.Dimension dimension3 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.Measure measure2 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Measure measure3 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.ChartPane chartPane1 = new DevExpress.DashboardCommon.ChartPane();
             DevExpress.DashboardCommon.SimpleSeries simpleSeries1 = new DevExpress.DashboardCommon.SimpleSeries();
             DevExpress.DashboardCommon.SimpleSeries simpleSeries2 = new DevExpress.DashboardCommon.SimpleSeries();
+            DevExpress.DashboardCommon.SimpleSeries simpleSeries3 = new DevExpress.DashboardCommon.SimpleSeries();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Measure measure5 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Measure measure6 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Measure measure7 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.ChartPane chartPane2 = new DevExpress.DashboardCommon.ChartPane();
-            DevExpress.DashboardCommon.SimpleSeries simpleSeries3 = new DevExpress.DashboardCommon.SimpleSeries();
             DevExpress.DashboardCommon.SimpleSeries simpleSeries4 = new DevExpress.DashboardCommon.SimpleSeries();
             DevExpress.DashboardCommon.SimpleSeries simpleSeries5 = new DevExpress.DashboardCommon.SimpleSeries();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DashboardCommon.SimpleSeries simpleSeries6 = new DevExpress.DashboardCommon.SimpleSeries();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DashboardCommon.Dimension dimension4 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn1 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Dimension dimension5 = new DevExpress.DashboardCommon.Dimension();
@@ -64,8 +67,8 @@
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn6 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Dimension dimension10 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn7 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
@@ -90,11 +93,12 @@
             ((System.ComponentModel.ISupportInitialize)(dimension3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDashboardItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension4)).BeginInit();
@@ -154,11 +158,16 @@
             this.chartDashboardItem1.AxisX.TitleVisible = false;
             this.chartDashboardItem1.ComponentName = "chartDashboardItem1";
             measure2.DataMember = "CantidadActual";
+            measure2.Name = "Ocupado";
             measure3.DataMember = "Cantidad";
+            measure3.Name = "Capacidad Total";
+            measure4.DataMember = "CantidadDisponible";
+            measure4.Name = "Disponible";
             this.chartDashboardItem1.DataItemRepository.Clear();
             this.chartDashboardItem1.DataItemRepository.Add(measure2, "DataItem0");
             this.chartDashboardItem1.DataItemRepository.Add(measure3, "DataItem1");
             this.chartDashboardItem1.DataItemRepository.Add(dimension3, "DataItem2");
+            this.chartDashboardItem1.DataItemRepository.Add(measure4, "DataItem3");
             this.chartDashboardItem1.DataMember = "GHA_USP_VET_rpt_CapacidadCaniles";
             this.chartDashboardItem1.DataSource = this.dashboardSqlDataSource4;
             this.chartDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
@@ -172,11 +181,13 @@
             chartPane1.SecondaryAxisY.TitleVisible = true;
             simpleSeries1.Name = "Cantidad Actual";
             simpleSeries1.AddDataItem("Value", measure2);
-            simpleSeries2.Name = "Cantidad Maxima";
-            simpleSeries2.AddDataItem("Value", measure3);
+            simpleSeries2.AddDataItem("Value", measure4);
+            simpleSeries3.Name = "Cantidad Maxima";
+            simpleSeries3.AddDataItem("Value", measure3);
             chartPane1.Series.AddRange(new DevExpress.DashboardCommon.ChartSeries[] {
             simpleSeries1,
-            simpleSeries2});
+            simpleSeries2,
+            simpleSeries3});
             this.chartDashboardItem1.Panes.AddRange(new DevExpress.DashboardCommon.ChartPane[] {
             chartPane1});
             this.chartDashboardItem1.ShowCaption = true;
@@ -200,15 +211,15 @@
             // 
             this.chartDashboardItem2.AxisX.TitleVisible = false;
             this.chartDashboardItem2.ComponentName = "chartDashboardItem2";
-            measure4.DataMember = "CantidadProximasCitas";
-            measure4.Name = "Cantidad Proximas Citas ";
-            measure5.DataMember = "CantidadServiciosActivos";
-            measure5.Name = "Cantidad Servicios Activos";
-            measure6.DataMember = "CapacidadTotal";
+            measure5.DataMember = "CantidadProximasCitas";
+            measure5.Name = "Cantidad Proximas Citas ";
+            measure6.DataMember = "CantidadServiciosActivos";
+            measure6.Name = "Cantidad Servicios Activos";
+            measure7.DataMember = "CapacidadTotal";
             this.chartDashboardItem2.DataItemRepository.Clear();
-            this.chartDashboardItem2.DataItemRepository.Add(measure4, "DataItem0");
-            this.chartDashboardItem2.DataItemRepository.Add(measure5, "DataItem1");
-            this.chartDashboardItem2.DataItemRepository.Add(measure6, "DataItem2");
+            this.chartDashboardItem2.DataItemRepository.Add(measure5, "DataItem0");
+            this.chartDashboardItem2.DataItemRepository.Add(measure6, "DataItem1");
+            this.chartDashboardItem2.DataItemRepository.Add(measure7, "DataItem2");
             this.chartDashboardItem2.DataMember = "Query";
             this.chartDashboardItem2.DataSource = this.dashboardSqlDataSource3;
             this.chartDashboardItem2.InteractivityOptions.IgnoreMasterFilters = false;
@@ -220,14 +231,14 @@
             chartPane2.SecondaryAxisY.AlwaysShowZeroLevel = true;
             chartPane2.SecondaryAxisY.ShowGridLines = false;
             chartPane2.SecondaryAxisY.TitleVisible = true;
-            simpleSeries3.AddDataItem("Value", measure4);
             simpleSeries4.AddDataItem("Value", measure5);
-            simpleSeries5.Name = "Capacidad Total";
             simpleSeries5.AddDataItem("Value", measure6);
+            simpleSeries6.Name = "Capacidad Total";
+            simpleSeries6.AddDataItem("Value", measure7);
             chartPane2.Series.AddRange(new DevExpress.DashboardCommon.ChartSeries[] {
-            simpleSeries3,
             simpleSeries4,
-            simpleSeries5});
+            simpleSeries5,
+            simpleSeries6});
             this.chartDashboardItem2.Panes.AddRange(new DevExpress.DashboardCommon.ChartPane[] {
             chartPane2});
             this.chartDashboardItem2.ShowCaption = true;
@@ -237,10 +248,14 @@
             this.dashboardSqlDataSource3.ComponentName = "dashboardSqlDataSource3";
             this.dashboardSqlDataSource3.ConnectionName = "VeterinariaConnectionString";
             this.dashboardSqlDataSource3.Name = "Indicadores";
-            customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            storedProcQuery3.Name = "Query";
+            queryParameter3.Name = "@FechaSim";
+            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter3.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaSim]", typeof(System.DateTime));
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "GHA_USP_VET_rpt_Indicadores";
             this.dashboardSqlDataSource3.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            storedProcQuery3});
             this.dashboardSqlDataSource3.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource3.ResultSchemaSerializable");
             // 
             // gridDashboardItem1
@@ -299,7 +314,7 @@
             this.gridDashboardItem1.DataSource = this.dashboardSqlDataSource2;
             this.gridDashboardItem1.GridOptions.ColumnWidthMode = DevExpress.DashboardCommon.GridColumnWidthMode.Manual;
             this.gridDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
-            this.gridDashboardItem1.Name = "Reservas Pendientes - Hoy";
+            this.gridDashboardItem1.Name = "Reservas Pendientes";
             this.gridDashboardItem1.ShowCaption = true;
             // 
             // dashboardSqlDataSource2
@@ -307,14 +322,14 @@
             this.dashboardSqlDataSource2.ComponentName = "dashboardSqlDataSource2";
             this.dashboardSqlDataSource2.ConnectionName = "VeterinariaConnectionString";
             this.dashboardSqlDataSource2.Name = "Reservas Pendientes";
-            storedProcQuery3.Name = "Query";
-            queryParameter3.Name = "@FechaSim_";
-            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter3.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaSim]", typeof(System.DateTime));
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "GHA_USP_VET_rpt_ReservarPendientes";
+            storedProcQuery4.Name = "Query";
+            queryParameter4.Name = "@FechaSim_";
+            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter4.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaSim]", typeof(System.DateTime));
+            storedProcQuery4.Parameters.Add(queryParameter4);
+            storedProcQuery4.StoredProcName = "GHA_USP_VET_rpt_ReservarPendientes";
             this.dashboardSqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery4});
             this.dashboardSqlDataSource2.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource2.ResultSchemaSerializable");
             // 
             // Dashboard1
@@ -352,7 +367,7 @@
             dashboardParameter1.Description = "Fecha Simulación";
             dashboardParameter1.Name = "FechaSim";
             dashboardParameter1.Type = typeof(System.DateTime);
-            dashboardParameter1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dashboardParameter1.Value = new System.DateTime(2017, 1, 24, 0, 0, 0, 0);
             this.Parameters.AddRange(new DevExpress.DashboardCommon.DashboardParameter[] {
             dashboardParameter1});
             this.Title.Text = "Control de Capacidad de Atención";
@@ -364,11 +379,12 @@
             ((System.ComponentModel.ISupportInitialize)(dimension3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDashboardItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(measure7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDashboardItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(dimension4)).EndInit();

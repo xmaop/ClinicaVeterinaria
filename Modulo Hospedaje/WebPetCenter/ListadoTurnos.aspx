@@ -153,10 +153,12 @@
              <uc4:ucwAsignacion ID="ucwAsignacion" runat="server" OnOnAsignacion="OnAsignacion" VisibleAsignacion="true" OnClikScriptAsignacion="return javasript:ValidAsignacion()"  />
         </div></td>
                 
-                  <td><label  class="form-control-label">Empleado:</label></td>
-                                <td> <asp:DropDownList class="form-control" id="cboEmpleadoExp"  runat="server" style="width:220px" ></asp:DropDownList>
-                                </td> 
-              <td>  <uc5:ucwExportar ID="ucwExportar" runat="server" OnOnExportarDet="OnExportarDet" VisibleExportar="true"  />
+                  <td style=" border:2px dotted black;" >   
+                 &nbsp;&nbsp;     <label  class="form-control-label"> Horario por Empleado:</label>
+                               <asp:DropDownList class="form-control" id="cboEmpleadoExp"  runat="server" style="width:220px" ></asp:DropDownList>
+                               
+               <uc5:ucwExportar ID="ucwExportar" runat="server" OnOnExportarDet="OnExportarDet" VisibleExportar="true"  />
+                
              </td> </tr>
           
         </table>

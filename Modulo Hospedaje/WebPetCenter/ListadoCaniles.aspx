@@ -21,9 +21,6 @@
        }
        function Validate() {
            var sMensaje = "";
-           if ($("input[id=MainContent_txtCanil]").val() == "") {
-               sMensaje = sMensaje + "* Nombre de Canil." + "</br>";
-           }
            if ($("input[id=MainContent_cboTipoRaza]").val() == "" || $("#MainContent_cboTipoRaza").val() == "-1") {
                sMensaje = sMensaje + "* Tipo raza." + "</br>";
            }
@@ -105,8 +102,8 @@
                       <div class="form-inline">
             <label for="InputPlan">Codigo :</label>
             <input type="text" runat="server" class="form-control" id="InputCodigo" placeholder="Codigo Canil"  />
-            <label for="InputNombreMascota">Nombre:</label>
-            <input type="text" runat="server" class="form-control" id="InputNombreCanil" placeholder="Nombre" />
+            <label for="InputNombreMascota" style="display:none">Nombre:</label>
+            <input type="text" runat="server" style="display:none" class="form-control" id="InputNombreCanil" placeholder="Nombre" />
             <label for="InputEspecie">Especie:</label>
              <asp:DropDownList class="form-control" id="InputEspecieCbo" runat="server" style="width:120px"></asp:DropDownList>
             <label for="InputTamanio">Tamaño Canil:</label>
@@ -156,12 +153,6 @@
                          <asp:Label ID="lblCodigo" runat="server" Text='<%# Bind("CodigoCanil") %>'></asp:Label>
                      </ItemTemplate>
                  </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Nombre" SortExpression="NombreCanil" HeaderStyle-Width="140px">
-                     <ItemTemplate>
-                         <asp:Label ID="lblNombreCanil" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
-                     </ItemTemplate>
-                 <HeaderStyle Width="120px"></HeaderStyle>
-                 </asp:TemplateField>
                  <asp:TemplateField HeaderText="Capacidad" SortExpression="Tamanio"  HeaderStyle-Width="100px">
                      <ItemTemplate>
                          <asp:Label ID="lblTamanio" runat="server" Text='<%# Bind("Tamanio") %>'></asp:Label>
@@ -209,13 +200,13 @@
                                     <div class="form-group">
                         <table style="width:100%">
                             <tr id="trCodigoCanil" runat="server">
-                                <td><label  class="form-control-label">Canil:</label></td>
-                                <td><input type="text" class="form-control" id="txtCodigoCanil" runat="server" style="width:120px" >
+                                <td><label  class="form-control-label">Codigo:</label></td>
+                                <td><input type="text" class="form-control" id="txtCodigoCanil" runat="server" style="width:120px" readonly="readonly" disabled="disabled" >
                                     <input type="hidden" class="form-control" id="hndIdCanil" runat="server" style="width:120px" >
                                 </td>
                                
                             </tr>
-                            <tr>
+                            <tr style="display:none">
                                 <td><label  class="form-control-label">Nombre:</label></td>
                                 <td> <asp:TextBox ID="txtCanil" class="form-control"  runat="server" Width="120px" Height="20px" Font-Size="Small" ></asp:TextBox>
 

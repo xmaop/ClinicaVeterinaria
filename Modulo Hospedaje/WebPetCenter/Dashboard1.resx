@@ -121,16 +121,7 @@
     <value>PERhdGFTZXQgTmFtZT0iRGlzdHJpYnVjaW9uIHNlZ3VuIFJhemFzIj48VmlldyBOYW1lPSJRdWVyeSI+PEZpZWxkIE5hbWU9IkRlc2NyaXBjaW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkdDUF9Fc3BlY2llX0Rlc2NyaXBjaW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklkX1JhemEiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IklkX0VzcGVjaWUiIFR5cGU9IkRlY2ltYWwiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
   <data name="dashboardSqlDataSource4.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0iQ2FwYWNpZGFkIGRlIENhbmlsZXMiPjxWaWV3IE5hbWU9IkdIQV9VU1BfVkVUX3JwdF9DYXBhY2lkYWRDYW5pbGVzIj48RmllbGQgTmFtZT0iSWRfQ2FuaWwiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwY2lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYW50aWRhZCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkNhbnRpZGFkQWN0dWFsIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
-  </data>
-  <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>SELECT
-  (select COUNT(1) FROM [BDPetCenter].[dbo].[GHA_Reserva_Cita] 
-  WHERE Fec_Inicio &gt; cast(GETDATE() as date) and Estado = 0) CantidadProximasCitas,
-  (SELECT count(1) FROM [BDPetCenter].[dbo].[GHA_ServicioHospedaje]
-  where Estado in ('A')) CantidadServiciosActivos,
-  (SELECT sum(Cantidad) FROM [BDPetCenter].[dbo].[GHA_Canil]) CapacidadTotal
-</value>
+    <value>PERhdGFTZXQgTmFtZT0iQ2FwYWNpZGFkIGRlIENhbmlsZXMiPjxWaWV3IE5hbWU9IkdIQV9VU1BfVkVUX3JwdF9DYXBhY2lkYWRDYW5pbGVzIj48RmllbGQgTmFtZT0iSWRfQ2FuaWwiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwY2lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYW50aWRhZCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkNhbnRpZGFkQWN0dWFsIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQ2FudGlkYWREaXNwb25pYmxlIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <data name="dashboardSqlDataSource3.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0iSW5kaWNhZG9yZXMiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iQ2FudGlkYWRQcm94aW1hc0NpdGFzIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQ2FudGlkYWRTZXJ2aWNpb3NBY3Rpdm9zIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQ2FwYWNpZGFkVG90YWwiIFR5cGU9IkludDMyIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>

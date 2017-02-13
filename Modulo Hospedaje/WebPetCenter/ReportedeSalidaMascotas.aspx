@@ -19,9 +19,22 @@
     <script>
         $(document).ready(function () {
             setInterval(function () {
-                $('.dxc-val-title > text').html('# Pacientes');
+               $('.dxc-val-title > text').html('# Pacientes');
             }, 500);
+            $('body').on('blur', '.dx-texteditor-input', function () {
+                var x = new Date();
+                var y = new Date();
+                var fecha = ($('.dx-texteditor-input').eq(1).val()).split("/");
+                x.setFullYear(fecha[2], fecha[1] - 1, fecha[0]);
+                var today = ($('.dx-texteditor-input').eq(2).val()).split("/");
+                y.setFullYear(today[2], today[1] - 1, today[0]);
 
+                if (x >= y) {
+                    $('.dx-texteditor-input').eq(1).val('');
+                    alert('La fecha de ingreso no puede ser mayor a la fecha de salida.');
+
+                }
+            });
         });
     </script>
 </asp:Content>

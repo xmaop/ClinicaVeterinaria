@@ -52,14 +52,16 @@
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn6 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Dimension dimension8 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn7 = new DevExpress.DashboardCommon.GridDimensionColumn();
-            DevExpress.DashboardCommon.Dimension dimension9 = new DevExpress.DashboardCommon.Dimension();
-            DevExpress.DashboardCommon.GridDimensionColumn gridDimensionColumn8 = new DevExpress.DashboardCommon.GridDimensionColumn();
             DevExpress.DashboardCommon.Measure measure3 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.GridMeasureColumn gridMeasureColumn1 = new DevExpress.DashboardCommon.GridMeasureColumn();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter7 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter8 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem2 = new DevExpress.DashboardCommon.DashboardLayoutItem();
@@ -69,6 +71,7 @@
             this.chartDashboardItem1 = new DevExpress.DashboardCommon.ChartDashboardItem();
             this.dashboardSqlDataSource2 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.gridDashboardItem1 = new DevExpress.DashboardCommon.GridDashboardItem();
+            this.dashboardSqlDataSource3 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.dashboardSqlDataSource1 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.chartDashboardItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension1)).BeginInit();
@@ -83,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(dimension6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(dimension9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -105,7 +108,7 @@
             this.chartDashboardItem1.DataMember = "GHA_USP_DataChartIngresoSalidas";
             this.chartDashboardItem1.DataSource = this.dashboardSqlDataSource2;
             this.chartDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
-            this.chartDashboardItem1.Name = "Total ingresos y salidas del Mes";
+            this.chartDashboardItem1.Name = "Total ingresos y salidas";
             chartPane1.Name = "Panel 1";
             chartPane1.PrimaryAxisY.AlwaysShowZeroLevel = true;
             chartPane1.PrimaryAxisY.ShowGridLines = true;
@@ -145,7 +148,7 @@
             // 
             // gridDashboardItem1
             // 
-            dimension2.DataMember = "Codigo_Expediente";
+            dimension2.DataMember = "CodigoServicio";
             gridDimensionColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn1.AddDataItem("Dimension", dimension2);
             dimension3.DataMember = "CodigoPaciente";
@@ -160,19 +163,16 @@
             dimension6.DataMember = "Raza";
             gridDimensionColumn5.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn5.AddDataItem("Dimension", dimension6);
-            dimension7.DataMember = "Servicio";
+            dimension7.DataMember = "FechaIngreso";
+            dimension7.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             gridDimensionColumn6.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn6.AddDataItem("Dimension", dimension7);
-            dimension8.DataMember = "FechaIngreso";
+            dimension8.DataMember = "FechaSalida";
             dimension8.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
             gridDimensionColumn7.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridDimensionColumn7.AddDataItem("Dimension", dimension8);
-            dimension9.DataMember = "FechaSalida";
-            dimension9.DateTimeGroupInterval = DevExpress.DashboardCommon.DateTimeGroupInterval.DayMonthYear;
-            dimension9.SortOrder = DevExpress.DashboardCommon.DimensionSortOrder.Descending;
-            gridDimensionColumn8.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
-            gridDimensionColumn8.AddDataItem("Dimension", dimension9);
             measure3.DataMember = "DiasHospedaje";
+            measure3.Name = "# Dias";
             gridMeasureColumn1.WidthType = DevExpress.DashboardCommon.GridColumnFixedWidthType.Weight;
             gridMeasureColumn1.AddDataItem("Measure", measure3);
             this.gridDashboardItem1.Columns.AddRange(new DevExpress.DashboardCommon.GridColumnBase[] {
@@ -183,34 +183,32 @@
             gridDimensionColumn5,
             gridDimensionColumn6,
             gridDimensionColumn7,
-            gridDimensionColumn8,
             gridMeasureColumn1});
             this.gridDashboardItem1.ComponentName = "gridDashboardItem1";
             this.gridDashboardItem1.DataItemRepository.Clear();
-            this.gridDashboardItem1.DataItemRepository.Add(dimension2, "DataItem0");
-            this.gridDashboardItem1.DataItemRepository.Add(dimension3, "DataItem1");
+            this.gridDashboardItem1.DataItemRepository.Add(dimension3, "DataItem0");
             this.gridDashboardItem1.DataItemRepository.Add(dimension4, "DataItem2");
             this.gridDashboardItem1.DataItemRepository.Add(dimension5, "DataItem3");
             this.gridDashboardItem1.DataItemRepository.Add(dimension6, "DataItem4");
-            this.gridDashboardItem1.DataItemRepository.Add(dimension7, "DataItem5");
-            this.gridDashboardItem1.DataItemRepository.Add(dimension8, "DataItem6");
-            this.gridDashboardItem1.DataItemRepository.Add(dimension9, "DataItem7");
+            this.gridDashboardItem1.DataItemRepository.Add(dimension7, "DataItem6");
+            this.gridDashboardItem1.DataItemRepository.Add(dimension8, "DataItem7");
             this.gridDashboardItem1.DataItemRepository.Add(measure3, "DataItem8");
+            this.gridDashboardItem1.DataItemRepository.Add(dimension2, "DataItem1");
             this.gridDashboardItem1.DataMember = "GHA_USP_VET_rpt_SalidaMascotas";
-            this.gridDashboardItem1.DataSource = this.dashboardSqlDataSource1;
+            this.gridDashboardItem1.DataSource = this.dashboardSqlDataSource3;
             this.gridDashboardItem1.InteractivityOptions.IgnoreMasterFilters = false;
-            this.gridDashboardItem1.Name = "Reporte de Ingreso y Salida de Pacientes";
+            this.gridDashboardItem1.Name = "Reporte de Ingresos y Salidas de Pacientes";
             this.gridDashboardItem1.ShowCaption = true;
             // 
-            // dashboardSqlDataSource1
+            // dashboardSqlDataSource3
             // 
-            this.dashboardSqlDataSource1.ComponentName = "dashboardSqlDataSource1";
-            this.dashboardSqlDataSource1.ConnectionName = "VeterinariaConnectionString";
-            this.dashboardSqlDataSource1.Name = "Origen de datos SQL 1";
+            this.dashboardSqlDataSource3.ComponentName = "dashboardSqlDataSource3";
+            this.dashboardSqlDataSource3.ConnectionName = "VeterinariaConnectionString";
+            this.dashboardSqlDataSource3.Name = "Origen de datos SQL 1";
             storedProcQuery2.Name = "GHA_USP_VET_rpt_SalidaMascotas";
             queryParameter3.Name = "@Codigo_Expediente";
             queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter3.Value = new DevExpress.DataAccess.Expression("[Parameters.CodigoExpediente]", typeof(string));
+            queryParameter3.Value = new DevExpress.DataAccess.Expression("", typeof(string));
             queryParameter4.Name = "@FIngreso";
             queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
             queryParameter4.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaIngreso]", typeof(System.DateTime));
@@ -221,22 +219,45 @@
             storedProcQuery2.Parameters.Add(queryParameter4);
             storedProcQuery2.Parameters.Add(queryParameter5);
             storedProcQuery2.StoredProcName = "GHA_USP_VET_rpt_SalidaMascotas";
-            this.dashboardSqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            this.dashboardSqlDataSource3.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery2});
+            this.dashboardSqlDataSource3.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource3.ResultSchemaSerializable");
+            // 
+            // dashboardSqlDataSource1
+            // 
+            this.dashboardSqlDataSource1.ComponentName = "dashboardSqlDataSource1";
+            this.dashboardSqlDataSource1.ConnectionName = "VeterinariaConnectionString";
+            this.dashboardSqlDataSource1.Name = "Origen de datos S2";
+            storedProcQuery3.Name = "GHA_USP_VET_rpt_SalidaMascotas";
+            queryParameter6.Name = "@Codigo_Expediente";
+            queryParameter6.Type = typeof(string);
+            queryParameter7.Name = "@FIngreso";
+            queryParameter7.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter7.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaIngreso]", typeof(System.DateTime));
+            queryParameter8.Name = "@FSalida";
+            queryParameter8.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter8.Value = new DevExpress.DataAccess.Expression("[Parameters.FechaSalida]", typeof(System.DateTime));
+            storedProcQuery3.Parameters.Add(queryParameter6);
+            storedProcQuery3.Parameters.Add(queryParameter7);
+            storedProcQuery3.Parameters.Add(queryParameter8);
+            storedProcQuery3.StoredProcName = "GHA_USP_VET_rpt_SalidaMascotas";
+            this.dashboardSqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery3});
             this.dashboardSqlDataSource1.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource1.ResultSchemaSerializable");
             // 
             // ReporteSalidaMascotas
             // 
             this.DataSources.AddRange(new DevExpress.DashboardCommon.IDashboardDataSource[] {
+            this.dashboardSqlDataSource2,
             this.dashboardSqlDataSource1,
-            this.dashboardSqlDataSource2});
+            this.dashboardSqlDataSource3});
             this.Items.AddRange(new DevExpress.DashboardCommon.DashboardItem[] {
-            this.gridDashboardItem1,
-            this.chartDashboardItem1});
+            this.chartDashboardItem1,
+            this.gridDashboardItem1});
             dashboardLayoutItem1.DashboardItem = this.chartDashboardItem1;
-            dashboardLayoutItem1.Weight = 49.85D;
+            dashboardLayoutItem1.Weight = 50D;
             dashboardLayoutItem2.DashboardItem = this.gridDashboardItem1;
-            dashboardLayoutItem2.Weight = 50.15D;
+            dashboardLayoutItem2.Weight = 50D;
             dashboardLayoutGroup1.ChildNodes.AddRange(new DevExpress.DashboardCommon.DashboardLayoutNode[] {
             dashboardLayoutItem1,
             dashboardLayoutItem2});
@@ -249,11 +270,11 @@
             dashboardParameter2.Description = "Fecha Ingreso";
             dashboardParameter2.Name = "FechaIngreso";
             dashboardParameter2.Type = typeof(System.DateTime);
-            dashboardParameter2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dashboardParameter2.Value = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             dashboardParameter3.Description = "Fecha Salida";
             dashboardParameter3.Name = "FechaSalida";
             dashboardParameter3.Type = typeof(System.DateTime);
-            dashboardParameter3.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dashboardParameter3.Value = new System.DateTime(2017, 2, 1, 0, 0, 0, 0);
             this.Parameters.AddRange(new DevExpress.DashboardCommon.DashboardParameter[] {
             dashboardParameter1,
             dashboardParameter2,
@@ -271,9 +292,9 @@
             ((System.ComponentModel.ISupportInitialize)(dimension6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(dimension7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(dimension8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(dimension9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -282,7 +303,8 @@
         #endregion
         private DevExpress.DashboardCommon.ChartDashboardItem chartDashboardItem1;
         private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource2;
-        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource1;
         private DevExpress.DashboardCommon.GridDashboardItem gridDashboardItem1;
+        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource3;
+        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource1;
     }
 }
