@@ -15,7 +15,4 @@ C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.DataAccessHel
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\obj\Debug\PetCenter_GCP.DataAccessHelper.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\obj\Debug\PetCenter_GCP.DataAccessHelper.pdb
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\bin\Debug\PetCenter_GCP.DataAccessHelper.dll
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\bin\Debug\PetCenter_GCP.DataAccessHelper.pdb
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\obj\Debug\PetCenter_GCP.DataAccessHelper.dll
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\obj\Debug\PetCenter_GCP.DataAccessHelper.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.DataAccessHelper\obj\Debug\PetCenter_GCP.DataAccessHelper.csprojResolveAssemblyReference.cache

@@ -19,7 +19,6 @@ namespace PetCenter_GCP.DataAccess
             try
             {
                 List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
-                parametrosSql.Add(new EstructuraParametro("@nomCliente", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
 
                 return EjecutarGenericDataReader<ClienteEntity>("GCP_getListadoCliente", parametrosSql);
             }
@@ -176,6 +175,24 @@ namespace PetCenter_GCP.DataAccess
                 parametros.Add(new EstructuraParametro("@mensaje", SqlDbType.VarChar, 100, ParameterDirection.Output, null));
 
                 return EjecutaNonQueryReturnValue("GCP_valTipoDocCliente", parametros, "@mensaje").ToString();
+            }
+            catch (Exception ex)
+            {
+                CustomSqlException ExceptionEntity = new CustomSqlException(Layer.DataAccess, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+
+        public string ValidarPacienteAsociado(List<object> parametro)
+        {
+            try
+            {
+                List<EstructuraParametro> parametros = new List<EstructuraParametro>();
+                parametros.Add(new EstructuraParametro("@id_Cliente", SqlDbType.Int, ParameterDirection.Input, parametro[0]));
+                parametros.Add(new EstructuraParametro("@mensaje", SqlDbType.VarChar, 150, ParameterDirection.Output, null));
+
+                return EjecutaNonQueryReturnValue("GCP_valPacienteAsociado", parametros, "@mensaje").ToString();
             }
             catch (Exception ex)
             {

@@ -13,8 +13,7 @@ namespace PetCenter_GCP.Web.Controllers
 {
     public class PacienteController : BaseController
     {
-        //
-        // GET: /ActualizarPaciente/
+        #region Action
         public ActionResult MainViewActualizarPaciente()
         {
             return View();
@@ -29,20 +28,10 @@ namespace PetCenter_GCP.Web.Controllers
             #region Variables Paginacion
             int PageIni = 0;
             int PageFin = 0;
-            int NroRegistros = 0;
-            int TotalPages = 0;
             #endregion
 
             #region Filtros
             Util.CalcularPaginacion(out PageIni, out PageFin, page, rows);
-            lstparameters.Add(GetFilterValue(f, "codigoCliente"));
-            lstparameters.Add(GetFilterValue(f, "nomCliente"));
-            lstparameters.Add(GetFilterValue(f, "nombre"));
-            lstparameters.Add(GetFilterValue(f, "codigo"));
-            lstparameters.Add(GetFilterValue(f, "nomEspecie"));
-            lstparameters.Add(GetFilterValue(f, "nomRaza"));
-            lstparameters.Add(GetFilterValue(f, "peso"));
-            lstparameters.Add(GetFilterValue(f, "sexo"));
             #endregion
 
             if (ModelState.IsValid)
@@ -53,15 +42,38 @@ namespace PetCenter_GCP.Web.Controllers
                     lst = sv.GetListadoPaciente(lstparameters);
                 }
 
-                NroRegistros = (lst.Count > 0 ? lst.Count : 0);
-                Util.CalcularTotalPages(out TotalPages, NroRegistros, rows);
+                if (filters != null)
+                {
+                    lst = (from r in lst
+                           where r.nomCliente.ToUpperIgnoreNull().Contains(GetFilterValue(f, "nomCliente").ToUpperIgnoreNull()) &&
+                                 r.codigoCliente.ToUpperIgnoreNull().Contains(GetFilterValue(f, "codigoCliente").ToUpperIgnoreNull()) &&
+                                  r.nombre.ToUpperIgnoreNull().Contains(GetFilterValue(f, "nombre").ToUpperIgnoreNull()) &&
+                                  r.codigo.ToUpperIgnoreNull().Contains(GetFilterValue(f, "codigo").ToUpperIgnoreNull()) &&
+                                   r.nomEspecie.ToUpperIgnoreNull().Contains(GetFilterValue(f, "nomEspecie").ToUpperIgnoreNull()) &&
+                                   r.nomRaza.ToUpperIgnoreNull().Contains(GetFilterValue(f, "nomRaza").ToUpperIgnoreNull()) &&
+                                   r.peso.ToString("0.00").Contains(GetFilterValue(f, "peso").ToUpperIgnoreNull()) &&
+                                   r.descSexo.ToUpperIgnoreNull().Contains(GetFilterValue(f, "descSexo").ToUpperIgnoreNull())
+                           select r).ToList();
+                }
+
+                BEGrid grid = new BEGrid();
+                grid.PageSize = rows;
+                grid.CurrentPage = page;
+                grid.SortColumn = sidx;
+                grid.SortOrder = sord;
+
+                BEPager pag = new BEPager();
+                IEnumerable<PacienteEntity> items = lst;
+                items = lst.AsQueryable().OrderBy(sidx + " " + sord);
+                items = items.ToList().Skip((grid.CurrentPage - 1) * grid.PageSize).Take(grid.PageSize);
+                pag = Util.PaginadorGenerico(grid, lst);
 
                 var data = new
                 {
-                    total = TotalPages,
-                    page = page,
-                    records = NroRegistros,
-                    rows = from a in lst
+                    total = pag.PageCount,
+                    page = pag.CurrentPage,
+                    records = pag.RecordCount,
+                    rows = from a in items
                            select new
                            {
                                cell = new string[]
@@ -110,6 +122,103 @@ namespace PetCenter_GCP.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Consultar_HistoricoCliente_Modal(string Parameter01, string Parameter02, string IdDialog)
+        {
+            var model = new PacienteEntity();
+            try
+            {
+                ViewBag.Id = Parameter01 == null ? "0" : Parameter01;
+                ViewBag.Index = Parameter02;
+
+                using (PacienteBizLogic sv = new PacienteBizLogic())
+                {
+                    List<object> lstParameters = new List<object>();
+                    lstParameters.Add(Parameter01);
+                    model = sv.GetPacienteById(lstParameters);
+                }
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.DisplayRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, UserData().login, ex.Source);
+            }
+            return View(model);
+        }
+
+        public ActionResult ConsultarHistorico(string sidx, string sord, int page, int rows, string filters, string id_Paciente)
+        {
+            var serializer = new JavaScriptSerializer();
+            Util.Filter f = (string.IsNullOrEmpty(filters)) ? null : serializer.Deserialize<Util.Filter>(filters);
+            List<object> lstparameters = new List<object>();
+
+            #region Variables Paginacion
+            int PageIni = 0;
+            int PageFin = 0;
+            #endregion
+
+            #region Filtros
+            Util.CalcularPaginacion(out PageIni, out PageFin, page, rows);
+            lstparameters.Add(id_Paciente);
+            #endregion
+
+            if (ModelState.IsValid)
+            {
+                List<ClienteEntity> lst;
+                using (ClienteBizLogic sv = new ClienteBizLogic())
+                {
+                    lst = sv.GetListadoClienteHistorico(lstparameters);
+                }
+
+                if (filters != null)
+                {
+                    lst = (from r in lst
+                           where (string.IsNullOrEmpty(r.nomCliente) ? r.razonSocial : r.nombreCompleto).ToUpperIgnoreNull().Contains(GetFilterValue(f, "nomCliente").ToUpperIgnoreNull()) &&
+                                 r.codigo.ToUpperIgnoreNull().Contains(GetFilterValue(f, "codigo").ToUpperIgnoreNull()) &&
+                                  r.descTipoCliente.ToUpperIgnoreNull().Contains(GetFilterValue(f, "descTipoCliente").ToUpperIgnoreNull()) &&
+                                  r.fechaRegistro.ToString("dd/MM/yyyy").Contains(GetFilterValue(f, "fechaRegistro").ToUpperIgnoreNull()) &&
+                                   r.fechaCese.ToString("dd/MM/yyyy").Contains(GetFilterValue(f, "fechaCese").ToUpperIgnoreNull())
+                           select r).ToList();
+                }
+
+                BEGrid grid = new BEGrid();
+                grid.PageSize = rows;
+                grid.CurrentPage = page;
+                grid.SortColumn = sidx;
+                grid.SortOrder = sord;
+
+                BEPager pag = new BEPager();
+                IEnumerable<ClienteEntity> items = lst;
+                items = lst.AsQueryable().OrderBy(sidx + " " + sord);
+                items = items.ToList().Skip((grid.CurrentPage - 1) * grid.PageSize).Take(grid.PageSize);
+                pag = Util.PaginadorGenerico(grid, lst);
+
+                var data = new
+                {
+                    total = pag.PageCount,
+                    page = pag.CurrentPage,
+                    records = pag.RecordCount,
+                    rows = from a in items
+                           select new
+                           {
+                               cell = new string[]
+                               {
+                                   a.id_Cliente.ToString(),
+                                   (string.IsNullOrEmpty(a.nomCliente) ? a.razonSocial : a.nombreCompleto),
+                                   a.codigo,
+                                   a.descTipoCliente,
+                                   a.fechaRegistro.ToString("dd/MM/yyyy"),
+                                   a.fechaCese.ToString("dd/MM/yyyy"),
+                                   a.estado == Constantes.EstadoRegistro.Activo ? "ACTIVO" : "INACTIVO"
+                                }
+                           }
+                };
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            return RedirectToAction("Index", "Contenedor");
+        }
+        #endregion
+
+        #region Metodos
         [HttpPost]
         public JsonResult Mantener(PacienteEntity model)
         {
@@ -218,83 +327,6 @@ namespace PetCenter_GCP.Web.Controllers
             }
         }
 
-        public ActionResult Consultar_HistoricoCliente_Modal(string Parameter01, string Parameter02, string IdDialog)
-        {
-            var model = new PacienteEntity();
-            try
-            {
-                ViewBag.Id = Parameter01 == null ? "0" : Parameter01;
-                ViewBag.Index = Parameter02;
-
-                using (PacienteBizLogic sv = new PacienteBizLogic())
-                {
-                    List<object> lstParameters = new List<object>();
-                    lstParameters.Add(Parameter01);
-                    model = sv.GetPacienteById(lstParameters);
-                }
-            }
-            catch (Exception ex)
-            {
-                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.DisplayRecord, 1, ex.Message, ex);
-                new LogCustomException().LogError(ExceptionEntity, UserData().login, ex.Source);
-            }
-            return View(model);
-        }
-
-        public ActionResult ConsultarHistorico(string sidx, string sord, int page, int rows, string filters, string id_Paciente)
-        {
-            var serializer = new JavaScriptSerializer();
-            Util.Filter f = (string.IsNullOrEmpty(filters)) ? null : serializer.Deserialize<Util.Filter>(filters);
-            List<object> lstparameters = new List<object>();
-
-            #region Variables Paginacion
-            int PageIni = 0;
-            int PageFin = 0;
-            int NroRegistros = 0;
-            int TotalPages = 0;
-            #endregion
-
-            #region Filtros
-            Util.CalcularPaginacion(out PageIni, out PageFin, page, rows);
-            lstparameters.Add(id_Paciente);
-            #endregion
-
-            if (ModelState.IsValid)
-            {
-                List<ClienteEntity> lst;
-                using (ClienteBizLogic sv = new ClienteBizLogic())
-                {
-                    lst = sv.GetListadoClienteHistorico(lstparameters);
-                }
-
-                NroRegistros = (lst.Count > 0 ? lst.Count : 0);
-                Util.CalcularTotalPages(out TotalPages, NroRegistros, rows);
-
-                var data = new
-                {
-                    total = TotalPages,
-                    page = page,
-                    records = NroRegistros,
-                    rows = from a in lst
-                           select new
-                           {
-                               cell = new string[]
-                               {
-                                   a.id_Cliente.ToString(),
-                                   (string.IsNullOrEmpty(a.nomCliente) ? a.razonSocial : a.nombreCompleto),
-                                   a.codigo,
-                                   a.descTipoCliente,
-                                   a.fechaRegistro.ToString("dd/MM/yyyy"),
-                                   a.fechaCese.ToString("dd/MM/yyyy"),
-                                   a.estado == Constantes.EstadoRegistro.Activo ? "ACTIVO" : "INACTIVO"
-                                }
-                           }
-                };
-                return Json(data, JsonRequestBehavior.AllowGet);
-            }
-            return RedirectToAction("Index", "Contenedor");
-        }
-
         [HttpGet]
         public JsonResult GetEspeciePaciente()
         {
@@ -372,5 +404,6 @@ namespace PetCenter_GCP.Web.Controllers
                 return ErrorJSon("Hubo un problema al obtener los datos. Intente nuevamente.");
             }
         }
+        #endregion
     }
 }

@@ -18,7 +18,6 @@ namespace PetCenter_GCP.DataAccess
             try
             {
                 List<EstructuraParametro> parametrosSql = new List<EstructuraParametro>();
-                parametrosSql.Add(new EstructuraParametro("@nomPaciente", SqlDbType.VarChar, ParameterDirection.Input, parametro[0]));
 
                 return EjecutarGenericDataReader<PacienteEntity>("GCP_getListadoPaciente", parametrosSql);
             }

@@ -134,6 +134,20 @@ namespace PetCenter_GCP.BizLogic
             }
         }
 
+        public string ValidarPacienteAsociado(List<object> parametro)
+        {
+            try
+            {
+                return dataAccess.ValidarPacienteAsociado(parametro);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.BizLogic, Module.FillRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                throw;
+            }
+        }
+            
         public void Dispose()
         {
         }

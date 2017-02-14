@@ -4,6 +4,7 @@
 }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">
+    var myChart;
     $(document).ready(function () {
         setInputDate();
     });
@@ -78,18 +79,22 @@
             }
         }
 
-        generarCuadro();
+        generarCuadro(fecinicio, fecfin);
     }
 
-    function generarCuadro() {
+    function generarCuadro(fecinicio, fecfin) {
 
         var lb;
         var ds;
+        if (myChart)
+            myChart.destroy();
         $.ajaxSetup({ cache: false });
         $.ajax({
             type: 'GET',
             url: baseUrl + 'ReporteAtencion/GetReporteAtencion',
             data: {
+                fechaInicio: fecinicio,
+                fechaFin: fecfin
             },
             dataType: 'Json',
             async: false,
@@ -111,7 +116,7 @@
             labels: lb/*["Enero", "February", "March", "April", "May", "June", "July"]*/,
             datasets: [
                 {
-                    label: "Cantidad de clientes atendidos",
+                    label: "REPORTE DE ATENCION POR FECHA",
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -134,7 +139,7 @@
             ]
         };
         var ctx = document.querySelector("#graph").getContext("2d");
-        new Chart(ctx, {
+        myChart = new Chart(ctx, {
             type: "bar",
             data: data,
             options: {
@@ -150,8 +155,10 @@
         });
     }
 
-    function onClickImprimir() {
-
+    function onClickImprimir(el) {
+        $("#divBtn").css("display", "none");
+        window.print();
+        $("#divBtn").css("display", "");
     }
 </script>
 <div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
@@ -171,7 +178,7 @@
                 <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
             </div>
         </div>
-        <div class="item_form" style="clear:both; padding-top: 10px;">
+        <div class="item_form" style="clear:both; padding-top: 10px; display: none;">
             <div class="item_labelMain">Dividir por Servicio:</div>
             <div class="item_campo">
                 <input type="checkbox" id="chkDividir" />
@@ -179,12 +186,18 @@
         </div>
         <div class="item_form">
             <div class="item_labelMain">
-                <div class="form-group right">
+                <div id="divBtn" class="form-group right">
                     <button type="button" id="btBuscar" onclick="return onClickGenerar();" class="btn btn-primary">Generar</button>
-                    <button type="button" id="btImprimir" onclick="return onClickImprimir();" class="btn btn-primary">Imprimir</button>
+                    <button type="button" id="btImprimir" onclick="return onClickImprimir('printArea');" class="btn btn-primary">Imprimir</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<canvas id="graph" width="100" height="100"></canvas>
+<div id="printArea">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8"><canvas id="graph"></canvas></div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

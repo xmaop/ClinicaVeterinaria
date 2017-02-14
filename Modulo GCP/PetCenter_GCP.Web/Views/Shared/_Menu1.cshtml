@@ -51,15 +51,15 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a id="hlReporteAtencionFecha" href="#" onclick="setMenu(this, 'liRegistros', 'ReporteAtencion', 'MainViewReporteAtencion', 'REPORTE DE ATENCION POR FECHA', 'setting.png');">Reporte de Atención por fecha</a></li>
                             }
-                            @if (usuarioPermiso.login == "glujan")
+                            @if (usuarioPermiso.login == "")
                             {
                                 <li><a id="hlReporteIngreso" href="#" onclick="setMenu(this, 'liRegistros', 'ReporteAtencion', 'MainViewReporteIngreso', 'REPORTE DE INGRESOS POR FECHA', 'setting.png');">Reporte de ingresos por fecha</a></li>
                             }
                             @if (usuarioPermiso.login == "glujan")
                             {
-                                <li><a id="hlReporteEspecie" href="#" onclick="setMenu(this, 'liRegistros', 'ReporteAtencion', 'MainViewReporteEspecie', 'REPORTE DE INGRESOS POR ESPECIE', 'setting.png');">Reporte de ingresos por especie</a></li>
+                                <li><a id="hlReporteEspecie" href="#" onclick="setMenu(this, 'liRegistros', 'ReporteAtencion', 'MainViewReporteEspecie', 'REPORTE DE PACIENTES POR ESPECIE', 'setting.png');">Reporte de Pacientes por especie</a></li>
                             }
-                            @if (usuarioPermiso.login == "glujan")
+                            @if (usuarioPermiso.login == "")
                             {
                                 <li><a id="hlReporteServicio" href="#" onclick="setMenu(this, 'liRegistros', 'ReporteAtencion', 'MainViewReporteServicio', 'REPORTE DE SERVICIOS POR CLIENTE', 'setting.png');">Reporte de servicios por cliente</a></li>
                             }

@@ -10,6 +10,10 @@
     width: 72%;
 }*/
 
+.ui-search-input{
+        color: black;
+}
+
 .form-group {
     margin-bottom: 0;
 }

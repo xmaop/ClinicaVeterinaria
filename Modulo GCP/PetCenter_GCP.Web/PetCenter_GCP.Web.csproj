@@ -79,7 +79,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -202,6 +201,7 @@
     <Content Include="Content\assets\plugins\jquery\jquery-migrate-1.1.0.min.js" />
     <Content Include="Content\assets\plugins\pace\pace.min.js" />
     <Content Include="Content\assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\images\anula.png" />
     <Content Include="Content\images\article.png" />
     <Content Include="Content\images\atributos.png" />
     <Content Include="Content\images\audit.png" />
@@ -470,11 +470,10 @@
     <Content Include="Views\Shared\_SelectGrid.cshtml" />
     <Content Include="Views\NotificarCliente\MainViewNotificarCliente.cshtml" />
     <Content Include="Views\NotificarCliente\Consultar_DetalleEnvio_Modal.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ReporteAtencion\MainViewReporteAtencion.cshtml" />
     <Content Include="Views\ReporteAtencion\MainViewReporteIngreso.cshtml" />
     <Content Include="Views\ReporteAtencion\MainViewReporteEspecie.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteServicio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

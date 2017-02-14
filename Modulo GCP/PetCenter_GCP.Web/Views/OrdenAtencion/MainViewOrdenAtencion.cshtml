@@ -40,7 +40,7 @@
                 { name: 'id_Cliente', index: 'id_Cliente', hidden: true },
                 { name: 'id_Paciente', index: 'id_Paciente', hidden: true },
                 { name: 'codigo', index: 'codigo', width: 80 },
-                { name: 'fecha', index: 'fecha', width: 80 },
+                { name: 'fecha', index: 'fecha', width: 90 },
                 { name: 'horaInicio', index: 'horaInicio', width: 40 },
                 { name: 'horaFin', index: 'horaFin', width: 40 },
                 { name: 'descSede', index: 'descSede', width: 100 },
@@ -76,10 +76,10 @@
             rownumbers: true,
             scrollOffset: 0,
             rowList: [10, 20, 30, 40, 50],
-            sortname: 'idCliente',
+            sortname: 'id_Cliente',
             sortorder: 'asc',
             viewrecords: true,
-            width: '1250',
+            width: '1240',
             height: 'auto',
             altRows: true,
             footerrow: true,
@@ -244,32 +244,6 @@
 
     function setInputSelects() {
         $.ajaxSetup({ cache: false });
-        @*$.ajax({
-            type: 'GET',
-            url: baseUrl + 'OrdenAtencion/GetServicio',
-            data: {
-            },
-            dataType: 'Json',
-            async: false,
-            success: function (data) {
-                if (data != null) {
-                    if (data.success) {
-                        var items = optionTodosText;
-                        for (var key in data.lst) {
-                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
-                                items += "<option value='" + data.lst[key].id_Servicio + "'>" + data.lst[key].descripcion + "</option>";
-                            }
-                        };
-                        $("#ddlServicio").html(items);
-                    }
-                    else
-                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-            }
-        });*@
-
         $.ajax({
             type: 'GET',
             url: baseUrl + 'OrdenAtencion/GetSede',
@@ -348,7 +322,7 @@
                             if (data.lst[key] && data.lst.hasOwnProperty(key)) {
                                 items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
 
-                                itemsDialog += (data.lst[key].codigo != '@Constantes.EstadoOrden.Atendido' ? "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>" : "");
+                                itemsDialog += (data.lst[key].codigo == '@Constantes.EstadoOrden.Atendido' ? "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>" : "");
                             }
                         };
                         $("#ddlEstadoOrden").html(items);

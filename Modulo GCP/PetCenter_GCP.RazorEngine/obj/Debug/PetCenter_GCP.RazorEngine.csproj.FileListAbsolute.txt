@@ -12,10 +12,3 @@ C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazorEngine\b
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.csprojResolveAssemblyReference.cache
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.pdb
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\bin\Debug\PetCenter_GCP.RazorEngine.dll
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\bin\Debug\PetCenter_GCP.RazorEngine.pdb
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\bin\Debug\PetCenter_GCP.ViewEngine.dll
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\bin\Debug\PetCenter_GCP.ViewEngine.pdb
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.csprojResolveAssemblyReference.cache
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.dll
-C:\Users\xmaop\Desktop\PetCenter_GCP\PetCenter_GCP.RazorEngine\obj\Debug\PetCenter_GCP.RazorEngine.pdb

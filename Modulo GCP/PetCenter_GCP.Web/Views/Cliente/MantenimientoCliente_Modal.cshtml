@@ -27,7 +27,7 @@
         SetSoloLetrasModal('txtApeMat');
         SetSoloLetrasModal('txtNomContacto');
 
-        SetAlphanumericModal('txtDireccion');
+        //SetAlphanumericModal('txtDireccion');
         SetAlphanumericCustomModal('txtEmail');
         SetAlphanumericCustomModal('txtEmailContacto');
         SetAlphanumericModal('txtRazonSocial');
@@ -402,8 +402,15 @@
             SetBackgroundField("txtCelular", '@Constantes.InputColors.Obligatorio');
             AppendMessage("Debe ingresar un nro. de celular");
             estado = false;
-        } else
-            SetBackgroundField("txtCelular", '');
+        } else {
+            if (parseInt(NewItem.data.celular.substring(0, 1)) != 9) {
+                SetBackgroundField("txtCelular", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("El primer dígito del nro. de celular debe iniciar con nueve(9)");
+                estado = false;
+            }
+            else
+                SetBackgroundField("txtCelular", '');
+        }
 
         if (NewItem.data.email == "") {
             SetBackgroundField("txtEmail", '@Constantes.InputColors.Obligatorio');

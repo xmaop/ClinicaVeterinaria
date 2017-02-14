@@ -5,13 +5,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <style>
     .c-child {
-    display: inline-block;
-    border: 1px solid red;
-    width:50%;
-    height:50%;
-}
+        display: inline-block;
+        border: 1px solid red;
+        width: 50%;
+        height: 50%;
+    }
 </style>
 <script type="text/javascript">
+    var myChart;
     $(document).ready(function () {
         setInputDate();
     });
@@ -86,18 +87,22 @@
             }
         }
 
-        generarCuadro();
+        generarCuadro(fecinicio, fecfin);
     }
 
-    function generarCuadro() {
+    function generarCuadro(fecinicio, fecfin) {
 
         var lb;
         var ds;
+        if (myChart)
+            myChart.destroy();
         $.ajaxSetup({ cache: false });
         $.ajax({
             type: 'GET',
             url: baseUrl + 'ReporteAtencion/GetReporteEspecie',
             data: {
+                fechaInicio : fecinicio,
+                fechaFin: fecfin
             },
             dataType: 'Json',
             async: false,
@@ -119,7 +124,7 @@
             labels: lb/*["Enero", "February", "March", "April", "May", "June", "July"]*/,
             datasets: [
                 {
-                    label: "Cantidad de clientes atendidos",
+                    //label: "REPORTE DE INGRESOS POR ESPECIE",
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -142,7 +147,7 @@
             ]
         };
         var ctx = document.querySelector("#graph").getContext("2d");
-        new Chart(ctx, {
+        myChart = new Chart(ctx, {
             type: "pie",
             data: data,
             options: {
@@ -159,11 +164,9 @@
     }
 
     function onClickImprimir(el) {
-        //var restorepage = $('body').html();
-        //var printcontent = $('#' + el).clone();
-        //$('body').empty().html(printcontent);
+        $("#divBtn").css("display", "none");
         window.print();
-        //$('body').html(restorepage);
+        $("#divBtn").css("display", "");
     }
 </script>
 <div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
@@ -183,7 +186,7 @@
                 <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
             </div>
         </div>
-        <div class="item_form" style="clear:both; padding-top: 10px;">
+        <div class="item_form" style="clear:both; padding-top: 10px; display: none;">
             <div class="item_labelMain">Dividir por Servicio:</div>
             <div class="item_campo">
                 <input type="checkbox" id="chkDividir" />
@@ -191,7 +194,7 @@
         </div>
         <div class="item_form">
             <div class="item_labelMain">
-                <div class="form-group right">
+                <div id="divBtn" class="form-group right">
                     <button type="button" id="btBuscar" onclick="return onClickGenerar();" class="btn btn-primary">Generar</button>
                     <button type="button" id="btImprimir" onclick="return onClickImprimir('printArea');" class="btn btn-primary">Imprimir</button>
                 </div>
@@ -200,5 +203,9 @@
     </div>
 </div>
 <div id="printArea">
-    <canvas id="graph" class="c-child"></canvas>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8"><canvas id="graph"></canvas></div>
+        <div class="col-md-2"></div>
+    </div>
 </div>

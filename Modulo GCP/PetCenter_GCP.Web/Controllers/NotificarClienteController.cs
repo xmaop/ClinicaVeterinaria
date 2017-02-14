@@ -4,47 +4,22 @@ using PetCenter_GCP.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using PetCenter_GCP.CustomException;
-using System.Net.Http;
 using System.Net;
 using System.IO;
+using System.Xml;
 
 namespace PetCenter_GCP.Web.Controllers
 {
     public class NotificarClienteController : BaseController
     {
-        // GET: NotificarUsuario
+        #region Action
         public ActionResult MainViewNotificarCliente()
         {
             return View();
-        }
-
-        [HttpGet]
-        public JsonResult GetTipoNotificar()
-        {
-            try
-            {
-                List<GenericEntity> lst = new List<GenericEntity>();
-                using (GenericBizLogic sv = new GenericBizLogic())
-                {
-                    lst = sv.GetTipoNotificar();
-                }
-
-                return Json(
-                    new
-                    {
-                        success = true,
-                        lst = lst
-                    }, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception ex)
-            {
-                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.ValidateRecord, 1, ex.Message, ex);
-                new LogCustomException().LogError(ExceptionEntity, ex.Source);
-                return ErrorJSon("Hubo un problema al obtener los datos. Intente nuevamente.");
-            }
         }
 
         public ActionResult ConsultarOrdenes(string sidx, string sord, int page, int rows, string filters, string fechaInicio, string fechaFin, string descSede, string estado, string flgNotificar)
@@ -56,8 +31,6 @@ namespace PetCenter_GCP.Web.Controllers
             #region Variables Paginacion
             int PageIni = 0;
             int PageFin = 0;
-            int NroRegistros = 0;
-            int TotalPages = 0;
             #endregion
 
             #region Filtros
@@ -77,8 +50,17 @@ namespace PetCenter_GCP.Web.Controllers
                     lst = sv.GetListadoOrdenAtencionNotif(lstparameters);
                 }
 
-                NroRegistros = (lst.Count > 0 ? lst.Count : 0);
-                Util.CalcularTotalPages(out TotalPages, NroRegistros, rows);
+                BEGrid grid = new BEGrid();
+                grid.PageSize = rows;
+                grid.CurrentPage = page;
+                grid.SortColumn = sidx;
+                grid.SortOrder = sord;
+
+                BEPager pag = new BEPager();
+                IEnumerable<OrdenAtencionEntity> items = lst;
+                items = lst.AsQueryable().OrderBy(sidx + " " + sord);
+                items = items.ToList().Skip((grid.CurrentPage - 1) * grid.PageSize).Take(grid.PageSize);
+                pag = Util.PaginadorGenerico(grid, lst);
 
                 if (Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE] != null)
                 {
@@ -87,7 +69,7 @@ namespace PetCenter_GCP.Web.Controllers
                     {
                         foreach (OrdenAtencionEntity item in lstModelCheck)
                         {
-                            lst.Where(r => r.id_OrdenAtencion == item.id_OrdenAtencion).Update(x =>
+                            items.Where(r => r.id_OrdenAtencion == item.id_OrdenAtencion).Update(x =>
                             {
                                 x.imageCheck = item.imageCheck;
                             });
@@ -97,10 +79,10 @@ namespace PetCenter_GCP.Web.Controllers
 
                 var data = new
                 {
-                    total = TotalPages,
-                    page = page,
-                    records = NroRegistros,
-                    rows = from a in lst
+                    total = pag.PageCount,
+                    page = pag.CurrentPage,
+                    records = pag.RecordCount,
+                    rows = from a in items
                            select new
                            {
                                cell = new string[]
@@ -137,6 +119,31 @@ namespace PetCenter_GCP.Web.Controllers
             return RedirectToAction("Index", "Contenedor");
         }
 
+        public ActionResult Consultar_DetalleEnvio_Modal(string Parameter01, string Parameter02, string IdDialog)
+        {
+            var model = new NotificacionEntity();
+            try
+            {
+                ViewBag.Id = Parameter01 == null ? "0" : Parameter01;
+                ViewBag.Index = Parameter02;
+
+                using (NotificarClienteBizLogic sv = new NotificarClienteBizLogic())
+                {
+                    List<object> lstParameters = new List<object>();
+                    lstParameters.Add(Parameter01);
+                    model = sv.GetDetalleNotificacionByOrden(lstParameters);
+                }
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.DisplayRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, UserData().login, ex.Source);
+            }
+            return View(model);
+        }
+        #endregion
+
+        #region Metodos
         [HttpGet]
         public JsonResult validarCheckedRow(int idOrdenAtencion, int idCliente, string imageCheck)
         {
@@ -195,24 +202,9 @@ namespace PetCenter_GCP.Web.Controllers
         {
             try
             {
-                string html = string.Empty;
-                string url = @"https://www.12voip.com/myaccount/sendsms.php?username=xxmaop&password=passwordseguro123&from=+51989288742&to=+51989288742&text=Hola%20mensaje%20de%20prueba_desde_C";
-
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.AutomaticDecompression = DecompressionMethods.GZip;
-
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                using (Stream stream = response.GetResponseStream())
-                using (StreamReader reader = new StreamReader(stream))
-                {
-                    html = reader.ReadToEnd();
-                }
-
-                Console.WriteLine(html);
-
-               
                 string mensaje = string.Empty;
                 List<OrdenAtencionEntity> lstModel = null;
+                bool t = false;
 
                 if (Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE] != null)
                     lstModel = (List<OrdenAtencionEntity>)Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE];
@@ -253,7 +245,40 @@ namespace PetCenter_GCP.Web.Controllers
                         }
                         else
                         {
+                            string html = string.Empty;
+                            detalle = string.Format(lst[0].descripcion, item.nomCliente, item.codigo, item.fecha.ToString("dd/MM/yyyy"));
+                            string url = @"https://www.12voip.com/myaccount/sendsms.php?username=xxmaop&password=passwordseguro123&from=" + System.Configuration.ConfigurationManager.AppSettings["SMSFromUser"] + "&to=+51" + item.celularCliente + "&text=" + Server.UrlEncode(detalle);
 
+                            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+                            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                            using (Stream stream = response.GetResponseStream())
+                            using (StreamReader reader = new StreamReader(stream))
+                            {
+                                html = reader.ReadToEnd();
+                                XmlDocument xmlDoc = new XmlDocument();
+                                xmlDoc.LoadXml(html);
+
+                                XmlNodeList elemlist = xmlDoc.GetElementsByTagName("result");
+                                string result = elemlist[0].InnerXml;
+                                if (result == Constantes.GenericProperties.Uno)
+                                    res = true;
+                            }
+                            //html = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                            //"<SmsResponse>" +
+                            //    "<version>1</version>" +
+                            //    "<result>1</result> " +
+                            //    "<resultstring>success</resultstring>" +
+                            //    "<description></description>" +
+                            //    "<partcount>1</partcount>" +
+                            //    "<endcause></endcause>" +
+                            //    "<callingurl>/myaccount/sendsms.php?username=xxmaop&amp;amp;password=passwordseguro123&amp;amp;from=+51997&amp;amp;to=+51989288742&amp;amp;text=Hola%20Mi%20nombre%20es%20gary</callingurl>" +
+                            //    "<browserID>0</browserID>" +
+                            //    "<lsID>none</lsID>" +
+                            //    "<sessionkey>B0A6003C-B9DB-1A28-0809-B4B1FC093E6C</sessionkey>" +
+                            //    "<campaignID></campaignID>" +
+                            //"</SmsResponse>";
                         }
 
                         if (res)
@@ -269,10 +294,76 @@ namespace PetCenter_GCP.Web.Controllers
                                 parametro.Add(detalle);
                                 sv.UpdOTClienteNotificado(parametro);
                             }
+                            t = true;
+                            mensaje = "Han sido enviadas correctamente las notificaciones a los clientes seleccionados";
+                        }
+                        else
+                        {
+                            mensaje = "Sucedió un error interno en la notificación, el administrador de la web lo atenderá";
+                            t = false;
                         }
                     }
-                    mensaje = "Han sido enviadas correctamente las notificaciones a los clientes seleccionados";
                     Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE] = null;
+                }
+
+                return Json(new
+                {
+                    success = true,
+                    message = mensaje,
+                    res = t
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.ValidateRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, UserData().login, ex.Source);
+                return ErrorJSon("Hubo un problema al Validar el registro. Intente nuevamente.");
+            }
+        }
+
+        [HttpGet]
+        public JsonResult GetTipoNotificar()
+        {
+            try
+            {
+                List<GenericEntity> lst = new List<GenericEntity>();
+                using (GenericBizLogic sv = new GenericBizLogic())
+                {
+                    lst = sv.GetTipoNotificar();
+                }
+
+                return Json(
+                    new
+                    {
+                        success = true,
+                        lst = lst
+                    }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.ValidateRecord, 1, ex.Message, ex);
+                new LogCustomException().LogError(ExceptionEntity, ex.Source);
+                return ErrorJSon("Hubo un problema al obtener los datos. Intente nuevamente.");
+            }
+        }
+
+        [HttpGet]
+        public JsonResult ValidarSeleccionRegistro()
+        {
+            try
+            {
+                string mensaje = string.Empty;
+                List<OrdenAtencionEntity> lstModel = null;
+
+                if (Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE] != null)
+                    lstModel = (List<OrdenAtencionEntity>)Session[Constantes.MenuOpciones.MANTNOTIFICARCLIENTE];
+                else
+                    lstModel = new List<OrdenAtencionEntity>();
+
+               
+                if(lstModel.Count == 0)
+                {
+                    mensaje = "Debe marcar al menos un registro para enviar la notificación.";
                 }
 
                 return Json(new
@@ -288,30 +379,6 @@ namespace PetCenter_GCP.Web.Controllers
                 return ErrorJSon("Hubo un problema al Validar el registro. Intente nuevamente.");
             }
         }
-
-
-        public ActionResult Consultar_DetalleEnvio_Modal(string Parameter01, string Parameter02, string IdDialog)
-        {
-            var model = new NotificacionEntity();
-            try
-            {
-                ViewBag.Id = Parameter01 == null ? "0" : Parameter01;
-                ViewBag.Index = Parameter02;
-
-                using (NotificarClienteBizLogic sv = new NotificarClienteBizLogic())
-                {
-                    List<object> lstParameters = new List<object>();
-                    lstParameters.Add(Parameter01);
-                    model = sv.GetDetalleNotificacionByOrden(lstParameters);
-                }
-            }
-            catch (Exception ex)
-            {
-                CustomDataValidationException ExceptionEntity = new CustomDataValidationException(Layer.Web, Module.DisplayRecord, 1, ex.Message, ex);
-                new LogCustomException().LogError(ExceptionEntity, UserData().login, ex.Source);
-            }
-            return View(model);
-        }
-
+        #endregion
     }
 }

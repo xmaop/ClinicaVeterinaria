@@ -2074,7 +2074,7 @@
                     str += "</select></td>";
                 }
                 if (dir === "rtl") { pgl += str; }
-                if (ts.p.pginput === true) { pginp = "<td dir='" + dir + "'>" + $.jgrid.format(ts.p.pgtext || "", "<input class='ui-pg-input' type='text' size='2' maxlength='7' value='0' role='textbox'/>", "<span id='sp_1_" + $.jgrid.jqID(pgid) + "'></span>") + "</td>"; }
+                if (ts.p.pginput === true) { pginp = "<td dir='" + dir + "'>" + $.jgrid.format(ts.p.pgtext || "", "<input class='ui-pg-input' type='text' size='2' maxlength='7' value='0' role='textbox'/>", "<span id='sp_1_" + $.jgrid.jqID(pgid) + "' style='float: right; margin-top: 3px;'></span>") + "</td>"; }
                 if (ts.p.pgbuttons === true) {
                     var po = ["first" + tp, "prev" + tp, "next" + tp, "last" + tp]; if (dir === "rtl") { po.reverse(); }
                     pgl += "<td id='" + po[0] + "' class='ui-pg-button ui-corner-all'><span class='ui-icon ui-icon-seek-first'></span></td>";

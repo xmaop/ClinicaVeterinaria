@@ -81,7 +81,7 @@
             rownumbers: true,
             scrollOffset: 0,
             rowList: [10, 20, 30, 40, 50],
-            sortname: 'idCliente',
+            sortname: 'id_Cliente',
             sortorder: 'asc',
             viewrecords: true,
             width: '1240',
@@ -173,15 +173,22 @@
     function ShowActions(cellvalue, options, rowObject) {
         var img = "";
         var id = options.rowId + "_check";
-
-        if (rowObject[21] != "N")
-            img = "&nbsp;<a href='javascript:;' id='" + id + "'>" + "<img src='@Url.Content("~/Content/images/completeact.png")' border='0' alt='Envío exitoso' title='Envío exitoso' /></a>";
-        else {
-            if (rowObject[22] == "S")
-
-                img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_checked.png")' border='0' /></a>";
+        // 23 estado
+        if (rowObject[23] != '@Constantes.EstadoOrden.Generado') {
+            if (rowObject[21] != "N")
+                img = "&nbsp;<a href='javascript:;' id='" + id + "'>" + "<img src='@Url.Content("~/Content/images/completeact.png")' border='0' alt='Envío exitoso' title='Envío exitoso' /></a>";
             else
-                img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_unchecked.png")' border='0' /></a>";
+                img = "&nbsp;<a href='javascript:;' id='" + id + "'>" + "<img src='@Url.Content("~/Content/images/anula.png")' border='0' alt='No se pudo enviar notificación' title='No se pudo enviar notificación' /></a>";
+        }
+        else {
+            if (rowObject[21] != "N")
+                img = "&nbsp;<a href='javascript:;' id='" + id + "'>" + "<img src='@Url.Content("~/Content/images/completeact.png")' border='0' alt='Envío exitoso' title='Envío exitoso' /></a>";
+            else {
+                if (rowObject[22] == "S")
+                    img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_checked.png")' border='0' /></a>";
+                else
+                    img = "&nbsp;<a href='javascript:;' id='" + id + "' onclick=\"return $('#list').AgregarCheckMain('" + rowObject[0] + "','" + rowObject[1] + "','" + rowObject[22] + "','" + options.rowId + "', event);\" >" + "<img src='@Url.Content("~/Content/images/chk_unchecked.png")' border='0' /></a>";
+            }
         }
         return img;
     }
@@ -213,41 +220,60 @@
                     }
                     else
                         messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
-                    }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
                 }
-            });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
 
-            $.ajax({
-                type: 'GET',
-                url: baseUrl + 'NotificarCliente/GetTipoNotificar',
-                data: {
-                },
-                dataType: 'Json',
-                async: false,
-                success: function (data) {
-                    if (data != null) {
-                        if (data.success) {
-                            var items = optionTodosText;
-                            for (var key in data.lst) {
-                                if (data.lst[key] && data.lst.hasOwnProperty(key)) {
-                                    items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'NotificarCliente/GetTipoNotificar',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optionTodosText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+                            }
+                        };
+                        $("#ddlNotificar").html(items);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    function setInputDate() {
+        $('#txtFecInicio').datepicker(
+                            {
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (date) {
+                                    $('#txtFecInicio').val(date);
                                 }
-                            };
-                            $("#ddlNotificar").html(items);
-                        }
-                        else
-                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
-                    }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                }
-            });
-        }
+                            });
+        $('#txtFecInicio').mask('99/99/9999');
+        $('#txtFecInicio').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
 
-        function setInputDate() {
-            $('#txtFecInicio').datepicker(
+        $('#txtFecFin').datepicker(
                                 {
                                     dateFormat: 'dd/mm/yy',
                                     changeMonth: true,
@@ -257,110 +283,123 @@
                                     inline: true,
                                     maxDate: new Date(),
                                     onSelect: function (date) {
-                                        $('#txtFecInicio').val(date);
+                                        $('#txtFecFin').val(date);
                                     }
                                 });
-            $('#txtFecInicio').mask('99/99/9999');
-            $('#txtFecInicio').live('blur', function () {
-                if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
-                    this.value = '';
-            });
+        $('#txtFecFin').mask('99/99/9999');
+        $('#txtFecFin').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
 
-            $('#txtFecFin').datepicker(
-                                    {
-                                        dateFormat: 'dd/mm/yy',
-                                        changeMonth: true,
-                                        changeYear: true,
-                                        showWeek: false,
-                                        firstDay: 1,
-                                        inline: true,
-                                        maxDate: new Date(),
-                                        onSelect: function (date) {
-                                            $('#txtFecFin').val(date);
-                                        }
-                                    });
-            $('#txtFecFin').mask('99/99/9999');
-            $('#txtFecFin').live('blur', function () {
-                if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
-                    this.value = '';
-            });
+    function onClickBuscarOrden() {
+        var fecinicio = $.trim($("#txtFecInicio").val());
+        var fecfin = $.trim($("#txtFecFin").val());
+
+        //if (fecinicio == "") {
+        //    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+        //    return false;
+        //}
+
+        if (fecinicio != "") {
+            if (!isValidDate(fecinicio)) {
+                message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
+                return false;
+            }
         }
 
-        function onClickBuscarOrden() {
-            var fecinicio = $.trim($("#txtFecInicio").val());
-            var fecfin = $.trim($("#txtFecFin").val());
-
-            //if (fecinicio == "") {
-            //    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
-            //    return false;
-            //}
-
-            if (fecinicio != "") {
-                if (!isValidDate(fecinicio)) {
-                    message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
-                    return false;
-                }
+        if (fecfin != "") {
+            if (!isValidDate(fecfin)) {
+                message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
+                return false;
             }
-
-            if (fecfin != "") {
-                if (!isValidDate(fecfin)) {
-                    message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
-                    return false;
-                }
-                else if (fecinicio == "") {
-                    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
-                    return false;
-                }
-                else if (compareDate(fecfin, fecinicio, false)) {
-                    message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
-                    return false;
-                }
+            else if (fecinicio == "") {
+                message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+                return false;
             }
-
-            $("#list").setGridParam({ datatype: 'json', page: 1 }).trigger('reloadGrid');
+            else if (compareDate(fecfin, fecinicio, false)) {
+                message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
+                return false;
+            }
         }
 
+        $("#list").setGridParam({ datatype: 'json', page: 1 }).trigger('reloadGrid');
+    }
 
-        function onClickNotificarMail() {
+
+    function onClickNotificarMail() {
+        if (validarSeleccion())
             if (confirm('¿Está seguro(a) que desea notificar vía Email?')) {
                 EnviarNotificacion('@Constantes.TipoParametro.EMAIL');
             }
-        }
+    }
 
-        function onClickNotificarSms() {
+    function onClickNotificarSms() {
+        if (validarSeleccion())
             if (confirm('¿Está seguro(a) que desea notificar vía Mensaje de texto (SMS)?')) {
                 EnviarNotificacion('@Constantes.TipoParametro.SMS');
             }
-        }
+    }
 
-        function EnviarNotificacion(TipoEnvio) {
-            $.ajax({
-                type: 'GET',
-                url: baseUrl + 'NotificarCliente/EnviarNotificacion',
-                data: {
-                    tipoEnvio: TipoEnvio
-                },
-                dataType: 'Json',
-                async: false,
-                success: function (data) {
-                    if (data != null) {
-                        if (data.success) {
-                            $("#list").trigger('reloadGrid', [{ current: true }]);
+    function validarSeleccion() {
+        res = true;
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'NotificarCliente/ValidarSeleccionRegistro',
+            data: {},
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        if (data.message != "") {
+                            message('Información:', data.message, 'info');
+                            res = false;
                         }
-                        else
-                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
                     }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
                 }
-            });
-        }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+        return res;
+    }
 
-        function VerDetalleRow(id_OrdenAtencion, Index) {
-            var URL = "NotificarCliente/Consultar_DetalleEnvio_Modal?Parameter01=" + id_OrdenAtencion + "&Parameter02=" + Index;
-            OpenDialogId('Consultar Detalle Envío', 700, URL, '@Constantes.ModalKeys.CONSULTA' + id_OrdenAtencion, "Consultando Detalle Envío : " + id_OrdenAtencion);
-            return false;
-        }
+    function EnviarNotificacion(TipoEnvio) {
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'NotificarCliente/EnviarNotificacion',
+            data: {
+                tipoEnvio: TipoEnvio
+            },
+            dataType: 'Json',
+            async: true,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        if (data.res)
+                            message('Confirmación:', data.message, 'success');
+                        else
+                            message('Información:', data.message, 'info');
+                        $("#list").trigger('reloadGrid', [{ current: true }]);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    function VerDetalleRow(id_OrdenAtencion, Index) {
+        var URL = "NotificarCliente/Consultar_DetalleEnvio_Modal?Parameter01=" + id_OrdenAtencion + "&Parameter02=" + Index;
+        OpenDialogId('Consultar Detalle Envío', 700, URL, '@Constantes.ModalKeys.CONSULTA' + id_OrdenAtencion, "Consultando Detalle Envío : " + id_OrdenAtencion);
+        return false;
+    }
 </script>
 <div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
     @*<div class="panel-heading" style="background: #80bd00; color:#ffffff">

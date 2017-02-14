@@ -70,7 +70,9 @@
             }
         });
         $.dlg("#" + $.dlg("#hdGridDetalle").val()).jqGrid('navGrid', "#" + $.dlg("#hdPagerDetalle").val(), { edit: false, add: false, refresh: true, del: false, search: false });
+        addFilterToGridModal($.dlg("#hdGridDetalle").val(), $.dlg("#hdPagerDetalle").val(), false);
         ScrollDynamicGrid($.dlg("#hdGridDetalle").val(), 90);
+        $.dlg("#divGridDetalle.grilla_custom").css("overflow-x", "scroll");
     }
 </script>
 <div class="content_modal" id="divFields">

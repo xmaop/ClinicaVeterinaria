@@ -16,11 +16,7 @@
             url: baseUrl + "Paciente/ConsultarPacientes",
             datatype: 'json',
             mtype: 'GET',
-            postData: ({
-                //idNivelEducativo: function () { return $("#dlNivelEducativo").val(); },
-                //idGrado: function () { return $("#dlGrado").val() },
-                //idCurso: function () { return $("#dlCurso").val() }
-            }),
+            postData: ({ }),
             contentType: "application/json; charset=utf-8",
             colNames: ['idCliente', 'idPaciente', 'Nombre Cliente', 'Código Cliente', 'Nombre Paciente', 'Código Paciente', 'Especie', 'Raza', 'Peso (Kg.)', 'Sexo', 'Acción'],
             colModel: [
@@ -70,25 +66,12 @@
                     var Index = $("#hdMainIndex").val();
                     jQuery("#listPaciente").setSelection(Index, true);
                 }
-            },
-            //beforeRequest: function () {
-            //    var grid = $(this);
-            //    var postdata = grid.jqGrid('getGridParam', 'postData');
-            //    if (postdata != undefined && postdata.filters != undefined) {
-            //        postdata.idNivelEducativo = $("#dlNivelEducativo").val();
-            //        postdata.idGrado = $("#dlGrado").val();
-            //        postdata.idCurso = $("#dlCurso").val();
-            //    } else {
-            //        jQuery.extend(postdata, {
-            //        });
-            //    }
-            //    return [true, ''];
-            //}
+            }
         });
         jQuery("#listPaciente").jqGrid('navGrid', "#pagerPaciente", {
-            add: false, edit: false, refresh: false, del: false, search: false
+            add: false, edit: false, refresh: true, del: false, search: false
         });
-        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        addFilterToGrid('listPaciente', 'pagerPaciente');
         ScrollDynamicGridPage("listPaciente");
     }
 
