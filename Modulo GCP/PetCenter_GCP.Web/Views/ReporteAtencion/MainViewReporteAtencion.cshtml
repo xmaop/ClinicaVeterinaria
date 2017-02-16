@@ -1,0 +1,203 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript">
+    var myChart;
+    $(document).ready(function () {
+        setInputDate();
+    });
+
+    function setInputDate() {
+        $('#txtFecInicio').datepicker(
+                            {
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (date) {
+                                    $('#txtFecInicio').val(date);
+                                }
+                            });
+        $('#txtFecInicio').mask('99/99/9999');
+        $('#txtFecInicio').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+
+        $('#txtFecFin').datepicker(
+                                {
+                                    dateFormat: 'dd/mm/yy',
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    showWeek: false,
+                                    firstDay: 1,
+                                    inline: true,
+                                    maxDate: new Date(),
+                                    onSelect: function (date) {
+                                        $('#txtFecFin').val(date);
+                                    }
+                                });
+        $('#txtFecFin').mask('99/99/9999');
+        $('#txtFecFin').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
+
+    function onClickGenerar() {
+        var fecinicio = $.trim($("#txtFecInicio").val());
+        var fecfin = $.trim($("#txtFecFin").val());
+
+        if (fecinicio == "") {
+            message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+            return false;
+        }
+        if (fecinicio != "") {
+            if (!isValidDate(fecinicio)) {
+                message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
+                return false;
+            }
+        }
+
+        if (fecfin != "") {
+            if (!isValidDate(fecfin)) {
+                message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
+                return false;
+            }
+            else if (fecinicio == "") {
+                message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+                return false;
+            }
+            else if (compareDate(fecfin, fecinicio, false)) {
+                message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
+                return false;
+            }
+        }
+
+        generarCuadro(fecinicio, fecfin);
+    }
+
+    function generarCuadro(fecinicio, fecfin) {
+
+        var lb;
+        var ds;
+        if (myChart)
+            myChart.destroy();
+        $.ajaxSetup({ cache: false });
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'ReporteAtencion/GetReporteAtencion',
+            data: {
+                fechaInicio: fecinicio,
+                fechaFin: fecfin
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        lb = data.lst2;
+                        ds = data.lst1;
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        var data = {
+            labels: lb/*["Enero", "February", "March", "April", "May", "June", "July"]*/,
+            datasets: [
+                {
+                    label: "REPORTE DE ATENCION POR FECHA",
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    data: ds/*[65, 59, 80, 81, 56, 55, 40]*/,
+                }
+            ]
+        };
+        var ctx = document.querySelector("#graph").getContext("2d");
+        myChart = new Chart(ctx, {
+            type: "bar",
+            data: data,
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        });
+    }
+
+    function onClickImprimir(el) {
+        $("#divBtn").css("display", "none");
+        window.print();
+        $("#divBtn").css("display", "");
+    }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        <div class="item_form" style="clear:both; padding-top: 10px;">
+            <div class="item_labelMain">Fecha Inicio:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecInicio" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+            <div class="item_labelMain">Fecha Fin:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+        </div>
+        <div class="item_form" style="clear:both; padding-top: 10px; display: none;">
+            <div class="item_labelMain">Dividir por Servicio:</div>
+            <div class="item_campo">
+                <input type="checkbox" id="chkDividir" />
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_labelMain">
+                <div id="divBtn" class="form-group right">
+                    <button type="button" id="btBuscar" onclick="return onClickGenerar();" class="btn btn-primary">Generar</button>
+                    <button type="button" id="btImprimir" onclick="return onClickImprimir('printArea');" class="btn btn-primary">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="printArea">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8"><canvas id="graph"></canvas></div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

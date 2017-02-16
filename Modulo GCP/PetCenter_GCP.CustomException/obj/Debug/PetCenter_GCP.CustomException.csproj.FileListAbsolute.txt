@@ -1,0 +1,18 @@
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.csprojResolveAssemblyReference.cache
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.CustomException\bin\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.CustomException\obj\Debug\PetCenter_GCP.CustomException.csprojResolveAssemblyReference.cache

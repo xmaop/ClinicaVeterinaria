@@ -1,0 +1,236 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<style>
+    .item_campoFix{
+        width: 600px;
+    }
+</style>
+<script type="text/javascript">
+    var optionTodosText = "<option value=''>-- TODOS --</option>";
+    var optionDefaultText = "<option value=''>-- SELECCIONE --</option>";
+
+    $(document).ready(function () {
+        setInputDate();
+        fnGrillaServicio();
+
+        $("#hrefCliente").click(function () {
+            LoadColorboxCliente("hdIdCliente", "txtNomCliente", "txtCodCliente", true);
+        });
+
+        $("#hrefClean").click(function () {
+            cleanCliente();
+        });
+    });
+
+    function cleanCliente() {
+        $("#hdIdCliente").val("");
+        $("#txtCodCliente").val("");
+        $("#txtNomCliente").val("");
+    }
+
+    function setInputDate() {
+        $('#txtFecInicio').datepicker(
+                            {
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (date) {
+                                    $('#txtFecInicio').val(date);
+                                }
+                            });
+        $('#txtFecInicio').mask('99/99/9999');
+        $('#txtFecInicio').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+
+        $('#txtFecFin').datepicker(
+                                {
+                                    dateFormat: 'dd/mm/yy',
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    showWeek: false,
+                                    firstDay: 1,
+                                    inline: true,
+                                    maxDate: new Date(),
+                                    onSelect: function (date) {
+                                        $('#txtFecFin').val(date);
+                                    }
+                                });
+        $('#txtFecFin').mask('99/99/9999');
+        $('#txtFecFin').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
+
+    function fnGrillaServicio() {
+        jQuery("#list").jqGrid({
+            url: baseUrl + "ReporteAtencion/ConsultarServicioCliente",
+            datatype: 'json',
+            mtype: 'GET',
+            postData: ({
+                fechaInicio: function () { return $('#txtFecInicio').val(); },
+                fechaFin: function () { return $('#txtFecFin').val(); },
+                id_Cliente: function () { return $("#hdIdCliente").val(); }
+            }),
+            contentType: "application/json; charset=utf-8",
+            colNames: ['idCliente', 'id_Servicio', 'Fecha Atención', 'Servicio', 'Nombre Paciente', 'Monto'],
+            colModel: [
+                { name: 'idCliente', index: 'id_Cliente', hidden: true },
+                { name: 'id_Servicio', index: 'id_Servicio', hidden: true },
+                { name: 'fecha', index: 'fecha', width: 70 },
+                { name: 'descServicio', index: 'descServicio', width: 120 },
+                { name: 'nomPaciente', index: 'nomPaciente', width: 200 },
+                { name: 'monto', index: 'monto', width: 40 }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: jQuery('#pager'),
+            rowNum: 10,
+            rownumbers: true,
+            scrollOffset: 0,
+            rowList: [10, 20, 30, 40, 50],
+            sortname: 'idCliente',
+            sortorder: 'asc',
+            viewrecords: true,
+            width: '1000',
+            height: 'auto',
+            altRows: true,
+            footerrow: true,
+            altclass: 'jQGridAltRowClass',
+            loadComplete: function (data) {
+                if (data != null) {
+                    var Index = $("#hdMainIndex").val();
+                    jQuery("#list").setSelection(Index, true);
+                }
+            },
+            beforeRequest: function () {
+                var grid = $(this);
+                var postdata = grid.jqGrid('getGridParam', 'postData');
+                if (postdata != undefined && postdata.filters != undefined) {
+                    postdata.fechaInicio = $('#txtFecInicio').val();
+                    postdata.fechaFin = $('#txtFecFin').val();
+                    postdata.id_Cliente = $("#hdIdCliente").val();
+                } else {
+                    jQuery.extend(postdata, {
+                    });
+                }
+                return [true, ''];
+            }
+        });
+        jQuery("#list").jqGrid('navGrid', "#pager", {
+            add: false, edit: false, refresh: false, del: false, search: false
+        });
+        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        ScrollDynamicGridPage("list");
+    }
+
+    function onClickGenerar() {
+        var fecinicio = $.trim($("#txtFecInicio").val());
+        var fecfin = $.trim($("#txtFecFin").val());
+
+        if (fecinicio == "") {
+            message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+            return false;
+        }
+        if (fecinicio != "") {
+            if (!isValidDate(fecinicio)) {
+                message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
+                return false;
+            }
+        }
+
+        if (fecfin != "") {
+            if (!isValidDate(fecfin)) {
+                message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
+                return false;
+            }
+            else if (fecinicio == "") {
+                message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+                return false;
+            }
+            else if (compareDate(fecfin, fecinicio, false)) {
+                message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
+                return false;
+            }
+        }
+
+        $("#list").setGridParam({ datatype: 'json', page: 1 }).trigger('reloadGrid');
+    }
+
+    function onClickImprimir(el) {
+        $("#divBtn").css("display", "none");
+        window.print();
+        $("#divBtn").css("display", "");
+    }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        <div class="item_form" style="clear:both; padding-top: 10px;">
+            <div class="item_labelMain">Fecha Inicio:</div>
+            <div class="item_campo">|
+                <input type="text" id="txtFecInicio" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+            <div class="item_labelMain">Fecha Fin:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_label">Nombre Cliente:</div>
+            <div class="item_campoFix">
+                <input type="text" id="txtCodCliente" maxlength="50" placeholder="Código" style="width: 140px !important;" disabled="disabled" />
+                <input type="text" id="txtNomCliente" maxlength="100" placeholder="Nombre o Razón Social" disabled="disabled" style="width: 230px" />
+                <a id="hrefCliente" href="javascript:;" style="text-decoration: none;">
+                    <img src="@Url.Content("~/Content/images/searchC.png")" title="Buscar Cliente" style="cursor:pointer; border:0; padding-top:5px;" />
+                </a>
+                <a id="hrefClean" href="javascript:;">
+                    <img src="@Url.Content("~/Content/images/clean.png")" title="Limpiar Cliente" style="cursor:pointer; border:0; padding-top:5px;" />
+                </a>
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_labelMain">
+                <div id="divBtn" class="form-group right">
+                    <button type="button" id="btBuscar" onclick="return onClickGenerar();" class="btn btn-primary">Generar</button>
+                    <button type="button" id="btImprimir" onclick="return onClickImprimir();" class="btn btn-primary">Imprimir</button>
+                </div>
+            </div>
+        </div>
+        <div class="item_form">
+            <fieldset>
+                <legend>Listado de Clientes por Servicio</legend>
+                <div class="grilla_custom">
+                    <table id="list"></table>
+                    <div id="pager"></div>
+                </div>
+            </fieldset>
+        </div>
+        <input type="hidden" id="hdIdCliente" />
+    </div>
+</div>
+@{
+    Html.RenderPartial("~/Views/UserControls/_ListaCliente.cshtml");
+}
+@Html.LoadJsInline(Url.Content("~/Scripts/UserControls/_ListaCliente.js"))

@@ -1,0 +1,647 @@
+﻿@using PetCenter_GCP.Common
+@model PetCenter_GCP.Entity.ClienteEntity
+<style>
+    .ui-datepicker {
+        z-index: 9999 !important;
+    }
+
+    textarea {
+        resize: none;
+    }
+</style>
+<script type="text/javascript">
+    var optiondefaultText = "<option value=''>-- Seleccionar --</option>";
+    $(document).ready(function () {
+        InitDialog();
+        var Id = '@ViewBag.Id';
+        var IdDialog = $(dlgrFocus)[0].childNodes[1].id;
+        $.dlg("#hdIdCliente").val(Id);
+        $.dlg("#hdIdDialog").val(IdDialog);
+        $.dlg("#hdIndex").val('@ViewBag.Index');
+        InitBottonsMant('list', 'hdIndex');
+        setInputSelects();
+        setInputDate();
+
+        SetSoloLetrasModal('txtNombres');
+        SetSoloLetrasModal('txtApePat');
+        SetSoloLetrasModal('txtApeMat');
+        SetSoloLetrasModal('txtNomContacto');
+
+        //SetAlphanumericModal('txtDireccion');
+        SetAlphanumericCustomModal('txtEmail');
+        SetAlphanumericCustomModal('txtEmailContacto');
+        SetAlphanumericModal('txtRazonSocial');
+
+        SetNumericWithOutDotModal('txtDNI');
+        SetNumericWithOutDotModal('txtRUC');
+        SetNumericWithOutDotModal('txtCelular');
+        SetAlphanumericModal('txtTelefono');
+
+        if (Id != "0") {
+            $.dlg("#ddlTipoCliente").val('@Model.tipoCliente');
+            $.dlg('#ddlTipoCliente').trigger('change');
+            $.dlg('#ddlTipoCliente').attr('disabled', 'disabled');
+            $.dlg("#txtCodigo").val('@Html.Raw(Model.codigo)');
+            if ('@Model.tipoCliente' == '@Constantes.TipoCliente.Natural') {
+                $.dlg("#txtNombres").val('@Html.Raw(Model.nomCliente)');
+                $.dlg("#txtApePat").val('@Html.Raw(Model.apePatCliente)');
+                $.dlg("#txtApeMat").val('@Html.Raw(Model.apeMatCliente)');
+                $.dlg("#txtDNI").val('@Model.nroDocumento');
+                $.dlg("#txtFechaNac").val('@(Model.fechaNacimiento == null ? "" : Convert.ToDateTime(Model.fechaNacimiento).ToString("dd/MM/yyyy"))');
+                $.dlg("#ddlSexo").val('@Html.Raw(Model.sexo)');
+                $.dlg("#divNatural").show();
+            }
+            else {
+                $.dlg("#txtRazonSocial").val('@Html.Raw(Model.razonSocial)');
+                $.dlg("#txtRUC").val('@Model.nroDocumento');
+                $.dlg("#divJuridico").show();
+            }
+            $.dlg("#ddlTipoDocumento").val('@Model.tipoDocumento');
+            $.dlg('#ddlTipoDocumento').attr('disabled', 'disabled');
+            $.dlg("#txtNomContacto").val('@Html.Raw(Model.nomContacto)');
+            $.dlg("#txtEmailContacto").val('@Html.Raw(Model.emailContacto)');
+            $.dlg("#txtTelefono").val('@Model.telefonoFijo');
+            $.dlg("#txtCelular").val('@Model.celular');
+            $.dlg("#txtEmail").val('@Html.Raw(Model.email)');
+            $.dlg("#ddlDistrito").val('@Model.id_Distrito');
+            $.dlg("#txtDireccion").text('@Html.Raw(HttpUtility.JavaScriptStringEncode(Model.direccion))');
+        }
+    });
+
+    function setInputDate() {
+        $.dlg('#txtFechaNac').datepicker(
+                            {
+                                //showOn: "none",
+                                //buttonImage: "../Content/images/iconCalendar.png",
+                                //buttonImageOnly: true,
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (newDate, i) {
+                                    //var oldDate = i.lastVal;
+                                    //if (oldDate != newDate) {
+                                    //    $.dlg('#txtFechaRegistro').val(newDate);
+                                    //    updComprobanteMoneda(newDate);
+                                    //    $.dlg("#" + $.dlg("#hdGridDetalle").val()).trigger("reloadGrid");
+                                    //}
+                                }
+                            });
+        $.dlg('#txtFechaNac').mask('99/99/9999');
+        $.dlg('#txtFechaNac').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
+
+    function setInputSelects() {
+        $.ajaxSetup({ cache: false });
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Cliente/GetTipoCliente',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optiondefaultText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_TipoCliente + "'>" + data.lst[key].nombre + "</option>";
+                            }
+                        };
+                        $.dlg("#ddlTipoCliente").html(items);
+                        $("#ddlTipoDocumento").html(optiondefaultText);
+                        $("#ddlTipoCliente").change(function () {
+                            var selectedID = this.value;
+                            if (selectedID != "") {
+                                if (selectedID == '@Constantes.TipoCliente.Natural')
+                                    showDiv('@Constantes.TipoCliente.Natural');
+                                else
+                                    showDiv('@Constantes.TipoCliente.Juridico');
+
+                                $.ajaxSetup({ cache: false });
+                                $.ajax({
+                                    type: 'GET',
+                                    url: baseUrl + 'Cliente/GetTipoDocByCliente',
+                                    data: {
+                                        id_TipoCliente: selectedID
+                                    },
+                                    dataType: 'Json',
+                                    async: false,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                var items = optiondefaultText;
+                                                for (var key in data.lst) {
+                                                    if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                                        items += "<option value='" + data.lst[key].id_TipoDocumento + "'>" + data.lst[key].codigo + "</option>";
+                                                    }
+                                                };
+                                                $.dlg("#ddlTipoDocumento").html(items);
+                                            }
+                                            else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                            else {
+                                $("#ddlTipoDocumento").html(optiondefaultText);
+                                $("#divNatural,#divJuridico").hide();
+
+                                $.dlg("#divMensaje ul").html("");
+                                $.dlg("#divMensaje").fadeOut("fast");
+                                SetBackgroundField("ddlTipoDocumento", '');
+                                SetBackgroundField("txtNomContacto", '');
+                                SetBackgroundField("txtEmailContacto", '');
+                                SetBackgroundField("txtCelular", '');
+                                SetBackgroundField("txtEmail", '');
+                                SetBackgroundField("ddlDistrito", '');
+                                SetBackgroundField("txtDireccion", '');
+                            }
+                        });
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Cliente/GetGenero',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optiondefaultText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+                            }
+                        };
+                        $.dlg("#ddlSexo").html(items);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Cliente/GetDistrito',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optiondefaultText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_Distrito + "'>" + data.lst[key].nombre + "</option>";
+                            }
+                        };
+                        $.dlg("#ddlDistrito").html(items);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    function existChangesClientes() {
+        return false;
+    }
+
+    function CleanValidationsClientes() {
+        CleanDivsValidations();
+    }
+
+    function GuardarClientes() {
+        get_DialogFocus();
+        $.dlg("#divMensaje ul").html("");
+        var estado = true;
+        var NewItem = {
+            data: {
+                id_Cliente: $.dlg("#hdIdCliente").val(),
+                nomCliente: $.trim($.dlg("#txtNombres").val()),
+                apePatCliente: $.trim($.dlg("#txtApePat").val()),
+                apeMatCliente: $.trim($.dlg("#txtApeMat").val()),
+                nroDocumento: ($.dlg("#ddlTipoCliente").val() == '@Constantes.TipoCliente.Natural' ? $.dlg("#txtDNI").val() : $.dlg("#txtRUC").val()),
+                telefonoFijo: $.dlg("#txtTelefono").val(),
+                direccion: $.trim($.dlg("#txtDireccion").val()),
+                email: $.trim($.dlg("#txtEmail").val()),
+                tipoCliente: $.dlg("#ddlTipoCliente").val(),
+                tipoDocumento: $.dlg("#ddlTipoDocumento").val(),
+                razonSocial: $.trim($.dlg("#txtRazonSocial").val()),
+                nomContacto: $.trim($.dlg("#txtNomContacto").val()),
+                emailContacto: $.trim($.dlg("#txtEmailContacto").val()),
+                celular: $.dlg("#txtCelular").val(),
+                fechaNacimiento: $.dlg("#txtFechaNac").val(),
+                sexo: $.dlg("#ddlSexo").val(),
+                id_Distrito: $.dlg("#ddlDistrito").val(),
+
+            }
+        };
+
+        if (NewItem.data.tipoCliente == "") {
+            SetBackgroundField("ddlTipoCliente", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar un Tipo de cliente");
+            estado = false;
+        } else
+            SetBackgroundField("ddlTipoCliente", '');
+
+        if (NewItem.data.tipoDocumento == "") {
+            SetBackgroundField("ddlTipoDocumento", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar un Tipo de documento");
+            estado = false;
+        } else
+            SetBackgroundField("ddlTipoCliente", '');
+
+        if ($.dlg("#divNatural").is(":visible")) {
+            if (NewItem.data.nomCliente == "") {
+                SetBackgroundField("txtNombres", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar un nombre");
+                estado = false;
+            } else
+                SetBackgroundField("txtNombres", '');
+
+            if (NewItem.data.apePatCliente == "") {
+                SetBackgroundField("txtApePat", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar un Apellido Paterno");
+                estado = false;
+            } else
+                SetBackgroundField("txtApePat", '');
+
+            if (NewItem.data.apeMatCliente == "") {
+                SetBackgroundField("txtApeMat", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar un Apellido Materno");
+                estado = false;
+            } else
+                SetBackgroundField("txtApeMat", '');
+
+            if (NewItem.data.nroDocumento == "") {
+                SetBackgroundField("txtDNI", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar un nro. DNI");
+                estado = false;
+            } else {
+                if (NewItem.data.nroDocumento.length != 8) {
+                    SetBackgroundField("txtDNI", '@Constantes.InputColors.Obligatorio');
+                    AppendMessage("Debe ingresar un nro. DNI válido");
+                    estado = false;
+                }
+                else
+                    SetBackgroundField("txtDNI", '');
+            }
+
+            if (NewItem.data.fechaNacimiento == "") {
+                SetBackgroundFieldWithoutFocus("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar una Fecha nacimiento");
+                estado = false;
+            } else {
+                var currDate = new Date();
+                var dd = currDate.getDate().toString();
+                var mm = (currDate.getMonth() + 1).toString();
+                var yyyy = currDate.getFullYear().toString();
+                var dateString = (dd[1] ? dd : "0" + dd[0]) + "/" + (mm[1] ? mm : "0" + mm[0]) + "/" + yyyy;
+
+                if (!isValidDate(NewItem.data.fechaNacimiento)) {
+                    SetBackgroundField("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+                    AppendMessage('Debe ingresar una Fecha nacimiento válida.');
+                    estado = false;
+                }
+                else if (compareDate(dateString, NewItem.data.fechaNacimiento, true)) {
+                    SetBackgroundField("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+                    AppendMessage('Debe ingresar una Fecha nacimiento menor a la fecha actual.');
+                    estado = false;
+                }
+                else
+                    SetBackgroundField("txtFechaNac", '');
+            }
+
+            if (NewItem.data.sexo == "") {
+                SetBackgroundField("ddlSexo", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe seleccionar un Sexo");
+                estado = false;
+            } else
+                SetBackgroundField("ddlSexo", '');
+        }
+
+        if ($.dlg("#divJuridico").is(":visible")) {
+            if (NewItem.data.razonSocial == "") {
+                SetBackgroundField("txtRazonSocial", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar una Razón Social");
+                estado = false;
+            } else
+                SetBackgroundField("txtRazonSocial", '');
+
+            if (NewItem.data.nroDocumento == "") {
+                SetBackgroundField("txtRUC", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("Debe ingresar un nro. RUC");
+                estado = false;
+            } else {
+                if (NewItem.data.nroDocumento.length != 11) {
+                    SetBackgroundField("txtRUC", '@Constantes.InputColors.Obligatorio');
+                    AppendMessage("Debe ingresar un nro. RUC válido");
+                    estado = false;
+                }
+                else
+                    SetBackgroundField("txtRUC", '');
+            }
+        }
+
+        if (NewItem.data.nomContacto == "") {
+            SetBackgroundField("txtNomContacto", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un nombre de Contacto");
+            estado = false;
+        } else
+            SetBackgroundField("txtNomContacto", '');
+
+        if (NewItem.data.emailContacto == "") {
+            SetBackgroundField("txtEmailContacto", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un Email de Contacto");
+            estado = false;
+        } else {
+            if (!validateEmail(NewItem.data.emailContacto)) {
+                SetBackgroundField("txtEmailContacto", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar un Email contacto con estructura valida.');
+                estado = false;
+            } else
+                SetBackgroundField("txtEmailContacto", '');
+        }
+
+        @*if (NewItem.data.telefonoFijo == "") {
+            SetBackgroundField("txtTelefono", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un Telef. Fijo");
+            estado = false;
+        } else
+            SetBackgroundField("txtTelefono", '');*@
+
+        if (NewItem.data.celular == "") {
+            SetBackgroundField("txtCelular", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un nro. de celular");
+            estado = false;
+        } else {
+            if (parseInt(NewItem.data.celular.substring(0, 1)) != 9) {
+                SetBackgroundField("txtCelular", '@Constantes.InputColors.Obligatorio');
+                AppendMessage("El primer dígito del nro. de celular debe iniciar con nueve(9)");
+                estado = false;
+            }
+            else
+                SetBackgroundField("txtCelular", '');
+        }
+
+        if (NewItem.data.email == "") {
+            SetBackgroundField("txtEmail", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un Email");
+            estado = false;
+        } else {
+            if (!validateEmail(NewItem.data.email)) {
+                SetBackgroundField("txtEmail", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar un Email con estructura valida.');
+                estado = false;
+            } else
+                SetBackgroundField("txtEmail", '');
+        }
+
+        if (NewItem.data.id_Distrito == "") {
+            SetBackgroundField("ddlDistrito", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar un distrito");
+            estado = false;
+        } else
+            SetBackgroundField("ddlDistrito", '');
+
+        if (NewItem.data.direccion == "") {
+            SetBackgroundField("txtDireccion", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar una Dirección");
+            estado = false;
+        } else
+            SetBackgroundField("txtDireccion", '');
+
+        if (!estado) {
+            UnblockandShowErrors();
+        }
+        else
+            $.dlg("#divMensaje").fadeOut("fast");
+
+        if (estado) {
+            $.ajaxSetup({ cache: false });
+            jQuery.ajax({
+                type: 'GET',
+                url: baseUrl + 'Cliente/ValidarDocumentoRepetido',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: {
+                    id_Cliente: NewItem.data.id_Cliente == "" ? 0 : NewItem.data.id_Cliente,
+                    nroDocumento: NewItem.data.nroDocumento,
+                    id_TipoCliente: NewItem.data.tipoCliente
+                },
+                async: false,
+                success: function (data) {
+                    if (data != null) {
+                        if (data.success) {
+                            if (data.message != "") {
+                                AppendMessage(data.message);
+                                UnblockandShowErrors();
+                            }
+                            else {
+                                jQuery.ajax({
+                                    type: 'POST',
+                                    url: baseUrl + 'Cliente/Mantener',
+                                    dataType: 'json',
+                                    contentType: 'application/json; charset=utf-8',
+                                    data: JSON.stringify({
+                                        'model': NewItem.data
+                                    }),
+                                    async: true,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                message('Confirmación:', data.message, 'success');
+                                                jQuery("#listCliente").trigger('reloadGrid');
+                                                CloseDialog(dlgrFocus);
+                                            } else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                        } else
+                            messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+
+        return false;
+    }
+
+    function showDiv(t) {
+        if (t == '@Constantes.TipoCliente.Natural') {
+            $.dlg("#txtNombres").val(""); SetBackgroundField("txtNombres", '');
+            $.dlg("#txtApePat").val(""); SetBackgroundField("txtApePat", '');
+            $.dlg("#txtApeMat").val(""); SetBackgroundField("txtApeMat", '');
+            $.dlg("#txtDNI").val(""); SetBackgroundField("txtDNI", '');
+            $.dlg("#txtFechaNac").val(""); SetBackgroundFieldWithoutFocus("txtFechaNac", '');
+            $.dlg("#ddlSexo").val(""); SetBackgroundField("ddlSexo", '');
+            $.dlg("#divNatural").show();
+            $.dlg("#divJuridico").hide();
+        }
+        else if (t == '@Constantes.TipoCliente.Juridico') {
+            $.dlg("#txtRazonSocial").val(""); SetBackgroundField("txtRazonSocial", '');
+            $.dlg("#txtRUC").val(""); SetBackgroundField("txtRUC", '');
+            $.dlg("#divJuridico").show();
+            $.dlg("#divNatural").hide();
+        }
+
+        $.dlg("#divMensaje ul").html("");
+        $.dlg("#divMensaje").fadeOut("fast");
+        SetBackgroundField("ddlTipoDocumento", '');
+        SetBackgroundField("txtNomContacto", '');
+        SetBackgroundField("txtEmailContacto", '');
+        SetBackgroundField("txtCelular", '');
+        SetBackgroundField("txtEmail", '');
+        SetBackgroundField("ddlDistrito", '');
+        SetBackgroundField("txtDireccion", '');
+        SetBackgroundField("ddlTipoCliente", '');
+    }
+</script>
+<div class="mensaje" id="divMensaje" style="display: none; width: 83%;">
+    <ul id="ulMessage"></ul>
+</div>
+<div id="divAjax" class="ui-dialog-buttonpane ui-widget-content">
+    <button type="button" id="btnGrabar" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)" onblur="onblurBtn(this)"
+            class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+        Guardar <span class="ui-icon ui-icon-disk"></span>
+    </button>
+    <button type="button" id="btnCancelar" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)"
+            onblur="onblurBtn(this)" class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+        Cancelar <span class="ui-icon ui-icon-cancel"></span>
+    </button>
+</div>
+<div class="content_modal" id="divFields" style="overflow-y: auto;">
+    <input type="hidden" id="hdDialogState" />
+    <div class="item_form">
+        <div class="item_label">Tipo Cliente(*):</div>
+        <div class="item_campo">
+            <select id="ddlTipoCliente"></select>
+        </div>
+        <div class="item_label">Código:</div>
+        <div class="item_campo">
+            <input type="text" id="txtCodigo" maxlength="8" disabled="disabled" />
+        </div>
+        <div class="item_label">Tipo Documento(*):</div>
+        <div class="item_campo">
+            <select id="ddlTipoDocumento"></select>
+        </div>
+    </div>
+    <div id="divNatural" style="display:none;">
+        <div class="item_form">
+            <div class="item_label">Nombres(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtNombres" maxlength="30" />
+            </div>
+            <div class="item_label">Ape. Paterno(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtApePat" maxlength="30" />
+            </div>
+            <div class="item_label">Ape. Materno(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtApeMat" maxlength="30" />
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_label">Nro. Documento(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtDNI" maxlength="8" />
+            </div>
+            <div class="item_label">Fecha Nac.(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtFechaNac" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+            <div class="item_label">Sexo(*):</div>
+            <div class="item_campo">
+                <select id="ddlSexo"></select>
+            </div>
+        </div>
+    </div>
+    <div id="divJuridico" style="display:none;">
+        <div class="item_form">
+            <div class="item_label">Razón Social(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtRazonSocial" maxlength="200" />
+            </div>
+            <div class="item_label">RUC(*):</div>
+            <div class="item_campo">
+                <input type="text" id="txtRUC" maxlength="11" />
+            </div>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Nombre Contacto(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtNomContacto" maxlength="30" />
+        </div>
+        <div class="item_label">Email Contacto(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtEmailContacto" maxlength="50" />
+        </div>
+        <div class="item_label">Telf. Fijo:</div>
+        <div class="item_campo">
+            <input type="text" id="txtTelefono" maxlength="12" />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Celular(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtCelular" maxlength="9" />
+        </div>
+        <div class="item_label">Email(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtEmail" maxlength="50" />
+        </div>
+        <div class="item_label">Distrito(*):</div>
+        <div class="item_campo">
+            <select id="ddlDistrito"></select>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Dirección(*):</div>
+        <div class="item_campo" style="width: 750px !important;">
+            <textarea id="txtDireccion" rows="3" cols="26" maxlength="300" style="width: 100%;"></textarea>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label" style="width: 200px !important;"> (*) : Campos requeridos</div>
+        <div class="item_campo">
+        </div>
+    </div>
+    <input type="hidden" id="hdIdCliente" />
+    <input type="hidden" value="0" id="hdIdDialog" />
+    <input type="hidden" id="hdIndex" />
+</div>

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BEEmpleados.cs" />
+    <Compile Include="BEEspecie.cs" />
     <Compile Include="BEAlimentos.cs" />
     <Compile Include="BECanil.cs" />
     <Compile Include="BEPlanRutinaDet.cs" />
@@ -52,7 +55,14 @@
     <Compile Include="BEServicioHospedaje.cs" />
     <Compile Include="BEPlanAlimenticioDet.cs" />
     <Compile Include="BEPlanAlimenticio.cs" />
+    <Compile Include="BETamanio.cs" />
+    <Compile Include="BETurno.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Option.cs" />
+    <Compile Include="Seguridad\Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

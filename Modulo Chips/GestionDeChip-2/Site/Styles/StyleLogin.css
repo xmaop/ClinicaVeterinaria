@@ -1,0 +1,277 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+
+body {  
+    background-image: url(../images/LineasOndeadas.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;    
+    color: white;
+    font-family: 'Roboto';
+    height: 424px;
+}
+
+html {
+    height: 100%
+}
+
+.flat-form {
+    background: #0F547C;/*#136899;*/ 
+    margin: 25px auto 6px auto;
+    width: 389px;
+    height: 420px;
+    position: relative;
+    font-family: 'Roboto';
+    top: 0px;
+    left: -1px;
+    box-shadow: 2px 2px 5px #999;
+    border: 1px solid #142957;
+    -webkit-box-shadow: 2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+    border-radius: 5px;
+
+}
+.tabs {
+    background: #0F547C;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+.tabs li 
+{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.tabs a {
+  background: #0F547C;
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 12px 22px 12px 22px;
+  /*border-right: 1px solid @tab-border;*/
+
+}
+.tabs li:last-child a {
+  border-right: none;
+  width: 174px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.tabs a.active {
+  background: #4B93FE;
+  border-right: none;
+  -webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	transition: all 0.5s linear;
+}
+.form-action {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.form-action h1 {
+  font-size: 42px;
+  padding-bottom: 10px;
+}
+.form-action p {
+  font-size: 12px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+form {
+  padding-right: 20px !important;
+}
+form input[type=text],
+form input[type=password],
+form input[type=submit] {
+  font-family: 'Roboto';
+    
+}
+
+form input[type=text],
+form input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  color: #0F547C;
+  outline: none;
+}
+
+.dark-box {
+  background: #5e0400;
+  box-shadow: 1px 3px 3px #3d0100 inset;
+  height: 40px;
+  width: 50px;
+}
+.form-action .dark-box.bottom {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+}
+.tabs + .dark-box.top {
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+.show {
+    display: block;
+    top: 0px;
+    left: 1px;
+    height: 228px;
+}
+.hide {
+  display: none;
+}
+
+.button {
+    /*padding: 20px 20px;*/
+    border: none;
+    display: block;
+    background: #1E77AB;
+    height: 40px;
+    width: 345px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: lighter;
+  	-webkit-transition: all 0.15s linear;
+	  -moz-transition: all 0.15s linear;
+	  transition: all 0.15s linear;
+}
+
+.linkbutton {
+    border: none;
+    display: block;
+    color:#ffffff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-bottom: 25px;
+    }
+
+
+.linkbutton:hover{
+    color: #2493D2;
+}
+
+.button:hover {
+  background: #2493D2;
+  /*box-shadow: 0 3px 1px #237bb2;*/
+}
+
+.button:active {
+  background: #136899;
+  /*box-shadow: 0 3px 1px #0f608c;*/
+}
+
+::-webkit-input-placeholder {
+  color: #0F547C;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #0F547C;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #0F547C;
+}
+:-ms-input-placeholder {
+  color: #0F547C;
+}
+
+/*Estilo Panel Password*/
+
+.ModalBackground {
+    background-color: gray;
+    opacity: 0.7;
+    z-index: 10000;
+}
+
+.PnlBackground
+{
+    position: absolute;
+    top:10%;
+    left:10px;
+    width:60%;
+    height:210px;
+    text-align:center;
+    background-color:#0F547C;
+    box-shadow: 5px 5px 5px #999;
+       
+    
+    /*border: 1px solid #142957;*/
+    /*padding: inherit;*/
+
+}
+
+.buttonPanel {
+    border: none;
+    display: block;
+    background: #1E77AB;
+    height: 40px;
+    width: 100px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;   
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 32px;
+    align-items: flex-start;
+
+  	-webkit-transition: all 0.15s linear;
+	  -moz-transition: all 0.15s linear;
+	  transition: all 0.15s linear;
+}
+
+.buttonPanel:hover {
+  background: #2493D2;
+  /*box-shadow: 0 3px 1px #237bb2;*/
+}
+
+.buttonPanel:active {
+  background: #136899;
+  /*box-shadow: 0 3px 1px #0f608c;*/
+}
+
+.lineaPanel{
+    /*margin-left: 10px;*/
+    margin-top: 1px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size:x-small;
+    font-weight:lighter;
+    width:100%;
+
+
+}
+
+.ventana_flotante {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px 6px 6px 6px;
+    bottom: 50px;
+    left: auto;
+    margin-left: -120px;
+    padding: 10px 0 0;
+    position: fixed;
+    text-align: center;
+    width: 90px;
+    z-index: 15;
+}
+
+/*FIn Estilo Panel Password*/
+
+

@@ -1,0 +1,28 @@
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.csprojResolveAssemblyReference.cache
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.pdb
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.csprojResolveAssemblyReference.cache
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.dll
+C:\Users\glujan\Desktop\Nueva carpeta\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\Omu.Drawing.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\Omu.Drawing.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.csprojResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER_MARTES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\bin\Debug\Omu.Drawing.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.dll
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.Common\obj\Debug\PetCenter_GCP.Common.csprojResolveAssemblyReference.cache

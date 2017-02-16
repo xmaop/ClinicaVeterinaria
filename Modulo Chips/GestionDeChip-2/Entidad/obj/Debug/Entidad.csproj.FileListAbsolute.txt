@@ -1,0 +1,31 @@
+C:\BPCS\Entidad\bin\Debug\Entidad.dll
+C:\BPCS\Entidad\bin\Debug\Entidad.pdb
+C:\BPCS\Entidad\obj\Debug\Entidad.dll
+C:\BPCS\Entidad\obj\Debug\Entidad.pdb
+C:\BPCS\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+D:\Net\pobNet\Entidad\bin\Debug\Entidad.dll
+D:\Net\pobNet\Entidad\bin\Debug\Entidad.pdb
+D:\Net\pobNet\Entidad\obj\Debug\Entidad.dll
+D:\Net\pobNet\Entidad\obj\Debug\Entidad.pdb
+C:\net\pto\Entidad\bin\Debug\Entidad.dll
+C:\net\pto\Entidad\bin\Debug\Entidad.pdb
+C:\net\pto\Entidad\obj\Debug\Entidad.dll
+C:\net\pto\Entidad\obj\Debug\Entidad.pdb
+D:\Net\pto\Entidad\bin\Debug\Entidad.dll
+D:\Net\pto\Entidad\bin\Debug\Entidad.pdb
+D:\Net\pto\Entidad\obj\Debug\Entidad.dll
+D:\Net\pto\Entidad\obj\Debug\Entidad.pdb
+D:\Net\pto - copia\Entidad\bin\Debug\Entidad.dll
+D:\Net\pto - copia\Entidad\bin\Debug\Entidad.pdb
+D:\Net\pto - copia\Entidad\obj\Debug\Entidad.dll
+D:\Net\pto - copia\Entidad\obj\Debug\Entidad.pdb
+C:\net\pto\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Debug\Entidad.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Debug\Entidad.pdb

@@ -1,0 +1,27 @@
+C:\BPCS\Entidad\bin\Release\Entidad.dll
+C:\BPCS\Entidad\bin\Release\Entidad.pdb
+C:\BPCS\Entidad\obj\Release\Entidad.dll
+C:\BPCS\Entidad\obj\Release\Entidad.pdb
+C:\net\pto\Entidad\bin\Release\Entidad.dll
+C:\net\pto\Entidad\bin\Release\Entidad.pdb
+C:\net\pto\Entidad\obj\Release\Entidad.dll
+C:\net\pto\Entidad\obj\Release\Entidad.pdb
+D:\Net\pto - copia\Entidad\bin\Release\Entidad.dll
+D:\Net\pto - copia\Entidad\bin\Release\Entidad.pdb
+D:\Net\pto - copia\Entidad\obj\Release\Entidad.dll
+D:\Net\pto - copia\Entidad\obj\Release\Entidad.pdb
+D:\Net\pto\Entidad\bin\Release\Entidad.dll
+D:\Net\pto\Entidad\bin\Release\Entidad.pdb
+D:\Net\pto\Entidad\obj\Release\Entidad.dll
+D:\Net\pto\Entidad\obj\Release\Entidad.pdb
+D:\Net\pto\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Entidad\obj\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Entidad\obj\Release\Entidad.csprojResolveAssemblyReference.cache

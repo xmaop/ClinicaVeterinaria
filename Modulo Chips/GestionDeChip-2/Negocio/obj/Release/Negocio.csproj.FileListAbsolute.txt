@@ -1,0 +1,70 @@
+C:\BPCS\Negocio\bin\Release\Negocio.dll
+C:\BPCS\Negocio\bin\Release\Negocio.pdb
+C:\BPCS\Negocio\bin\Release\Datos.dll
+C:\BPCS\Negocio\bin\Release\Entidad.dll
+C:\BPCS\Negocio\bin\Release\log4net.dll
+C:\BPCS\Negocio\bin\Release\Datos.pdb
+C:\BPCS\Negocio\bin\Release\Entidad.pdb
+C:\BPCS\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\BPCS\Negocio\obj\Release\Negocio.dll
+C:\BPCS\Negocio\obj\Release\Negocio.pdb
+D:\Net\pobNet\Negocio\bin\Release\Negocio.dll
+D:\Net\pobNet\Negocio\bin\Release\Negocio.pdb
+D:\Net\pobNet\Negocio\bin\Release\Datos.dll
+D:\Net\pobNet\Negocio\bin\Release\Entidad.dll
+D:\Net\pobNet\Negocio\bin\Release\log4net.dll
+D:\Net\pobNet\Negocio\bin\Release\Datos.pdb
+D:\Net\pobNet\Negocio\bin\Release\Entidad.pdb
+D:\Net\pobNet\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pobNet\Negocio\obj\Release\Negocio.dll
+D:\Net\pobNet\Negocio\obj\Release\Negocio.pdb
+C:\net\pto\Negocio\bin\Release\Negocio.dll
+C:\net\pto\Negocio\bin\Release\Negocio.pdb
+C:\net\pto\Negocio\bin\Release\Datos.dll
+C:\net\pto\Negocio\bin\Release\Entidad.dll
+C:\net\pto\Negocio\bin\Release\log4net.dll
+C:\net\pto\Negocio\bin\Release\Datos.pdb
+C:\net\pto\Negocio\bin\Release\Entidad.pdb
+C:\net\pto\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\net\pto\Negocio\obj\Release\Negocio.dll
+C:\net\pto\Negocio\obj\Release\Negocio.pdb
+D:\Net\pto - copia\Negocio\bin\Release\Negocio.dll
+D:\Net\pto - copia\Negocio\bin\Release\Negocio.pdb
+D:\Net\pto - copia\Negocio\bin\Release\Datos.dll
+D:\Net\pto - copia\Negocio\bin\Release\Entidad.dll
+D:\Net\pto - copia\Negocio\bin\Release\log4net.dll
+D:\Net\pto - copia\Negocio\bin\Release\Datos.pdb
+D:\Net\pto - copia\Negocio\bin\Release\Entidad.pdb
+D:\Net\pto - copia\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pto - copia\Negocio\obj\Release\Negocio.dll
+D:\Net\pto - copia\Negocio\obj\Release\Negocio.pdb
+D:\Net\pto\Negocio\bin\Release\Negocio.dll
+D:\Net\pto\Negocio\bin\Release\Negocio.pdb
+D:\Net\pto\Negocio\bin\Release\Datos.dll
+D:\Net\pto\Negocio\bin\Release\Entidad.dll
+D:\Net\pto\Negocio\bin\Release\log4net.dll
+D:\Net\pto\Negocio\bin\Release\Datos.pdb
+D:\Net\pto\Negocio\bin\Release\Entidad.pdb
+D:\Net\pto\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pto\Negocio\obj\Release\Negocio.dll
+D:\Net\pto\Negocio\obj\Release\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Release\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Release\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Release\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Release\Negocio.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Release\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Release\Negocio.pdb

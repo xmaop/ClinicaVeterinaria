@@ -1,0 +1,80 @@
+C:\BPCS\Negocio\bin\Debug\Negocio.dll
+C:\BPCS\Negocio\bin\Debug\Negocio.pdb
+C:\BPCS\Negocio\bin\Debug\Datos.dll
+C:\BPCS\Negocio\bin\Debug\Entidad.dll
+C:\BPCS\Negocio\bin\Debug\log4net.dll
+C:\BPCS\Negocio\bin\Debug\Datos.pdb
+C:\BPCS\Negocio\bin\Debug\Entidad.pdb
+C:\BPCS\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\BPCS\Negocio\obj\Debug\Negocio.dll
+C:\BPCS\Negocio\obj\Debug\Negocio.pdb
+D:\Net\pobNet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pobNet\Negocio\bin\Debug\Negocio.dll
+D:\Net\pobNet\Negocio\bin\Debug\Negocio.pdb
+D:\Net\pobNet\Negocio\bin\Debug\Datos.dll
+D:\Net\pobNet\Negocio\bin\Debug\Entidad.dll
+D:\Net\pobNet\Negocio\bin\Debug\log4net.dll
+D:\Net\pobNet\Negocio\bin\Debug\Datos.pdb
+D:\Net\pobNet\Negocio\bin\Debug\Entidad.pdb
+D:\Net\pobNet\Negocio\obj\Debug\Negocio.dll
+D:\Net\pobNet\Negocio\obj\Debug\Negocio.pdb
+C:\net\pobNet\Negocio\bin\Debug\Negocio.dll
+C:\net\pobNet\Negocio\bin\Debug\Negocio.pdb
+C:\net\pobNet\Negocio\bin\Debug\Datos.dll
+C:\net\pobNet\Negocio\bin\Debug\Entidad.dll
+C:\net\pobNet\Negocio\bin\Debug\log4net.dll
+C:\net\pobNet\Negocio\bin\Debug\Datos.pdb
+C:\net\pobNet\Negocio\bin\Debug\Entidad.pdb
+C:\net\pobNet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\net\pobNet\Negocio\obj\Debug\Negocio.dll
+C:\net\pobNet\Negocio\obj\Debug\Negocio.pdb
+C:\net\pto\Negocio\bin\Debug\Negocio.dll
+C:\net\pto\Negocio\bin\Debug\Negocio.pdb
+C:\net\pto\Negocio\bin\Debug\Datos.dll
+C:\net\pto\Negocio\bin\Debug\Entidad.dll
+C:\net\pto\Negocio\bin\Debug\log4net.dll
+C:\net\pto\Negocio\bin\Debug\Datos.pdb
+C:\net\pto\Negocio\bin\Debug\Entidad.pdb
+C:\net\pto\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\net\pto\Negocio\obj\Debug\Negocio.dll
+C:\net\pto\Negocio\obj\Debug\Negocio.pdb
+D:\Net\pto\Negocio\bin\Debug\Negocio.dll
+D:\Net\pto\Negocio\bin\Debug\Negocio.pdb
+D:\Net\pto\Negocio\bin\Debug\Datos.dll
+D:\Net\pto\Negocio\bin\Debug\Entidad.dll
+D:\Net\pto\Negocio\bin\Debug\log4net.dll
+D:\Net\pto\Negocio\bin\Debug\Datos.pdb
+D:\Net\pto\Negocio\bin\Debug\Entidad.pdb
+D:\Net\pto\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pto\Negocio\obj\Debug\Negocio.dll
+D:\Net\pto\Negocio\obj\Debug\Negocio.pdb
+D:\Net\pto - copia\Negocio\bin\Debug\Negocio.dll
+D:\Net\pto - copia\Negocio\bin\Debug\Negocio.pdb
+D:\Net\pto - copia\Negocio\bin\Debug\Datos.dll
+D:\Net\pto - copia\Negocio\bin\Debug\Entidad.dll
+D:\Net\pto - copia\Negocio\bin\Debug\log4net.dll
+D:\Net\pto - copia\Negocio\bin\Debug\Datos.pdb
+D:\Net\pto - copia\Negocio\bin\Debug\Entidad.pdb
+D:\Net\pto - copia\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+D:\Net\pto - copia\Negocio\obj\Debug\Negocio.dll
+D:\Net\pto - copia\Negocio\obj\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Negocio\obj\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Negocio.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Negocio\obj\Debug\Negocio.pdb

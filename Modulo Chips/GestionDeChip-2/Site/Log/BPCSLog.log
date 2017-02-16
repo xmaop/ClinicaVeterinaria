@@ -1,0 +1,924 @@
+ï»¿2015-09-25 09:48:54,271 ERROR 5 UsuarioDAO - Clase: UsuarioDAO - MenuxUsuario: Procedure or function 'BWEB_INS_USUARIO' expects parameter '@nCia', which was not supplied.
+2015-09-28 10:34:55,409 ERROR 12 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2015-10-07 10:27:06,893 ERROR 27 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-02-08 13:51:55,376 ERROR 11 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-08-16 10:54:03,673 ERROR 11 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 10:55:04,103 ERROR 19 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 10:55:37,535 ERROR 25 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 10:55:52,056 ERROR 28 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 10:56:04,388 ERROR 18 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 10:56:05,068 ERROR 18 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión ya está abierta.
+2016-08-16 14:21:35,567 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:22:27,299 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:24:05,297 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:25:45,342 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:39:10,217 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:40:23,704 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:51:10,345 ERROR 6 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:53:19,510 ERROR 7 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-16 14:56:43,784 ERROR 7 ModuloDAO - Error al listar clientes corporativos x usuario: SQL0104 Símbolo QGPL no válido. Símbolos válidos: ( INTO USING.
+2016-08-17 06:55:33,158 ERROR 6 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 06:57:11,871 ERROR 9 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 07:05:58,662 ERROR 7 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 07:19:26,951 ERROR 6 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 07:19:41,682 ERROR 9 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 07:23:40,613 ERROR 7 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 08:11:32,411 ERROR 9 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-17 11:03:00,784 ERROR 12 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-20 21:23:07,611 ERROR 6 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 21:51:13,005 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 21:57:09,627 ERROR 11 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 21:57:34,211 ERROR 17 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 21:59:58,965 ERROR 11 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:00:03,484 ERROR 10 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:00:06,383 ERROR 13 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:00:06,429 ERROR 13 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-20 22:03:19,161 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:03:39,023 ERROR 11 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:09:02,991 ERROR 10 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:10:27,901 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:10:38,194 ERROR 10 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:13:08,529 ERROR 6 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:24:49,858 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-08-20 22:24:49,905 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-08-20 22:25:15,570 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-08-20 22:25:15,585 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-08-20 22:55:45,480 ERROR 6 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-20 22:55:45,558 ERROR 6 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-20 22:59:10,938 ERROR 6 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-20 23:06:46,348 ERROR 7 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-21 09:43:54,585 ERROR 17 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-21 09:44:42,653 ERROR 22 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-21 09:45:59,677 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR1ITH005W.SQLP_V3.
+2016-08-22 12:59:26,011 ERROR 18 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-22 12:59:37,152 ERROR 17 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-27 22:55:42,664 ERROR 9 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-29 08:03:31,215 ERROR 10 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-29 08:05:04,248 ERROR 8 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-29 09:01:24,134 ERROR 13 ModuloDAO - ReporteDelete - Error la carga de los valores de los parametros: Error al convertir el valor del parámetro de String a Int32.
+2016-08-31 14:42:59,657 ERROR 10 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR360002P.SQLP_V4.
+2016-08-31 14:50:12,968 ERROR 11 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-08-31 15:15:47,715 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR360001P.SQLP_V5.
+2016-08-31 15:15:55,855 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR360001P.SQLP_V5.
+2016-08-31 15:16:03,825 ERROR 12 ModuloDAO - Error al listar el reporte: SQL0302 Error de conversión en variable del lenguaje principal o parámetro UR360001P.SQLP_V5.
+2016-09-06 20:11:39,887 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'BWEB_SEL_USUARIO'.
+2016-09-06 20:25:11,095 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'BWEB_SEL_USUARIO'.
+2016-09-06 20:25:23,098 ERROR 6 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'BWEB_SEL_USUARIO'.
+2016-09-06 20:25:32,008 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'BWEB_SEL_USUARIO'.
+2016-09-06 20:58:26,169 ERROR 5 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión no se puede abrir porque se ha sobrepasado el tiempo de espera de la conexión.
+2016-09-06 20:58:26,204 ERROR 5 ClientesDAO - Error al listar clientes: La operación no puede completarse porque la conexión no es válida.
+2016-09-06 20:58:26,360 ERROR 5 ClientesDAO - Error al listar clientes corporativos x usuario: Could not find stored procedure 'BWEB_SEL_USUARIO_BPCS'.
+2016-09-06 20:59:29,279 ERROR 9 ClientesDAO - Error al listar clientes corporativos x usuario: Could not find stored procedure 'BWEB_SEL_USUARIO_BPCS'.
+2016-09-06 22:18:44,341 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-06 22:18:44,384 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-06 22:20:35,262 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-06 22:20:35,300 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-06 22:20:35,350 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-06 22:20:35,385 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:18:47,270 ERROR 8 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:18:47,313 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:18:47,370 ERROR 8 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:18:47,391 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:30:22,904 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:30:22,932 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:30:22,966 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:30:22,987 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:33:57,235 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:33:57,262 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:33:57,297 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:33:57,318 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:43:17,787 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:43:17,816 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:43:17,849 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:43:17,869 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:48:06,908 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:48:06,935 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:48:06,972 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:48:06,996 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:58:42,412 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:58:42,457 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 20:58:42,490 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 20:58:42,513 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:34:15,593 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:34:15,620 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:34:15,653 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:34:15,673 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:43:22,500 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:43:22,533 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:43:22,581 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:43:22,604 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:45:57,706 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:45:57,733 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:45:57,765 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:45:57,785 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:50:33,694 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:50:33,725 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:50:33,759 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:50:33,779 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:56:46,223 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:56:46,257 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:56:46,302 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:56:46,329 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:58:44,306 ERROR 9 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:58:44,334 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 21:58:44,367 ERROR 9 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 21:58:44,387 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:03:22,465 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:03:22,494 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:03:22,527 ERROR 6 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:03:22,548 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:10:36,699 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:10:36,728 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:10:36,764 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:10:36,790 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:34:53,561 ERROR 9 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:34:53,591 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:34:53,623 ERROR 9 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:34:53,643 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:44:55,038 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:44:55,066 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:44:55,098 ERROR 7 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:44:55,119 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:48:06,876 ERROR 12 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:48:06,910 ERROR 12 ModuloDAO - Error clase: ModuloDAO - ModulosSinAsignarxUsuario: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-07 22:48:06,948 ERROR 12 ConexionDIS - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-07 22:48:06,969 ERROR 12 ModuloDAO - Error clase: ModuloDAO - ListarEstados: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 07:01:18,511 ERROR 9 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 07:01:18,557 ERROR 9 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:43:50,531 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 09:43:50,605 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:44:47,410 ERROR 10 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 09:44:47,431 ERROR 10 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:47:17,985 ERROR 9 AutorizacionDAO - Login - Error la carga de los valores: Error en el nivel del transporte al recibir los resultados del servidor. (provider: TCP Provider, error: 0 - El nombre de red especificado ya no está disponible.)
+2016-09-10 09:49:02,770 ERROR 10 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 09:49:02,804 ERROR 10 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:50:04,196 ERROR 9 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 09:50:04,234 ERROR 9 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:52:20,562 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 09:52:20,568 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 09:54:01,897 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarAno: Error en el nivel del transporte al recibir los resultados del servidor. (provider: TCP Provider, error: 0 - El nombre de red especificado ya no está disponible.)
+2016-09-10 10:01:38,914 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarCECO: Error en el nivel del transporte al recibir los resultados del servidor. (provider: TCP Provider, error: 0 - El nombre de red especificado ya no está disponible.)
+2016-09-10 10:02:04,608 ERROR 6 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-09-10 10:02:04,629 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarCECO: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-10 12:46:19,373 ERROR 11 ReporteList - GrdModuloList_RowCommand: El argumento especificado está fuera del intervalo de valores válidos.
+Nombre del parámetro: index
+2016-09-10 17:36:01,304 ERROR 12 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión no se puede abrir porque se ha sobrepasado el tiempo de espera de la conexión.
+2016-09-10 17:36:01,333 ERROR 12 ClientesDAO - Error al listar clientes: La operación no puede completarse porque la conexión no es válida.
+2016-09-10 17:36:01,367 ERROR 12 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 17:41:23,287 ERROR 11 ConexionDB2 - Conectar: Error en abrir la conexion DB2La conexión no se puede abrir porque se ha sobrepasado el tiempo de espera de la conexión.
+2016-09-10 17:41:23,318 ERROR 11 ClientesDAO - Error al listar clientes: La operación no puede completarse porque la conexión no es válida.
+2016-09-10 17:42:44,545 ERROR 11 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 18:06:27,743 ERROR 11 AutorizacionDAO - Login - Error la carga de los valores: Invalid column name 'cTipoUsr'.
+2016-09-10 18:19:51,144 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Invalid column name 'cTipoUsr'.
+2016-09-10 18:20:38,596 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Invalid column name 'cTipoUsr'.
+2016-09-10 18:24:51,207 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_USUARIO'.
+2016-09-10 18:29:27,560 ERROR 11 UsuarioDAO - Clase: UsuarioDAO - ListaUsuarios: Invalid column name 'cTipoUsr'.
+Invalid column name 'cTipoUsr'.
+Invalid column name 'cTipoUsr'.
+2016-09-10 19:29:18,886 ERROR 8 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 19:33:28,486 ERROR 6 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 19:41:56,130 ERROR 7 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 19:58:32,743 ERROR 12 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 20:00:47,649 ERROR 9 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 20:02:59,373 ERROR 7 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 20:06:50,146 ERROR 10 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 20:08:18,167 ERROR 8 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: nIdUsr
+2016-09-10 20:32:17,166 ERROR 24 UsuarioDAO - Clase: UsuarioDAO - Error al insertar el usuario: Procedure or function 'BWEB_INS_USUARIO' expects parameter '@nCia', which was not supplied.
+2016-09-10 21:39:57,710 ERROR 27 UsuarioDAO - UsuarioUpdate - Error la carga de los valores de los parametros: Procedure or function 'BWEB_UPD_USUARIO' expects parameter '@nCia', which was not supplied.
+2016-09-10 21:49:04,933 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-09-10 21:55:43,072 ERROR 6 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-09-10 21:57:57,534 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-09-12 06:45:53,960 ERROR 6 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-12 06:46:07,756 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-12 06:46:20,167 ERROR 10 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-13 17:51:49,923 ERROR 6 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-09-13 23:08:36,062 ERROR 9 ReportesDAO - Error clase: ReportesDAO - SeleccionaReporte: No se puede convertir un objeto DBNull en otros tipos.
+2016-09-13 23:31:01,896 ERROR 7 ReportesDAO - Error clase: ReportesDAO - SeleccionaReporte: No se puede convertir un objeto DBNull en otros tipos.
+2016-09-13 23:34:14,593 ERROR 6 ReportesDAO - Error clase: ReportesDAO - SeleccionaReporte: No se puede convertir un objeto DBNull en otros tipos.
+2016-09-14 13:41:51,065 ERROR 9 ReportesDAO - ReporteUpdate - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2016-09-14 13:41:51,158 ERROR 9 ReporteDetails - Cuentas - BtnGrabar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2016-09-14 14:01:01,973 ERROR 8 ReporteList - GrdReporteList_RowCommand: No se encontró ningún campo o propiedad 'nId' en el origen de datos seleccionado.
+2016-09-16 19:16:25,670 ERROR 10 ReportesDAO - ReporteInsert - Error la carga de los valores de los parametros: Procedure or function 'BWEB_INS_REPORTE' expects parameter '@cDesRpt', which was not supplied.
+2016-09-16 19:16:25,722 ERROR 10 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'BWEB_INS_REPORTE' expects parameter '@cDesRpt', which was not supplied.
+2016-09-16 20:21:31,211 ERROR 15 ReportesDAO - CeCoInsert - Error la carga de los valores de los parametros: Violation of PRIMARY KEY constraint 'PK_gnrl_ceco'. Cannot insert duplicate key in object 'dbo.gnrl_ceco'.
+The statement has been terminated.
+2016-09-16 20:21:31,217 ERROR 15 ReporteDetails - ReporteDetails - BtnGrabar_Click: Violation of PRIMARY KEY constraint 'PK_gnrl_ceco'. Cannot insert duplicate key in object 'dbo.gnrl_ceco'.
+The statement has been terminated.
+2016-09-16 21:38:50,557 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2016-09-16 21:41:35,008 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2016-09-16 21:43:20,328 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2016-09-16 21:43:57,157 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: nId
+2016-09-16 21:45:09,035 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: nId
+2016-09-17 10:07:19,562 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:08:33,339 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:09:24,905 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:48:17,183 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:48:25,333 ERROR 17 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:50:36,713 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 10:50:36,922 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Conversion failed when converting the varchar value '10MKTOT' to data type int.
+2016-09-17 10:50:37,124 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Conversion failed when converting the varchar value '10TITOT' to data type int.
+2016-09-17 10:50:41,098 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEmpresaVM: Conversion failed when converting the varchar value '100TOT' to data type int.
+2016-09-17 11:22:40,643 ERROR 12 ModuloDAO - Error clase: ModuloDAO - ListarCECOVM: Procedure or function 'PTO_SEL_CECO_VM' expects parameter '@CTA9', which was not supplied.
+2016-09-17 11:22:54,264 ERROR 10 ModuloDAO - Error clase: ModuloDAO - ListarCECOVM: Procedure or function 'PTO_SEL_CECO_VM' expects parameter '@CTA9', which was not supplied.
+2016-09-17 11:29:17,452 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarCECOVM: Procedure or function 'PTO_SEL_CECO_VM' expects parameter '@CTA9', which was not supplied.
+2016-09-17 11:30:01,938 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarCECOVM: Procedure or function 'PTO_SEL_CECO_VM' expects parameter '@CTA9', which was not supplied.
+2016-09-17 11:34:51,411 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarCECOVM: Procedure or function 'PTO_SEL_CECO_VM' expects parameter '@CTA9', which was not supplied.
+2016-09-18 21:20:39,378 ERROR 11 ReportesDAO - CeCoGenerar - Error la carga de los valores de los parametros: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 21:20:39,563 ERROR 11 ReporteList - GrdReporteList_RowCommand: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 21:24:55,847 ERROR 6 ReportesDAO - CeCoGenerar - Error la carga de los valores de los parametros: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 21:24:55,852 ERROR 6 ReporteList - GrdReporteList_RowCommand: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 21:35:40,297 ERROR 12 ReportesDAO - CeCoGenerar - Error la carga de los valores de los parametros: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 21:35:40,308 ERROR 12 ReporteList - GrdReporteList_RowCommand: The conversion of the varchar value '3000000388' overflowed an int column.
+The statement has been terminated.
+2016-09-18 23:13:14,833 ERROR 9 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-09-18 23:56:43,127 ERROR 12 ReporteList - Error metodo Boton Exportar : Subproceso anulado.
+2016-09-20 21:56:43,190 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarCECO: Could not find stored procedure 'PTO_SEL_CECOUSUARIO_PERFIL'.
+2016-09-20 22:09:21,252 ERROR 11 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-09-20 22:09:21,258 ERROR 11 ModuloDAO - Error clase: ModuloDAO - ListarCECO: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-21 08:26:53,743 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS_PERFIL'.
+2016-09-21 08:27:59,657 ERROR 13 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS_PERFIL'.
+2016-09-21 16:27:55,948 ERROR 9 ModuloDAO - AprobarPlantilla - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_APRUEBA_DESAPRUEBA' expects parameter '@USUARIO', which was not supplied.
+2016-09-21 16:29:17,544 ERROR 11 ModuloDAO - AprobarPlantilla - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_APRUEBA_DESAPRUEBA' expects parameter '@USUARIO', which was not supplied.
+2016-09-22 11:43:43,187 ERROR 9 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+2016-09-22 11:43:43,218 ERROR 9 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-09-23 22:28:23,559 ERROR 6 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-09-23 22:28:23,773 ERROR 6 ReporteList - Error  : Índice fuera de los límites de la matriz.
+2016-09-23 22:28:25,057 ERROR 6 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-09-23 22:28:31,381 ERROR 6 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-09-23 22:28:33,488 ERROR 9 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-09-28 21:40:42,362 ERROR 10 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Se agotó el tiempo de espera de ejecución. El período de tiempo de espera transcurrió antes de la finalización de la operación o el servidor no responde.
+2016-09-28 21:41:14,137 ERROR 13 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Se agotó el tiempo de espera de ejecución. El período de tiempo de espera transcurrió antes de la finalización de la operación o el servidor no responde.
+2016-09-30 19:50:21,583 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-30 19:50:49,103 ERROR 9 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-30 19:51:29,537 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-30 19:52:45,911 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2016-09-30 23:07:12,307 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:10:16,381 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:11:13,774 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:11:43,851 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:13:04,829 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:14:05,534 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:15:56,108 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:16:26,119 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:18:45,414 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:19:38,296 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-09-30 23:20:27,802 ERROR 11 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 09:55:00,485 ERROR 10 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 10:26:51,974 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 10:27:22,040 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 10:28:31,555 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo1VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 10:29:01,570 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-01 10:31:06,784 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarNodo2VM: Valor de Timeout caducado. El período de tiempo de espera caducó antes de completar la operación o el servidor no responde.
+2016-10-02 15:32:38,840 ERROR 27 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-10-02 19:56:13,372 ERROR 12 ConexionSQL - Error al abrir conexion al SQL: La conexión no se cerró. El estado actual de la conexión es abierta.
+2016-10-03 22:29:30,498 ERROR 7 ReportesDAO - Cargar - Error la carga de los valores de los parametros: Se agotó el tiempo de espera de ejecución. El período de tiempo de espera transcurrió antes de la finalización de la operación o el servidor no responde.
+2016-10-07 20:37:45,378 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+2016-10-07 20:37:45,406 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-07 20:38:11,858 ERROR 10 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+2016-10-07 20:38:11,884 ERROR 10 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-09 10:28:52,628 ERROR 11 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-10-09 10:35:06,503 ERROR 14 ReporteList - Error  : El índice estaba fuera del intervalo. Debe ser un valor no negativo e inferior al tamaño de la colección.
+Nombre del parámetro: index
+2016-10-11 19:39:58,954 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-11 19:39:59,206 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-11 19:40:03,097 ERROR 6 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-11 19:40:03,126 ERROR 6 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-11 19:40:22,773 ERROR 6 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-11 19:40:22,773 ERROR 6 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-11 21:26:18,383 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 21:26:18,412 ERROR 8 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 21:31:10,956 ERROR 6 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 21:31:10,963 ERROR 6 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 21:36:38,120 ERROR 5 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-11 21:37:08,203 ERROR 5 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-11 21:37:48,623 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-11 21:38:45,894 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-11 21:39:06,636 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-11 22:03:14,651 ERROR 6 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:03:14,675 ERROR 6 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:06:17,526 ERROR 7 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:06:17,535 ERROR 7 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:07:43,732 ERROR 7 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:07:43,756 ERROR 7 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:10:31,001 ERROR 7 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:10:31,008 ERROR 7 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'PTO_UPD_CECO' expects parameter '@FECHA_APROBADO', which was not supplied.
+2016-10-11 22:11:59,153 ERROR 6 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:11:59,176 ERROR 6 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:15:36,450 ERROR 6 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:15:36,473 ERROR 6 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:17:39,071 ERROR 7 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:17:39,098 ERROR 7 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:38:54,128 ERROR 6 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:38:54,137 ERROR 6 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:46:21,810 ERROR 7 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Conversion failed when converting date and/or time from character string.
+2016-10-11 22:46:21,825 ERROR 7 ReporteDetails - ReporteDetails - BtnGrabar_Click: Conversion failed when converting date and/or time from character string.
+2016-10-12 21:57:57,377 ERROR 10 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: ID_PLLA_BLOQUEO
+2016-10-12 22:00:07,348 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: ID_PLLA_BLOQUEO
+2016-10-12 22:02:09,370 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: ID_PLLA_BLOQUEO
+2016-10-12 22:06:00,442 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: ID_PLLA_BLOQUEO
+2016-10-12 22:06:32,782 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-12 22:07:01,494 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-12 22:09:36,838 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: No se puede convertir un objeto DBNull en otros tipos.
+2016-10-13 12:16:58,184 ERROR 8 ReporteList - GrdModuloList_RowCommand: El argumento especificado está fuera del intervalo de valores válidos.
+Nombre del parámetro: index
+2016-10-13 12:18:45,222 ERROR 11 ReporteList - GrdModuloList_RowCommand: El argumento especificado está fuera del intervalo de valores válidos.
+Nombre del parámetro: index
+2016-10-14 20:55:02,802 ERROR 7 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-14 20:55:02,854 ERROR 7 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-17 19:49:31,781 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-17 19:49:31,834 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-17 19:49:33,439 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-17 19:49:33,471 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-18 10:36:59,454 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarCECOVU: Procedure or function 'PTO_SEL_CECO_VU' expects parameter '@Usuario', which was not supplied.
+2016-10-18 10:40:07,080 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarCECOVU: Procedure or function 'PTO_SEL_CECO_VU' expects parameter '@Usuario', which was not supplied.
+2016-10-25 07:38:15,486 ERROR 10 ReportesDAO - Error clase: ReportesDAO - CargaArchivo: Cannot initialize the data source object of OLE DB provider "Microsoft.ACE.OLEDB.12.0" for linked server "(null)".
+2016-10-25 08:07:58,856 ERROR 10 ReportesDAO - Error clase: ReportesDAO - CargaArchivo: The OLE DB provider "Microsoft.ACE.OLEDB.12.0" for linked server "(null)" does not contain the table "Hoja1$". The table either does not exist or the current user does not have permissions on that table.
+2016-10-25 08:11:42,547 ERROR 7 ReportesDAO - Error clase: ReportesDAO - CargaArchivo: The OLE DB provider "Microsoft.ACE.OLEDB.12.0" for linked server "(null)" does not contain the table "Hoja1$". The table either does not exist or the current user does not have permissions on that table.
+2016-10-26 13:52:03,262 ERROR 8 ReportesDAO - Error clase: ReportesDAO - CargaArchivo: The OLE DB provider "Microsoft.ACE.OLEDB.12.0" for linked server "(null)" does not contain the table "Hoja1$". The table either does not exist or the current user does not have permissions on that table.
+2016-10-26 13:58:23,362 ERROR 8 ReportesDAO - Error clase: ReportesDAO - CargaArchivo: Invalid column name 'SET'.
+2016-10-26 21:39:14,839 ERROR 7 ReporteList - GrdModuloList_RowCommand: Subproceso anulado.
+2016-10-26 21:39:21,414 ERROR 9 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 21:39:26,835 ERROR 10 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:35:28,776 ERROR 18 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:35:35,457 ERROR 17 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:35:43,522 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:35:49,562 ERROR 17 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:36:14,083 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:36:43,629 ERROR 15 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:37:05,346 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:37:13,245 ERROR 17 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:37:20,918 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:37:26,317 ERROR 17 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-26 22:38:41,509 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-26 22:39:10,737 ERROR 15 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 07:21:07,638 ERROR 20 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 07:21:59,346 ERROR 13 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 09:43:04,869 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 09:43:20,788 ERROR 12 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 10:01:09,039 ERROR 12 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 10:08:51,303 ERROR 11 ReporteDetails - Workflow2 - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 10:11:17,114 ERROR 7 ReporteList - GrdReporteList_RowCommand: Subproceso anulado.
+2016-10-27 10:11:19,786 ERROR 8 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 20:19:21,855 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server)
+2016-10-27 20:19:21,916 ERROR 8 AutorizacionDAO - Login - Error la carga de los valores: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2016-10-27 20:32:38,982 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 20:33:39,000 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 20:40:51,293 ERROR 7 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 20:41:05,693 ERROR 7 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 20:44:46,005 ERROR 8 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-27 22:12:11,621 ERROR 8 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-28 07:20:15,563 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-28 07:20:36,874 ERROR 8 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-10-28 07:20:55,434 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarCECOVU: Could not find stored procedure 'PTO_SEL_CECO_MA'.
+2016-10-28 07:20:55,494 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarCUENTA: Could not find stored procedure 'PTO_SEL_CUENTAS_MA'.
+2016-10-29 23:04:36,995 ERROR 10 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-11-03 09:05:39,137 ERROR 5 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-11-03 09:43:47,512 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-11-12 07:31:20,244 ERROR 23 ReportesDAO - CeCoInsert - Error la carga de los valores de los parametros: Procedure or function 'PTO_INS_CECO' expects parameter '@ID_PLLA_VISUALIZA', which was not supplied.
+2016-11-12 07:31:20,274 ERROR 23 ReporteDetails - ReporteDetails - BtnGrabar_Click: Procedure or function 'PTO_INS_CECO' expects parameter '@ID_PLLA_VISUALIZA', which was not supplied.
+2016-12-04 17:16:04,159 ERROR 11 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2016-12-04 17:21:14,107 ERROR 10 ReporteDetails - Cuentas - BtnNuevo_Click: Subproceso anulado.
+2016-12-04 17:21:48,488 ERROR 9 ReporteDetails - Cuentas - BtnNuevo_Click: Subproceso anulado.
+2016-12-04 17:27:08,022 ERROR 7 ReporteDetails - Cuentas - BtnNuevo_Click: Subproceso anulado.
+2017-01-20 13:48:41,392 ERROR 10 UsuarioDAO - Clase: UsuarioDAO - ListaUsuarios: Could not find stored procedure 'PTO_SEL_USUARIOS'.
+2017-01-20 20:40:55,373 ERROR 8 UsuarioDAO - Clase: UsuarioDAO - BuscaUsuario: Could not find stored procedure 'PTO_SEL_IDUSUARIO'.
+2017-01-20 22:20:20,648 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:21:00,684 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:21:22,531 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:21:22,591 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:21:22,641 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-20 22:25:18,584 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:25:18,644 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:25:18,684 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-20 22:34:03,201 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:34:03,264 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:34:03,311 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-20 22:38:55,545 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:38:55,592 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:38:55,639 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-20 22:42:43,077 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:42:43,140 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:42:43,186 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-20 22:59:41,746 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-20 22:59:41,808 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-20 22:59:41,839 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:21:31,679 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:21:31,760 ERROR 7 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-21 09:21:31,826 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:21:51,755 ERROR 9 ReporteDetails - Workflow - BtnNuevo_Click: Subproceso anulado.
+2017-01-21 09:24:54,658 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:24:54,727 ERROR 6 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-21 09:24:54,779 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:24:59,079 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 09:25:04,639 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarEmpresa: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:25:04,695 ERROR 8 ModuloDAO - Error clase: ModuloDAO - ListarVisualiza: Could not find stored procedure 'PTO_SEL_VISUALIZA'.
+2017-01-21 09:25:04,742 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:38:53,280 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:39:07,755 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 09:39:10,774 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarModulos: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:39:18,205 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarModulos: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:39:22,352 ERROR 9 ModuloDAO - Error clase: ModuloDAO - ListarModulos: Could not find stored procedure 'PTO_SEL_EMPRESAS'.
+2017-01-21 09:39:28,546 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:41:09,227 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:41:18,198 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 09:52:47,174 ERROR 10 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 09:55:51,643 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 10:34:42,492 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 10:36:15,397 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 10:41:21,651 ERROR 10 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 10:44:09,785 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 10:44:34,889 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 10:47:59,703 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 10:54:37,454 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Could not find stored procedure 'PTO_SEL_IDCECO'.
+2017-01-21 11:27:33,195 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Procedure or function 'ACI_USP_VET_get_OrdenDeImplantacion' expects parameter '@idOrdenAtencion', which was not supplied.
+2017-01-21 11:33:30,313 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Procedure or function 'ACI_USP_VET_get_OrdenDeImplantacion' expects parameter '@idOrdenAtencion', which was not supplied.
+2017-01-21 11:34:44,572 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 11:38:46,971 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 11:38:56,854 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:34:39,615 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:38:13,719 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:44:32,509 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: observacion
+2017-01-21 12:48:21,690 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: observacion
+2017-01-21 12:50:01,956 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:52:13,842 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:55:10,551 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:57:35,264 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:57:46,680 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 12:58:46,071 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 13:29:03,867 ERROR 10 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'ACI_USP_VET_upd_OrdenDeImplantacion' expects parameter '@fecha', which was not supplied.
+2017-01-21 13:29:03,885 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Procedure or function 'ACI_USP_VET_upd_OrdenDeImplantacion' expects parameter '@fecha', which was not supplied.
+2017-01-21 13:30:34,159 ERROR 9 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function 'ACI_USP_VET_upd_OrdenDeImplantacion' expects parameter '@fecha', which was not supplied.
+2017-01-21 13:30:34,168 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Procedure or function 'ACI_USP_VET_upd_OrdenDeImplantacion' expects parameter '@fecha', which was not supplied.
+2017-01-21 14:12:52,072 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: Procedure or function ACI_USP_VET_upd_OrdenDeImplantacion has too many arguments specified.
+2017-01-21 14:12:52,078 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: Procedure or function ACI_USP_VET_upd_OrdenDeImplantacion has too many arguments specified.
+2017-01-21 14:13:59,505 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:14:34,006 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:14:49,434 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:19:56,541 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:20:46,646 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-21 14:21:01,435 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-21 14:21:09,966 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-21 14:22:02,538 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:22:13,546 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:33:27,418 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 14:37:21,763 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 16:53:43,827 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 18:05:02,704 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 18:05:25,628 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 18:05:50,953 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 18:57:35,554 ERROR 6 UsuarioDAO - Clase: PetCenter - VerHistorico: Could not find stored procedure 'ACI_USP_VET_sel_VerHistorico'.
+2017-01-21 18:59:26,078 ERROR 9 UsuarioDAO - Clase: PetCenter - VerHistorico: Could not find stored procedure 'ACI_USP_VET_sel_VerHistorico'.
+2017-01-21 19:19:10,816 ERROR 42 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 19:52:20,623 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 19:55:20,041 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-21 22:16:39,770 ERROR 82 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 00:48:15,377 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 01:18:45,188 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 01:23:57,579 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 01:24:21,815 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 12:57:19,825 ERROR 113 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 12:57:24,614 ERROR 116 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 17:47:15,318 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 17:49:37,552 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 18:20:36,333 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 21:06:45,758 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-22 23:27:01,579 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:01:03,465 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:04:52,946 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:06:22,937 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:06:53,448 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:08:44,816 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:09:20,004 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:45:57,548 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 08:59:33,348 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 10:01:16,357 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 10:01:33,762 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 10:56:02,784 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 14:39:35,843 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 14:40:27,637 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 14:41:09,882 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 14:49:59,952 ERROR 33 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 14:54:55,146 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 15:02:03,357 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 15:02:48,331 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 16:37:56,288 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 16:40:20,978 ERROR 14 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 16:45:51,132 ERROR 12 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 16:48:18,644 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 16:50:30,729 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Error de lectura porque no hay datos.
+2017-01-23 16:52:24,534 ERROR 7 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Error de lectura porque no hay datos.
+2017-01-23 16:53:40,009 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: Error de lectura porque no hay datos.
+2017-01-23 16:54:42,798 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:23:25,520 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:27:28,058 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:29:33,962 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:53:15,133 ERROR 5 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:55:07,704 ERROR 8 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:56:27,863 ERROR 9 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:58:39,380 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 20:59:53,222 ERROR 6 ReportesDAO - Error clase: CeCoDAO - SeleccionaCeCo: La cadena de entrada no tiene el formato correcto.
+2017-01-23 21:02:07,083 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 21:25:59,817 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 22:15:52,455 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 22:16:06,505 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 22:20:18,099 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 22:20:35,308 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-23 22:25:23,480 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 00:00:45,606 ERROR 9 ReportesDAO - RegistraTarjeta - Error la carga de los valores de los parametros: Invalid column name 'fechaVencimiento'.
+2017-01-24 00:00:45,627 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Invalid column name 'fechaVencimiento'.
+2017-01-24 00:02:31,217 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-24 00:04:26,830 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 00:28:25,721 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 00:37:16,079 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 03:59:11,270 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-24 03:59:17,130 ERROR 8 UsuarioDAO - Clase: PetCenter - VerHistoricoPaciente: Error al convertir el valor del parámetro de String a Int32.
+2017-01-24 04:06:08,922 ERROR 9 UsuarioDAO - Clase: PetCenter - VerHistoricoPaciente: Error al convertir el valor del parámetro de String a Int32.
+2017-01-24 04:07:02,496 ERROR 7 UsuarioDAO - Clase: PetCenter - VerHistoricoPaciente: Procedure or function 'ACI_USP_VET_sel_VerHistoricoPaciente' expects parameter '@codigo_Mascota', which was not supplied.
+2017-01-24 08:51:15,593 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 08:55:11,193 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 09:25:33,475 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 09:25:47,117 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 09:51:27,247 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-24 09:52:11,638 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 09:52:21,016 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 10:22:15,898 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 10:23:33,471 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 11:44:40,496 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 11:49:28,336 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 16:56:06,670 ERROR 6 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Could not find stored procedure 'ACI_USP_VET_sel_OrdenesDisponiblesImplantacion'.
+2017-01-24 17:21:00,151 ERROR 8 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-24 23:18:00,433 ERROR 7 UsuarioDAO - Clase: PetCenter - RegistraInfChip: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-24 23:50:37,372 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-24 23:51:50,437 ERROR 25 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-24 23:51:50,452 ERROR 25 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:10:24,504 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:10:24,512 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:32:49,808 ERROR 8 ReportesDAO - CeCoUpdate - Error la carga de los valores de los parametros: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 00:32:49,813 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: String or binary data would be truncated.
+The statement has been terminated.
+2017-01-25 01:13:02,786 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:13:25,412 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:17:33,407 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 01:19:39,104 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:07:48,588 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:10:07,367 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:13:17,440 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:14:22,842 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:20,948 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:31,743 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 08:15:59,495 ERROR 8 UsuarioDAO - Clase: PetCenter - ListaGenerarTarjeta: Conversion failed when converting the varchar value 'DNI' to data type int.
+2017-01-25 12:44:47,534 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-25 12:45:20,748 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 12:46:06,372 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 12:51:24,104 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 14:49:00,175 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 15:38:05,892 ERROR 7 ReportesDAO - ActualizaFoto - Error la carga de los valores de los parametros: Could not find stored procedure 'ACI_USP_VET_upd_ActualizaFoto'.
+2017-01-25 16:01:27,735 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 16:53:56,661 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 16:55:39,887 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:29:30,053 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 18:36:17,474 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:37:09,972 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 18:39:42,833 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: Error al enviar correo.
+2017-01-25 18:46:47,840 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: Error al enviar correo.
+2017-01-25 19:09:53,635 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:11:58,391 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:16:25,689 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 19:18:37,413 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 20:33:43,233 ERROR 12 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:11:46,094 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:12:44,506 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:14:35,118 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:15:17,931 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:16:39,949 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: La cadena de entrada no tiene el formato correcto.
+2017-01-25 21:26:15,993 ERROR 8 ReportesDAO - Error clase: PetCenter - Correo: Procedure or function 'ACI_USP_VET_sel_Correo' expects parameter '@idOrdenAtencion', which was not supplied.
+2017-01-25 21:26:16,047 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: El parámetro 'addresses' no puede ser una cadena vacía.
+Nombre del parámetro: addresses
+2017-01-25 21:27:35,912 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:32:08,813 ERROR 17 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:33:23,715 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 21:56:40,657 ERROR 6 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:02:10,432 ERROR 22 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:03:03,631 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:05:39,253 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-25 22:49:17,500 ERROR 37 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 22:56:13,882 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-25 22:56:43,801 ERROR 9 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 00:27:19,953 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:39:09,433 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:45:22,330 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:49:42,499 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 00:50:12,575 ERROR 10 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 00:50:17,363 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:29:13,491 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:29:33,025 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:40:45,201 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 01:41:07,180 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:44:49,535 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:47:01,152 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:51:27,838 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 07:52:08,626 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:04:48,860 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:07:32,827 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:26:17,250 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:29:33,155 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:34:27,659 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:04,987 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:26,862 ERROR 20 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:37:35,972 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:54:51,454 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 08:58:04,761 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 08:58:13,059 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:13:40,177 ERROR 39 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 09:23:23,822 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:28:25,913 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 09:53:38,565 ERROR 44 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:06:40,791 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:08:18,740 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 10:11:11,570 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:11:58,267 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:17:41,728 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:18:15,776 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:24:15,864 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:33:14,842 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:34:01,555 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:41:02,798 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:41:19,012 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:42:16,624 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:43:53,840 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:52:08,443 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:52:22,913 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 12:57:33,084 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 13:15:52,343 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 13:25:24,822 ERROR 38 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:06:34,305 ERROR 119 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:12:43,210 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:12:49,411 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:15:49,132 ERROR 108 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:25:36,926 ERROR 113 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:30:03,438 ERROR 115 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:30:23,359 ERROR 115 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:35:00,674 ERROR 114 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:36:05,073 ERROR 117 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:44:25,778 ERROR 107 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:46:42,593 ERROR 103 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:46:57,943 ERROR 117 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:47:59,667 ERROR 103 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:55:03,848 ERROR 109 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 14:55:17,095 ERROR 111 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:00:43,919 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:01:19,967 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:23:01,754 ERROR 60 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 15:25:31,012 ERROR 59 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:25:50,769 ERROR 55 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:35:00,312 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:37:30,246 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 15:47:10,922 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 15:48:45,894 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:49:44,983 ERROR 23 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 15:50:56,945 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:23:53,738 ERROR 85 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:24:11,576 ERROR 84 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 16:24:31,657 ERROR 81 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 16:24:36,935 ERROR 80 UsuarioDAO - Clase: PetCenter - VerHistoricoPaciente: Invalid column name 'NoOrden'.
+2017-01-26 16:27:16,150 ERROR 5 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 16:29:19,366 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:19:50,012 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:47:42,499 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:29,876 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:35,186 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:43,976 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 18:52:59,776 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:02:21,483 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:03:27,484 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:04:47,244 ERROR 21 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:10:43,429 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:11:31,969 ERROR 23 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:13:06,158 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:15:45,084 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:16:17,676 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:16:34,216 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:35:03,826 ERROR 17 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:35:28,014 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:36:05,911 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:37:12,566 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:38:24,069 ERROR 20 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:44:17,014 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:45:57,357 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:46:20,252 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 19:47:32,376 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:29:46,518 ERROR 61 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:34:28,880 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:36:03,365 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:38:30,963 ERROR 55 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:46:00,134 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:47:03,543 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:50:04,411 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:54:31,997 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 20:55:13,734 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:02:48,857 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:12:25,452 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:26:48,530 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:26:58,304 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:27:30,825 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:33,926 ERROR 39 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:40,852 ERROR 34 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:45,806 ERROR 36 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:51,096 ERROR 35 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:37:56,391 ERROR 39 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:45:17,084 ERROR 23 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:46:00,304 ERROR 23 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:46:00,404 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:46:42,736 ERROR 24 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:47:31,836 ERROR 24 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:48:14,505 ERROR 37 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:50:46,301 ERROR 7 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:50:46,313 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:51:41,200 ERROR 8 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:51:41,219 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:52:30,185 ERROR 5 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:53:27,142 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:53:55,007 ERROR 10 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:53:55,019 ERROR 10 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:54:38,612 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:55:06,075 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:55:40,747 ERROR 7 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 21:56:00,417 ERROR 8 ReportesDAO - DarBajaTarjeta - Error la carga de los valores de los parametros: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:56:00,428 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subquery returned more than 1 value. This is not permitted when the subquery follows =, !=, <, <= , >, >= or when the subquery is used as an expression.
+2017-01-26 21:57:14,992 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-26 21:58:46,030 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-26 21:59:44,425 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:02:48,934 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:03:12,156 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:03:39,754 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:04:59,058 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:05:31,940 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:08:09,210 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-26 22:11:53,775 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-27 07:43:38,985 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 07:43:43,843 ERROR 7 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 07:44:04,214 ERROR 9 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 07:44:07,165 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 09:38:01,856 ERROR 5 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 09:38:06,222 ERROR 8 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-27 09:39:20,784 ERROR 7 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-01-27 09:39:31,046 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:55:38,500 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:10,125 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:16,893 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:28,160 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 09:59:50,108 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:09,923 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:17,336 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:00:23,617 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:16,855 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:23,996 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:34,507 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:06:46,949 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-28 10:07:11,236 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 08:17:08,299 ERROR 7 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Procedure or function ACI_USP_VET_ins_Tareas has too many arguments specified.
+2017-01-30 08:17:08,328 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function ACI_USP_VET_ins_Tareas has too many arguments specified.
+2017-01-30 08:18:40,506 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Procedure or function 'ACI_USP_VET_ins_Tareas' expects parameter '@Modalidad', which was not supplied.
+2017-01-30 08:18:40,524 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function 'ACI_USP_VET_ins_Tareas' expects parameter '@Modalidad', which was not supplied.
+2017-01-30 08:20:51,391 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-01-30 16:29:13,666 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:32:18,223 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:41:16,070 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:41:51,515 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:45:54,717 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 16:46:02,947 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-30 18:45:33,828 ERROR 8 ConexionSQL - Error al abrir conexion al SQL: Valor de tiempo de espera caducado. El periodo de tiempo de espera se agotó al intentar consumir la confirmación del protocolo de enlace previo al inicio de sesión. El motivo podría ser que se produjo un error en el protocolo de enlace o que el servidor no pudo responder a tiempo.  El tiempo invertido al intentar conectarse a este servidor fue: [Previo al inicio de sesión] inicialización=27947; protocolo de enlace=49; 
+2017-01-30 18:45:33,908 ERROR 8 UsuarioDAO - Clase: PetCenter - ListaGenerarTarjeta: ExecuteReader requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada.
+2017-01-31 09:42:57,155 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:47:13,257 ERROR 8 ReporteDetails - PetCenter - BtnGrabar_Click: El parámetro 'addresses' no puede ser una cadena vacía.
+Nombre del parámetro: addresses
+2017-01-31 09:51:57,048 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:52:08,241 ERROR 19 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:52:38,957 ERROR 12 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 09:54:45,490 ERROR 23 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 09:58:17,509 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:58:39,862 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:59:23,363 ERROR 6 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 09:59:46,464 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:23:13,497 ERROR 6 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-01-31 10:23:29,601 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:26:01,438 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:31:24,735 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 10:31:44,770 ERROR 24 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:03:39,504 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:03:54,476 ERROR 8 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:04:05,421 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:04:20,241 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 13:05:10,300 ERROR 9 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-01-31 21:23:04,756 ERROR 10 UsuarioDAO - Clase: PetCenter - VerOrdenesActualizacion: Could not find stored procedure 'ACI_USP_VET_sel_OrdenesDisponiblesActualizacion'.
+2017-02-01 18:31:10,021 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:31:10,036 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:32:56,464 ERROR 10 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:32:56,464 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:36:19,307 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:36:19,322 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:40:29,204 ERROR 9 TareaDAO - GenerarTarea - Error la carga de los valores de los parametros: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:40:29,220 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Desbordamiento de SqlDateTime. Debe estar entre 1/1/1753 12:00:00 AM y 12/31/9999 11:59:59 PM.
+2017-02-01 18:41:31,762 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 18:43:32,059 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: No se puede encontrar una parte de la ruta de acceso 'C:\inetpub\wwwroot\PetCenter\TareasExportarDatos.csv'.
+2017-02-01 18:45:36,640 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 19:08:48,583 ERROR 9 UsuarioList - PetCenter - BtnGenerar_Click: 'C:/UPC/Taller de Proyectos III/GestionDeChipAzure/Site/Tareas/ExportarDatos.csv' es una ruta de acceso física, pero se esperaba una ruta de acceso virtual.
+2017-02-01 19:11:18,689 ERROR 5 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 19:35:54,150 ERROR 8 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 23:24:16,670 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-01 23:26:59,489 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:04:22,117 ERROR 7 TareaDAO - Clase: PetCenter - SeleccionaRegistrosTarea: Procedure or function 'ACI_USP_VET_sel_RegistrosTarea' expects parameter '@CodTarea', which was not supplied.
+2017-02-02 12:04:22,126 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Procedure or function 'ACI_USP_VET_sel_RegistrosTarea' expects parameter '@CodTarea', which was not supplied.
+2017-02-02 12:09:21,665 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:19:06,342 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 12:21:33,208 ERROR 14 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 14:22:02,711 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 15:47:11,061 ERROR 5 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:24:24,428 ERROR 11 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:28:32,188 ERROR 24 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:37:28,735 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 16:55:11,515 ERROR 8 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:02:08,991 ERROR 7 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:08:25,567 ERROR 10 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.
+2017-02-02 17:22:38,605 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 17:22:50,825 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 17:22:59,734 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:03:53,619 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:14:28,120 ERROR 10 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:19:12,432 ERROR 18 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:07,286 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:16,794 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:26,657 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:22:35,137 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:26:53,184 ERROR 30 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:27:10,290 ERROR 29 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:28:31,124 ERROR 10 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 19:29:04,337 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:29:42,398 ERROR 12 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:40:29,116 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:40:39,047 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:01,517 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:09,949 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:41:39,142 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:57:39,383 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 19:58:07,286 ERROR 22 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:58:17,708 ERROR 26 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 19:58:22,701 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:07:56,754 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:08:07,939 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:08:58,199 ERROR 22 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 20:09:08,745 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:16,278 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:28,931 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:11:52,769 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:00,419 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:28,193 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:13:44,608 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:14:55,470 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:04,564 ERROR 22 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:15,782 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:15:54,107 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:21,611 ERROR 29 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:30,630 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:38,775 ERROR 25 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:16:50,216 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:02,056 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:26,918 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:31:53,288 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:32:17,410 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:32:47,096 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:33:43,471 ERROR 14 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:33:53,317 ERROR 30 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:35:28,275 ERROR 27 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:38:26,947 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:39:22,073 ERROR 11 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:40:18,365 ERROR 28 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 20:43:05,296 ERROR 26 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:00:06,420 ERROR 27 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:00:52,639 ERROR 27 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:00:57,534 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:01:24,974 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:03:30,138 ERROR 13 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:04:10,465 ERROR 17 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:04:33,778 ERROR 26 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 21:07:52,344 ERROR 15 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:09:07,835 ERROR 12 ReporteDetails - PetCenter - BtnBajaAceptar_Click: Subproceso anulado.
+2017-02-02 21:09:19,304 ERROR 14 ReporteDetails - PetCenter - BtnGrabar_Click: Subproceso anulado.
+2017-02-02 21:13:23,761 ERROR 16 ReporteDetails - PetCenter - BtnSalir_Click: Subproceso anulado.
+2017-02-02 21:18:20,132 ERROR 15 UsuarioList - PetCenter - BtnGenerar_Click: Subproceso anulado.

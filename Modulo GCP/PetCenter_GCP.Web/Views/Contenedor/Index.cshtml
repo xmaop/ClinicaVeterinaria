@@ -1,0 +1,102 @@
+﻿@using PetCenter_GCP.Common
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<style type="text/css">
+    body {
+        background-image: none !important;
+    }
+</style>
+<script>
+    function CalcularScreenSize() {
+        var Height = screen.height;
+        var Width = screen.width;
+        if (Width == '@Constantes.Resoluciones.R1366X768.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1366X768.Split('X')[1]')
+            $("#tabcontent").css("height", "560px");
+        else if (Width == '@Constantes.Resoluciones.R1920X1080.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1920X1080.Split('X')[1]')
+            $("#tabcontent").css("height", "840px");
+        else if (Width == '@Constantes.Resoluciones.R1024X768.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1024X768.Split('X')[1]')
+            $("#tabcontent").css("height", "560px");
+        else
+            $("#tabcontent").css("height", "610px");
+    }
+
+    function CalcularScreenSizeAuto(Id, Alto) {
+        var Height = screen.height;
+        var Width = screen.width;
+
+        if (Width == '@Constantes.Resoluciones.R1366X768.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1366X768.Split('X')[1]')
+            $("#" + Id).height(Math.max(Alto, 550));
+        else if (Width == '@Constantes.Resoluciones.R1920X1080.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1920X1080.Split('X')[1]')
+            $("#" + Id).height(Math.max(Alto, 820));
+        else if (Width == '@Constantes.Resoluciones.R1024X768.Split('X')[0]' && Height == '@Constantes.Resoluciones.R1024X768.Split('X')[1]')
+            $("#" + Id).height(Math.max(Alto, 550));
+        else
+            $("#" + Id).height(Math.max(Alto, 600));
+    }
+
+    function addtab(count, Controller, Action, OptionName, hideCloseBtn, ndRefresh) {
+        $("#tabcontent").removeAttr("style");
+        if (Controller == "" || Controller == undefined)
+            return false;
+        var closetab = '';
+        var URL = baseUrl + Controller + "/" + Action;
+        if (!hideCloseBtn)
+            closetab = '<a href="" id="close' + count + '" class="close">&times;</a>';
+        $("#tabul").append('<li id="t' + count + '" class="ntabs">' + OptionName + '&nbsp;&nbsp;' + closetab + '</li>');
+        $("#tabcontent").append('<div id="c' + count + '"></div>');
+
+        $("#tabul li").removeClass("ctab");
+        $("#t" + count).addClass("ctab");
+
+        $($("#tabcontent").find("#c" + count)).append('<iframe style="display:none" id=\"iframe' + count + '\" src="' + URL + '" border="0" allowTransparency="true" width="100%" frameBorder="0" scrolling="no" style="overflow:hidden;" onload=\"autoResize(this.id)\" ></iframe>').show('slow');
+        $("#iframe" + count).show();
+        $("#t" + count).bind("click", function () {
+            $("#tabul li").removeClass("ctab");
+            $("#t" + count).addClass("ctab");
+            $("#tabcontent div").hide();
+            $("#c" + count).fadeIn('slow');
+
+            if (ndRefresh) {
+                var iframe = document.getElementById("iframe" + count);
+                iframe.src = iframe.src;
+            }
+        });
+
+        if (!hideCloseBtn)
+            $("#close" + count).bind("click", function () {
+                var hasChanged = false;
+                if (typeof ($("#iframe" + count)[0].contentWindow.existChangesCurrentTab) == "function")
+                    hasChanged = $("#iframe" + count)[0].contentWindow.existChangesCurrentTab();
+                if (!hasChanged) {
+                    $("#tabul li").removeClass("ctab");
+                    $("#tabcontent div").hide();
+                    if ($(this).parent().prev()[0].innerText == "+") {
+                        $(this).parent().next().addClass("ctab");
+                        $("#c" + count).next().fadeIn('slow');
+                    } else {
+                        $(this).parent().prev().addClass("ctab");
+                        $("#c" + count).prev().fadeIn('slow');
+                    }
+                    var lenght = $(".ctab").length;
+                    if (lenght == 0)
+                        CalcularScreenSize();
+                    if (typeof ($("#iframe" + count)[0].contentWindow.CloseCurrentTab) == "function")
+                        $("#iframe" + count)[0].contentWindow.CloseCurrentTab();
+                    $(this).parent().remove();
+                    $("#c" + count).remove();
+                }
+                return false;
+            });
+    }
+
+</script>
+<div class="">
+    <div id="tabcontent"></div>
+    @*<ul id="tabul">
+        <li id="litab" class="ntabs add" style="display: none;"><a href="javascript:;" id="addtab">+</a></li>
+    </ul>*@
+</div>
+<div id="loadingScreen"></div>
+<div id="loadingScreenCustom"></div>
+<div id="loadingScreenMain"></div>

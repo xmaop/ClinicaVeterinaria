@@ -1,0 +1,508 @@
+﻿@using PetCenter_GCP.Common
+@model PetCenter_GCP.Entity.PacienteEntity
+<style>
+    .ui-datepicker {
+        z-index: 9999 !important;
+    }
+
+    .qq-upload-button {
+        background-color: rgb(255, 255, 255);
+        font-weight: bold;
+        padding: 0px;
+        height: 100%;
+        width: auto;
+        border: none;
+    }
+
+    .qq-uploader {
+        height: 19px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .ui-search-input{
+        color: black;
+    }
+</style>
+
+<script src="@Url.Content("~/Scripts/incidencia.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/fileuploader.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    var optiondefaultText = "<option value=''>-- Seleccionar --</option>";
+
+    $(document).ready(function () {
+        InitDialog();
+
+        var Id = '@ViewBag.Id';
+        var IdDialog = $(dlgrFocus)[0].childNodes[1].id;
+        $.dlg("#hdIdPaciente").val(Id);
+        $.dlg("#hdIdDialog").val(IdDialog);
+        $.dlg("#hdIndex").val('@ViewBag.Index');
+        InitBottonsMant('list', 'hdIndex');
+        setInputSelects();
+        setInputDate();
+
+        SetSoloLetrasModal('txtNombre');
+        SetNumericWithDotModal('txtPeso');
+
+        initUploader();
+
+        $.dlg("#hrefCliente").click(function () {
+            LoadColorboxCliente("hdIdCliente", "txtNomCliente", "txtCodCliente", false);
+        });
+
+        $.dlg("#hrefClean").click(function () {
+            cleanCliente();
+        });
+
+        if (Id != "0") {
+            $.dlg("#hdIdCliente").val('@Model.id_Cliente');
+            $.dlg("#txtCodCliente").val('@Model.codigoCliente');
+            $.dlg("#txtNomCliente").val('@Html.Raw(Model.nomCliente)');
+            $.dlg("#txtNombre").val('@Model.nombre');
+            $.dlg("#txtCodigo").val('@Model.codigo');
+            $.dlg("#txtFechaNac").val('@Model.fechaNacimiento.ToString("dd/MM/yyyy")');
+            $.dlg("#ddlEspecie").val('@Model.id_Especie');
+            $.dlg('#ddlEspecie').trigger('change');
+            $.dlg('#ddlEspecie').attr('disabled', 'disabled');
+            $.dlg("#ddlRaza").val('@Model.id_Raza');
+            $.dlg('#ddlRaza').attr('disabled', 'disabled');
+            $.dlg("#ddlSexo").val('@Model.sexo');
+            //$.dlg('#ddlSexo').attr('disabled', 'disabled');
+
+            addQueueUpload(Id, '@Model.rutaImagen', false, false, $.dlg("#hdIndex").val(), 'removeUpload');
+            queueComplete(Id, '@Model.id_Foto', '0', '1');
+            $.dlg("#hdNombreArchivo").val('@Model.rutaImagen');
+            $.dlg(".qq-uploader").hide();
+
+            $.dlg("#txtPeso").val('@Model.peso.ToString("0.00")');
+            $.dlg("#txtComentario").text('@Html.Raw(HttpUtility.JavaScriptStringEncode(Model.comentario))');
+        }
+    });
+
+    function setInputDate() {
+        $.dlg('#txtFechaNac').datepicker(
+                            {
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (newDate, i) {
+                                }
+                            });
+        $.dlg('#txtFechaNac').mask('99/99/9999');
+        $.dlg('#txtFechaNac').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
+
+    function setInputSelects() {
+        $.ajaxSetup({ cache: false });
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Paciente/GetEspeciePaciente',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optiondefaultText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_Especie + "'>" + data.lst[key].descripcion + "</option>";
+                            }
+                        };
+                        $.dlg("#ddlEspecie").html(items);
+                        $("#ddlRaza").html(optiondefaultText);
+                        $("#ddlEspecie").change(function () {
+                            var selectedID = this.value;
+                            if (selectedID != "") {
+
+                                $.ajaxSetup({ cache: false });
+                                $.ajax({
+                                    type: 'GET',
+                                    url: baseUrl + 'Paciente/GetRazaByEspecie',
+                                    data: {
+                                        id_Especie: selectedID
+                                    },
+                                    dataType: 'Json',
+                                    async: false,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                var items = optiondefaultText;
+                                                for (var key in data.lst) {
+                                                    if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                                        items += "<option value='" + data.lst[key].id_Raza + "'>" + data.lst[key].descripcion + "</option>";
+                                                    }
+                                                };
+                                                $.dlg("#ddlRaza").html(items);
+                                            }
+                                            else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                            else {
+                                $("#ddlRaza").html(optiondefaultText);
+                            }
+                        });
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Paciente/GetGeneroPaciente',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optiondefaultText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+                            }
+                        };
+                        $.dlg("#ddlSexo").html(items);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    function existChangesPacientes() {
+        return false;
+    }
+
+    function CleanValidationsPacientes() {
+        CleanDivsValidations();
+    }
+
+    function GuardarPacientes() {
+        get_DialogFocus();
+        $.dlg("#divMensaje ul").html("");
+        var estado = true;
+        var NewItem = {
+            data: {
+                id_Cliente: $.dlg("#hdIdCliente").val(),
+                id_Paciente: $.dlg("#hdIdPaciente").val(),
+                nombre: $.trim($.dlg("#txtNombre").val()),
+                fechaNacimiento: $.dlg("#txtFechaNac").val(),
+                sexo: $.dlg("#ddlSexo").val(),
+                rutaImagen: $.dlg("#hdNombreArchivo").val(),
+                rutaImagenTemp: $.dlg("#hdNombreArchivoTemp").val(),
+                peso: $.dlg("#txtPeso").val(),
+                id_Raza: $.dlg("#ddlRaza").val(),
+                id_Especie: $.dlg("#ddlEspecie").val(),
+                comentario: $.trim($.dlg("#txtComentario").val())
+            }
+        };
+
+        if (NewItem.data.id_Cliente == "") {
+            SetBackgroundField("txtCodCliente", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe especificar un Cliente");
+            estado = false;
+        } else
+            SetBackgroundField("txtCodCliente", '');
+
+        if (NewItem.data.nombre == "") {
+            SetBackgroundField("txtNombre", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un Nombre o Apodo del paciente");
+            estado = false;
+        } else
+            SetBackgroundField("txtNombre", '');
+
+        if (NewItem.data.fechaNacimiento == "") {
+            SetBackgroundFieldWithoutFocus("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar una Fecha nacimiento");
+            estado = false;
+        } else {
+            var currDate = new Date();
+            var dd = currDate.getDate().toString();
+            var mm = (currDate.getMonth() + 1).toString();
+            var yyyy = currDate.getFullYear().toString();
+            var dateString = (dd[1] ? dd : "0" + dd[0]) + "/" + (mm[1] ? mm : "0" + mm[0]) + "/" + yyyy;
+
+            if (!isValidDate(NewItem.data.fechaNacimiento)) {
+                SetBackgroundField("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar una Fecha nacimiento válida.');
+                estado = false;
+            }
+            else if (compareDate(dateString, NewItem.data.fechaNacimiento, true)) {
+                SetBackgroundField("txtFechaNac", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar una Fecha nacimiento menor a la fecha actual.');
+                estado = false;
+            }
+            else
+                SetBackgroundField("txtFechaNac", '');
+        }
+
+        if (NewItem.data.sexo == "") {
+            SetBackgroundField("ddlSexo", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar un Sexo");
+            estado = false;
+        } else
+            SetBackgroundField("ddlSexo", '');
+
+        if (NewItem.data.rutaImagen == "") {
+            AppendMessage('Debe adjuntar un archivo.');
+            estado = false;
+        }
+
+        if (NewItem.data.peso == "") {
+            SetBackgroundField("txtPeso", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe ingresar un peso");
+            estado = false;
+        } else {
+            if (parseFloat(NewItem.data.peso) == 0.00) {
+                SetBackgroundField("txtPeso", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar un peso mayor a cero.');
+                estado = false;
+            }
+            else if (!$.isNumeric(NewItem.data.peso.replace(',', ''))) {
+                SetBackgroundField("txtPeso", '@Constantes.InputColors.Obligatorio');
+                AppendMessage('Debe ingresar un valor numérico correcto en peso.');
+                estado = false;
+            }
+            else {
+                NewItem.data.peso = parseFloat(NewItem.data.peso);
+                SetBackgroundField("txtPeso", '');
+            }
+        }
+
+        if (NewItem.data.id_Especie == "") {
+            SetBackgroundField("ddlEspecie", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar una Especie");
+            estado = false;
+        } else
+            SetBackgroundField("ddlEspecie", '');
+
+        if (NewItem.data.id_Raza == "") {
+            SetBackgroundField("ddlRaza", '@Constantes.InputColors.Obligatorio');
+            AppendMessage("Debe seleccionar una Raza");
+            estado = false;
+        } else
+            SetBackgroundField("ddlRaza", '');
+
+        if (!estado) {
+            UnblockandShowErrors();
+        }
+        else
+            $.dlg("#divMensaje").fadeOut("fast");
+
+        if (estado) {
+            $.ajaxSetup({ cache: false });
+            if (estado) {
+                $.ajaxSetup({ cache: false });
+                jQuery.ajax({
+                    type: 'POST',
+                    url: baseUrl + 'Paciente/Mantener',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify({
+                        'model': NewItem.data
+                    }),
+                    async: true,
+                    success: function (data) {
+                        if (data != null) {
+                            if (data.success) {
+                                message('Confirmación:', data.message, 'success');
+                                jQuery("#listPaciente").trigger('reloadGrid');
+                                CloseDialog(dlgrFocus);
+                            } else
+                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    }
+                });
+            }
+        }
+        return false;
+    }
+
+    function initUploader() {
+        var row_id = $.dlg("#hdIdPaciente").val();
+
+        var Index = $.dlg("#hdIndex").val();
+        var uploader = new qq.FileUploader({
+            element: $.dlg("#divUpload")[0],
+            params: {
+                guid: function () { return GetGuid(); }
+            },
+            template: '<div class="qq-uploader" style="width: 70px; height: 23px;"><div class="qq-upload-button"><button type="button" id="btnAdjuntar" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)" onblur="onblurBtn(this)" class="fm-button ui-state-default ui-corner-all fm-button-icon-left"> Adjuntar <span class="ui-icon ui-icon-tag"></span></button></div><ul class="qq-upload-list"></ul></div> <div id="queuelist' + Index + '" style="max-height: 146px; overflow-x: auto;"></div>',
+            action: '@Url.Action("FileUpload", "Base")',
+            multiple: false,
+            sizeLimit: '@Constantes.FileUploadOptions.SizeLimitBytes',
+            allowedExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'dwg'],
+            messages: {
+                typeError: "El archivo tiene una extensión incorrecta. Solo se aceptan archivos de imagen(png, jpg, jpeg).",
+                sizeError: "\"{file}\" es muy largo. Debe adjuntar archivos con un tamaño no mayor a {sizeLimit}.",
+                emptyError: "\"{file}\" se encuentra vacío. Por favor seleccione otro."
+            },
+            onComplete: function (id, fileName, responseJSON) {
+                if (responseJSON.success) {
+                    queueComplete(row_id + "_" + id, responseJSON.origFileName, responseJSON.fileByte, '0');
+                    $.dlg("#divMensaje ul").find("#li_msg").remove();
+                    if ($.dlg("#divMensaje ul")[0].childNodes.length == 0)
+                        $.dlg("#divMensaje").fadeOut("fast");
+                    $.dlg("#hdNombreArchivo").val(fileName);
+                    $.dlg("#hdNombreArchivoTemp").val(responseJSON.origFileName);
+                    $.dlg(".qq-uploader").hide();
+                }
+                else {
+                    $.dlg("#divMensaje ul").find("#li_msg").remove();
+                    $.dlg("#divMensaje ul").append('<li id="li_msg">* No se pudo adjuntar el archivo, ya que probablemente sea muy grande. Por favor, intentelo nuevamente.</li>');
+                    $.dlg("#divMensaje").fadeIn("slow");
+                    removeUpload(row_id + "_" + id, "queuelist" + Index);
+                }
+            },
+            onSubmit: function (id, fileName) {
+                addQueueUpload(row_id + "_" + id, fileName, true, false, Index, 'removeUpload');
+            },
+            onProgress: function (id, fileName, loaded, total) {
+                $.dlg("#queue" + row_id + "_" + id + "progress").text("cargando " + loaded + " de " + total + " bytes");
+            },
+            showMessage: function (message) {
+                $.dlg("#divMensaje ul").find("#li_msg").remove();
+                $.dlg("#divMensaje ul").append('<li id="li_msg">* ' + message + '</li>');
+                $.dlg("#divMensaje").fadeIn("slow");
+            }
+        });
+    }
+
+    function removeUpload(id, hasError) {
+        if (hasError) {
+            $.dlg("#queue" + id + "progress").text("Error");
+            setTimeout(function () {
+                $.dlg("#container" + id).fadeOut("slow", function () { try { $.dlg("#" + hasError)[0].removeChild(this); } catch (e) { } });
+            }, 1000);
+        }
+        else {
+            elem = $.dlg("#container" + id);
+            //delSessionArchivoIncidencia(id);
+            elem.fadeOut("slow", function () { try { elem[0].parentElement.removeChild(this); $.dlg(".qq-uploader").show(); } catch (e) { } });
+        }
+        $.dlg("#hdNombreArchivo").val("");
+        $.dlg("#hdNombreArchivoTemp").val("");
+    }
+
+    function cleanCliente() {
+        SetBackgroundField("txtCodCliente", '');
+        $.dlg("#hdIdCliente").val("");
+        $.dlg("#txtCodCliente").val("");
+        $.dlg("#txtNomCliente").val("");
+        $.dlg("#divMensaje ul").html("");
+        $.dlg("#divMensaje").fadeOut("fast");
+    }
+</script>
+<div class="mensaje" id="divMensaje" style="display: none; width: 83%;">
+    <ul id="ulMessage"></ul>
+</div>
+<div id="divAjax" class="ui-dialog-buttonpane ui-widget-content">
+    <button type="button" id="btnGrabar" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)" onblur="onblurBtn(this)"
+            class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+        Guardar <span class="ui-icon ui-icon-disk"></span>
+    </button>
+    <button type="button" id="btnCancelar" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)"
+            onblur="onblurBtn(this)" class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+        Cancelar <span class="ui-icon ui-icon-cancel"></span>
+    </button>
+</div>
+<div class="content_modal" id="divFields" style="overflow-y: auto;">
+    <input type="hidden" id="hdDialogState" />
+    <div class="item_form">
+        <div class="item_label">Cliente(*):</div>
+        <div class="item_campoFix">
+            <input type="text" id="txtCodCliente" maxlength="50" placeholder="Código" style="width: 140px !important;" disabled="disabled" />
+            <input type="text" id="txtNomCliente" maxlength="100" placeholder="Nombre o Razón Social" disabled="disabled" style="width: 230px" />
+            <a id="hrefCliente" href="javascript:;" style="text-decoration: none;">
+                <img src="@Url.Content("~/Content/images/searchC.png")" title="Buscar Cliente" style="cursor:pointer; border:0; padding-top:5px;" />
+            </a>
+            <a id="hrefClean" href="javascript:;">
+                <img src="@Url.Content("~/Content/images/clean.png")" title="Limpiar Cliente" style="cursor:pointer; border:0; padding-top:5px;" />
+            </a>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Nombre o Apodo(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtNombre" maxlength="30" />
+        </div>
+        <div class="item_label">Código:</div>
+        <div class="item_campo">
+            <input type="text" id="txtCodigo" maxlength="8" disabled="disabled" />
+        </div>
+        <div class="item_label">Fecha Nac.(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtFechaNac" placeholder="dd/mm/aaaa" maxlength="10" />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Especie(*):</div>
+        <div class="item_campo">
+            <select id="ddlEspecie"></select>
+        </div>
+        <div class="item_label">Raza(*):</div>
+        <div class="item_campo">
+            <select id="ddlRaza"></select>
+        </div>
+        <div class="item_label">Sexo(*):</div>
+        <div class="item_campo">
+            <select id="ddlSexo"></select>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Foto(*):</div>
+        <div class="item_campo" style="width: 673px;">
+            <div id="divUpload" style="width: 75%;"></div>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Peso(*):</div>
+        <div class="item_campo">
+            <input type="text" id="txtPeso" maxlength="6" style="width:80px;" /> Kg.
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Comentario:</div>
+        <div class="item_campo" style="width: 750px !important;">
+            <textarea id="txtComentario" rows="3" placeholder="Ingrese un comentario" cols="26" maxlength="300" style="width: 100%;"></textarea>
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label" style="width: 200px !important;"> (*) : Campos requeridos</div>
+        <div class="item_campo">
+        </div>
+    </div>
+    <input type="hidden" id="hdIdPaciente" />
+    <input type="hidden" id="hdIdCliente" />
+    <input type="hidden" value="0" id="hdIdDialog" />
+    <input type="hidden" id="hdIndex" />
+    <input type="hidden" id="hdNombreArchivo" />
+    <input type="hidden" id="hdNombreArchivoTemp" />
+</div>

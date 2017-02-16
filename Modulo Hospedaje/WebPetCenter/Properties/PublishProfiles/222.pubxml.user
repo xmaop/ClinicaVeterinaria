@@ -135,6 +135,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Controles/ucwTituloPopup.ascx">
       <publishTime>10/08/2016 17:32:01</publishTime>
     </File>
+    <File Include="Controles/ucwVerDisponibilidad.ascx">
+      <publishTime>01/23/2017 08:46:56</publishTime>
+    </File>
     <File Include="Default.aspx">
       <publishTime>10/02/2016 17:48:00</publishTime>
     </File>

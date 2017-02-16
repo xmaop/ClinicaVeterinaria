@@ -1,0 +1,64 @@
+C:\BPCS\Datos\bin\Debug\Datos.dll
+C:\BPCS\Datos\bin\Debug\Datos.pdb
+C:\BPCS\Datos\bin\Debug\Entidad.dll
+C:\BPCS\Datos\bin\Debug\log4net.dll
+C:\BPCS\Datos\bin\Debug\Entidad.pdb
+C:\BPCS\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\BPCS\Datos\obj\Debug\Datos.dll
+C:\BPCS\Datos\obj\Debug\Datos.pdb
+D:\Net\pobNet\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pobNet\Datos\bin\Debug\Datos.dll
+D:\Net\pobNet\Datos\bin\Debug\Datos.pdb
+D:\Net\pobNet\Datos\bin\Debug\Entidad.dll
+D:\Net\pobNet\Datos\bin\Debug\log4net.dll
+D:\Net\pobNet\Datos\bin\Debug\Entidad.pdb
+D:\Net\pobNet\Datos\obj\Debug\Datos.dll
+D:\Net\pobNet\Datos\obj\Debug\Datos.pdb
+C:\net\pobNet\Datos\bin\Debug\Datos.dll
+C:\net\pobNet\Datos\bin\Debug\Datos.pdb
+C:\net\pobNet\Datos\bin\Debug\Entidad.dll
+C:\net\pobNet\Datos\bin\Debug\log4net.dll
+C:\net\pobNet\Datos\bin\Debug\Entidad.pdb
+C:\net\pobNet\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\net\pobNet\Datos\obj\Debug\Datos.dll
+C:\net\pobNet\Datos\obj\Debug\Datos.pdb
+C:\net\pto\Datos\bin\Debug\Datos.dll
+C:\net\pto\Datos\bin\Debug\Datos.pdb
+C:\net\pto\Datos\bin\Debug\Entidad.dll
+C:\net\pto\Datos\bin\Debug\log4net.dll
+C:\net\pto\Datos\bin\Debug\Entidad.pdb
+C:\net\pto\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\net\pto\Datos\obj\Debug\Datos.dll
+C:\net\pto\Datos\obj\Debug\Datos.pdb
+D:\Net\pto\Datos\bin\Debug\Datos.dll
+D:\Net\pto\Datos\bin\Debug\Datos.pdb
+D:\Net\pto\Datos\bin\Debug\Entidad.dll
+D:\Net\pto\Datos\bin\Debug\log4net.dll
+D:\Net\pto\Datos\bin\Debug\Entidad.pdb
+D:\Net\pto\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pto\Datos\obj\Debug\Datos.dll
+D:\Net\pto\Datos\obj\Debug\Datos.pdb
+D:\Net\pto - copia\Datos\bin\Debug\Datos.dll
+D:\Net\pto - copia\Datos\bin\Debug\Datos.pdb
+D:\Net\pto - copia\Datos\bin\Debug\Entidad.dll
+D:\Net\pto - copia\Datos\bin\Debug\log4net.dll
+D:\Net\pto - copia\Datos\bin\Debug\Entidad.pdb
+D:\Net\pto - copia\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\Net\pto - copia\Datos\obj\Debug\Datos.dll
+D:\Net\pto - copia\Datos\obj\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChip\Datos\obj\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Datos.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Entidad.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\log4net.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\bin\Debug\Entidad.pdb
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.dll
+C:\UPC\Taller de Proyectos III\GestionDeChipAzure\Datos\obj\Debug\Datos.pdb

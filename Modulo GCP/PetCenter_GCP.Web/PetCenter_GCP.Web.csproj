@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6694AED0-274A-4211-BCF7-E751D6C366B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetCenter_GCP.Web</RootNamespace>
+    <AssemblyName>PetCenter_GCP.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\animate.min.css" />
+    <Content Include="Content\assets\css\style-responsive.min.css" />
+    <Content Include="Content\assets\css\style.min.css" />
+    <Content Include="Content\assets\css\theme\default.css" />
+    <Content Include="Content\assets\img\agregarJornada.png" />
+    <Content Include="Content\assets\img\agregarMorbilidad.png" />
+    <Content Include="Content\assets\img\delete.png" />
+    <Content Include="Content\assets\img\delete_personal.png" />
+    <Content Include="Content\assets\img\edit.png" />
+    <Content Include="Content\assets\img\equipos.png" />
+    <Content Include="Content\assets\img\especializacion.png" />
+    <Content Include="Content\assets\img\login-bg\bg-1.jpg" />
+    <Content Include="Content\assets\img\login-bg\bg-2.jpg" />
+    <Content Include="Content\assets\img\login-bg\bg-3.jpg" />
+    <Content Include="Content\assets\img\login-bg\bg-5.jpg" />
+    <Content Include="Content\assets\img\login-bg\logo.png" />
+    <Content Include="Content\assets\img\login-bg\logo_completo.png" />
+    <Content Include="Content\assets\img\login-photo\usuario.jpg" />
+    <Content Include="Content\assets\img\login-photo\usuario.png" />
+    <Content Include="Content\assets\img\mensaje\check.png" />
+    <Content Include="Content\assets\img\pattern-cover.png" />
+    <Content Include="Content\assets\img\personal.png" />
+    <Content Include="Content\assets\img\requisitos.png" />
+    <Content Include="Content\assets\img\seleccionar.png" />
+    <Content Include="Content\assets\img\servicios.png" />
+    <Content Include="Content\assets\img\ver.png" />
+    <Content Include="Content\assets\js\apps.js" />
+    <Content Include="Content\assets\js\apps.min.js" />
+    <Content Include="Content\assets\js\generarppa.js" />
+    <Content Include="Content\assets\js\gestionarsolicitudupp.js" />
+    <Content Include="Content\assets\js\login.js" />
+    <Content Include="Content\assets\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\assets\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\assets\plugins\bootstrap-datetimepicker\js\moment-with-locales.js" />
+    <Content Include="Content\assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\assets\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfont914c.html" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfont914c.svg" />
+    <Content Include="Content\assets\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\assets\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Content\assets\plugins\gritter\images\gritter-red.png" />
+    <Content Include="Content\assets\plugins\gritter\images\gritter.png" />
+    <Content Include="Content\assets\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\assets\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\blueimp-gallery\blueimp-gallery.min.css" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\blueimp-gallery\jquery.blueimp-gallery.min.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\css\jquery.fileupload.css" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\error-2.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\error.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\loading.gif" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\play-pause-2.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\play-pause.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\video-play-2.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\img\video-play.html" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-audio.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-image.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-process.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-validate.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload-video.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Content\assets\plugins\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Content\assets\plugins\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Content\assets\plugins\jquery\jquery-migrate-1.1.0.min.js" />
+    <Content Include="Content\assets\plugins\pace\pace.min.js" />
+    <Content Include="Content\assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\images\anula.png" />
+    <Content Include="Content\images\article.png" />
+    <Content Include="Content\images\atributos.png" />
+    <Content Include="Content\images\audit.png" />
+    <Content Include="Content\images\audit_disabled.png" />
+    <Content Include="Content\images\bg_body.png" />
+    <Content Include="Content\images\bg_botones.png" />
+    <Content Include="Content\images\bg_contenido.png" />
+    <Content Include="Content\images\bg_foot.png" />
+    <Content Include="Content\images\bg_input.png" />
+    <Content Include="Content\images\bg_input_normal.png" />
+    <Content Include="Content\images\bg_login.png" />
+    <Content Include="Content\images\bg_login_box.png" />
+    <Content Include="Content\images\bg_name.png" />
+    <Content Include="Content\images\bg_title.png" />
+    <Content Include="Content\images\bg_title_2.png" />
+    <Content Include="Content\images\bg_top.png" />
+    <Content Include="Content\images\bg_top_login.png" />
+    <Content Include="Content\images\bg_wrapper.png" />
+    <Content Include="Content\images\btn_ingresar.png" />
+    <Content Include="Content\images\cerrar_sesion.png" />
+    <Content Include="Content\images\chk_checked.png" />
+    <Content Include="Content\images\chk_checked_disabled.png" />
+    <Content Include="Content\images\chk_unchecked.png" />
+    <Content Include="Content\images\clean.png" />
+    <Content Include="Content\images\completeact.png" />
+    <Content Include="Content\images\contact.png" />
+    <Content Include="Content\images\Delete.png" />
+    <Content Include="Content\images\down.gif" />
+    <Content Include="Content\images\Edit.png" />
+    <Content Include="Content\images\Edit_disabled.png" />
+    <Content Include="Content\images\email.png" />
+    <Content Include="Content\images\foot_login.png" />
+    <Content Include="Content\images\icon_botones.png" />
+    <Content Include="Content\images\icon_check_green.png" />
+    <Content Include="Content\images\icon_title2.png" />
+    <Content Include="Content\images\input_login.png" />
+    <Content Include="Content\images\input_login2.png" />
+    <Content Include="Content\images\left.png" />
+    <Content Include="Content\images\legend.png" />
+    <Content Include="Content\images\line_login.png" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Content\images\logo2.png" />
+    <Content Include="Content\images\logo_login.png" />
+    <Content Include="Content\images\menu.png" />
+    <Content Include="Content\images\no_found.png" />
+    <Content Include="Content\images\pet.png" />
+    <Content Include="Content\images\replaceFact.png" />
+    <Content Include="Content\images\right.png" />
+    <Content Include="Content\images\searchC.png" />
+    <Content Include="Content\images\setting.png" />
+    <Content Include="Content\images\td_over.png" />
+    <Content Include="Content\images\thead.png" />
+    <Content Include="Content\images\timeline.png" />
+    <Content Include="Content\Styles\site\alertNotify.css" />
+    <Content Include="Content\Styles\jquery.colorbox\colorbox.css" />
+    <Content Include="Content\Styles\jquery.colorbox\images\border1.png" />
+    <Content Include="Content\Styles\jquery.colorbox\images\border2.png" />
+    <Content Include="Content\Styles\jquery.colorbox\images\controls.png" />
+    <Content Include="Content\Styles\jquery.colorbox\images\loading.gif" />
+    <Content Include="Content\Styles\jquery.jqGrid\ellipsis-xbl.xml" />
+    <Content Include="Content\Styles\jquery.jqGrid\images\thead.png" />
+    <Content Include="Content\Styles\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\Styles\jquery.pnotify\jquery.pnotify.default.css" />
+    <Content Include="Content\Styles\jquery.qtip\jquery.qtip.css" />
+    <Content Include="Content\Styles\jquery.ui\images\animated-overlay.gif" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_flat_55_fbec88_1x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\jquery-ui.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery-ui.multiselect.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.accordion.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.all.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.autocomplete.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.base.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.button.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.core.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.datepicker.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.dialog.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.menubar.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.progressbar.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.resizable.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.selectable.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.slider.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.tabs.css" />
+    <Content Include="Content\Styles\jquery.ui\jquery.ui.theme.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery-ui.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\Styles\jquery.ui\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\Styles\jstree\apple\bg.jpg" />
+    <Content Include="Content\Styles\jstree\apple\d.png" />
+    <Content Include="Content\Styles\jstree\apple\dot_for_ie.gif" />
+    <Content Include="Content\Styles\jstree\apple\file.png" />
+    <Content Include="Content\Styles\jstree\apple\folder.png" />
+    <Content Include="Content\Styles\jstree\apple\stylejstree.css" />
+    <Content Include="Content\Styles\jstree\apple\throbber.gif" />
+    <Content Include="Content\Styles\normalize\normalize.css" />
+    <Content Include="Content\Styles\poshytip\tip-yellow.css" />
+    <Content Include="Content\Styles\poshytip\tip-yellow.png" />
+    <Content Include="Content\Styles\poshytip\tip-yellow_arrows.png" />
+    <Content Include="Content\Styles\preloader\loading.css" />
+    <Content Include="Content\Styles\site\site.css" />
+    <Content Include="Content\Styles\site\site2.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\fileuploader.js" />
+    <Content Include="Scripts\grid.locale-es.js" />
+    <Content Include="Content\Styles\jstree\apple\Thumbs.db" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfont914c.eot" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfont914c.ttf" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfont914c.woff" />
+    <Content Include="Content\assets\plugins\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="Scripts\incidencia.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-barcode.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery-ui.multiselect.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.colorbox.js" />
+    <Content Include="Scripts\jquery.colorPicker.min.js" />
+    <Content Include="Scripts\jquery.contextMenu.js" />
+    <Content Include="Scripts\jquery.dialogcustom.js" />
+    <Content Include="Scripts\jquery.extend.js" />
+    <Content Include="Scripts\jquery.fancytree.alert.js" />
+    <Content Include="Scripts\jquery.fancytree.childcounter.js" />
+    <Content Include="Scripts\jquery.fancytree.contextmenu.js" />
+    <Content Include="Scripts\jquery.fancytree.edit.js" />
+    <Content Include="Scripts\jquery.fancytree.filter.js" />
+    <Content Include="Scripts\jquery.fancytree.js" />
+    <Content Include="Scripts\jquery.fancytree.table.js" />
+    <Content Include="Scripts\jquery.fixedheadertable.min.js" />
+    <Content Include="Scripts\jquery.jOrgChart.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.src.js" />
+    <Content Include="Scripts\jquery.jstree-hotkeys.js" />
+    <Content Include="Scripts\jquery.jstree.js" />
+    <Content Include="Scripts\jquery.layout-latest.min.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
+    <Content Include="Scripts\jquery.mobilemenu.min.js" />
+    <Content Include="Scripts\jquery.multiple.select.js" />
+    <Content Include="Scripts\jquery.multiselect.js" />
+    <Content Include="Scripts\jquery.pnotify.js" />
+    <Content Include="Scripts\jquery.poshytip.min.js" />
+    <Content Include="Scripts\jquery.qtip.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\jquery.tagsinput.js" />
+    <Content Include="Scripts\jquery.tooltipster.min.js" />
+    <Content Include="Scripts\jquery.ui.position.js" />
+    <Content Include="Scripts\jquery.ui.selectable.scroll.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.uploadify.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jqueryslidemenu.js" />
+    <Content Include="Scripts\jwerty.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\numeric.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\title_notifier.js" />
+    <Content Include="Scripts\UserControls\_ListaCliente.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Shared\_MainViewLayout.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Contenedor\Index.cshtml" />
+    <Content Include="Views\Cliente\MainViewActualizarCliente.cshtml" />
+    <Content Include="Views\Cliente\MantenimientoCliente_Modal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\SessionExpiredActionFilter.cs" />
+    <Compile Include="ActionFilters\SessionExpiredActionFilterProvider.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\NotificarClienteController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContenedorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrdenAtencionController.cs" />
+    <Compile Include="Controllers\ReporteAtencionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Paciente\MainViewActualizarPaciente.cshtml" />
+    <Content Include="Views\Paciente\MantenimientoPaciente_Modal.cshtml" />
+    <Content Include="Views\UserControls\_ListaCliente.cshtml" />
+    <Content Include="Views\Paciente\Consultar_HistoricoCliente_Modal.cshtml" />
+    <Content Include="Views\Cliente\Consultar_Paciente_Modal.cshtml" />
+    <Content Include="Views\OrdenAtencion\MainViewOrdenAtencion.cshtml" />
+    <Content Include="Views\Shared\_Menu1.cshtml" />
+    <Content Include="Views\Shared\_SelectGrid.cshtml" />
+    <Content Include="Views\NotificarCliente\MainViewNotificarCliente.cshtml" />
+    <Content Include="Views\NotificarCliente\Consultar_DetalleEnvio_Modal.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteAtencion.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteIngreso.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteEspecie.cshtml" />
+    <Content Include="Views\ReporteAtencion\MainViewReporteServicio.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\files\upload\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetCenter_GCP.BizLogic\PetCenter_GCP.BizLogic.csproj">
+      <Project>{f5ad5a23-1a53-4534-b053-2933fc2b30da}</Project>
+      <Name>PetCenter_GCP.BizLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetCenter_GCP.Common\PetCenter_GCP.Common.csproj">
+      <Project>{0d37fc67-0060-434b-bcd2-496bb20b22c3}</Project>
+      <Name>PetCenter_GCP.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetCenter_GCP.CustomException\PetCenter_GCP.CustomException.csproj">
+      <Project>{5e883955-98d0-44ce-a851-55d976b971ec}</Project>
+      <Name>PetCenter_GCP.CustomException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetCenter_GCP.Entity\PetCenter_GCP.Entity.csproj">
+      <Project>{7328ef5e-264d-48c8-be42-273a369cf574}</Project>
+      <Name>PetCenter_GCP.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetCenter_GCP.RazonJS\PetCenter_GCP.RazonJS.csproj">
+      <Project>{89f57bce-4200-477a-a965-aa9fa62e82de}</Project>
+      <Name>PetCenter_GCP.RazonJS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetCenter_GCP.RazorEngine\PetCenter_GCP.RazorEngine.csproj">
+      <Project>{e605a2f2-8b7f-490b-a7ee-efb6b5171ec7}</Project>
+      <Name>PetCenter_GCP.RazorEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34589</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34589/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,109 @@
+﻿@using PetCenter_GCP.Common
+@model PetCenter_GCP.Entity.ClienteEntity
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        InitDialog();
+        var Id = '@ViewBag.Id';
+        var IdDialog = $(dlgrFocus)[0].childNodes[1].id;
+
+        $.dlg("#hdIdCliente").val(Id);
+        InitBottonsCons('list', 'hdIndex');
+
+        var GUID = GetGuid();
+        var divListDetalle = "lstDetalle" + GUID;
+        var divPagerDetalle = "pagerDetalle" + GUID;
+        $.dlg("#hdGridDetalle").val(divListDetalle);
+        $.dlg("#hdPagerDetalle").val(divPagerDetalle);
+        $.dlg("#divGridDetalle").append("<table id='" + divListDetalle + "'></table> <div id='" + divPagerDetalle + "'></div>");
+
+        fnGrillaDetalle();
+    });
+
+    function fnGrillaDetalle() {
+        $.dlg("#" + $.dlg("#hdGridDetalle").val()).jqGrid({
+            url: baseUrl + "Cliente/ConsultarPacientesByCliente",
+            datatype: 'json',
+            postData: ({
+                id_Cliente: function () { return $.dlg("#hdIdCliente").val(); }
+            }),
+            mtype: 'GET',
+            contentType: "application/json; charset=utf-8",
+            colNames: ['id_Paciente', 'Nombre o Apodo', 'Código', 'Fecha Nac.', 'Sexo', 'Especie', 'Raza'],
+            colModel: [
+                { name: 'id_Paciente', index: 'id_Paciente', hidden: true },
+                { name: 'nombre', index: 'nombre', width: 205 },
+                { name: 'codigo', index: 'codigo', width: 100 },
+                { name: 'fechaNacimiento', index: 'fechaNacimiento', width: 90 },
+                { name: 'descSexo', index: 'descSexo', width: 100 },
+                { name: 'nomEspecie', index: 'nomEspecie', width: 120 },
+                { name: 'nomRaza', index: 'nomRaza', width: 160 }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: $.dlg('#' + $.dlg("#hdPagerDetalle").val()),
+            height: 'auto',
+            rowNum: 3,
+            rownumbers: true,
+            rowList: [3, 6, 9, 12, 15, 18, 21],
+            sortorder: 'asc',
+            sortname: 'id_Paciente',
+            sortable: true,
+            altRows: true,
+            altclass: 'jQGridAltRowClass',
+            width: '800',
+            pgbuttons: true,
+            shrinkToFit: false,
+            viewrecords: true,
+            loadComplete: function (data) {
+                if (data != null) {
+                }
+            }
+        });
+        $.dlg("#" + $.dlg("#hdGridDetalle").val()).jqGrid('navGrid', "#" + $.dlg("#hdPagerDetalle").val(), { edit: false, add: false, refresh: true, del: false, search: false });
+        addFilterToGridModal($.dlg("#hdGridDetalle").val(), $.dlg("#hdPagerDetalle").val(), false);
+        ScrollDynamicGrid($.dlg("#hdGridDetalle").val(), 90);
+        $.dlg("#divGridDetalle.grilla_custom").css("overflow-x", "scroll");
+    }
+</script>
+<div class="content_modal" id="divFields">
+    <input type="hidden" id="hdDialogState" />
+    <div class="item_form">
+        <div class="item_label">Nombre Cliente:</div>
+        <div class="item_campo">
+            <input type="text" id="txtNomCliente" maxlength="50" disabled="disabled" value='@Model.nomCliente' />
+        </div>
+        <div class="item_label">Código Cliente:</div>
+        <div class="item_campo">
+            <input type="text" id="txtCodigo" maxlength="50" disabled="disabled" value='@Model.codigo' />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="item_label">Tipo Ciente:</div>
+        <div class="item_campo">
+            <input type="text" id="txtTipoCliente" maxlength="50" disabled="disabled" value='@Model.descTipoCliente' />
+        </div>
+        <div class="item_label">Distrito:</div>
+        <div class="item_campo">
+            <input type="text" id="txtDistrito" maxlength="50" value='@Model.descDistrito' disabled="disabled" />
+        </div>
+    </div>
+    <div class="item_form">
+        <div class="grilla_custom" id="divGridDetalle" style="padding:0px;">
+        </div>
+    </div>
+    <input type="hidden" value="0" id="hdIdCliente" />
+    <input type="hidden" id="hdIndex" />
+    <input type="hidden" id="hdGridDetalle" />
+    <input type="hidden" id="hdPagerDetalle" />
+    <input type="hidden" id="hdIdRowDetalle" />
+</div>

@@ -1,0 +1,589 @@
+﻿@using PetCenter_GCP.Common;
+@{
+    Layout = "~/Views/Shared/_MainViewLayout.cshtml";
+}
+<script type="text/javascript">
+    var optionTodosText = "<option value=''>-- TODOS --</option>";
+    var optionDefaultText = "<option value=''>-- SELECCIONE --</option>";
+
+    $(document).ready(function () {
+        setInputSelects();
+        setInputDate();
+        fnGrillaOrdenAtencion();
+        SetNumeric('txtNroDocCliente');
+    });
+
+    function fnGrillaOrdenAtencion() {
+        jQuery("#list").jqGrid({
+            url: baseUrl + "OrdenAtencion/ConsultarOrdenes",
+            datatype: 'json',
+            mtype: 'GET',
+            postData: ({
+                fechaInicio: function () { return $('#txtFecInicio').val(); },
+                fechaFin: function () { return $('#txtFecFin').val(); },
+                descServicio: function () { return $("#ddlServicio").val(); },
+                descSede: function () { return $("#ddlSede").val(); },
+                estado: function () { return $("#ddlEstadoOrden").val(); },
+                nomCliente: function () { return $.trim($("#txtNomCliente").val()) },
+                codigoCliente: function () { return $.trim($("#txtCodCliente").val()) },
+                tipoDocCliente: function () { return $("#ddlTipoDocCliente").val(); },
+                nroDocCliente: function () { return $("#txtNroDocCliente").val(); },
+                tipoCliente: function () { return $("#ddlTipoCliente").val(); },
+                nomPaciente: function () { return $.trim($("#txtNomPaciente").val()); },
+                codigoPaciente: function () { return $.trim($("#txtCodPaciente").val()); }
+            }),
+            contentType: "application/json; charset=utf-8",
+            colNames: ['id_OrdenAtencion', 'id_Cliente', 'id_Paciente', 'Nro. Orden', 'Fecha Programada', 'Hora Inicio', 'Hora Fin',
+                'Sede', 'Servicio', 'Nombre Cliente', 'Cód. Cliente', 'Tipo Cliente', 'Tipo Doc. Cliente', 'Nro. Doc. Cliente', 'Nombre Paciente', 'Cód. Paciente', 'Estado Orden', 'Acción'],
+            colModel: [
+                { name: 'id_OrdenAtencion', index: 'id_OrdenAtencion', hidden: true },
+                { name: 'id_Cliente', index: 'id_Cliente', hidden: true },
+                { name: 'id_Paciente', index: 'id_Paciente', hidden: true },
+                { name: 'codigo', index: 'codigo', width: 80 },
+                { name: 'fecha', index: 'fecha', width: 90 },
+                { name: 'horaInicio', index: 'horaInicio', width: 40 },
+                { name: 'horaFin', index: 'horaFin', width: 40 },
+                { name: 'descSede', index: 'descSede', width: 100 },
+                { name: 'descServicio', index: 'descServicio', width: 120 },
+                { name: 'nomCliente', index: 'nomCliente', width: 150 },
+                { name: 'codigoCliente', index: 'codigoCliente', width: 80 },
+                { name: 'descTipoCliente', index: 'descTipoCliente', width: 60 },
+                { name: 'descTipoDocCliente', index: 'descTipoDocCliente', width: 80 },
+                { name: 'nroDocCliente', index: 'nroDocCliente', width: 90 },
+                { name: 'nomPaciente', index: 'nomPaciente', width: 120 },
+                { name: 'codigoPaciente', index: 'codigoPaciente', width: 80 },
+                { name: 'descEstado', index: 'descEstado', width: 100 },
+                {
+                    name: 'act', index: 'act', width: 60, sortable: false, align: 'center', resizable: false,
+                    formatter: function (cellvalue, options, rowObject) {
+                        return ShowActions(cellvalue, options, rowObject);
+                    }, search: false, hidedlg: true
+                }
+            ],
+            jsonReader:
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                userdata: "userdata",
+                repeatitems: true,
+                cell: "cell",
+                id: "id"
+            },
+            pager: jQuery('#pager'),
+            rowNum: 10,
+            rownumbers: true,
+            scrollOffset: 0,
+            rowList: [10, 20, 30, 40, 50],
+            sortname: 'id_Cliente',
+            sortorder: 'asc',
+            viewrecords: true,
+            width: '1240',
+            height: 'auto',
+            altRows: true,
+            footerrow: true,
+            altclass: 'jQGridAltRowClass',
+            loadComplete: function (data) {
+                if (data != null) {
+                    var Index = $("#hdMainIndex").val();
+                    jQuery("#list").setSelection(Index, true);
+                }
+            },
+            beforeRequest: function () {
+                var grid = $(this);
+                var postdata = grid.jqGrid('getGridParam', 'postData');
+                if (postdata != undefined && postdata.filters != undefined) {
+                    postdata.fechaInicio = $('#txtFecInicio').val();
+                    postdata.fechaFin = $('#txtFecFin').val();
+                    postdata.descServicio = $("#ddlServicio").val();
+                    postdata.descSede = $("#ddlSede").val();
+                    postdata.estado = $("#ddlEstadoOrden").val();
+                    postdata.nomCliente = $.trim($("#txtNomCliente").val());
+                    postdata.codigoCliente = $.trim($("#txtCodCliente").val());
+                    postdata.tipoDocCliente = $("#ddlTipoDocCliente").val();
+                    postdata.nroDocCliente = $("#txtNroDocCliente").val();
+                    postdata.tipoCliente = $("#ddlTipoCliente").val();
+                    postdata.nomPaciente = $.trim($("#txtNomPaciente").val());
+                    postdata.codigoPaciente = $.trim($("#txtCodPaciente").val());
+                } else {
+                    jQuery.extend(postdata, {
+                    });
+                }
+                return [true, ''];
+            }
+        });
+        jQuery("#list").jqGrid('navGrid', "#pager", {
+            add: false, edit: false, refresh: false, del: false, search: false
+        });
+        //addFilterToGrid('listCompetencia', 'pagerCompetencia');
+        ScrollDynamicGridPage("list");
+    }
+
+    $.jgrid.extend({
+        CambiarEstado: function (Id, Estado, RowId) {
+            CambiarEstadoRow(Id, Estado, RowId);
+            return false;
+        }
+    });
+
+    function ShowActions(cellvalue, options, rowObject) {
+        var estado = "<a href='javascript:;' onclick=\"return jQuery('#list').CambiarEstado('" + rowObject[0] + "','" + rowObject[17] + "','" + options.rowId + "');\" >" + "<img src='@Url.Content("~/Content/images/article.png")' width='18' alt='Cambiar Estado' title='Cambiar Estado' border='0' /></a>";
+
+        return estado;
+    }
+
+    function CambiarEstadoRow(Id, Estado, Index) {
+        if (Estado == '@Constantes.EstadoOrden.Atendido') {
+            message('Información:', "La operación no puede continuar porque la orden ya ha sido Atendida.", 'info');
+            return false;
+        }
+        if (Estado == '@Constantes.EstadoOrden.Anulado') {
+            message('Información:', "La operación no puede continuar porque la orden se encuentra Anulada.", 'info');
+            return false;
+        }
+
+        $("#hdIdOrdenAtencionDialog").val(Id);
+        var originalCloseCdr = $.colorbox.close;
+        $.colorbox.close = function () {
+            originalCloseCdr();
+        };
+        $.colorbox({
+            fixed: true,
+            inline: true,
+            width: 450,
+            href: $('#divContentCargaCdr'),
+            onComplete: function () {
+            },
+            onClosed: function () {
+            }
+        });
+    }
+
+    function CargarCdr() {
+        $("#divMensajeUpCdr ul").html("");
+        $("#divMensajeUpCdr").fadeOut('fast');
+        if ($("#ddlEstadoCdr").val() == "") {
+            $("#divMensajeUpCdr ul").append("<li>Debe seleccionar un estado para la Orden de Atención.</li>");
+            $("#divMensajeUpCdr").fadeIn("slow");
+            $.colorbox.resize();
+            return;
+        }
+
+        $.ajaxSetup({ cache: false });
+        $.ajax({
+            type: 'POST',
+            url: baseUrl + 'OrdenAtencion/GuardarEstadoCdr',
+            data: { id_OrdenAtencion: $("#hdIdOrdenAtencionDialog").val(), estado: $('#ddlEstadoCdr').val() },
+            dataType: 'Json',
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        $.fn.colorbox.close();
+                        $("#ddlEstadoCdr").val("");
+                        $("#divMensajeUpCdr ul").html("");
+                        $('#hdIdOrdenAtencionDialog').val("");
+                        message('Confirmación:', data.message, 'success');
+                        jQuery("#list").trigger("reloadGrid", [{ current: true }]);
+                    }
+                    else {
+                        $("#ddlEstadoCdr").val("");
+                        $("#divMensajeUpCdr ul").html("");
+                        $("#divMensajeUpCdr ul").append(data.msj);
+                        $("#divMensajeUpCdr").fadeIn("slow");
+                        setTimeout(function () { $.colorbox.resize(); }, 0);
+                    }
+                } else
+                    messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                messageErrorAjax('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA', xhr.status, baseUrl + 'OrdenAtencion/GuardarCdr', JSON.stringify({ id_OrdenAtencion: $("#hdIdOrdenAtencionDialog").val(), estado: $('#ddlEstadoCdr').val() }));
+            }
+        });
+    }
+
+    function setInputDate() {
+        $('#txtFecInicio').datepicker(
+                            {
+                                dateFormat: 'dd/mm/yy',
+                                changeMonth: true,
+                                changeYear: true,
+                                showWeek: false,
+                                firstDay: 1,
+                                inline: true,
+                                maxDate: new Date(),
+                                onSelect: function (date) {
+                                    $('#txtFecInicio').val(date);
+                                }
+                            });
+        $('#txtFecInicio').mask('99/99/9999');
+        $('#txtFecInicio').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+
+        $('#txtFecFin').datepicker(
+                                {
+                                    dateFormat: 'dd/mm/yy',
+                                    changeMonth: true,
+                                    changeYear: true,
+                                    showWeek: false,
+                                    firstDay: 1,
+                                    inline: true,
+                                    maxDate: new Date(),
+                                    onSelect: function (date) {
+                                        $('#txtFecFin').val(date);
+                                    }
+                                });
+        $('#txtFecFin').mask('99/99/9999');
+        $('#txtFecFin').live('blur', function () {
+            if (!/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/g.test(this.value))
+                this.value = '';
+        });
+    }
+
+    function setInputSelects() {
+        $.ajaxSetup({ cache: false });
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'OrdenAtencion/GetSede',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optionTodosText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_Sede + "'>" + data.lst[key].nombre + "</option>";
+                            }
+                        };
+                        $("#ddlSede").html(items);
+                        $("#ddlServicio").html(optionTodosText);
+                        $("#ddlSede").change(function () {
+                            var selectedID = this.value;
+                            if (selectedID != "") {
+                                $.ajaxSetup({ cache: false });
+                                $.ajax({
+                                    type: 'GET',
+                                    url: baseUrl + 'OrdenAtencion/GetServicioBySede',
+                                    data: {
+                                        id_Sede: selectedID
+                                    },
+                                    dataType: 'Json',
+                                    async: false,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                var items = optionTodosText;
+                                                for (var key in data.lst) {
+                                                    if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                                        items += "<option value='" + data.lst[key].id_Servicio + "'>" + data.lst[key].descripcion + "</option>";
+                                                    }
+                                                };
+                                                $("#ddlServicio").html(items);
+                                            }
+                                            else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                            else {
+                                $("#ddlServicio").html(optionTodosText);
+                            }
+                        });
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'OrdenAtencion/GetEstadoOrden',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optionTodosText;
+                        var itemsDialog = optionTodosText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>";
+
+                                itemsDialog += (data.lst[key].codigo == '@Constantes.EstadoOrden.Atendido' ? "<option value='" + data.lst[key].codigo + "'>" + data.lst[key].descripcion + "</option>" : "");
+                            }
+                        };
+                        $("#ddlEstadoOrden").html(items);
+                        $("#ddlEstadoOrden").val('@Constantes.EstadoOrden.Generado');
+                        $("#ddlEstadoCdr").html(itemsDialog);
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: baseUrl + 'Cliente/GetTipoCliente',
+            data: {
+            },
+            dataType: 'Json',
+            async: false,
+            success: function (data) {
+                if (data != null) {
+                    if (data.success) {
+                        var items = optionTodosText;
+                        for (var key in data.lst) {
+                            if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                items += "<option value='" + data.lst[key].id_TipoCliente + "'>" + data.lst[key].nombre + "</option>";
+                            }
+                        };
+                        $("#ddlTipoCliente").html(items);
+                        $("#ddlTipoDocCliente").html(optionTodosText);
+                        $("#ddlTipoCliente").change(function () {
+                            var selectedID = this.value;
+                            if (selectedID != "") {
+                                $.ajaxSetup({ cache: false });
+                                $.ajax({
+                                    type: 'GET',
+                                    url: baseUrl + 'Cliente/GetTipoDocByCliente',
+                                    data: {
+                                        id_TipoCliente: selectedID
+                                    },
+                                    dataType: 'Json',
+                                    async: false,
+                                    success: function (data) {
+                                        if (data != null) {
+                                            if (data.success) {
+                                                var items = optionTodosText;
+                                                for (var key in data.lst) {
+                                                    if (data.lst[key] && data.lst.hasOwnProperty(key)) {
+                                                        items += "<option value='" + data.lst[key].id_TipoDocumento + "'>" + data.lst[key].codigo + "</option>";
+                                                    }
+                                                };
+                                                $("#ddlTipoDocCliente").html(items);
+                                                $("#txtNroDocCliente").val("");
+                                                $("#txtNroDocCliente").attr("disabled", "disabled");
+                                                $("#ddlTipoDocCliente").change(function () {
+                                                    var selectedID = this.value;
+                                                    if (selectedID != "") {
+                                                        if (selectedID == '1') // DNI
+                                                            $("#txtNroDocCliente").attr("maxlength", "8");
+                                                        else if (selectedID == '2') { // RUC
+                                                            $("#txtNroDocCliente").attr("maxlength", "11");
+                                                        }
+                                                        $("#txtNroDocCliente").removeAttr("disabled");
+                                                    }
+                                                    else {
+                                                        $("#txtNroDocCliente").val("");
+                                                        $("#txtNroDocCliente").attr("disabled", "disabled");
+                                                    }
+                                                });
+                                            }
+                                            else
+                                                messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    }
+                                });
+                            }
+                            else {
+                                $("#txtNroDocCliente").val("");
+                                $("#txtNroDocCliente").attr("disabled","disabled");
+                                $("#ddlTipoDocCliente").html(optionTodosText);
+                            }
+                        });
+                    }
+                    else
+                        messageErrorServer('Error:', '@Constantes.MensajeOpciones.ERRORSISTEMA');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    }
+
+    function onClickBuscarOrden() {
+        var fecinicio = $.trim($("#txtFecInicio").val());
+        var fecfin = $.trim($("#txtFecFin").val());
+
+        //if (fecinicio == "") {
+        //    message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+        //    return false;
+        //}
+
+        if (fecinicio != "") {
+            if (!isValidDate(fecinicio)) {
+                message('Información:', 'Debe ingresar una fecha de Inicio válida.', 'info');
+                return false;
+            }
+        }
+
+        if (fecfin != "") {
+            if (!isValidDate(fecfin)) {
+                message('Información:', 'Debe ingresar una fecha Fin válida.', 'info');
+                return false;
+            }
+            else if (fecinicio == "") {
+                message('Información:', 'Debe ingresar una fecha de Inicio.', 'info');
+                return false;
+            }
+            else if (compareDate(fecfin, fecinicio, false)) {
+                message('Información:', 'Debe ingresar una fecha Fin mayor o igual a la fecha Inicio.', 'info');
+                return false;
+            }
+        }
+
+        $("#list").setGridParam({ datatype: 'json', page: 1 }).trigger('reloadGrid');
+    }
+
+    function onClickLimpiarOrden() {
+        $('#txtFecInicio').val("");
+        $('#txtFecFin').val("");
+        $('#ddlServicio').html(optionTodosText);
+        $('#ddlSede').val("");
+        $('#ddlEstadoOrden').val("");
+        $('#txtNomCliente').val("");
+        $('#txtCodCliente').val("");
+        $('#ddlTipoDocCliente').html(optionTodosText);
+        $('#txtNroDocCliente').val("");
+        $('#txtNroDocCliente').attr("disabled", "disabled");
+        $('#ddlTipoCliente').val("");
+        $('#txtNomPaciente').val("");
+        $('#txtCodPaciente').val("");
+    }
+</script>
+<div class="panel panel-default" data-sortable-id="ui-widget-16" data-init="true">
+    @*<div class="panel-heading" style="background: #80bd00; color:#ffffff">
+        <div class="panel-heading-btn">
+        </div>
+        <h4 class="panel-title"><strong>CONSULTA DE ORDEN DE ATENCIÓN</strong></h4>
+    </div>*@
+    <div class="contenido">
+        <div id="ContenidogDialog">
+        </div>
+        <div class="mensaje" id="divMensaje" style="display: none;">
+            <ul id="ulMessage"></ul>
+        </div>
+        @*<div id="Alerta" style="text-align: left; padding: 10px !important; margin: 12px 50px 0 10px; min-height: 20px; font-size: 12px;" class="@ViewBag.cssAlert" role="alert"><strong>Información:</strong><span style="margin-left: 15px;">@ViewBag.messageAlert</span></div>*@
+        <div class="item_form" style="clear:both; padding-top: 10px;">
+            <div class="item_labelMain">Fecha Inicio:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecInicio" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+            <div class="item_labelMain">Fecha Fin:</div>
+            <div class="item_campo">
+                <input type="text" id="txtFecFin" placeholder="dd/mm/aaaa" maxlength="10" />
+            </div>
+        </div>
+        <div class="item_form">
+            <div class="item_labelMain">Sede:</div>
+            <div class="item_campo">
+                <select id="ddlSede"></select>
+            </div>
+            <div class="item_labelMain">Servicio:</div>
+            <div class="item_campo">
+                <select id="ddlServicio"></select>
+            </div>
+            <div class="item_labelMain">Estado Orden:</div>
+            <div class="item_campo">
+                <select id="ddlEstadoOrden"></select>
+            </div>
+        </div>
+        <fieldset>
+            <legend>Datos Cliente</legend>
+            <div class="item_form">
+                <div class="item_labelMain">Tipo Cliente:</div>
+                <div class="item_campo">
+                    <select id="ddlTipoCliente"></select>
+                </div>
+                <div class="item_labelMain">Tipo Documento:</div>
+                <div class="item_campo">
+                    <select id="ddlTipoDocCliente"></select>
+                </div>
+            </div>
+            <div class="item_form">
+                <div class="item_labelMain">Nro. Documento:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtNroDocCliente" disabled="disabled" />
+                </div>
+                <div class="item_labelMain">Nombre o Razón Social:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtNomCliente" maxlength="200" />
+                </div>
+                <div class="item_labelMain">Código Cliente:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtCodCliente" maxlength="8" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Paciente</legend>
+            <div class="item_form">
+                <div class="item_labelMain">Nombre Paciente:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtNomPaciente" maxlength="50" />
+                </div>
+                <div class="item_labelMain">Código Paciente:</div>
+                <div class="item_campo">
+                    <input type="text" id="txtCodPaciente" maxlength="12" />
+                </div>
+            </div>
+        </fieldset>
+        <div class="item_form">
+            <div class="item_labelMain">
+                <div class="form-group right">
+                    <button type="button" id="btBuscar" onclick="return onClickBuscarOrden();" class="btn btn-primary">Buscar</button>
+                    <button type="button" id="btLimpiar" onclick="return onClickLimpiarOrden();" class="btn btn-primary">Limpiar</button>
+                </div>
+            </div>
+        </div>
+        <div class="item_form">
+            <fieldset>
+                <legend>Listado de Orden de Atención</legend>
+                <div class="grilla_custom">
+                    <table id="list"></table>
+                    <div id="pager"></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div style="display: none;">
+    <div id="divContentCargaCdr" class="item_form">
+        <div class="item_form">
+            <h2>Estado Orden Atención</h2>
+        </div>
+        <div class="item_label">Estado(*):</div>
+        <div class="item_campo">
+            <div style="float: left; width: 80%">
+                <select id="ddlEstadoCdr"></select>
+            </div>
+            <input type="hidden" id="hdIdOrdenAtencionDialog" />
+        </div>
+        <div style="padding-top: 4px;">
+            <button type="button" id="btnCargarCdr" onclick="CargarCdr();" onmouseover="onmouseoverBtn(this)" onmouseout="onmouseoutBtn(this)" onfocus="onfocusBtn(this)" onblur="onblurBtn(this)" class="fm-button ui-state-default ui-corner-all fm-button-icon-left">
+                Guardar <span class="ui-icon ui-icon-disk"></span>
+            </button>
+        </div>
+        <div class="mensaje" id="divMensajeUpCdr" style="width:92%; max-height:150px; display: none;">
+            <ul id="ulMessageUpCdr"></ul>
+        </div>
+    </div>
+</div>

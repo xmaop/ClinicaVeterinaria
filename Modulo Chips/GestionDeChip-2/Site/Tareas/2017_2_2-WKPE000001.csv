@@ -1,0 +1,6 @@
+codigo_Chip,estado,codigoTarjeta,Paciente,Especie,Raza,Genero,Fecha_Nacimiento,TipoCliente,TipoDocumento,Documento_Identidad,Cliente,Dirección,Distrito,Telefono,celular,Email,Contacto
+CHI00003,Activo              ,,Chery,Perro,Chihuahua,Hembra,24/12/2015 12:00:00 a.m.,Natural,DNI,10458795,Meliza Suarez Palacios,,Jesús María,012555487,929992555,carlosjjv@gmail.com,Cesar Alvarez Wong
+CHI00007,Activo              ,,Agaton,Gato,Angora Turco,Macho,06/10/2016 12:00:00 a.m.,Natural,DNI,45795881,Roberto Paredes Quintanilla,,Jesús María,014331234,976663355,carlosjjv@gmail.com,Jorge Vallejos Quispe
+CHI00008,Activo              ,,Adita,Gato,American Curl,Macho,06/10/2016 12:00:00 a.m.,Natural,DNI,45795881,Roberto Paredes Quintanilla,,Jesús María,014331234,976663355,carlosjjv@gmail.com,Jorge Vallejos Quispe
+CHI00009,Activo              ,,Batute,Gato,American Curl,Macho,06/10/2016 12:00:00 a.m.,Natural,DNI,54829458,Raul Velarde Carrillo,,Jesús María,012231200,995666352,carlosjjv@gmail.com,Juan Valdivia Ramos
+CHI00010,Activo              ,,Becker,Gato,American Curl,Macho,23/07/2015 12:00:00 a.m.,Natural,DNI,43584967,Lisett Falcon Espinoza,,Jesús María,013664878,922225555,carlosjjv@gmail.com,Cesar Alvarez Wong
