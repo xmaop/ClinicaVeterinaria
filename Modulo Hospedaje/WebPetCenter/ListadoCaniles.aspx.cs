@@ -110,7 +110,8 @@ namespace WebPetCenter
       {
           LimpiarControles();
           lblModalTitle.Text ="Nuevo Canil";
-            trCodigoCanil.Visible = false;
+          trCodigoCanil.Visible = false;
+          btnGrabar.Visible = true;
           ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalNew", "$('#myModal').modal();", true);
           upModal.Update();
         }

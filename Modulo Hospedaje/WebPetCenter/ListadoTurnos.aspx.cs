@@ -432,8 +432,9 @@ namespace WebPetCenter
                     }
                    
                     mHeader = mHeader + "</table>";
-                  
 
+
+          
 
                     Response.Clear();
                     Response.Buffer = true;
@@ -442,7 +443,14 @@ namespace WebPetCenter
                     Response.Charset = "UTF-8";
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
-                    Response.Flush();
+
+
+                    Response.End();
+                    Response.Clear();
+
+
+                 
+                    //Response.Flush();
                     //Response.Close();
                    // Response.End();
                 }
@@ -560,6 +568,8 @@ namespace WebPetCenter
                 gvTurnoTarde.DataBind();
                 gvTurnoNoche.DataSource = objBE_TurnoN;
                 gvTurnoNoche.DataBind();
+
+      
             }
             catch (Exception ex)
             {
@@ -676,7 +686,11 @@ namespace WebPetCenter
                     Response.Charset = "UTF-8";
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
-                    Response.Flush();
+
+                    Response.End();
+                    Response.Clear();
+
+                    //Response.Flush();
                     //Response.Close();
                     //Response.End();
 
@@ -758,7 +772,11 @@ namespace WebPetCenter
                     Response.Charset = "UTF-8";
                     Response.ContentEncoding = System.Text.Encoding.Default;
                     Response.Write(mHeader);
-                    Response.Flush();
+
+                    Response.End();
+                    Response.Clear();
+
+                    //Response.Flush();
                     //Response.Close();
                     //Response.End();
                 }
