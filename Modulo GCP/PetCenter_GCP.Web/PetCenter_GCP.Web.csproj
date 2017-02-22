@@ -416,6 +416,7 @@
     <Content Include="Scripts\jwerty.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\numeric.js" />
+    <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\title_notifier.js" />
     <Content Include="Scripts\UserControls\_ListaCliente.js" />

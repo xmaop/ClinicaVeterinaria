@@ -20,9 +20,23 @@
     <link href="@Url.Content("~/Content/assets/css/theme/default.css")" rel="stylesheet" id="theme" />
     <link href="@Url.Content("~/Content/assets/plugins/gritter/css/jquery.gritter.css")" rel="stylesheet" />
     @System.Web.Optimization.Scripts.Render("~/bundles/JQueryJs")
-    <script src="@Url.Content("~/Content/assets/plugins/pace/pace.min.js")"></script>
-</head>
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.0/pace.min.js" type="text/javascript"></script>
+    @*<style>
+        body.pace-running {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
 
+        body.pace-done {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+    </style>*@
+</head>
 <body class="pace-top">
     @RenderSection("featured", required: false)
     @RenderBody()

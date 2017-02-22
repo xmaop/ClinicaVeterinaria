@@ -18,7 +18,6 @@ C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\D
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\PetCenter_GCP.RazonJS.pdb
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\PetCenter_GCP.RazorEngine.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\System.Web.Mvc.dll
-C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\System.Web.WebPages.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\PetCenter_GCP.ViewEngine.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\PetCenter_GCP.RazorEngine.pdb
@@ -30,3 +29,4 @@ C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\D
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\obj\Debug\PetCenter_GCP.RazonJS.csprojResolveAssemblyReference.cache
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\obj\Debug\PetCenter_GCP.RazonJS.dll
 C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\obj\Debug\PetCenter_GCP.RazonJS.pdb
+C:\Users\Gary\Desktop\PETCENTER_JUEVES\PetCenter_GCP\PetCenter_GCP.RazonJS\bin\Debug\System.Web.Mvc.xml
